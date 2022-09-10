@@ -76,6 +76,7 @@ Module.expectedDataFileDownloads++;
   }
   var REMOTE_PACKAGE_NAME = Module["locateFile"] ? Module["locateFile"](REMOTE_PACKAGE_BASE, "") : REMOTE_PACKAGE_BASE;
   var REMOTE_PACKAGE_SIZE = metadata["remote_package_size"];
+  var PACKAGE_UUID = metadata["package_uuid"];
   function fetchRemotePackage(packageName, packageSize, callback, errback) {
    if (typeof process === "object" && typeof process.versions === "object" && typeof process.versions.node === "string") {
     require("fs").readFile(packageName, function(err, contents) {
@@ -152,40 +153,40 @@ Module.expectedDataFileDownloads++;
    }
    Module["FS_createPath"]("/", "data", true, true);
    Module["FS_createPath"]("/data", "ZGUI", true, true);
-   Module["FS_createPath"]("/data/ZGUI", "Font", true, true);
    Module["FS_createPath"]("/data/ZGUI", "Image", true, true);
    Module["FS_createPath"]("/data/ZGUI", "Lua", true, true);
-   Module["FS_createPath"]("/data", "bgfx_shader", true, true);
-   Module["FS_createPath"]("/data/bgfx_shader", "android", true, true);
-   Module["FS_createPath"]("/data/bgfx_shader", "asmjs", true, true);
-   Module["FS_createPath"]("/data/bgfx_shader", "ios", true, true);
-   Module["FS_createPath"]("/data/bgfx_shader", "osx", true, true);
-   Module["FS_createPath"]("/data/bgfx_shader", "windows", true, true);
-   Module["FS_createPath"]("/data", "font", true, true);
+   Module["FS_createPath"]("/data/ZGUI", "Font", true, true);
    Module["FS_createPath"]("/data", "image", true, true);
-   Module["FS_createPath"]("/data/image", "animation", true, true);
-   Module["FS_createPath"]("/data/image/animation", "blood", true, true);
-   Module["FS_createPath"]("/data/image/animation", "wizard", true, true);
-   Module["FS_createPath"]("/data/image", "flappy_duck", true, true);
-   Module["FS_createPath"]("/data/image/flappy_duck", "duck", true, true);
-   Module["FS_createPath"]("/data/image", "font", true, true);
    Module["FS_createPath"]("/data/image", "ui", true, true);
-   Module["FS_createPath"]("/data/image/ui", "button16", true, true);
    Module["FS_createPath"]("/data/image/ui", "dpad16", true, true);
    Module["FS_createPath"]("/data/image/ui", "joystick32", true, true);
+   Module["FS_createPath"]("/data/image/ui", "button16", true, true);
+   Module["FS_createPath"]("/data/image", "flappy_duck", true, true);
+   Module["FS_createPath"]("/data/image/flappy_duck", "duck", true, true);
+   Module["FS_createPath"]("/data/image", "animation", true, true);
+   Module["FS_createPath"]("/data/image/animation", "wizard", true, true);
+   Module["FS_createPath"]("/data/image/animation", "blood", true, true);
+   Module["FS_createPath"]("/data/image", "font", true, true);
    Module["FS_createPath"]("/data", "lua", true, true);
-   Module["FS_createPath"]("/data/lua", "app", true, true);
-   Module["FS_createPath"]("/data/lua/app", "game", true, true);
+   Module["FS_createPath"]("/data/lua", "nes", true, true);
+   Module["FS_createPath"]("/data/lua/nes", "libs", true, true);
    Module["FS_createPath"]("/data/lua", "core", true, true);
    Module["FS_createPath"]("/data/lua/core", "components", true, true);
+   Module["FS_createPath"]("/data/lua/core", "systems", true, true);
    Module["FS_createPath"]("/data/lua/core", "data", true, true);
    Module["FS_createPath"]("/data/lua/core", "entities", true, true);
    Module["FS_createPath"]("/data/lua/core/entities", "ui", true, true);
-   Module["FS_createPath"]("/data/lua/core", "systems", true, true);
-   Module["FS_createPath"]("/data/lua", "libs", true, true);
-   Module["FS_createPath"]("/data/lua", "nes", true, true);
-   Module["FS_createPath"]("/data/lua/nes", "libs", true, true);
+   Module["FS_createPath"]("/data/lua", "app", true, true);
+   Module["FS_createPath"]("/data/lua/app", "game", true, true);
    Module["FS_createPath"]("/data/lua", "utils", true, true);
+   Module["FS_createPath"]("/data/lua", "libs", true, true);
+   Module["FS_createPath"]("/data", "font", true, true);
+   Module["FS_createPath"]("/data", "bgfx_shader", true, true);
+   Module["FS_createPath"]("/data/bgfx_shader", "asmjs", true, true);
+   Module["FS_createPath"]("/data/bgfx_shader", "osx", true, true);
+   Module["FS_createPath"]("/data/bgfx_shader", "ios", true, true);
+   Module["FS_createPath"]("/data/bgfx_shader", "android", true, true);
+   Module["FS_createPath"]("/data/bgfx_shader", "windows", true, true);
    function DataRequest(start, end, audio) {
     this.start = start;
     this.end = end;
@@ -247,1519 +248,1536 @@ Module.expectedDataFileDownloads++;
  };
  loadPackage({
   "files": [ {
-   "filename": "/data/ZGUI/Font/chinese.msyh.ttf",
+   "filename": "/data/.DS_Store",
    "start": 0,
-   "end": 15044442
-  }, {
-   "filename": "/data/ZGUI/Font/zpix.ttf",
-   "start": 15044442,
-   "end": 19724790
-  }, {
-   "filename": "/data/ZGUI/Image/Daisy.png",
-   "start": 19724790,
-   "end": 20425106
-  }, {
-   "filename": "/data/ZGUI/Image/Galaxy.png",
-   "start": 20425106,
-   "end": 21625318
-  }, {
-   "filename": "/data/ZGUI/Image/c0.png",
-   "start": 21625318,
-   "end": 21626011
-  }, {
-   "filename": "/data/ZGUI/Image/c1.png",
-   "start": 21626011,
-   "end": 21626711
-  }, {
-   "filename": "/data/ZGUI/Image/c2.png",
-   "start": 21626711,
-   "end": 21627387
-  }, {
-   "filename": "/data/ZGUI/Image/c3.png",
-   "start": 21627387,
-   "end": 21628090
-  }, {
-   "filename": "/data/ZGUI/Image/c4.png",
-   "start": 21628090,
-   "end": 21628785
-  }, {
-   "filename": "/data/ZGUI/Image/c5.png",
-   "start": 21628785,
-   "end": 21631826
-  }, {
-   "filename": "/data/ZGUI/Image/c6.png",
-   "start": 21631826,
-   "end": 21632853
-  }, {
-   "filename": "/data/ZGUI/Image/c7.png",
-   "start": 21632853,
-   "end": 21633549
-  }, {
-   "filename": "/data/ZGUI/Image/ca1.png",
-   "start": 21633549,
-   "end": 21634083
-  }, {
-   "filename": "/data/ZGUI/Image/ca10.png",
-   "start": 21634083,
-   "end": 21634641
-  }, {
-   "filename": "/data/ZGUI/Image/ca2.png",
-   "start": 21634641,
-   "end": 21635217
-  }, {
-   "filename": "/data/ZGUI/Image/ca3.png",
-   "start": 21635217,
-   "end": 21635833
-  }, {
-   "filename": "/data/ZGUI/Image/ca4.png",
-   "start": 21635833,
-   "end": 21636488
-  }, {
-   "filename": "/data/ZGUI/Image/ca5.png",
-   "start": 21636488,
-   "end": 21637143
-  }, {
-   "filename": "/data/ZGUI/Image/ca6.png",
-   "start": 21637143,
-   "end": 21637798
-  }, {
-   "filename": "/data/ZGUI/Image/ca7.png",
-   "start": 21637798,
-   "end": 21638457
-  }, {
-   "filename": "/data/ZGUI/Image/ca8.png",
-   "start": 21638457,
-   "end": 21639091
-  }, {
-   "filename": "/data/ZGUI/Image/ca9.png",
-   "start": 21639091,
-   "end": 21639684
-  }, {
-   "filename": "/data/ZGUI/Image/cf.png",
-   "start": 21639684,
-   "end": 21640897
-  }, {
-   "filename": "/data/ZGUI/Image/cff.png",
-   "start": 21640897,
-   "end": 21642328
-  }, {
-   "filename": "/data/ZGUI/Image/e1.png",
-   "start": 21642328,
-   "end": 21644255
-  }, {
-   "filename": "/data/ZGUI/Image/e10.png",
-   "start": 21644255,
-   "end": 21646216
-  }, {
-   "filename": "/data/ZGUI/Image/e11.png",
-   "start": 21646216,
-   "end": 21648183
-  }, {
-   "filename": "/data/ZGUI/Image/e12.png",
-   "start": 21648183,
-   "end": 21650142
-  }, {
-   "filename": "/data/ZGUI/Image/e13.png",
-   "start": 21650142,
-   "end": 21652112
-  }, {
-   "filename": "/data/ZGUI/Image/e14.png",
-   "start": 21652112,
-   "end": 21654128
-  }, {
-   "filename": "/data/ZGUI/Image/e15.png",
-   "start": 21654128,
-   "end": 21656092
-  }, {
-   "filename": "/data/ZGUI/Image/e16.png",
-   "start": 21656092,
-   "end": 21658033
-  }, {
-   "filename": "/data/ZGUI/Image/e17.png",
-   "start": 21658033,
-   "end": 21659956
-  }, {
-   "filename": "/data/ZGUI/Image/e18.png",
-   "start": 21659956,
-   "end": 21661874
-  }, {
-   "filename": "/data/ZGUI/Image/e19.png",
-   "start": 21661874,
-   "end": 21663795
-  }, {
-   "filename": "/data/ZGUI/Image/e2.png",
-   "start": 21663795,
-   "end": 21665725
-  }, {
-   "filename": "/data/ZGUI/Image/e20.png",
-   "start": 21665725,
-   "end": 21667656
-  }, {
-   "filename": "/data/ZGUI/Image/e21.png",
-   "start": 21667656,
-   "end": 21669564
-  }, {
-   "filename": "/data/ZGUI/Image/e22.png",
-   "start": 21669564,
-   "end": 21671509
-  }, {
-   "filename": "/data/ZGUI/Image/e23.png",
-   "start": 21671509,
-   "end": 21673460
-  }, {
-   "filename": "/data/ZGUI/Image/e24.png",
-   "start": 21673460,
-   "end": 21675384
-  }, {
-   "filename": "/data/ZGUI/Image/e25.png",
-   "start": 21675384,
-   "end": 21677313
-  }, {
-   "filename": "/data/ZGUI/Image/e26.png",
-   "start": 21677313,
-   "end": 21679209
-  }, {
-   "filename": "/data/ZGUI/Image/e27.png",
-   "start": 21679209,
-   "end": 21681087
-  }, {
-   "filename": "/data/ZGUI/Image/e28.png",
-   "start": 21681087,
-   "end": 21682958
-  }, {
-   "filename": "/data/ZGUI/Image/e29.png",
-   "start": 21682958,
-   "end": 21684828
-  }, {
-   "filename": "/data/ZGUI/Image/e3.png",
-   "start": 21684828,
-   "end": 21686735
-  }, {
-   "filename": "/data/ZGUI/Image/e30.png",
-   "start": 21686735,
-   "end": 21688625
-  }, {
-   "filename": "/data/ZGUI/Image/e31.png",
-   "start": 21688625,
-   "end": 21690521
-  }, {
-   "filename": "/data/ZGUI/Image/e32.png",
-   "start": 21690521,
-   "end": 21692395
-  }, {
-   "filename": "/data/ZGUI/Image/e33.png",
-   "start": 21692395,
-   "end": 21694261
-  }, {
-   "filename": "/data/ZGUI/Image/e34.png",
-   "start": 21694261,
-   "end": 21696147
-  }, {
-   "filename": "/data/ZGUI/Image/e35.png",
-   "start": 21696147,
-   "end": 21698076
-  }, {
-   "filename": "/data/ZGUI/Image/e36.png",
-   "start": 21698076,
-   "end": 21699973
-  }, {
-   "filename": "/data/ZGUI/Image/e37.png",
-   "start": 21699973,
-   "end": 21701855
-  }, {
-   "filename": "/data/ZGUI/Image/e38.png",
-   "start": 21701855,
-   "end": 21703774
-  }, {
-   "filename": "/data/ZGUI/Image/e39.png",
-   "start": 21703774,
-   "end": 21705673
-  }, {
-   "filename": "/data/ZGUI/Image/e4.png",
-   "start": 21705673,
-   "end": 21707550
-  }, {
-   "filename": "/data/ZGUI/Image/e40.png",
-   "start": 21707550,
-   "end": 21709389
-  }, {
-   "filename": "/data/ZGUI/Image/e41.png",
-   "start": 21709389,
-   "end": 21711238
-  }, {
-   "filename": "/data/ZGUI/Image/e42.png",
-   "start": 21711238,
-   "end": 21713025
-  }, {
-   "filename": "/data/ZGUI/Image/e43.png",
-   "start": 21713025,
-   "end": 21714816
-  }, {
-   "filename": "/data/ZGUI/Image/e44.png",
-   "start": 21714816,
-   "end": 21716645
-  }, {
-   "filename": "/data/ZGUI/Image/e45.png",
-   "start": 21716645,
-   "end": 21718473
-  }, {
-   "filename": "/data/ZGUI/Image/e46.png",
-   "start": 21718473,
-   "end": 21720218
-  }, {
-   "filename": "/data/ZGUI/Image/e47.png",
-   "start": 21720218,
-   "end": 21721943
-  }, {
-   "filename": "/data/ZGUI/Image/e48.png",
-   "start": 21721943,
-   "end": 21723684
-  }, {
-   "filename": "/data/ZGUI/Image/e49.png",
-   "start": 21723684,
-   "end": 21725395
-  }, {
-   "filename": "/data/ZGUI/Image/e5.png",
-   "start": 21725395,
-   "end": 21727296
-  }, {
-   "filename": "/data/ZGUI/Image/e50.png",
-   "start": 21727296,
-   "end": 21729068
-  }, {
-   "filename": "/data/ZGUI/Image/e51.png",
-   "start": 21729068,
-   "end": 21730859
-  }, {
-   "filename": "/data/ZGUI/Image/e52.png",
-   "start": 21730859,
-   "end": 21732667
-  }, {
-   "filename": "/data/ZGUI/Image/e53.png",
-   "start": 21732667,
-   "end": 21734498
-  }, {
-   "filename": "/data/ZGUI/Image/e54.png",
-   "start": 21734498,
-   "end": 21736367
-  }, {
-   "filename": "/data/ZGUI/Image/e55.png",
-   "start": 21736367,
-   "end": 21738249
-  }, {
-   "filename": "/data/ZGUI/Image/e56.png",
-   "start": 21738249,
-   "end": 21740067
-  }, {
-   "filename": "/data/ZGUI/Image/e57.png",
-   "start": 21740067,
-   "end": 21741922
-  }, {
-   "filename": "/data/ZGUI/Image/e58.png",
-   "start": 21741922,
-   "end": 21743782
-  }, {
-   "filename": "/data/ZGUI/Image/e59.png",
-   "start": 21743782,
-   "end": 21745617
-  }, {
-   "filename": "/data/ZGUI/Image/e6.png",
-   "start": 21745617,
-   "end": 21747515
-  }, {
-   "filename": "/data/ZGUI/Image/e60.png",
-   "start": 21747515,
-   "end": 21749380
-  }, {
-   "filename": "/data/ZGUI/Image/e7.png",
-   "start": 21749380,
-   "end": 21751228
-  }, {
-   "filename": "/data/ZGUI/Image/e8.png",
-   "start": 21751228,
-   "end": 21753127
-  }, {
-   "filename": "/data/ZGUI/Image/e9.png",
-   "start": 21753127,
-   "end": 21755013
-  }, {
-   "filename": "/data/ZGUI/Image/resurrect-64-32x.png",
-   "start": 21755013,
-   "end": 21755815
-  }, {
-   "filename": "/data/ZGUI/Lua/anim_card.lua",
-   "start": 21755815,
-   "end": 21757099
-  }, {
-   "filename": "/data/ZGUI/Lua/anim_card2.lua",
-   "start": 21757099,
-   "end": 21758380
-  }, {
-   "filename": "/data/ZGUI/Lua/anim_card_light.lua",
-   "start": 21758380,
-   "end": 21758993
-  }, {
-   "filename": "/data/ZGUI/Lua/anim_planet.lua",
-   "start": 21758993,
-   "end": 21759514
-  }, {
-   "filename": "/data/ZGUI/Lua/animation.lua",
-   "start": 21759514,
-   "end": 21760158
-  }, {
-   "filename": "/data/ZGUI/Lua/animation_s.lua",
-   "start": 21760158,
-   "end": 21760389
-  }, {
-   "filename": "/data/ZGUI/Lua/button.lua",
-   "start": 21760389,
-   "end": 21763105
-  }, {
-   "filename": "/data/ZGUI/Lua/clickable.lua",
-   "start": 21763105,
-   "end": 21764849
-  }, {
-   "filename": "/data/ZGUI/Lua/clip.lua",
-   "start": 21764849,
-   "end": 21766008
-  }, {
-   "filename": "/data/ZGUI/Lua/clip_s.lua",
-   "start": 21766008,
-   "end": 21766230
-  }, {
-   "filename": "/data/ZGUI/Lua/debug_panel.lua",
-   "start": 21766230,
-   "end": 21773070
-  }, {
-   "filename": "/data/ZGUI/Lua/debug_panel_s.lua",
-   "start": 21773070,
-   "end": 21773305
-  }, {
-   "filename": "/data/ZGUI/Lua/hittest.lua",
-   "start": 21773305,
-   "end": 21776139
-  }, {
-   "filename": "/data/ZGUI/Lua/scene.lua",
-   "start": 21776139,
-   "end": 21778902
-  }, {
-   "filename": "/data/ZGUI/Lua/screen.lua",
-   "start": 21778902,
-   "end": 21781652
-  }, {
-   "filename": "/data/ZGUI/Lua/skeleton_hand_l.lua",
-   "start": 21781652,
-   "end": 21781848
-  }, {
-   "filename": "/data/ZGUI/Lua/skeleton_hand_r.lua",
-   "start": 21781848,
-   "end": 21782044
-  }, {
-   "filename": "/data/ZGUI/Lua/skeleton_head.lua",
-   "start": 21782044,
-   "end": 21782242
-  }, {
-   "filename": "/data/ZGUI/Lua/test.lua",
-   "start": 21782242,
-   "end": 21784060
-  }, {
-   "filename": "/data/ZGUI/Lua/text.lua",
-   "start": 21784060,
-   "end": 21785785
-  }, {
-   "filename": "/data/ZGUI/Lua/text_s.lua",
-   "start": 21785785,
-   "end": 21786004
-  }, {
-   "filename": "/data/ZGUI/Lua/text_sdf.lua",
-   "start": 21786004,
-   "end": 21788159
-  }, {
-   "filename": "/data/ZGUI/Lua/z_object.lua",
-   "start": 21788159,
-   "end": 21789240
-  }, {
-   "filename": "/data/bgfx_shader/android/f_simple.bin",
-   "start": 21789240,
-   "end": 21789538
-  }, {
-   "filename": "/data/bgfx_shader/android/f_zgui.bin",
-   "start": 21789538,
-   "end": 21791242
-  }, {
-   "filename": "/data/bgfx_shader/android/v_simple.bin",
-   "start": 21791242,
-   "end": 21791677
-  }, {
-   "filename": "/data/bgfx_shader/android/v_zgui.bin",
-   "start": 21791677,
-   "end": 21792292
-  }, {
-   "filename": "/data/bgfx_shader/asmjs/f_simple.bin",
-   "start": 21792292,
-   "end": 21792590
-  }, {
-   "filename": "/data/bgfx_shader/asmjs/f_zgui.bin",
-   "start": 21792590,
-   "end": 21794294
-  }, {
-   "filename": "/data/bgfx_shader/asmjs/v_simple.bin",
-   "start": 21794294,
-   "end": 21794729
-  }, {
-   "filename": "/data/bgfx_shader/asmjs/v_zgui.bin",
-   "start": 21794729,
-   "end": 21795344
-  }, {
-   "filename": "/data/bgfx_shader/bgfx_shader.sh",
-   "start": 21795344,
-   "end": 21818936
-  }, {
-   "filename": "/data/bgfx_shader/f_simple.bin",
-   "start": 21818936,
-   "end": 21819029
-  }, {
-   "filename": "/data/bgfx_shader/f_simple.sc",
-   "start": 21819029,
-   "end": 21819224
-  }, {
-   "filename": "/data/bgfx_shader/f_zgui.sc",
-   "start": 21819224,
-   "end": 21820420
-  }, {
-   "filename": "/data/bgfx_shader/ios/f_simple.bin",
-   "start": 21820420,
-   "end": 21821134
-  }, {
-   "filename": "/data/bgfx_shader/ios/f_zgui.bin",
-   "start": 21821134,
-   "end": 21822904
-  }, {
-   "filename": "/data/bgfx_shader/ios/v_simple.bin",
-   "start": 21822904,
-   "end": 21823706
-  }, {
-   "filename": "/data/bgfx_shader/ios/v_zgui.bin",
-   "start": 21823706,
-   "end": 21824824
-  }, {
-   "filename": "/data/bgfx_shader/osx/f_simple.bin",
-   "start": 21824824,
-   "end": 21825538
-  }, {
-   "filename": "/data/bgfx_shader/osx/f_zgui.bin",
-   "start": 21825538,
-   "end": 21827308
-  }, {
-   "filename": "/data/bgfx_shader/osx/v_simple.bin",
-   "start": 21827308,
-   "end": 21828110
-  }, {
-   "filename": "/data/bgfx_shader/osx/v_zgui.bin",
-   "start": 21828110,
-   "end": 21829228
-  }, {
-   "filename": "/data/bgfx_shader/v_simple.bin",
-   "start": 21829228,
-   "end": 21829561
-  }, {
-   "filename": "/data/bgfx_shader/v_simple.sc",
-   "start": 21829561,
-   "end": 21829801
-  }, {
-   "filename": "/data/bgfx_shader/v_zgui.sc",
-   "start": 21829801,
-   "end": 21830207
-  }, {
-   "filename": "/data/bgfx_shader/varying.def.sc",
-   "start": 21830207,
-   "end": 21830446
-  }, {
-   "filename": "/data/bgfx_shader/windows.varying.def.sc",
-   "start": 21830446,
-   "end": 21830684
-  }, {
-   "filename": "/data/bgfx_shader/windows/f_simple.bin",
-   "start": 21830684,
-   "end": 21830906
-  }, {
-   "filename": "/data/bgfx_shader/windows/f_zgui.bin",
-   "start": 21830906,
-   "end": 21832524
-  }, {
-   "filename": "/data/bgfx_shader/windows/v_simple.bin",
-   "start": 21832524,
-   "end": 21832879
-  }, {
-   "filename": "/data/bgfx_shader/windows/v_zgui.bin",
-   "start": 21832879,
-   "end": 21833396
-  }, {
-   "filename": "/data/font/zpix.ttf",
-   "start": 21833396,
-   "end": 26513744
+   "end": 6148
   }, {
    "filename": "/data/history.txt",
-   "start": 26513744,
-   "end": 26513745
-  }, {
-   "filename": "/data/image/animation/blood/1.png",
-   "start": 26513745,
-   "end": 26514139
-  }, {
-   "filename": "/data/image/animation/blood/10.png",
-   "start": 26514139,
-   "end": 26514646
-  }, {
-   "filename": "/data/image/animation/blood/11.png",
-   "start": 26514646,
-   "end": 26515083
-  }, {
-   "filename": "/data/image/animation/blood/12.png",
-   "start": 26515083,
-   "end": 26515521
-  }, {
-   "filename": "/data/image/animation/blood/13.png",
-   "start": 26515521,
-   "end": 26515920
-  }, {
-   "filename": "/data/image/animation/blood/14.png",
-   "start": 26515920,
-   "end": 26516308
-  }, {
-   "filename": "/data/image/animation/blood/15.png",
-   "start": 26516308,
-   "end": 26516674
-  }, {
-   "filename": "/data/image/animation/blood/16.png",
-   "start": 26516674,
-   "end": 26517001
-  }, {
-   "filename": "/data/image/animation/blood/17.png",
-   "start": 26517001,
-   "end": 26517328
-  }, {
-   "filename": "/data/image/animation/blood/18.png",
-   "start": 26517328,
-   "end": 26517655
-  }, {
-   "filename": "/data/image/animation/blood/19.png",
-   "start": 26517655,
-   "end": 26517982
-  }, {
-   "filename": "/data/image/animation/blood/2.png",
-   "start": 26517982,
-   "end": 26518720
-  }, {
-   "filename": "/data/image/animation/blood/20.png",
-   "start": 26518720,
-   "end": 26519057
-  }, {
-   "filename": "/data/image/animation/blood/3.png",
-   "start": 26519057,
-   "end": 26519904
-  }, {
-   "filename": "/data/image/animation/blood/4.png",
-   "start": 26519904,
-   "end": 26520818
-  }, {
-   "filename": "/data/image/animation/blood/5.png",
-   "start": 26520818,
-   "end": 26521694
-  }, {
-   "filename": "/data/image/animation/blood/6.png",
-   "start": 26521694,
-   "end": 26522459
-  }, {
-   "filename": "/data/image/animation/blood/7.png",
-   "start": 26522459,
-   "end": 26523118
-  }, {
-   "filename": "/data/image/animation/blood/8.png",
-   "start": 26523118,
-   "end": 26523715
-  }, {
-   "filename": "/data/image/animation/blood/9.png",
-   "start": 26523715,
-   "end": 26524209
-  }, {
-   "filename": "/data/image/animation/wizard/1.png",
-   "start": 26524209,
-   "end": 26525440
-  }, {
-   "filename": "/data/image/animation/wizard/10.png",
-   "start": 26525440,
-   "end": 26526705
-  }, {
-   "filename": "/data/image/animation/wizard/11.png",
-   "start": 26526705,
-   "end": 26527943
-  }, {
-   "filename": "/data/image/animation/wizard/12.png",
-   "start": 26527943,
-   "end": 26529204
-  }, {
-   "filename": "/data/image/animation/wizard/13.png",
-   "start": 26529204,
-   "end": 26530439
-  }, {
-   "filename": "/data/image/animation/wizard/14.png",
-   "start": 26530439,
-   "end": 26531668
-  }, {
-   "filename": "/data/image/animation/wizard/15.png",
-   "start": 26531668,
-   "end": 26532866
-  }, {
-   "filename": "/data/image/animation/wizard/16.png",
-   "start": 26532866,
-   "end": 26534146
-  }, {
-   "filename": "/data/image/animation/wizard/2.png",
-   "start": 26534146,
-   "end": 26535396
-  }, {
-   "filename": "/data/image/animation/wizard/3.png",
-   "start": 26535396,
-   "end": 26536630
-  }, {
-   "filename": "/data/image/animation/wizard/4.png",
-   "start": 26536630,
-   "end": 26537870
-  }, {
-   "filename": "/data/image/animation/wizard/5.png",
-   "start": 26537870,
-   "end": 26539090
-  }, {
-   "filename": "/data/image/animation/wizard/6.png",
-   "start": 26539090,
-   "end": 26540342
-  }, {
-   "filename": "/data/image/animation/wizard/7.png",
-   "start": 26540342,
-   "end": 26541609
-  }, {
-   "filename": "/data/image/animation/wizard/8.png",
-   "start": 26541609,
-   "end": 26542913
-  }, {
-   "filename": "/data/image/animation/wizard/9.png",
-   "start": 26542913,
-   "end": 26544184
-  }, {
-   "filename": "/data/image/flappy_duck/cactus.png",
-   "start": 26544184,
-   "end": 26544380
-  }, {
-   "filename": "/data/image/flappy_duck/duck/down1.png",
-   "start": 26544380,
-   "end": 26544632
-  }, {
-   "filename": "/data/image/flappy_duck/duck/down2.png",
-   "start": 26544632,
-   "end": 26544876
-  }, {
-   "filename": "/data/image/flappy_duck/duck/up1.png",
-   "start": 26544876,
-   "end": 26545137
-  }, {
-   "filename": "/data/image/flappy_duck/duck/up2.png",
-   "start": 26545137,
-   "end": 26545386
-  }, {
-   "filename": "/data/image/flappy_duck/duck_head.png",
-   "start": 26545386,
-   "end": 26545678
-  }, {
-   "filename": "/data/image/flappy_duck/skybg1.png",
-   "start": 26545678,
-   "end": 26546770
-  }, {
-   "filename": "/data/image/flappy_duck/skybg2.png",
-   "start": 26546770,
-   "end": 26547527
-  }, {
-   "filename": "/data/image/flappy_duck/stars.png",
-   "start": 26547527,
-   "end": 26548388
-  }, {
-   "filename": "/data/image/font/-1.png",
-   "start": 26548388,
-   "end": 26548491
-  }, {
-   "filename": "/data/image/font/100.png",
-   "start": 26548491,
-   "end": 26548598
-  }, {
-   "filename": "/data/image/font/101.png",
-   "start": 26548598,
-   "end": 26548705
-  }, {
-   "filename": "/data/image/font/102.png",
-   "start": 26548705,
-   "end": 26548805
-  }, {
-   "filename": "/data/image/font/103.png",
-   "start": 26548805,
-   "end": 26548918
-  }, {
-   "filename": "/data/image/font/104.png",
-   "start": 26548918,
-   "end": 26549022
-  }, {
-   "filename": "/data/image/font/105.png",
-   "start": 26549022,
-   "end": 26549116
-  }, {
-   "filename": "/data/image/font/106.png",
-   "start": 26549116,
-   "end": 26549222
-  }, {
-   "filename": "/data/image/font/107.png",
-   "start": 26549222,
-   "end": 26549327
-  }, {
-   "filename": "/data/image/font/108.png",
-   "start": 26549327,
-   "end": 26549415
-  }, {
-   "filename": "/data/image/font/109.png",
-   "start": 26549415,
-   "end": 26549518
-  }, {
-   "filename": "/data/image/font/110.png",
-   "start": 26549518,
-   "end": 26549618
-  }, {
-   "filename": "/data/image/font/111.png",
-   "start": 26549618,
-   "end": 26549723
-  }, {
-   "filename": "/data/image/font/112.png",
-   "start": 26549723,
-   "end": 26549831
-  }, {
-   "filename": "/data/image/font/113.png",
-   "start": 26549831,
-   "end": 26549934
-  }, {
-   "filename": "/data/image/font/114.png",
-   "start": 26549934,
-   "end": 26550034
-  }, {
-   "filename": "/data/image/font/115.png",
-   "start": 26550034,
-   "end": 26550139
-  }, {
-   "filename": "/data/image/font/116.png",
-   "start": 26550139,
-   "end": 26550232
-  }, {
-   "filename": "/data/image/font/117.png",
-   "start": 26550232,
-   "end": 26550333
-  }, {
-   "filename": "/data/image/font/118.png",
-   "start": 26550333,
-   "end": 26550434
-  }, {
-   "filename": "/data/image/font/119.png",
-   "start": 26550434,
-   "end": 26550535
-  }, {
-   "filename": "/data/image/font/120.png",
-   "start": 26550535,
-   "end": 26550648
-  }, {
-   "filename": "/data/image/font/121.png",
-   "start": 26550648,
-   "end": 26550757
-  }, {
-   "filename": "/data/image/font/122.png",
-   "start": 26550757,
-   "end": 26550869
-  }, {
-   "filename": "/data/image/font/123.png",
-   "start": 26550869,
-   "end": 26550976
-  }, {
-   "filename": "/data/image/font/124.png",
-   "start": 26550976,
-   "end": 26551065
-  }, {
-   "filename": "/data/image/font/125.png",
-   "start": 26551065,
-   "end": 26551166
-  }, {
-   "filename": "/data/image/font/126.png",
-   "start": 26551166,
-   "end": 26551263
-  }, {
-   "filename": "/data/image/font/127.png",
-   "start": 26551263,
-   "end": 26551368
-  }, {
-   "filename": "/data/image/font/32.png",
-   "start": 26551368,
-   "end": 26551446
-  }, {
-   "filename": "/data/image/font/33.png",
-   "start": 26551446,
-   "end": 26551537
-  }, {
-   "filename": "/data/image/font/34.png",
-   "start": 26551537,
-   "end": 26551632
-  }, {
-   "filename": "/data/image/font/35.png",
-   "start": 26551632,
-   "end": 26551730
-  }, {
-   "filename": "/data/image/font/36.png",
-   "start": 26551730,
-   "end": 26551845
-  }, {
-   "filename": "/data/image/font/37.png",
-   "start": 26551845,
-   "end": 26551957
-  }, {
-   "filename": "/data/image/font/38.png",
-   "start": 26551957,
-   "end": 26552068
-  }, {
-   "filename": "/data/image/font/39.png",
-   "start": 26552068,
-   "end": 26552166
-  }, {
-   "filename": "/data/image/font/40.png",
-   "start": 26552166,
-   "end": 26552265
-  }, {
-   "filename": "/data/image/font/41.png",
-   "start": 26552265,
-   "end": 26552357
-  }, {
-   "filename": "/data/image/font/42.png",
-   "start": 26552357,
-   "end": 26552468
-  }, {
-   "filename": "/data/image/font/43.png",
-   "start": 26552468,
-   "end": 26552573
-  }, {
-   "filename": "/data/image/font/44.png",
-   "start": 26552573,
-   "end": 26552669
-  }, {
-   "filename": "/data/image/font/45.png",
-   "start": 26552669,
-   "end": 26552763
-  }, {
-   "filename": "/data/image/font/46.png",
-   "start": 26552763,
-   "end": 26552850
-  }, {
-   "filename": "/data/image/font/47.png",
-   "start": 26552850,
-   "end": 26552953
-  }, {
-   "filename": "/data/image/font/48.png",
-   "start": 26552953,
-   "end": 26553057
-  }, {
-   "filename": "/data/image/font/49.png",
-   "start": 26553057,
-   "end": 26553157
-  }, {
-   "filename": "/data/image/font/50.png",
-   "start": 26553157,
-   "end": 26553263
-  }, {
-   "filename": "/data/image/font/51.png",
-   "start": 26553263,
-   "end": 26553371
-  }, {
-   "filename": "/data/image/font/52.png",
-   "start": 26553371,
-   "end": 26553479
-  }, {
-   "filename": "/data/image/font/53.png",
-   "start": 26553479,
-   "end": 26553588
-  }, {
-   "filename": "/data/image/font/54.png",
-   "start": 26553588,
-   "end": 26553702
-  }, {
-   "filename": "/data/image/font/55.png",
-   "start": 26553702,
-   "end": 26553803
-  }, {
-   "filename": "/data/image/font/56.png",
-   "start": 26553803,
-   "end": 26553909
-  }, {
-   "filename": "/data/image/font/57.png",
-   "start": 26553909,
-   "end": 26554019
-  }, {
-   "filename": "/data/image/font/58.png",
-   "start": 26554019,
-   "end": 26554110
-  }, {
-   "filename": "/data/image/font/59.png",
-   "start": 26554110,
-   "end": 26554207
-  }, {
-   "filename": "/data/image/font/60.png",
-   "start": 26554207,
-   "end": 26554309
-  }, {
-   "filename": "/data/image/font/61.png",
-   "start": 26554309,
-   "end": 26554407
-  }, {
-   "filename": "/data/image/font/62.png",
-   "start": 26554407,
-   "end": 26554514
-  }, {
-   "filename": "/data/image/font/63.png",
-   "start": 26554514,
-   "end": 26554623
-  }, {
-   "filename": "/data/image/font/64.png",
-   "start": 26554623,
-   "end": 26554745
-  }, {
-   "filename": "/data/image/font/65.png",
-   "start": 26554745,
-   "end": 26554856
-  }, {
-   "filename": "/data/image/font/66.png",
-   "start": 26554856,
-   "end": 26554962
-  }, {
-   "filename": "/data/image/font/67.png",
-   "start": 26554962,
-   "end": 26555065
-  }, {
-   "filename": "/data/image/font/68.png",
-   "start": 26555065,
-   "end": 26555169
-  }, {
-   "filename": "/data/image/font/69.png",
-   "start": 26555169,
-   "end": 26555272
-  }, {
-   "filename": "/data/image/font/70.png",
-   "start": 26555272,
-   "end": 26555371
-  }, {
-   "filename": "/data/image/font/71.png",
-   "start": 26555371,
-   "end": 26555485
-  }, {
-   "filename": "/data/image/font/72.png",
-   "start": 26555485,
-   "end": 26555594
-  }, {
-   "filename": "/data/image/font/73.png",
-   "start": 26555594,
-   "end": 26555682
-  }, {
-   "filename": "/data/image/font/74.png",
-   "start": 26555682,
-   "end": 26555778
-  }, {
-   "filename": "/data/image/font/75.png",
-   "start": 26555778,
-   "end": 26555891
-  }, {
-   "filename": "/data/image/font/76.png",
-   "start": 26555891,
-   "end": 26555987
-  }, {
-   "filename": "/data/image/font/77.png",
-   "start": 26555987,
-   "end": 26556094
-  }, {
-   "filename": "/data/image/font/78.png",
-   "start": 26556094,
-   "end": 26556203
-  }, {
-   "filename": "/data/image/font/79.png",
-   "start": 26556203,
-   "end": 26556307
-  }, {
-   "filename": "/data/image/font/80.png",
-   "start": 26556307,
-   "end": 26556414
-  }, {
-   "filename": "/data/image/font/81.png",
-   "start": 26556414,
-   "end": 26556528
-  }, {
-   "filename": "/data/image/font/82.png",
-   "start": 26556528,
-   "end": 26556631
-  }, {
-   "filename": "/data/image/font/83.png",
-   "start": 26556631,
-   "end": 26556748
-  }, {
-   "filename": "/data/image/font/84.png",
-   "start": 26556748,
-   "end": 26556842
-  }, {
-   "filename": "/data/image/font/85.png",
-   "start": 26556842,
-   "end": 26556947
-  }, {
-   "filename": "/data/image/font/86.png",
-   "start": 26556947,
-   "end": 26557049
-  }, {
-   "filename": "/data/image/font/87.png",
-   "start": 26557049,
-   "end": 26557163
-  }, {
-   "filename": "/data/image/font/88.png",
-   "start": 26557163,
-   "end": 26557276
-  }, {
-   "filename": "/data/image/font/89.png",
-   "start": 26557276,
-   "end": 26557380
-  }, {
-   "filename": "/data/image/font/90.png",
-   "start": 26557380,
-   "end": 26557485
-  }, {
-   "filename": "/data/image/font/91.png",
-   "start": 26557485,
-   "end": 26557583
-  }, {
-   "filename": "/data/image/font/92.png",
-   "start": 26557583,
-   "end": 26557683
-  }, {
-   "filename": "/data/image/font/93.png",
-   "start": 26557683,
-   "end": 26557777
-  }, {
-   "filename": "/data/image/font/94.png",
-   "start": 26557777,
-   "end": 26557878
-  }, {
-   "filename": "/data/image/font/95.png",
-   "start": 26557878,
-   "end": 26557970
-  }, {
-   "filename": "/data/image/font/96.png",
-   "start": 26557970,
-   "end": 26558065
-  }, {
-   "filename": "/data/image/font/97.png",
-   "start": 26558065,
-   "end": 26558172
-  }, {
-   "filename": "/data/image/font/98.png",
-   "start": 26558172,
-   "end": 26558279
-  }, {
-   "filename": "/data/image/font/99.png",
-   "start": 26558279,
-   "end": 26558379
-  }, {
-   "filename": "/data/image/mario.png",
-   "start": 26558379,
-   "end": 26558677
-  }, {
-   "filename": "/data/image/splash.png",
-   "start": 26558677,
-   "end": 26560529
+   "start": 6148,
+   "end": 6149
+  }, {
+   "filename": "/data/ZGUI/Image/Daisy.png",
+   "start": 6149,
+   "end": 706465
+  }, {
+   "filename": "/data/ZGUI/Image/e21.png",
+   "start": 706465,
+   "end": 708373
+  }, {
+   "filename": "/data/ZGUI/Image/e35.png",
+   "start": 708373,
+   "end": 710302
+  }, {
+   "filename": "/data/ZGUI/Image/e34.png",
+   "start": 710302,
+   "end": 712188
+  }, {
+   "filename": "/data/ZGUI/Image/e20.png",
+   "start": 712188,
+   "end": 714119
+  }, {
+   "filename": "/data/ZGUI/Image/e36.png",
+   "start": 714119,
+   "end": 716016
+  }, {
+   "filename": "/data/ZGUI/Image/e22.png",
+   "start": 716016,
+   "end": 717961
+  }, {
+   "filename": "/data/ZGUI/Image/e23.png",
+   "start": 717961,
+   "end": 719912
+  }, {
+   "filename": "/data/ZGUI/Image/e37.png",
+   "start": 719912,
+   "end": 721794
+  }, {
+   "filename": "/data/ZGUI/Image/e33.png",
+   "start": 721794,
+   "end": 723660
+  }, {
+   "filename": "/data/ZGUI/Image/e27.png",
+   "start": 723660,
+   "end": 725538
+  }, {
+   "filename": "/data/ZGUI/Image/e26.png",
+   "start": 725538,
+   "end": 727434
+  }, {
+   "filename": "/data/ZGUI/Image/e32.png",
+   "start": 727434,
+   "end": 729308
+  }, {
+   "filename": "/data/ZGUI/Image/Galaxy.png",
+   "start": 729308,
+   "end": 1929520
+  }, {
+   "filename": "/data/ZGUI/Image/e18.png",
+   "start": 1929520,
+   "end": 1931438
+  }, {
+   "filename": "/data/ZGUI/Image/e24.png",
+   "start": 1931438,
+   "end": 1933362
+  }, {
+   "filename": "/data/ZGUI/Image/e30.png",
+   "start": 1933362,
+   "end": 1935252
+  }, {
+   "filename": "/data/ZGUI/Image/e31.png",
+   "start": 1935252,
+   "end": 1937148
+  }, {
+   "filename": "/data/ZGUI/Image/e25.png",
+   "start": 1937148,
+   "end": 1939077
+  }, {
+   "filename": "/data/ZGUI/Image/e19.png",
+   "start": 1939077,
+   "end": 1940998
+  }, {
+   "filename": "/data/ZGUI/Image/ca10.png",
+   "start": 1940998,
+   "end": 1941556
+  }, {
+   "filename": "/data/ZGUI/Image/e42.png",
+   "start": 1941556,
+   "end": 1943343
+  }, {
+   "filename": "/data/ZGUI/Image/e56.png",
+   "start": 1943343,
+   "end": 1945161
+  }, {
+   "filename": "/data/ZGUI/Image/e57.png",
+   "start": 1945161,
+   "end": 1947016
+  }, {
+   "filename": "/data/ZGUI/Image/e43.png",
+   "start": 1947016,
+   "end": 1948807
+  }, {
+   "filename": "/data/ZGUI/Image/e8.png",
+   "start": 1948807,
+   "end": 1950706
+  }, {
+   "filename": "/data/ZGUI/Image/e55.png",
+   "start": 1950706,
+   "end": 1952588
+  }, {
+   "filename": "/data/ZGUI/Image/e41.png",
+   "start": 1952588,
+   "end": 1954437
+  }, {
+   "filename": "/data/ZGUI/Image/e40.png",
+   "start": 1954437,
+   "end": 1956276
+  }, {
+   "filename": "/data/ZGUI/Image/e54.png",
+   "start": 1956276,
+   "end": 1958145
+  }, {
+   "filename": "/data/ZGUI/Image/e9.png",
+   "start": 1958145,
+   "end": 1960031
+  }, {
+   "filename": "/data/ZGUI/Image/ca9.png",
+   "start": 1960031,
+   "end": 1960624
+  }, {
+   "filename": "/data/ZGUI/Image/e50.png",
+   "start": 1960624,
+   "end": 1962396
+  }, {
+   "filename": "/data/ZGUI/Image/e44.png",
+   "start": 1962396,
+   "end": 1964225
+  }, {
+   "filename": "/data/ZGUI/Image/e45.png",
+   "start": 1964225,
+   "end": 1966053
+  }, {
+   "filename": "/data/ZGUI/Image/e51.png",
+   "start": 1966053,
+   "end": 1967844
+  }, {
+   "filename": "/data/ZGUI/Image/ca8.png",
+   "start": 1967844,
+   "end": 1968478
+  }, {
+   "filename": "/data/ZGUI/Image/e47.png",
+   "start": 1968478,
+   "end": 1970203
+  }, {
+   "filename": "/data/ZGUI/Image/e53.png",
+   "start": 1970203,
+   "end": 1972034
+  }, {
+   "filename": "/data/ZGUI/Image/e52.png",
+   "start": 1972034,
+   "end": 1973842
+  }, {
+   "filename": "/data/ZGUI/Image/e46.png",
+   "start": 1973842,
+   "end": 1975587
+  }, {
+   "filename": "/data/ZGUI/Image/ca6.png",
+   "start": 1975587,
+   "end": 1976242
+  }, {
+   "filename": "/data/ZGUI/Image/e2.png",
+   "start": 1976242,
+   "end": 1978172
+  }, {
+   "filename": "/data/ZGUI/Image/e3.png",
+   "start": 1978172,
+   "end": 1980079
+  }, {
+   "filename": "/data/ZGUI/Image/ca7.png",
+   "start": 1980079,
+   "end": 1980738
+  }, {
+   "filename": "/data/ZGUI/Image/ca5.png",
+   "start": 1980738,
+   "end": 1981393
+  }, {
+   "filename": "/data/ZGUI/Image/e1.png",
+   "start": 1981393,
+   "end": 1983320
+  }, {
+   "filename": "/data/ZGUI/Image/e60.png",
+   "start": 1983320,
+   "end": 1985185
+  }, {
+   "filename": "/data/ZGUI/Image/e48.png",
+   "start": 1985185,
+   "end": 1986926
+  }, {
+   "filename": "/data/ZGUI/Image/e49.png",
+   "start": 1986926,
+   "end": 1988637
+  }, {
+   "filename": "/data/ZGUI/Image/ca4.png",
+   "start": 1988637,
+   "end": 1989292
+  }, {
+   "filename": "/data/ZGUI/Image/e4.png",
+   "start": 1989292,
+   "end": 1991169
+  }, {
+   "filename": "/data/ZGUI/Image/e59.png",
+   "start": 1991169,
+   "end": 1993004
+  }, {
+   "filename": "/data/ZGUI/Image/e58.png",
+   "start": 1993004,
+   "end": 1994864
+  }, {
+   "filename": "/data/ZGUI/Image/e5.png",
+   "start": 1994864,
+   "end": 1996765
+  }, {
+   "filename": "/data/ZGUI/Image/ca1.png",
+   "start": 1996765,
+   "end": 1997299
+  }, {
+   "filename": "/data/ZGUI/Image/resurrect-64-32x.png",
+   "start": 1997299,
+   "end": 1998101
+  }, {
+   "filename": "/data/ZGUI/Image/ca3.png",
+   "start": 1998101,
+   "end": 1998717
+  }, {
+   "filename": "/data/ZGUI/Image/e7.png",
+   "start": 1998717,
+   "end": 2000565
+  }, {
+   "filename": "/data/ZGUI/Image/e6.png",
+   "start": 2000565,
+   "end": 2002463
+  }, {
+   "filename": "/data/ZGUI/Image/ca2.png",
+   "start": 2002463,
+   "end": 2003039
+  }, {
+   "filename": "/data/ZGUI/Image/c1.png",
+   "start": 2003039,
+   "end": 2003739
+  }, {
+   "filename": "/data/ZGUI/Image/e14.png",
+   "start": 2003739,
+   "end": 2005755
+  }, {
+   "filename": "/data/ZGUI/Image/e28.png",
+   "start": 2005755,
+   "end": 2007626
+  }, {
+   "filename": "/data/ZGUI/Image/e29.png",
+   "start": 2007626,
+   "end": 2009496
+  }, {
+   "filename": "/data/ZGUI/Image/e15.png",
+   "start": 2009496,
+   "end": 2011460
+  }, {
+   "filename": "/data/ZGUI/Image/c0.png",
+   "start": 2011460,
+   "end": 2012153
+  }, {
+   "filename": "/data/ZGUI/Image/cf.png",
+   "start": 2012153,
+   "end": 2013366
+  }, {
+   "filename": "/data/ZGUI/Image/cff.png",
+   "start": 2013366,
+   "end": 2014797
+  }, {
+   "filename": "/data/ZGUI/Image/c2.png",
+   "start": 2014797,
+   "end": 2015473
+  }, {
+   "filename": "/data/ZGUI/Image/e17.png",
+   "start": 2015473,
+   "end": 2017396
+  }, {
+   "filename": "/data/ZGUI/Image/e16.png",
+   "start": 2017396,
+   "end": 2019337
+  }, {
+   "filename": "/data/ZGUI/Image/c3.png",
+   "start": 2019337,
+   "end": 2020040
+  }, {
+   "filename": "/data/ZGUI/Image/c7.png",
+   "start": 2020040,
+   "end": 2020736
+  }, {
+   "filename": "/data/ZGUI/Image/e12.png",
+   "start": 2020736,
+   "end": 2022695
+  }, {
+   "filename": "/data/ZGUI/Image/e13.png",
+   "start": 2022695,
+   "end": 2024665
+  }, {
+   "filename": "/data/ZGUI/Image/c6.png",
+   "start": 2024665,
+   "end": 2025692
+  }, {
+   "filename": "/data/ZGUI/Image/c4.png",
+   "start": 2025692,
+   "end": 2026387
+  }, {
+   "filename": "/data/ZGUI/Image/e39.png",
+   "start": 2026387,
+   "end": 2028286
+  }, {
+   "filename": "/data/ZGUI/Image/e11.png",
+   "start": 2028286,
+   "end": 2030253
+  }, {
+   "filename": "/data/ZGUI/Image/e10.png",
+   "start": 2030253,
+   "end": 2032214
+  }, {
+   "filename": "/data/ZGUI/Image/e38.png",
+   "start": 2032214,
+   "end": 2034133
+  }, {
+   "filename": "/data/ZGUI/Image/c5.png",
+   "start": 2034133,
+   "end": 2037174
+  }, {
+   "filename": "/data/ZGUI/Lua/anim_planet.lua",
+   "start": 2037174,
+   "end": 2037695
+  }, {
+   "filename": "/data/ZGUI/Lua/skeleton_head.lua",
+   "start": 2037695,
+   "end": 2037893
+  }, {
+   "filename": "/data/ZGUI/Lua/text_s.lua",
+   "start": 2037893,
+   "end": 2038112
+  }, {
+   "filename": "/data/ZGUI/Lua/hittest.lua",
+   "start": 2038112,
+   "end": 2040946
+  }, {
+   "filename": "/data/ZGUI/Lua/debug_panel.lua",
+   "start": 2040946,
+   "end": 2047769
+  }, {
+   "filename": "/data/ZGUI/Lua/anim_card_light.lua",
+   "start": 2047769,
+   "end": 2048382
+  }, {
+   "filename": "/data/ZGUI/Lua/skeleton_hand_l.lua",
+   "start": 2048382,
+   "end": 2048578
+  }, {
+   "filename": "/data/ZGUI/Lua/clip_s.lua",
+   "start": 2048578,
+   "end": 2048800
+  }, {
+   "filename": "/data/ZGUI/Lua/animation.lua",
+   "start": 2048800,
+   "end": 2049444
+  }, {
+   "filename": "/data/ZGUI/Lua/clickable.lua",
+   "start": 2049444,
+   "end": 2051188
+  }, {
+   "filename": "/data/ZGUI/Lua/clip.lua",
+   "start": 2051188,
+   "end": 2052347
+  }, {
+   "filename": "/data/ZGUI/Lua/anim_card2.lua",
+   "start": 2052347,
+   "end": 2053628
+  }, {
+   "filename": "/data/ZGUI/Lua/test.lua",
+   "start": 2053628,
+   "end": 2055446
+  }, {
+   "filename": "/data/ZGUI/Lua/screen.lua",
+   "start": 2055446,
+   "end": 2058196
+  }, {
+   "filename": "/data/ZGUI/Lua/debug_panel_s.lua",
+   "start": 2058196,
+   "end": 2058431
+  }, {
+   "filename": "/data/ZGUI/Lua/text_sdf.lua",
+   "start": 2058431,
+   "end": 2060586
+  }, {
+   "filename": "/data/ZGUI/Lua/z_object.lua",
+   "start": 2060586,
+   "end": 2061667
+  }, {
+   "filename": "/data/ZGUI/Lua/animation_s.lua",
+   "start": 2061667,
+   "end": 2061898
+  }, {
+   "filename": "/data/ZGUI/Lua/anim_card.lua",
+   "start": 2061898,
+   "end": 2063182
+  }, {
+   "filename": "/data/ZGUI/Lua/skeleton_hand_r.lua",
+   "start": 2063182,
+   "end": 2063378
+  }, {
+   "filename": "/data/ZGUI/Lua/scene.lua",
+   "start": 2063378,
+   "end": 2066141
+  }, {
+   "filename": "/data/ZGUI/Lua/text.lua",
+   "start": 2066141,
+   "end": 2067866
+  }, {
+   "filename": "/data/ZGUI/Lua/button.lua",
+   "start": 2067866,
+   "end": 2070582
+  }, {
+   "filename": "/data/ZGUI/Font/chinese.msyh.ttf",
+   "start": 2070582,
+   "end": 17115024
+  }, {
+   "filename": "/data/ZGUI/Font/zpix.ttf",
+   "start": 17115024,
+   "end": 21795372
   }, {
    "filename": "/data/image/sprite16.png",
-   "start": 26560529,
-   "end": 26560690
+   "start": 21795372,
+   "end": 21795533
   }, {
-   "filename": "/data/image/ui/blank2.png",
-   "start": 26560690,
-   "end": 26560781
-  }, {
-   "filename": "/data/image/ui/button16/1.png",
-   "start": 26560781,
-   "end": 26560946
-  }, {
-   "filename": "/data/image/ui/button16/2.png",
-   "start": 26560946,
-   "end": 26561109
-  }, {
-   "filename": "/data/image/ui/button16/3.png",
-   "start": 26561109,
-   "end": 26561276
-  }, {
-   "filename": "/data/image/ui/dpad16/d1.png",
-   "start": 26561276,
-   "end": 26561453
-  }, {
-   "filename": "/data/image/ui/dpad16/d2.png",
-   "start": 26561453,
-   "end": 26561623
-  }, {
-   "filename": "/data/image/ui/dpad16/l1.png",
-   "start": 26561623,
-   "end": 26561805
-  }, {
-   "filename": "/data/image/ui/dpad16/l2.png",
-   "start": 26561805,
-   "end": 26561986
-  }, {
-   "filename": "/data/image/ui/dpad16/r1.png",
-   "start": 26561986,
-   "end": 26562183
-  }, {
-   "filename": "/data/image/ui/dpad16/r2.png",
-   "start": 26562183,
-   "end": 26562371
-  }, {
-   "filename": "/data/image/ui/dpad16/u1.png",
-   "start": 26562371,
-   "end": 26562553
-  }, {
-   "filename": "/data/image/ui/dpad16/u2.png",
-   "start": 26562553,
-   "end": 26562746
-  }, {
-   "filename": "/data/image/ui/joystick32/1.png",
-   "start": 26562746,
-   "end": 26562961
-  }, {
-   "filename": "/data/image/ui/joystick32/2.png",
-   "start": 26562961,
-   "end": 26563160
-  }, {
-   "filename": "/data/image/ui/joystick32/3.png",
-   "start": 26563160,
-   "end": 26563377
-  }, {
-   "filename": "/data/image/ui/joystick32/4.png",
-   "start": 26563377,
-   "end": 26563614
-  }, {
-   "filename": "/data/image/ui/joystick32/5.png",
-   "start": 26563614,
-   "end": 26563856
-  }, {
-   "filename": "/data/image/ui/joystick32/6.png",
-   "start": 26563856,
-   "end": 26564077
-  }, {
-   "filename": "/data/image/yapre.png",
-   "start": 26564077,
-   "end": 26564541
+   "filename": "/data/image/.DS_Store",
+   "start": 21795533,
+   "end": 21801681
   }, {
    "filename": "/data/image/yapre_text.png",
-   "start": 26564541,
-   "end": 26564738
-  }, {
-   "filename": "/data/lua/app/_init.lua",
-   "start": 26564738,
-   "end": 26564780
-  }, {
-   "filename": "/data/lua/app/app.lua",
-   "start": 26564780,
-   "end": 26565367
-  }, {
-   "filename": "/data/lua/app/game/_init.lua",
-   "start": 26565367,
-   "end": 26569255
-  }, {
-   "filename": "/data/lua/app/game/world_dungeon.lua",
-   "start": 26569255,
-   "end": 26570982
-  }, {
-   "filename": "/data/lua/app/game/world_flappy_duck.lua",
-   "start": 26570982,
-   "end": 26583905
-  }, {
-   "filename": "/data/lua/app/game/world_image.lua",
-   "start": 26583905,
-   "end": 26586720
-  }, {
-   "filename": "/data/lua/app/game/world_label.lua",
-   "start": 26586720,
-   "end": 26589553
-  }, {
-   "filename": "/data/lua/app/game/world_mario_music.lua",
-   "start": 26589553,
-   "end": 26595400
-  }, {
-   "filename": "/data/lua/app/game/world_palette.lua",
-   "start": 26595400,
-   "end": 26595902
-  }, {
-   "filename": "/data/lua/app/game/world_slides.lua",
-   "start": 26595902,
-   "end": 26597495
-  }, {
-   "filename": "/data/lua/app/game/world_word_slide_maker.lua",
-   "start": 26597495,
-   "end": 26598843
-  }, {
-   "filename": "/data/lua/app/rewind_controller.lua",
-   "start": 26598843,
-   "end": 26604177
-  }, {
-   "filename": "/data/lua/app/test_world.lua",
-   "start": 26604177,
-   "end": 26607642
-  }, {
-   "filename": "/data/lua/core/_init.lua",
-   "start": 26607642,
-   "end": 26607833
-  }, {
-   "filename": "/data/lua/core/components/_init.lua",
-   "start": 26607833,
-   "end": 26608238
-  }, {
-   "filename": "/data/lua/core/components/animation.lua",
-   "start": 26608238,
-   "end": 26611071
-  }, {
-   "filename": "/data/lua/core/components/data.lua",
-   "start": 26611071,
-   "end": 26611141
-  }, {
-   "filename": "/data/lua/core/components/input.lua",
-   "start": 26611141,
-   "end": 26612775
-  }, {
-   "filename": "/data/lua/core/components/layout.lua",
-   "start": 26612775,
-   "end": 26618928
-  }, {
-   "filename": "/data/lua/core/components/position.lua",
-   "start": 26618928,
-   "end": 26619036
-  }, {
-   "filename": "/data/lua/core/components/size.lua",
-   "start": 26619036,
-   "end": 26619137
-  }, {
-   "filename": "/data/lua/core/components/sprite.lua",
-   "start": 26619137,
-   "end": 26620080
-  }, {
-   "filename": "/data/lua/core/components/sprite_text.lua",
-   "start": 26620080,
-   "end": 26623003
-  }, {
-   "filename": "/data/lua/core/components/tags.lua",
-   "start": 26623003,
-   "end": 26623073
-  }, {
-   "filename": "/data/lua/core/components/text.lua",
-   "start": 26623073,
-   "end": 26624279
-  }, {
-   "filename": "/data/lua/core/components/tick.lua",
-   "start": 26624279,
-   "end": 26625226
-  }, {
-   "filename": "/data/lua/core/components/tree.lua",
-   "start": 26625226,
-   "end": 26626990
-  }, {
-   "filename": "/data/lua/core/data/emscripten_keycode_mapping.lua",
-   "start": 26626990,
-   "end": 26628044
-  }, {
-   "filename": "/data/lua/core/data/font_data.lua",
-   "start": 26628044,
-   "end": 26629530
-  }, {
-   "filename": "/data/lua/core/data/palette_data.lua",
-   "start": 26629530,
-   "end": 26630787
-  }, {
-   "filename": "/data/lua/core/entities/_init.lua",
-   "start": 26630787,
-   "end": 26630816
-  }, {
-   "filename": "/data/lua/core/entities/ui/_init.lua",
-   "start": 26630816,
-   "end": 26631182
-  }, {
-   "filename": "/data/lua/core/entities/ui/button.lua",
-   "start": 26631182,
-   "end": 26634345
-  }, {
-   "filename": "/data/lua/core/entities/ui/dpad.lua",
-   "start": 26634345,
-   "end": 26637178
-  }, {
-   "filename": "/data/lua/core/entities/ui/image.lua",
-   "start": 26637178,
-   "end": 26640173
-  }, {
-   "filename": "/data/lua/core/entities/ui/joystick.lua",
-   "start": 26640173,
-   "end": 26643322
-  }, {
-   "filename": "/data/lua/core/entities/ui/label.lua",
-   "start": 26643322,
-   "end": 26643860
-  }, {
-   "filename": "/data/lua/core/entities/ui/palette.lua",
-   "start": 26643860,
-   "end": 26644744
-  }, {
-   "filename": "/data/lua/core/entities/ui/panel.lua",
-   "start": 26644744,
-   "end": 26645614
-  }, {
-   "filename": "/data/lua/core/entities/ui/progress.lua",
-   "start": 26645614,
-   "end": 26647308
-  }, {
-   "filename": "/data/lua/core/entities/ui/progress_selector.lua",
-   "start": 26647308,
-   "end": 26649277
-  }, {
-   "filename": "/data/lua/core/entities/ui/sprite_label.lua",
-   "start": 26649277,
-   "end": 26649923
-  }, {
-   "filename": "/data/lua/core/serialization.lua",
-   "start": 26649923,
-   "end": 26652439
-  }, {
-   "filename": "/data/lua/core/splash_screen.lua",
-   "start": 26652439,
-   "end": 26653784
-  }, {
-   "filename": "/data/lua/core/systems/_init.lua",
-   "start": 26653784,
-   "end": 26653933
-  }, {
-   "filename": "/data/lua/core/systems/dummy.lua",
-   "start": 26653933,
-   "end": 26654324
-  }, {
-   "filename": "/data/lua/core/systems/input.lua",
-   "start": 26654324,
-   "end": 26658391
-  }, {
-   "filename": "/data/lua/core/systems/sprite.lua",
-   "start": 26658391,
-   "end": 26660139
-  }, {
-   "filename": "/data/lua/core/systems/tick.lua",
-   "start": 26660139,
-   "end": 26661939
-  }, {
-   "filename": "/data/lua/core/systems/tree.lua",
-   "start": 26661939,
-   "end": 26663741
-  }, {
-   "filename": "/data/lua/core/yecs.lua",
-   "start": 26663741,
-   "end": 26676254
-  }, {
-   "filename": "/data/lua/libs/debugger.lua",
-   "start": 26676254,
-   "end": 26701014
-  }, {
-   "filename": "/data/lua/libs/rx.lua",
-   "start": 26701014,
-   "end": 26767200
-  }, {
-   "filename": "/data/lua/libs/strict.lua",
-   "start": 26767200,
-   "end": 26768407
-  }, {
-   "filename": "/data/lua/libs/table_save.lua",
-   "start": 26768407,
-   "end": 26773160
-  }, {
-   "filename": "/data/lua/nes/apu.lua",
-   "start": 26773160,
-   "end": 26801958
-  }, {
-   "filename": "/data/lua/nes/cpu.lua",
-   "start": 26801958,
-   "end": 26835846
-  }, {
-   "filename": "/data/lua/nes/libs/complex.lua",
-   "start": 26835846,
-   "end": 26848581
-  }, {
-   "filename": "/data/lua/nes/libs/profile.lua",
-   "start": 26848581,
-   "end": 26856064
-  }, {
-   "filename": "/data/lua/nes/libs/serpent.lua",
-   "start": 26856064,
-   "end": 26867125
-  }, {
-   "filename": "/data/lua/nes/nes.lua",
-   "start": 26867125,
-   "end": 26869573
-  }, {
-   "filename": "/data/lua/nes/pads.lua",
-   "start": 26869573,
-   "end": 26871940
-  }, {
-   "filename": "/data/lua/nes/palette.lua",
-   "start": 26871940,
-   "end": 26877357
-  }, {
-   "filename": "/data/lua/nes/ppu.lua",
-   "start": 26877357,
-   "end": 26926905
-  }, {
-   "filename": "/data/lua/nes/rom.lua",
-   "start": 26926905,
-   "end": 26944425
-  }, {
-   "filename": "/data/lua/nes/utils.lua",
-   "start": 26944425,
-   "end": 26951765
-  }, {
-   "filename": "/data/lua/utils/copy.lua",
-   "start": 26951765,
-   "end": 26952541
-  }, {
-   "filename": "/data/lua/utils/eval.lua",
-   "start": 26952541,
-   "end": 26952955
-  }, {
-   "filename": "/data/lua/utils/log.lua",
-   "start": 26952955,
-   "end": 26953776
-  }, {
-   "filename": "/data/lua/utils/package_path.lua",
-   "start": 26953776,
-   "end": 26954053
-  }, {
-   "filename": "/data/lua/utils/reload.lua",
-   "start": 26954053,
-   "end": 26970580
-  }, {
-   "filename": "/data/lua/utils/uuid.lua",
-   "start": 26970580,
-   "end": 26970875
-  }, {
-   "filename": "/data/lua/yazr.lua",
-   "start": 26970875,
-   "end": 26971598
+   "start": 21801681,
+   "end": 21801878
+  }, {
+   "filename": "/data/image/splash.png",
+   "start": 21801878,
+   "end": 21803730
+  }, {
+   "filename": "/data/image/yapre.png",
+   "start": 21803730,
+   "end": 21804194
+  }, {
+   "filename": "/data/image/mario.png",
+   "start": 21804194,
+   "end": 21804492
+  }, {
+   "filename": "/data/image/ui/blank2.png",
+   "start": 21804492,
+   "end": 21804583
+  }, {
+   "filename": "/data/image/ui/dpad16/l1.png",
+   "start": 21804583,
+   "end": 21804765
+  }, {
+   "filename": "/data/image/ui/dpad16/u2.png",
+   "start": 21804765,
+   "end": 21804958
+  }, {
+   "filename": "/data/image/ui/dpad16/l2.png",
+   "start": 21804958,
+   "end": 21805139
+  }, {
+   "filename": "/data/image/ui/dpad16/u1.png",
+   "start": 21805139,
+   "end": 21805321
+  }, {
+   "filename": "/data/image/ui/dpad16/r2.png",
+   "start": 21805321,
+   "end": 21805509
+  }, {
+   "filename": "/data/image/ui/dpad16/r1.png",
+   "start": 21805509,
+   "end": 21805706
+  }, {
+   "filename": "/data/image/ui/dpad16/d1.png",
+   "start": 21805706,
+   "end": 21805883
+  }, {
+   "filename": "/data/image/ui/dpad16/d2.png",
+   "start": 21805883,
+   "end": 21806053
+  }, {
+   "filename": "/data/image/ui/joystick32/4.png",
+   "start": 21806053,
+   "end": 21806290
+  }, {
+   "filename": "/data/image/ui/joystick32/5.png",
+   "start": 21806290,
+   "end": 21806532
+  }, {
+   "filename": "/data/image/ui/joystick32/6.png",
+   "start": 21806532,
+   "end": 21806753
+  }, {
+   "filename": "/data/image/ui/joystick32/2.png",
+   "start": 21806753,
+   "end": 21806952
+  }, {
+   "filename": "/data/image/ui/joystick32/3.png",
+   "start": 21806952,
+   "end": 21807169
+  }, {
+   "filename": "/data/image/ui/joystick32/1.png",
+   "start": 21807169,
+   "end": 21807384
+  }, {
+   "filename": "/data/image/ui/button16/2.png",
+   "start": 21807384,
+   "end": 21807547
+  }, {
+   "filename": "/data/image/ui/button16/3.png",
+   "start": 21807547,
+   "end": 21807714
+  }, {
+   "filename": "/data/image/ui/button16/1.png",
+   "start": 21807714,
+   "end": 21807879
+  }, {
+   "filename": "/data/image/flappy_duck/skybg1.png",
+   "start": 21807879,
+   "end": 21808971
+  }, {
+   "filename": "/data/image/flappy_duck/skybg2.png",
+   "start": 21808971,
+   "end": 21809728
+  }, {
+   "filename": "/data/image/flappy_duck/cactus.png",
+   "start": 21809728,
+   "end": 21809924
+  }, {
+   "filename": "/data/image/flappy_duck/duck_head.png",
+   "start": 21809924,
+   "end": 21810216
+  }, {
+   "filename": "/data/image/flappy_duck/stars.png",
+   "start": 21810216,
+   "end": 21811077
+  }, {
+   "filename": "/data/image/flappy_duck/duck/down2.png",
+   "start": 21811077,
+   "end": 21811321
+  }, {
+   "filename": "/data/image/flappy_duck/duck/down1.png",
+   "start": 21811321,
+   "end": 21811573
+  }, {
+   "filename": "/data/image/flappy_duck/duck/up2.png",
+   "start": 21811573,
+   "end": 21811822
+  }, {
+   "filename": "/data/image/flappy_duck/duck/up1.png",
+   "start": 21811822,
+   "end": 21812083
+  }, {
+   "filename": "/data/image/animation/wizard/8.png",
+   "start": 21812083,
+   "end": 21813387
+  }, {
+   "filename": "/data/image/animation/wizard/9.png",
+   "start": 21813387,
+   "end": 21814658
+  }, {
+   "filename": "/data/image/animation/wizard/14.png",
+   "start": 21814658,
+   "end": 21815887
+  }, {
+   "filename": "/data/image/animation/wizard/15.png",
+   "start": 21815887,
+   "end": 21817085
+  }, {
+   "filename": "/data/image/animation/wizard/16.png",
+   "start": 21817085,
+   "end": 21818365
+  }, {
+   "filename": "/data/image/animation/wizard/12.png",
+   "start": 21818365,
+   "end": 21819626
+  }, {
+   "filename": "/data/image/animation/wizard/13.png",
+   "start": 21819626,
+   "end": 21820861
+  }, {
+   "filename": "/data/image/animation/wizard/11.png",
+   "start": 21820861,
+   "end": 21822099
+  }, {
+   "filename": "/data/image/animation/wizard/10.png",
+   "start": 21822099,
+   "end": 21823364
+  }, {
+   "filename": "/data/image/animation/wizard/4.png",
+   "start": 21823364,
+   "end": 21824604
+  }, {
+   "filename": "/data/image/animation/wizard/5.png",
+   "start": 21824604,
+   "end": 21825824
+  }, {
+   "filename": "/data/image/animation/wizard/7.png",
+   "start": 21825824,
+   "end": 21827091
+  }, {
+   "filename": "/data/image/animation/wizard/6.png",
+   "start": 21827091,
+   "end": 21828343
+  }, {
+   "filename": "/data/image/animation/wizard/2.png",
+   "start": 21828343,
+   "end": 21829593
+  }, {
+   "filename": "/data/image/animation/wizard/3.png",
+   "start": 21829593,
+   "end": 21830827
+  }, {
+   "filename": "/data/image/animation/wizard/1.png",
+   "start": 21830827,
+   "end": 21832058
+  }, {
+   "filename": "/data/image/animation/blood/8.png",
+   "start": 21832058,
+   "end": 21832655
+  }, {
+   "filename": "/data/image/animation/blood/9.png",
+   "start": 21832655,
+   "end": 21833149
+  }, {
+   "filename": "/data/image/animation/blood/14.png",
+   "start": 21833149,
+   "end": 21833537
+  }, {
+   "filename": "/data/image/animation/blood/15.png",
+   "start": 21833537,
+   "end": 21833903
+  }, {
+   "filename": "/data/image/animation/blood/17.png",
+   "start": 21833903,
+   "end": 21834230
+  }, {
+   "filename": "/data/image/animation/blood/16.png",
+   "start": 21834230,
+   "end": 21834557
+  }, {
+   "filename": "/data/image/animation/blood/12.png",
+   "start": 21834557,
+   "end": 21834995
+  }, {
+   "filename": "/data/image/animation/blood/13.png",
+   "start": 21834995,
+   "end": 21835394
+  }, {
+   "filename": "/data/image/animation/blood/11.png",
+   "start": 21835394,
+   "end": 21835831
+  }, {
+   "filename": "/data/image/animation/blood/10.png",
+   "start": 21835831,
+   "end": 21836338
+  }, {
+   "filename": "/data/image/animation/blood/20.png",
+   "start": 21836338,
+   "end": 21836675
+  }, {
+   "filename": "/data/image/animation/blood/18.png",
+   "start": 21836675,
+   "end": 21837002
+  }, {
+   "filename": "/data/image/animation/blood/19.png",
+   "start": 21837002,
+   "end": 21837329
+  }, {
+   "filename": "/data/image/animation/blood/4.png",
+   "start": 21837329,
+   "end": 21838243
+  }, {
+   "filename": "/data/image/animation/blood/5.png",
+   "start": 21838243,
+   "end": 21839119
+  }, {
+   "filename": "/data/image/animation/blood/7.png",
+   "start": 21839119,
+   "end": 21839778
+  }, {
+   "filename": "/data/image/animation/blood/6.png",
+   "start": 21839778,
+   "end": 21840543
+  }, {
+   "filename": "/data/image/animation/blood/2.png",
+   "start": 21840543,
+   "end": 21841281
+  }, {
+   "filename": "/data/image/animation/blood/3.png",
+   "start": 21841281,
+   "end": 21842128
+  }, {
+   "filename": "/data/image/animation/blood/1.png",
+   "start": 21842128,
+   "end": 21842522
+  }, {
+   "filename": "/data/image/font/88.png",
+   "start": 21842522,
+   "end": 21842635
+  }, {
+   "filename": "/data/image/font/77.png",
+   "start": 21842635,
+   "end": 21842742
+  }, {
+   "filename": "/data/image/font/63.png",
+   "start": 21842742,
+   "end": 21842851
+  }, {
+   "filename": "/data/image/font/62.png",
+   "start": 21842851,
+   "end": 21842958
+  }, {
+   "filename": "/data/image/font/76.png",
+   "start": 21842958,
+   "end": 21843054
+  }, {
+   "filename": "/data/image/font/89.png",
+   "start": 21843054,
+   "end": 21843158
+  }, {
+   "filename": "/data/image/font/60.png",
+   "start": 21843158,
+   "end": 21843260
+  }, {
+   "filename": "/data/image/font/74.png",
+   "start": 21843260,
+   "end": 21843356
+  }, {
+   "filename": "/data/image/font/48.png",
+   "start": 21843356,
+   "end": 21843460
+  }, {
+   "filename": "/data/image/font/49.png",
+   "start": 21843460,
+   "end": 21843560
+  }, {
+   "filename": "/data/image/font/75.png",
+   "start": 21843560,
+   "end": 21843673
+  }, {
+   "filename": "/data/image/font/61.png",
+   "start": 21843673,
+   "end": 21843771
+  }, {
+   "filename": "/data/image/font/59.png",
+   "start": 21843771,
+   "end": 21843868
+  }, {
+   "filename": "/data/image/font/65.png",
+   "start": 21843868,
+   "end": 21843979
+  }, {
+   "filename": "/data/image/font/71.png",
+   "start": 21843979,
+   "end": 21844093
+  }, {
+   "filename": "/data/image/font/70.png",
+   "start": 21844093,
+   "end": 21844192
+  }, {
+   "filename": "/data/image/font/64.png",
+   "start": 21844192,
+   "end": 21844314
+  }, {
+   "filename": "/data/image/font/58.png",
+   "start": 21844314,
+   "end": 21844405
+  }, {
+   "filename": "/data/image/font/99.png",
+   "start": 21844405,
+   "end": 21844505
+  }, {
+   "filename": "/data/image/font/72.png",
+   "start": 21844505,
+   "end": 21844614
+  }, {
+   "filename": "/data/image/font/66.png",
+   "start": 21844614,
+   "end": 21844720
+  }, {
+   "filename": "/data/image/font/67.png",
+   "start": 21844720,
+   "end": 21844823
+  }, {
+   "filename": "/data/image/font/73.png",
+   "start": 21844823,
+   "end": 21844911
+  }, {
+   "filename": "/data/image/font/98.png",
+   "start": 21844911,
+   "end": 21845018
+  }, {
+   "filename": "/data/image/font/115.png",
+   "start": 21845018,
+   "end": 21845123
+  }, {
+   "filename": "/data/image/font/101.png",
+   "start": 21845123,
+   "end": 21845230
+  }, {
+   "filename": "/data/image/font/100.png",
+   "start": 21845230,
+   "end": 21845337
+  }, {
+   "filename": "/data/image/font/114.png",
+   "start": 21845337,
+   "end": 21845437
+  }, {
+   "filename": "/data/image/font/102.png",
+   "start": 21845437,
+   "end": 21845537
+  }, {
+   "filename": "/data/image/font/116.png",
+   "start": 21845537,
+   "end": 21845630
+  }, {
+   "filename": "/data/image/font/117.png",
+   "start": 21845630,
+   "end": 21845731
+  }, {
+   "filename": "/data/image/font/103.png",
+   "start": 21845731,
+   "end": 21845844
+  }, {
+   "filename": "/data/image/font/107.png",
+   "start": 21845844,
+   "end": 21845949
+  }, {
+   "filename": "/data/image/font/113.png",
+   "start": 21845949,
+   "end": 21846052
+  }, {
+   "filename": "/data/image/font/112.png",
+   "start": 21846052,
+   "end": 21846160
+  }, {
+   "filename": "/data/image/font/106.png",
+   "start": 21846160,
+   "end": 21846266
+  }, {
+   "filename": "/data/image/font/110.png",
+   "start": 21846266,
+   "end": 21846366
+  }, {
+   "filename": "/data/image/font/104.png",
+   "start": 21846366,
+   "end": 21846470
+  }, {
+   "filename": "/data/image/font/39.png",
+   "start": 21846470,
+   "end": 21846568
+  }, {
+   "filename": "/data/image/font/38.png",
+   "start": 21846568,
+   "end": 21846679
+  }, {
+   "filename": "/data/image/font/105.png",
+   "start": 21846679,
+   "end": 21846773
+  }, {
+   "filename": "/data/image/font/111.png",
+   "start": 21846773,
+   "end": 21846878
+  }, {
+   "filename": "/data/image/font/108.png",
+   "start": 21846878,
+   "end": 21846966
+  }, {
+   "filename": "/data/image/font/120.png",
+   "start": 21846966,
+   "end": 21847079
+  }, {
+   "filename": "/data/image/font/35.png",
+   "start": 21847079,
+   "end": 21847177
+  }, {
+   "filename": "/data/image/font/34.png",
+   "start": 21847177,
+   "end": 21847272
+  }, {
+   "filename": "/data/image/font/121.png",
+   "start": 21847272,
+   "end": 21847381
+  }, {
+   "filename": "/data/image/font/109.png",
+   "start": 21847381,
+   "end": 21847484
+  }, {
+   "filename": "/data/image/font/123.png",
+   "start": 21847484,
+   "end": 21847591
+  }, {
+   "filename": "/data/image/font/36.png",
+   "start": 21847591,
+   "end": 21847706
+  }, {
+   "filename": "/data/image/font/37.png",
+   "start": 21847706,
+   "end": 21847818
+  }, {
+   "filename": "/data/image/font/122.png",
+   "start": 21847818,
+   "end": 21847930
+  }, {
+   "filename": "/data/image/font/126.png",
+   "start": 21847930,
+   "end": 21848027
+  }, {
+   "filename": "/data/image/font/33.png",
+   "start": 21848027,
+   "end": 21848118
+  }, {
+   "filename": "/data/image/font/32.png",
+   "start": 21848118,
+   "end": 21848196
+  }, {
+   "filename": "/data/image/font/127.png",
+   "start": 21848196,
+   "end": 21848301
+  }, {
+   "filename": "/data/image/font/125.png",
+   "start": 21848301,
+   "end": 21848402
+  }, {
+   "filename": "/data/image/font/119.png",
+   "start": 21848402,
+   "end": 21848503
+  }, {
+   "filename": "/data/image/font/118.png",
+   "start": 21848503,
+   "end": 21848604
+  }, {
+   "filename": "/data/image/font/124.png",
+   "start": 21848604,
+   "end": 21848693
+  }, {
+   "filename": "/data/image/font/95.png",
+   "start": 21848693,
+   "end": 21848785
+  }, {
+   "filename": "/data/image/font/81.png",
+   "start": 21848785,
+   "end": 21848899
+  }, {
+   "filename": "/data/image/font/56.png",
+   "start": 21848899,
+   "end": 21849005
+  }, {
+   "filename": "/data/image/font/42.png",
+   "start": 21849005,
+   "end": 21849116
+  }, {
+   "filename": "/data/image/font/43.png",
+   "start": 21849116,
+   "end": 21849221
+  }, {
+   "filename": "/data/image/font/57.png",
+   "start": 21849221,
+   "end": 21849331
+  }, {
+   "filename": "/data/image/font/80.png",
+   "start": 21849331,
+   "end": 21849438
+  }, {
+   "filename": "/data/image/font/94.png",
+   "start": 21849438,
+   "end": 21849539
+  }, {
+   "filename": "/data/image/font/-1.png",
+   "start": 21849539,
+   "end": 21849642
+  }, {
+   "filename": "/data/image/font/82.png",
+   "start": 21849642,
+   "end": 21849745
+  }, {
+   "filename": "/data/image/font/96.png",
+   "start": 21849745,
+   "end": 21849840
+  }, {
+   "filename": "/data/image/font/41.png",
+   "start": 21849840,
+   "end": 21849932
+  }, {
+   "filename": "/data/image/font/55.png",
+   "start": 21849932,
+   "end": 21850033
+  }, {
+   "filename": "/data/image/font/69.png",
+   "start": 21850033,
+   "end": 21850136
+  }, {
+   "filename": "/data/image/font/68.png",
+   "start": 21850136,
+   "end": 21850240
+  }, {
+   "filename": "/data/image/font/54.png",
+   "start": 21850240,
+   "end": 21850354
+  }, {
+   "filename": "/data/image/font/40.png",
+   "start": 21850354,
+   "end": 21850453
+  }, {
+   "filename": "/data/image/font/97.png",
+   "start": 21850453,
+   "end": 21850560
+  }, {
+   "filename": "/data/image/font/83.png",
+   "start": 21850560,
+   "end": 21850677
+  }, {
+   "filename": "/data/image/font/87.png",
+   "start": 21850677,
+   "end": 21850791
+  }, {
+   "filename": "/data/image/font/93.png",
+   "start": 21850791,
+   "end": 21850885
+  }, {
+   "filename": "/data/image/font/78.png",
+   "start": 21850885,
+   "end": 21850994
+  }, {
+   "filename": "/data/image/font/44.png",
+   "start": 21850994,
+   "end": 21851090
+  }, {
+   "filename": "/data/image/font/50.png",
+   "start": 21851090,
+   "end": 21851196
+  }, {
+   "filename": "/data/image/font/51.png",
+   "start": 21851196,
+   "end": 21851304
+  }, {
+   "filename": "/data/image/font/45.png",
+   "start": 21851304,
+   "end": 21851398
+  }, {
+   "filename": "/data/image/font/79.png",
+   "start": 21851398,
+   "end": 21851502
+  }, {
+   "filename": "/data/image/font/92.png",
+   "start": 21851502,
+   "end": 21851602
+  }, {
+   "filename": "/data/image/font/86.png",
+   "start": 21851602,
+   "end": 21851704
+  }, {
+   "filename": "/data/image/font/90.png",
+   "start": 21851704,
+   "end": 21851809
+  }, {
+   "filename": "/data/image/font/84.png",
+   "start": 21851809,
+   "end": 21851903
+  }, {
+   "filename": "/data/image/font/53.png",
+   "start": 21851903,
+   "end": 21852012
+  }, {
+   "filename": "/data/image/font/47.png",
+   "start": 21852012,
+   "end": 21852115
+  }, {
+   "filename": "/data/image/font/46.png",
+   "start": 21852115,
+   "end": 21852202
+  }, {
+   "filename": "/data/image/font/52.png",
+   "start": 21852202,
+   "end": 21852310
+  }, {
+   "filename": "/data/image/font/85.png",
+   "start": 21852310,
+   "end": 21852415
+  }, {
+   "filename": "/data/image/font/91.png",
+   "start": 21852415,
+   "end": 21852513
+  }, {
+   "filename": "/data/lua/.DS_Store",
+   "start": 21852513,
+   "end": 21858661
   }, {
    "filename": "/data/lua/yazrXnes.lua",
-   "start": 26971598,
-   "end": 26975405
+   "start": 21858661,
+   "end": 21862468
+  }, {
+   "filename": "/data/lua/yazr.lua",
+   "start": 21862468,
+   "end": 21863191
+  }, {
+   "filename": "/data/lua/nes/palette.lua",
+   "start": 21863191,
+   "end": 21868608
+  }, {
+   "filename": "/data/lua/nes/cpu.lua",
+   "start": 21868608,
+   "end": 21902496
+  }, {
+   "filename": "/data/lua/nes/apu.lua",
+   "start": 21902496,
+   "end": 21931294
+  }, {
+   "filename": "/data/lua/nes/pads.lua",
+   "start": 21931294,
+   "end": 21933661
+  }, {
+   "filename": "/data/lua/nes/rom.lua",
+   "start": 21933661,
+   "end": 21951181
+  }, {
+   "filename": "/data/lua/nes/nes.lua",
+   "start": 21951181,
+   "end": 21953629
+  }, {
+   "filename": "/data/lua/nes/utils.lua",
+   "start": 21953629,
+   "end": 21960969
+  }, {
+   "filename": "/data/lua/nes/ppu.lua",
+   "start": 21960969,
+   "end": 22010517
+  }, {
+   "filename": "/data/lua/nes/libs/complex.lua",
+   "start": 22010517,
+   "end": 22023252
+  }, {
+   "filename": "/data/lua/nes/libs/profile.lua",
+   "start": 22023252,
+   "end": 22030735
+  }, {
+   "filename": "/data/lua/nes/libs/serpent.lua",
+   "start": 22030735,
+   "end": 22041796
+  }, {
+   "filename": "/data/lua/core/serialization.lua",
+   "start": 22041796,
+   "end": 22044312
+  }, {
+   "filename": "/data/lua/core/_init.lua",
+   "start": 22044312,
+   "end": 22044503
+  }, {
+   "filename": "/data/lua/core/yecs.lua",
+   "start": 22044503,
+   "end": 22057016
+  }, {
+   "filename": "/data/lua/core/splash_screen.lua",
+   "start": 22057016,
+   "end": 22058361
+  }, {
+   "filename": "/data/lua/core/components/sprite_text.lua",
+   "start": 22058361,
+   "end": 22061284
+  }, {
+   "filename": "/data/lua/core/components/tick.lua",
+   "start": 22061284,
+   "end": 22062231
+  }, {
+   "filename": "/data/lua/core/components/size.lua",
+   "start": 22062231,
+   "end": 22062332
+  }, {
+   "filename": "/data/lua/core/components/position.lua",
+   "start": 22062332,
+   "end": 22062440
+  }, {
+   "filename": "/data/lua/core/components/animation.lua",
+   "start": 22062440,
+   "end": 22065273
+  }, {
+   "filename": "/data/lua/core/components/_init.lua",
+   "start": 22065273,
+   "end": 22065678
+  }, {
+   "filename": "/data/lua/core/components/layout.lua",
+   "start": 22065678,
+   "end": 22071831
+  }, {
+   "filename": "/data/lua/core/components/sprite.lua",
+   "start": 22071831,
+   "end": 22072774
+  }, {
+   "filename": "/data/lua/core/components/data.lua",
+   "start": 22072774,
+   "end": 22072844
+  }, {
+   "filename": "/data/lua/core/components/tree.lua",
+   "start": 22072844,
+   "end": 22074608
+  }, {
+   "filename": "/data/lua/core/components/tags.lua",
+   "start": 22074608,
+   "end": 22074678
+  }, {
+   "filename": "/data/lua/core/components/input.lua",
+   "start": 22074678,
+   "end": 22076312
+  }, {
+   "filename": "/data/lua/core/components/text.lua",
+   "start": 22076312,
+   "end": 22077518
+  }, {
+   "filename": "/data/lua/core/systems/tick.lua",
+   "start": 22077518,
+   "end": 22079318
+  }, {
+   "filename": "/data/lua/core/systems/dummy.lua",
+   "start": 22079318,
+   "end": 22079709
+  }, {
+   "filename": "/data/lua/core/systems/_init.lua",
+   "start": 22079709,
+   "end": 22079858
+  }, {
+   "filename": "/data/lua/core/systems/sprite.lua",
+   "start": 22079858,
+   "end": 22081606
+  }, {
+   "filename": "/data/lua/core/systems/tree.lua",
+   "start": 22081606,
+   "end": 22083408
+  }, {
+   "filename": "/data/lua/core/systems/input.lua",
+   "start": 22083408,
+   "end": 22087475
+  }, {
+   "filename": "/data/lua/core/data/palette_data.lua",
+   "start": 22087475,
+   "end": 22088732
+  }, {
+   "filename": "/data/lua/core/data/font_data.lua",
+   "start": 22088732,
+   "end": 22090218
+  }, {
+   "filename": "/data/lua/core/data/emscripten_keycode_mapping.lua",
+   "start": 22090218,
+   "end": 22091272
+  }, {
+   "filename": "/data/lua/core/entities/_init.lua",
+   "start": 22091272,
+   "end": 22091301
+  }, {
+   "filename": "/data/lua/core/entities/ui/palette.lua",
+   "start": 22091301,
+   "end": 22092185
+  }, {
+   "filename": "/data/lua/core/entities/ui/progress.lua",
+   "start": 22092185,
+   "end": 22093879
+  }, {
+   "filename": "/data/lua/core/entities/ui/joystick.lua",
+   "start": 22093879,
+   "end": 22097028
+  }, {
+   "filename": "/data/lua/core/entities/ui/dpad.lua",
+   "start": 22097028,
+   "end": 22099861
+  }, {
+   "filename": "/data/lua/core/entities/ui/label.lua",
+   "start": 22099861,
+   "end": 22100399
+  }, {
+   "filename": "/data/lua/core/entities/ui/_init.lua",
+   "start": 22100399,
+   "end": 22100765
+  }, {
+   "filename": "/data/lua/core/entities/ui/panel.lua",
+   "start": 22100765,
+   "end": 22101635
+  }, {
+   "filename": "/data/lua/core/entities/ui/progress_selector.lua",
+   "start": 22101635,
+   "end": 22103604
+  }, {
+   "filename": "/data/lua/core/entities/ui/sprite_label.lua",
+   "start": 22103604,
+   "end": 22104250
+  }, {
+   "filename": "/data/lua/core/entities/ui/image.lua",
+   "start": 22104250,
+   "end": 22107245
+  }, {
+   "filename": "/data/lua/core/entities/ui/button.lua",
+   "start": 22107245,
+   "end": 22110408
+  }, {
+   "filename": "/data/lua/app/app.lua",
+   "start": 22110408,
+   "end": 22110995
+  }, {
+   "filename": "/data/lua/app/rewind_controller.lua",
+   "start": 22110995,
+   "end": 22116329
+  }, {
+   "filename": "/data/lua/app/_init.lua",
+   "start": 22116329,
+   "end": 22116371
+  }, {
+   "filename": "/data/lua/app/test_world.lua",
+   "start": 22116371,
+   "end": 22119836
+  }, {
+   "filename": "/data/lua/app/game/world_image.lua",
+   "start": 22119836,
+   "end": 22122651
+  }, {
+   "filename": "/data/lua/app/game/world_dungeon.lua",
+   "start": 22122651,
+   "end": 22124378
+  }, {
+   "filename": "/data/lua/app/game/world_mario_music.lua",
+   "start": 22124378,
+   "end": 22130225
+  }, {
+   "filename": "/data/lua/app/game/_init.lua",
+   "start": 22130225,
+   "end": 22134113
+  }, {
+   "filename": "/data/lua/app/game/world_palette.lua",
+   "start": 22134113,
+   "end": 22134615
+  }, {
+   "filename": "/data/lua/app/game/world_flappy_duck.lua",
+   "start": 22134615,
+   "end": 22147538
+  }, {
+   "filename": "/data/lua/app/game/world_label.lua",
+   "start": 22147538,
+   "end": 22150371
+  }, {
+   "filename": "/data/lua/app/game/world_word_slide_maker.lua",
+   "start": 22150371,
+   "end": 22151719
+  }, {
+   "filename": "/data/lua/app/game/world_slides.lua",
+   "start": 22151719,
+   "end": 22153312
+  }, {
+   "filename": "/data/lua/utils/eval.lua",
+   "start": 22153312,
+   "end": 22153726
+  }, {
+   "filename": "/data/lua/utils/package_path.lua",
+   "start": 22153726,
+   "end": 22154003
+  }, {
+   "filename": "/data/lua/utils/uuid.lua",
+   "start": 22154003,
+   "end": 22154298
+  }, {
+   "filename": "/data/lua/utils/log.lua",
+   "start": 22154298,
+   "end": 22155119
+  }, {
+   "filename": "/data/lua/utils/copy.lua",
+   "start": 22155119,
+   "end": 22155895
+  }, {
+   "filename": "/data/lua/utils/reload.lua",
+   "start": 22155895,
+   "end": 22172422
+  }, {
+   "filename": "/data/lua/libs/debugger.lua",
+   "start": 22172422,
+   "end": 22197182
+  }, {
+   "filename": "/data/lua/libs/table_save.lua",
+   "start": 22197182,
+   "end": 22201935
+  }, {
+   "filename": "/data/lua/libs/rx.lua",
+   "start": 22201935,
+   "end": 22268121
+  }, {
+   "filename": "/data/lua/libs/strict.lua",
+   "start": 22268121,
+   "end": 22269328
+  }, {
+   "filename": "/data/font/zpix.ttf",
+   "start": 22269328,
+   "end": 26949676
+  }, {
+   "filename": "/data/bgfx_shader/windows.varying.def.sc",
+   "start": 26949676,
+   "end": 26949914
+  }, {
+   "filename": "/data/bgfx_shader/.DS_Store",
+   "start": 26949914,
+   "end": 26956062
+  }, {
+   "filename": "/data/bgfx_shader/v_simple.bin",
+   "start": 26956062,
+   "end": 26956395
+  }, {
+   "filename": "/data/bgfx_shader/varying.def.sc",
+   "start": 26956395,
+   "end": 26956634
+  }, {
+   "filename": "/data/bgfx_shader/v_zgui.sc",
+   "start": 26956634,
+   "end": 26957040
+  }, {
+   "filename": "/data/bgfx_shader/v_simple.sc",
+   "start": 26957040,
+   "end": 26957280
+  }, {
+   "filename": "/data/bgfx_shader/f_simple.sc",
+   "start": 26957280,
+   "end": 26957475
+  }, {
+   "filename": "/data/bgfx_shader/f_zgui.sc",
+   "start": 26957475,
+   "end": 26958671
+  }, {
+   "filename": "/data/bgfx_shader/bgfx_shader.sh",
+   "start": 26958671,
+   "end": 26982263
+  }, {
+   "filename": "/data/bgfx_shader/f_simple.bin",
+   "start": 26982263,
+   "end": 26982356
+  }, {
+   "filename": "/data/bgfx_shader/asmjs/v_zgui.bin",
+   "start": 26982356,
+   "end": 26982971
+  }, {
+   "filename": "/data/bgfx_shader/asmjs/v_simple.bin",
+   "start": 26982971,
+   "end": 26983406
+  }, {
+   "filename": "/data/bgfx_shader/asmjs/f_simple.bin",
+   "start": 26983406,
+   "end": 26983704
+  }, {
+   "filename": "/data/bgfx_shader/asmjs/f_zgui.bin",
+   "start": 26983704,
+   "end": 26985408
+  }, {
+   "filename": "/data/bgfx_shader/osx/v_zgui.bin",
+   "start": 26985408,
+   "end": 26986526
+  }, {
+   "filename": "/data/bgfx_shader/osx/v_simple.bin",
+   "start": 26986526,
+   "end": 26987328
+  }, {
+   "filename": "/data/bgfx_shader/osx/f_simple.bin",
+   "start": 26987328,
+   "end": 26988042
+  }, {
+   "filename": "/data/bgfx_shader/osx/f_zgui.bin",
+   "start": 26988042,
+   "end": 26989812
+  }, {
+   "filename": "/data/bgfx_shader/ios/v_zgui.bin",
+   "start": 26989812,
+   "end": 26990930
+  }, {
+   "filename": "/data/bgfx_shader/ios/v_simple.bin",
+   "start": 26990930,
+   "end": 26991732
+  }, {
+   "filename": "/data/bgfx_shader/ios/f_simple.bin",
+   "start": 26991732,
+   "end": 26992446
+  }, {
+   "filename": "/data/bgfx_shader/ios/f_zgui.bin",
+   "start": 26992446,
+   "end": 26994216
+  }, {
+   "filename": "/data/bgfx_shader/android/v_zgui.bin",
+   "start": 26994216,
+   "end": 26994831
+  }, {
+   "filename": "/data/bgfx_shader/android/v_simple.bin",
+   "start": 26994831,
+   "end": 26995266
+  }, {
+   "filename": "/data/bgfx_shader/android/f_simple.bin",
+   "start": 26995266,
+   "end": 26995564
+  }, {
+   "filename": "/data/bgfx_shader/android/f_zgui.bin",
+   "start": 26995564,
+   "end": 26997268
+  }, {
+   "filename": "/data/bgfx_shader/windows/v_zgui.bin",
+   "start": 26997268,
+   "end": 26997778
+  }, {
+   "filename": "/data/bgfx_shader/windows/v_simple.bin",
+   "start": 26997778,
+   "end": 26998133
+  }, {
+   "filename": "/data/bgfx_shader/windows/f_simple.bin",
+   "start": 26998133,
+   "end": 26998355
+  }, {
+   "filename": "/data/bgfx_shader/windows/f_zgui.bin",
+   "start": 26998355,
+   "end": 26999973
   } ],
-  "remote_package_size": 26975405
+  "remote_package_size": 26999973,
+  "package_uuid": "6116fa1d-1033-4306-be61-a935b37e3b42"
  });
 })();
 
@@ -1820,31 +1838,31 @@ if (ENVIRONMENT_IS_NODE) {
  } else {
   scriptDirectory = __dirname + "/";
  }
- requireNodeFS = () => {
+ requireNodeFS = (() => {
   if (!nodePath) {
    fs = require("fs");
    nodePath = require("path");
   }
- };
+ });
  read_ = function shell_read(filename, binary) {
   requireNodeFS();
   filename = nodePath["normalize"](filename);
   return fs.readFileSync(filename, binary ? undefined : "utf8");
  };
- readBinary = filename => {
+ readBinary = (filename => {
   var ret = read_(filename, true);
   if (!ret.buffer) {
    ret = new Uint8Array(ret);
   }
   return ret;
- };
- readAsync = (filename, onload, onerror) => {
+ });
+ readAsync = ((filename, onload, onerror) => {
   requireNodeFS();
   filename = nodePath["normalize"](filename);
   fs.readFile(filename, function(err, data) {
    if (err) onerror(err); else onload(data.buffer);
   });
- };
+ });
  if (process["argv"].length > 1) {
   thisProgram = process["argv"][1].replace(/\\/g, "/");
  }
@@ -1860,14 +1878,14 @@ if (ENVIRONMENT_IS_NODE) {
  process["on"]("unhandledRejection", function(reason) {
   throw reason;
  });
- quit_ = (status, toThrow) => {
+ quit_ = ((status, toThrow) => {
   if (keepRuntimeAlive()) {
    process["exitCode"] = status;
    throw toThrow;
   }
   logExceptionOnExit(toThrow);
   process["exit"](status);
- };
+ });
  Module["inspect"] = function() {
   return "[Emscripten Module object]";
  };
@@ -1891,37 +1909,37 @@ if (ENVIRONMENT_IS_NODE) {
   scriptDirectory = "";
  }
  if (!ENVIRONMENT_IS_NODE) {
-  read_ = url => {
+  read_ = (url => {
    var xhr = new XMLHttpRequest();
    xhr.open("GET", url, false);
    xhr.send(null);
    return xhr.responseText;
-  };
+  });
   if (ENVIRONMENT_IS_WORKER) {
-   readBinary = url => {
+   readBinary = (url => {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, false);
     xhr.responseType = "arraybuffer";
     xhr.send(null);
     return new Uint8Array(xhr.response);
-   };
+   });
   }
-  readAsync = (url, onload, onerror) => {
+  readAsync = ((url, onload, onerror) => {
    var xhr = new XMLHttpRequest();
    xhr.open("GET", url, true);
    xhr.responseType = "arraybuffer";
-   xhr.onload = () => {
+   xhr.onload = (() => {
     if (xhr.status == 200 || xhr.status == 0 && xhr.response) {
      onload(xhr.response);
      return;
     }
     onerror();
-   };
+   });
    xhr.onerror = onerror;
    xhr.send(null);
-  };
+  });
  }
- setWindowTitle = title => document.title = title;
+ setWindowTitle = (title => document.title = title);
 } else {}
 
 if (ENVIRONMENT_IS_NODE) {
@@ -1936,8 +1954,8 @@ var defaultPrintErr = console.warn.bind(console);
 
 if (ENVIRONMENT_IS_NODE) {
  requireNodeFS();
- defaultPrint = str => fs.writeSync(1, str + "\n");
- defaultPrintErr = str => fs.writeSync(2, str + "\n");
+ defaultPrint = (str => fs.writeSync(1, str + "\n"));
+ defaultPrintErr = (str => fs.writeSync(2, str + "\n"));
 }
 
 var out = Module["print"] || defaultPrint;
@@ -1962,19 +1980,15 @@ function getNativeTypeSize(type) {
  switch (type) {
  case "i1":
  case "i8":
- case "u8":
   return 1;
 
  case "i16":
- case "u16":
   return 2;
 
  case "i32":
- case "u32":
   return 4;
 
  case "i64":
- case "u64":
   return 8;
 
  case "float":
@@ -1987,16 +2001,134 @@ function getNativeTypeSize(type) {
   {
    if (type[type.length - 1] === "*") {
     return POINTER_SIZE;
-   }
-   if (type[0] === "i") {
+   } else if (type[0] === "i") {
     const bits = Number(type.substr(1));
     assert(bits % 8 === 0, "getNativeTypeSize invalid bits " + bits + ", type " + type);
     return bits / 8;
+   } else {
+    return 0;
    }
-   return 0;
   }
  }
 }
+
+function warnOnce(text) {
+ if (!warnOnce.shown) warnOnce.shown = {};
+ if (!warnOnce.shown[text]) {
+  warnOnce.shown[text] = 1;
+  err(text);
+ }
+}
+
+function convertJsFunctionToWasm(func, sig) {
+ if (typeof WebAssembly.Function == "function") {
+  var typeNames = {
+   "i": "i32",
+   "j": "i64",
+   "f": "f32",
+   "d": "f64"
+  };
+  var type = {
+   parameters: [],
+   results: sig[0] == "v" ? [] : [ typeNames[sig[0]] ]
+  };
+  for (var i = 1; i < sig.length; ++i) {
+   type.parameters.push(typeNames[sig[i]]);
+  }
+  return new WebAssembly.Function(type, func);
+ }
+ var typeSection = [ 1, 0, 1, 96 ];
+ var sigRet = sig.slice(0, 1);
+ var sigParam = sig.slice(1);
+ var typeCodes = {
+  "i": 127,
+  "j": 126,
+  "f": 125,
+  "d": 124
+ };
+ typeSection.push(sigParam.length);
+ for (var i = 0; i < sigParam.length; ++i) {
+  typeSection.push(typeCodes[sigParam[i]]);
+ }
+ if (sigRet == "v") {
+  typeSection.push(0);
+ } else {
+  typeSection = typeSection.concat([ 1, typeCodes[sigRet] ]);
+ }
+ typeSection[1] = typeSection.length - 2;
+ var bytes = new Uint8Array([ 0, 97, 115, 109, 1, 0, 0, 0 ].concat(typeSection, [ 2, 7, 1, 1, 101, 1, 102, 0, 0, 7, 5, 1, 1, 102, 0, 0 ]));
+ var module = new WebAssembly.Module(bytes);
+ var instance = new WebAssembly.Instance(module, {
+  "e": {
+   "f": func
+  }
+ });
+ var wrappedFunc = instance.exports["f"];
+ return wrappedFunc;
+}
+
+var freeTableIndexes = [];
+
+var functionsInTableMap;
+
+function getEmptyTableSlot() {
+ if (freeTableIndexes.length) {
+  return freeTableIndexes.pop();
+ }
+ try {
+  wasmTable.grow(1);
+ } catch (err) {
+  if (!(err instanceof RangeError)) {
+   throw err;
+  }
+  throw "Unable to grow wasm table. Set ALLOW_TABLE_GROWTH.";
+ }
+ return wasmTable.length - 1;
+}
+
+function updateTableMap(offset, count) {
+ for (var i = offset; i < offset + count; i++) {
+  var item = getWasmTableEntry(i);
+  if (item) {
+   functionsInTableMap.set(item, i);
+  }
+ }
+}
+
+function addFunction(func, sig) {
+ if (!functionsInTableMap) {
+  functionsInTableMap = new WeakMap();
+  updateTableMap(0, wasmTable.length);
+ }
+ if (functionsInTableMap.has(func)) {
+  return functionsInTableMap.get(func);
+ }
+ var ret = getEmptyTableSlot();
+ try {
+  setWasmTableEntry(ret, func);
+ } catch (err) {
+  if (!(err instanceof TypeError)) {
+   throw err;
+  }
+  var wrapped = convertJsFunctionToWasm(func, sig);
+  setWasmTableEntry(ret, wrapped);
+ }
+ functionsInTableMap.set(func, ret);
+ return ret;
+}
+
+function removeFunction(index) {
+ functionsInTableMap.delete(getWasmTableEntry(index));
+ freeTableIndexes.push(index);
+}
+
+var tempRet0 = 0;
+
+var setTempRet0 = value => {
+ tempRet0 = value;
+};
+
+var getTempRet0 = () => tempRet0;
 
 var Atomics_load = Atomics.load;
 
@@ -2014,6 +2146,73 @@ if (typeof WebAssembly != "object") {
  abort("no native wasm support detected");
 }
 
+function setValue(ptr, value, type = "i8", noSafe) {
+ if (type.charAt(type.length - 1) === "*") type = "i32";
+ switch (type) {
+ case "i1":
+  GROWABLE_HEAP_I8()[ptr >>> 0] = value;
+  break;
+
+ case "i8":
+  GROWABLE_HEAP_I8()[ptr >>> 0] = value;
+  break;
+
+ case "i16":
+  GROWABLE_HEAP_I16()[ptr >>> 1] = value;
+  break;
+
+ case "i32":
+  GROWABLE_HEAP_I32()[ptr >>> 2] = value;
+  break;
+
+ case "i64":
+  tempI64 = [ value >>> 0, (tempDouble = value, +Math.abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math.min(+Math.floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math.ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0) ], 
+  GROWABLE_HEAP_I32()[ptr >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[ptr + 4 >>> 2] = tempI64[1];
+  break;
+
+ case "float":
+  GROWABLE_HEAP_F32()[ptr >>> 2] = value;
+  break;
+
+ case "double":
+  GROWABLE_HEAP_F64()[ptr >>> 3] = value;
+  break;
+
+ default:
+  abort("invalid type for setValue: " + type);
+ }
+}
+
+function getValue(ptr, type = "i8", noSafe) {
+ if (type.charAt(type.length - 1) === "*") type = "i32";
+ switch (type) {
+ case "i1":
+  return GROWABLE_HEAP_I8()[ptr >>> 0];
+
+ case "i8":
+  return GROWABLE_HEAP_I8()[ptr >>> 0];
+
+ case "i16":
+  return GROWABLE_HEAP_I16()[ptr >>> 1];
+
+ case "i32":
+  return GROWABLE_HEAP_I32()[ptr >>> 2];
+
+ case "i64":
+  return GROWABLE_HEAP_I32()[ptr >>> 2];
+
+ case "float":
+  return GROWABLE_HEAP_F32()[ptr >>> 2];
+
+ case "double":
+  return Number(GROWABLE_HEAP_F64()[ptr >>> 3]);
+
+ default:
+  abort("invalid type for getValue: " + type);
+ }
+ return null;
+}
+
 var wasmMemory;
 
 var wasmModule;
@@ -2028,6 +2227,88 @@ function assert(condition, text) {
  }
 }
 
+function getCFunc(ident) {
+ var func = Module["_" + ident];
+ return func;
+}
+
+function ccall(ident, returnType, argTypes, args, opts) {
+ var toC = {
+  "string": function(str) {
+   var ret = 0;
+   if (str !== null && str !== undefined && str !== 0) {
+    var len = (str.length << 2) + 1;
+    ret = stackAlloc(len);
+    stringToUTF8(str, ret, len);
+   }
+   return ret;
+  },
+  "array": function(arr) {
+   var ret = stackAlloc(arr.length);
+   writeArrayToMemory(arr, ret);
+   return ret;
+  }
+ };
+ function convertReturnValue(ret) {
+  if (returnType === "string") return UTF8ToString(ret);
+  if (returnType === "boolean") return Boolean(ret);
+  return ret;
+ }
+ var func = getCFunc(ident);
+ var cArgs = [];
+ var stack = 0;
+ if (args) {
+  for (var i = 0; i < args.length; i++) {
+   var converter = toC[argTypes[i]];
+   if (converter) {
+    if (stack === 0) stack = stackSave();
+    cArgs[i] = converter(args[i]);
+   } else {
+    cArgs[i] = args[i];
+   }
+  }
+ }
+ var ret = func.apply(null, cArgs);
+ function onDone(ret) {
+  if (stack !== 0) stackRestore(stack);
+  return convertReturnValue(ret);
+ }
+ ret = onDone(ret);
+ return ret;
+}
+
+function cwrap(ident, returnType, argTypes, opts) {
+ argTypes = argTypes || [];
+ var numericArgs = argTypes.every(function(type) {
+  return type === "number";
+ });
+ var numericRet = returnType !== "string";
+ if (numericRet && numericArgs && !opts) {
+  return getCFunc(ident);
+ }
+ return function() {
+  return ccall(ident, returnType, argTypes, arguments, opts);
+ };
+}
+
+var ALLOC_NORMAL = 0;
+
+var ALLOC_STACK = 1;
+
+function allocate(slab, allocator) {
+ var ret;
+ if (allocator == ALLOC_STACK) {
+  ret = stackAlloc(slab.length);
+ } else {
+  ret = _malloc(slab.length);
+ }
+ if (!slab.subarray && !slab.slice) {
+  slab = new Uint8Array(slab);
+ }
+ GROWABLE_HEAP_U8().set(slab, ret >>> 0);
+ return ret;
+}
+
 var UTF8Decoder = typeof TextDecoder != "undefined" ? new TextDecoder("utf8") : undefined;
 
 function UTF8ArrayToString(heapOrArray, idx, maxBytesToRead) {
@@ -2037,30 +2318,31 @@ function UTF8ArrayToString(heapOrArray, idx, maxBytesToRead) {
  while (heapOrArray[endPtr] && !(endPtr >= endIdx)) ++endPtr;
  if (endPtr - idx > 16 && heapOrArray.buffer && UTF8Decoder) {
   return UTF8Decoder.decode(heapOrArray.buffer instanceof SharedArrayBuffer ? heapOrArray.slice(idx, endPtr) : heapOrArray.subarray(idx, endPtr));
- }
- var str = "";
- while (idx < endPtr) {
-  var u0 = heapOrArray[idx++];
-  if (!(u0 & 128)) {
-   str += String.fromCharCode(u0);
-   continue;
-  }
-  var u1 = heapOrArray[idx++] & 63;
-  if ((u0 & 224) == 192) {
-   str += String.fromCharCode((u0 & 31) << 6 | u1);
-   continue;
-  }
-  var u2 = heapOrArray[idx++] & 63;
-  if ((u0 & 240) == 224) {
-   u0 = (u0 & 15) << 12 | u1 << 6 | u2;
-  } else {
-   u0 = (u0 & 7) << 18 | u1 << 12 | u2 << 6 | heapOrArray[idx++] & 63;
-  }
-  if (u0 < 65536) {
-   str += String.fromCharCode(u0);
-  } else {
-   var ch = u0 - 65536;
-   str += String.fromCharCode(55296 | ch >> 10, 56320 | ch & 1023);
+ } else {
+  var str = "";
+  while (idx < endPtr) {
+   var u0 = heapOrArray[idx++];
+   if (!(u0 & 128)) {
+    str += String.fromCharCode(u0);
+    continue;
+   }
+   var u1 = heapOrArray[idx++] & 63;
+   if ((u0 & 224) == 192) {
+    str += String.fromCharCode((u0 & 31) << 6 | u1);
+    continue;
+   }
+   var u2 = heapOrArray[idx++] & 63;
+   if ((u0 & 240) == 224) {
+    u0 = (u0 & 15) << 12 | u1 << 6 | u2;
+   } else {
+    u0 = (u0 & 7) << 18 | u1 << 12 | u2 << 6 | heapOrArray[idx++] & 63;
+   }
+   if (u0 < 65536) {
+    str += String.fromCharCode(u0);
+   } else {
+    var ch = u0 - 65536;
+    str += String.fromCharCode(55296 | ch >> 10, 56320 | ch & 1023);
+   }
   }
  }
  return str;
@@ -2113,19 +2395,152 @@ function stringToUTF8(str, outPtr, maxBytesToWrite) {
 function lengthBytesUTF8(str) {
  var len = 0;
  for (var i = 0; i < str.length; ++i) {
-  var c = str.charCodeAt(i);
-  if (c <= 127) {
-   len++;
-  } else if (c <= 2047) {
-   len += 2;
-  } else if (c >= 55296 && c <= 57343) {
-   len += 4;
-   ++i;
-  } else {
-   len += 3;
-  }
+  var u = str.charCodeAt(i);
+  if (u >= 55296 && u <= 57343) u = 65536 + ((u & 1023) << 10) | str.charCodeAt(++i) & 1023;
+  if (u <= 127) ++len; else if (u <= 2047) len += 2; else if (u <= 65535) len += 3; else len += 4;
  }
  return len;
+}
+
+function AsciiToString(ptr) {
+ ptr >>>= 0;
+ var str = "";
+ while (1) {
+  var ch = GROWABLE_HEAP_U8()[ptr++ >>> 0];
+  if (!ch) return str;
+  str += String.fromCharCode(ch);
+ }
+}
+
+function stringToAscii(str, outPtr) {
+ return writeAsciiToMemory(str, outPtr, false);
+}
+
+var UTF16Decoder = typeof TextDecoder != "undefined" ? new TextDecoder("utf-16le") : undefined;
+
+function UTF16ToString(ptr, maxBytesToRead) {
+ var endPtr = ptr;
+ var idx = endPtr >> 1;
+ var maxIdx = idx + maxBytesToRead / 2;
+ while (!(idx >= maxIdx) && GROWABLE_HEAP_U16()[idx >>> 0]) ++idx;
+ endPtr = idx << 1;
+ if (endPtr - ptr > 32 && UTF16Decoder) {
+  return UTF16Decoder.decode(GROWABLE_HEAP_U8().slice(ptr, endPtr));
+ } else {
+  var str = "";
+  for (var i = 0; !(i >= maxBytesToRead / 2); ++i) {
+   var codeUnit = GROWABLE_HEAP_I16()[ptr + i * 2 >>> 1];
+   if (codeUnit == 0) break;
+   str += String.fromCharCode(codeUnit);
+  }
+  return str;
+ }
+}
+
+function stringToUTF16(str, outPtr, maxBytesToWrite) {
+ if (maxBytesToWrite === undefined) {
+  maxBytesToWrite = 2147483647;
+ }
+ if (maxBytesToWrite < 2) return 0;
+ maxBytesToWrite -= 2;
+ var startPtr = outPtr;
+ var numCharsToWrite = maxBytesToWrite < str.length * 2 ? maxBytesToWrite / 2 : str.length;
+ for (var i = 0; i < numCharsToWrite; ++i) {
+  var codeUnit = str.charCodeAt(i);
+  GROWABLE_HEAP_I16()[outPtr >>> 1] = codeUnit;
+  outPtr += 2;
+ }
+ GROWABLE_HEAP_I16()[outPtr >>> 1] = 0;
+ return outPtr - startPtr;
+}
+
+function lengthBytesUTF16(str) {
+ return str.length * 2;
+}
+
+function UTF32ToString(ptr, maxBytesToRead) {
+ var i = 0;
+ var str = "";
+ while (!(i >= maxBytesToRead / 4)) {
+  var utf32 = GROWABLE_HEAP_I32()[ptr + i * 4 >>> 2];
+  if (utf32 == 0) break;
+  ++i;
+  if (utf32 >= 65536) {
+   var ch = utf32 - 65536;
+   str += String.fromCharCode(55296 | ch >> 10, 56320 | ch & 1023);
+  } else {
+   str += String.fromCharCode(utf32);
+  }
+ }
+ return str;
+}
+
+function stringToUTF32(str, outPtr, maxBytesToWrite) {
+ outPtr >>>= 0;
+ if (maxBytesToWrite === undefined) {
+  maxBytesToWrite = 2147483647;
+ }
+ if (maxBytesToWrite < 4) return 0;
+ var startPtr = outPtr;
+ var endPtr = startPtr + maxBytesToWrite - 4;
+ for (var i = 0; i < str.length; ++i) {
+  var codeUnit = str.charCodeAt(i);
+  if (codeUnit >= 55296 && codeUnit <= 57343) {
+   var trailSurrogate = str.charCodeAt(++i);
+   codeUnit = 65536 + ((codeUnit & 1023) << 10) | trailSurrogate & 1023;
+  }
+  GROWABLE_HEAP_I32()[outPtr >>> 2] = codeUnit;
+  outPtr += 4;
+  if (outPtr + 4 > endPtr) break;
+ }
+ GROWABLE_HEAP_I32()[outPtr >>> 2] = 0;
+ return outPtr - startPtr;
+}
+
+function lengthBytesUTF32(str) {
+ var len = 0;
+ for (var i = 0; i < str.length; ++i) {
+  var codeUnit = str.charCodeAt(i);
+  if (codeUnit >= 55296 && codeUnit <= 57343) ++i;
+  len += 4;
+ }
+ return len;
+}
+
+function allocateUTF8(str) {
+ var size = lengthBytesUTF8(str) + 1;
+ var ret = _malloc(size);
+ if (ret) stringToUTF8Array(str, GROWABLE_HEAP_I8(), ret, size);
+ return ret;
+}
+
+function allocateUTF8OnStack(str) {
+ var size = lengthBytesUTF8(str) + 1;
+ var ret = stackAlloc(size);
+ stringToUTF8Array(str, GROWABLE_HEAP_I8(), ret, size);
+ return ret;
+}
+
+function writeStringToMemory(string, buffer, dontAddNull) {
+ warnOnce("writeStringToMemory is deprecated and should not be called! Use stringToUTF8() instead!");
+ var lastChar, end;
+ if (dontAddNull) {
+  end = buffer + lengthBytesUTF8(string);
+  lastChar = GROWABLE_HEAP_I8()[end >>> 0];
+ }
+ stringToUTF8(string, buffer, Infinity);
+ if (dontAddNull) GROWABLE_HEAP_I8()[end >>> 0] = lastChar;
+}
+
+function writeArrayToMemory(array, buffer) {
+ GROWABLE_HEAP_I8().set(array, buffer >>> 0);
+}
+
+function writeAsciiToMemory(str, buffer, dontAddNull) {
+ for (var i = 0; i < str.length; ++i) {
+  GROWABLE_HEAP_I8()[buffer++ >>> 0] = str.charCodeAt(i);
+ }
+ if (!dontAddNull) GROWABLE_HEAP_I8()[buffer >>> 0] = 0;
 }
 
 var HEAP, buffer, HEAP8, HEAPU8, HEAP16, HEAPU16, HEAP32, HEAPU32, HEAPF32, HEAPF64;
@@ -2287,6 +2702,10 @@ function removeRunDependency(id) {
  }
 }
 
+Module["preloadedImages"] = {};
+
+Module["preloadedAudios"] = {};
+
 function abort(what) {
  if (ENVIRONMENT_IS_PTHREAD) {
   postMessage({
@@ -2302,7 +2721,7 @@ function abort(what) {
  err(what);
  ABORT = true;
  EXITSTATUS = 1;
- what += ". Build with -sASSERTIONS for more info.";
+ what += ". Build with -s ASSERTIONS=1 for more info.";
  var e = new WebAssembly.RuntimeError(what);
  throw e;
 }
@@ -2332,8 +2751,9 @@ function getBinary(file) {
   }
   if (readBinary) {
    return readBinary(file);
+  } else {
+   throw "both async and sync fetching of the wasm failed";
   }
-  throw "both async and sync fetching of the wasm failed";
  } catch (err) {
   abort(err);
  }
@@ -2375,7 +2795,7 @@ function createWasm() {
  function receiveInstance(instance, module) {
   var exports = instance.exports;
   Module["asm"] = exports;
-  registerTLSInit(Module["asm"]["_emscripten_tls_init"]);
+  registerTlsInit(Module["asm"]["emscripten_tls_init"]);
   wasmTable = Module["asm"]["__indirect_function_table"];
   addOnInit(Module["asm"]["__wasm_call_ctors"]);
   wasmModule = module;
@@ -2405,7 +2825,7 @@ function createWasm() {
   });
  }
  function instantiateAsync() {
-  if (!wasmBinary && typeof WebAssembly.instantiateStreaming == "function" && !isDataURI(wasmBinaryFile) && !isFileURI(wasmBinaryFile) && !ENVIRONMENT_IS_NODE && typeof fetch == "function") {
+  if (!wasmBinary && typeof WebAssembly.instantiateStreaming == "function" && !isDataURI(wasmBinaryFile) && !isFileURI(wasmBinaryFile) && typeof fetch == "function") {
    return fetch(wasmBinaryFile, {
     credentials: "same-origin"
    }).then(function(response) {
@@ -2438,7 +2858,7 @@ var tempDouble;
 var tempI64;
 
 var ASM_CONSTS = {
- 298844: $0 => {
+ 332628: function($0) {
   var str = UTF8ToString($0) + "\n\n" + "Abort/Retry/Ignore/AlwaysIgnore? [ariA] :";
   var reply = window.prompt(str, "i");
   if (reply === null) {
@@ -2446,7 +2866,7 @@ var ASM_CONSTS = {
   }
   return allocate(intArrayFromString(reply), "i8", ALLOC_NORMAL);
  },
- 299069: () => {
+ 332853: function() {
   if (typeof AudioContext !== "undefined") {
    return 1;
   } else if (typeof webkitAudioContext !== "undefined") {
@@ -2454,7 +2874,7 @@ var ASM_CONSTS = {
   }
   return 0;
  },
- 299206: () => {
+ 332990: function() {
   if (typeof navigator.mediaDevices !== "undefined" && typeof navigator.mediaDevices.getUserMedia !== "undefined") {
    return 1;
   } else if (typeof navigator.webkitGetUserMedia !== "undefined") {
@@ -2462,7 +2882,7 @@ var ASM_CONSTS = {
   }
   return 0;
  },
- 299430: $0 => {
+ 333214: function($0) {
   if (typeof Module["SDL2"] === "undefined") {
    Module["SDL2"] = {};
   }
@@ -2484,11 +2904,11 @@ var ASM_CONSTS = {
   }
   return SDL2.audioContext === undefined ? -1 : 0;
  },
- 299923: () => {
+ 333707: function() {
   var SDL2 = Module["SDL2"];
   return SDL2.audioContext.sampleRate;
  },
- 299991: ($0, $1, $2, $3) => {
+ 333775: function($0, $1, $2, $3) {
   var SDL2 = Module["SDL2"];
   var have_microphone = function(stream) {
    if (SDL2.capture.silenceTimer !== undefined) {
@@ -2529,7 +2949,7 @@ var ASM_CONSTS = {
    }, have_microphone, no_microphone);
   }
  },
- 301643: ($0, $1, $2, $3) => {
+ 335427: function($0, $1, $2, $3) {
   var SDL2 = Module["SDL2"];
   SDL2.audio.scriptProcessorNode = SDL2.audioContext["createScriptProcessor"]($1, 0, $0);
   SDL2.audio.scriptProcessorNode["onaudioprocess"] = function(e) {
@@ -2541,7 +2961,7 @@ var ASM_CONSTS = {
   };
   SDL2.audio.scriptProcessorNode["connect"](SDL2.audioContext["destination"]);
  },
- 302053: ($0, $1) => {
+ 335837: function($0, $1) {
   var SDL2 = Module["SDL2"];
   var numChannels = SDL2.capture.currentCaptureBuffer.numberOfChannels;
   for (var c = 0; c < numChannels; ++c) {
@@ -2560,7 +2980,7 @@ var ASM_CONSTS = {
    }
   }
  },
- 302658: ($0, $1) => {
+ 336442: function($0, $1) {
   var SDL2 = Module["SDL2"];
   var numChannels = SDL2.audio.currentOutputBuffer["numberOfChannels"];
   for (var c = 0; c < numChannels; ++c) {
@@ -2573,7 +2993,7 @@ var ASM_CONSTS = {
    }
   }
  },
- 303138: $0 => {
+ 336922: function($0) {
   var SDL2 = Module["SDL2"];
   if ($0) {
    if (SDL2.capture.silenceTimer !== undefined) {
@@ -2611,7 +3031,7 @@ var ASM_CONSTS = {
    SDL2.audioContext = undefined;
   }
  },
- 304310: ($0, $1, $2) => {
+ 338094: function($0, $1, $2) {
   var w = $0;
   var h = $1;
   var pixels = $2;
@@ -2683,7 +3103,7 @@ var ASM_CONSTS = {
   SDL2.ctx.putImageData(SDL2.image, 0, 0);
   return 0;
  },
- 305789: ($0, $1, $2, $3, $4) => {
+ 339573: function($0, $1, $2, $3, $4) {
   var w = $0;
   var h = $1;
   var hot_x = $2;
@@ -2720,59 +3140,144 @@ var ASM_CONSTS = {
   stringToUTF8(url, urlBuf, url.length + 1);
   return urlBuf;
  },
- 306778: $0 => {
+ 340562: function($0) {
   if (Module["canvas"]) {
    Module["canvas"].style["cursor"] = UTF8ToString($0);
   }
   return 0;
  },
- 306871: () => {
+ 340655: function() {
   if (Module["canvas"]) {
    Module["canvas"].style["cursor"] = "none";
   }
  },
- 306940: () => {
+ 340724: function() {
   return window.innerWidth;
  },
- 306970: () => {
+ 340754: function() {
   return window.innerHeight;
  },
- 307001: () => {
+ 340785: function() {
   debugger;
  }
 };
 
-function ExitStatus(status) {
- this.name = "ExitStatus";
- this.message = "Program terminated with exit(" + status + ")";
- this.status = status;
+function listenOnce(object, event, func) {
+ object.addEventListener(event, func, {
+  "once": true
+ });
+}
+
+function autoResumeAudioContext(ctx, elements) {
+ if (!elements) {
+  elements = [ document, document.getElementById("canvas") ];
+ }
+ [ "keydown", "mousedown", "touchstart" ].forEach(function(event) {
+  elements.forEach(function(element) {
+   if (element) {
+    listenOnce(element, event, function() {
+     if (ctx.state === "suspended") ctx.resume();
+    });
+   }
+  });
+ });
+}
+
+function callRuntimeCallbacks(callbacks) {
+ while (callbacks.length > 0) {
+  var callback = callbacks.shift();
+  if (typeof callback == "function") {
+   callback(Module);
+   continue;
+  }
+  var func = callback.func;
+  if (typeof func == "number") {
+   if (callback.arg === undefined) {
+    (function() {
+     dynCall_v.call(null, func);
+    })();
+   } else {
+    (function(a1) {
+     dynCall_vi.apply(null, [ func, a1 ]);
+    })(callback.arg);
+   }
+  } else {
+   func(callback.arg === undefined ? null : callback.arg);
+  }
+ }
+}
+
+function withStackSave(f) {
+ var stack = stackSave();
+ var ret = f();
+ stackRestore(stack);
+ return ret;
+}
+
+function demangle(func) {
+ return func;
+}
+
+function demangleAll(text) {
+ var regex = /\b_Z[\w\d_]+/g;
+ return text.replace(regex, function(x) {
+  var y = demangle(x);
+  return x === y ? x : y + " [" + x + "]";
+ });
+}
+
+function dynCallLegacy(sig, ptr, args) {
+ var f = Module["dynCall_" + sig];
+ return args && args.length ? f.apply(null, [ ptr ].concat(args)) : f.call(null, ptr);
+}
+
+var wasmTableMirror = [];
+
+function getWasmTableEntry(funcPtr) {
+ var func = wasmTableMirror[funcPtr];
+ if (!func) {
+  if (funcPtr >= wasmTableMirror.length) wasmTableMirror.length = funcPtr + 1;
+  wasmTableMirror[funcPtr] = func = wasmTable.get(funcPtr);
+ }
+ return func;
+}
+
+function dynCall(sig, ptr, args) {
+ return dynCallLegacy(sig, ptr, args);
 }
 
 function killThread(pthread_ptr) {
- var worker = PThread.pthreads[pthread_ptr];
+ GROWABLE_HEAP_I32()[pthread_ptr >>> 2] = 0;
+ var pthread = PThread.pthreads[pthread_ptr];
  delete PThread.pthreads[pthread_ptr];
- worker.terminate();
+ pthread.worker.terminate();
  __emscripten_thread_free_data(pthread_ptr);
- PThread.runningWorkers.splice(PThread.runningWorkers.indexOf(worker), 1);
- worker.pthread_ptr = 0;
+ PThread.runningWorkers.splice(PThread.runningWorkers.indexOf(pthread.worker), 1);
+ pthread.worker.pthread = undefined;
 }
 
 function cancelThread(pthread_ptr) {
- var worker = PThread.pthreads[pthread_ptr];
- worker.postMessage({
+ var pthread = PThread.pthreads[pthread_ptr];
+ pthread.worker.postMessage({
   "cmd": "cancel"
  });
 }
 
 function cleanupThread(pthread_ptr) {
- var worker = PThread.pthreads[pthread_ptr];
- assert(worker);
- PThread.returnWorkerToPool(worker);
+ var pthread = PThread.pthreads[pthread_ptr];
+ if (pthread) {
+  GROWABLE_HEAP_I32()[pthread_ptr >>> 2] = 0;
+  var worker = pthread.worker;
+  PThread.returnWorkerToPool(worker);
+ }
 }
 
 function zeroMemory(address, size) {
  GROWABLE_HEAP_U8().fill(0, address, address + size);
- return address;
+}
+
+function ptrToString(ptr) {
+ return "0x" + ptr.toString(16).padStart(8, "0");
 }
 
 function spawnThread(threadParams) {
@@ -2781,18 +3286,21 @@ function spawnThread(threadParams) {
   return 6;
  }
  PThread.runningWorkers.push(worker);
- PThread.pthreads[threadParams.pthread_ptr] = worker;
- worker.pthread_ptr = threadParams.pthread_ptr;
+ var pthread = PThread.pthreads[threadParams.pthread_ptr] = {
+  worker: worker,
+  threadInfoStruct: threadParams.pthread_ptr
+ };
+ worker.pthread = pthread;
  var msg = {
   "cmd": "run",
   "start_routine": threadParams.startRoutine,
   "arg": threadParams.arg,
-  "pthread_ptr": threadParams.pthread_ptr
+  "threadInfoStruct": threadParams.pthread_ptr
  };
- worker.runPthread = () => {
+ worker.runPthread = (() => {
   msg.time = performance.now();
   worker.postMessage(msg, threadParams.transferList);
- };
+ });
  if (worker.loaded) {
   worker.runPthread();
   delete worker.runPthread;
@@ -2800,13 +3308,343 @@ function spawnThread(threadParams) {
  return 0;
 }
 
+function _exit(status) {
+ exit(status);
+}
+
+function handleException(e) {
+ if (e instanceof ExitStatus || e == "unwind") {
+  return EXITSTATUS;
+ }
+ quit_(1, e);
+}
+
+var PThread = {
+ unusedWorkers: [],
+ runningWorkers: [],
+ tlsInitFunctions: [],
+ init: function() {
+  if (ENVIRONMENT_IS_PTHREAD) {
+   PThread.initWorker();
+  } else {
+   PThread.initMainThread();
+  }
+ },
+ initMainThread: function() {
+  var pthreadPoolSize = 8;
+  for (var i = 0; i < pthreadPoolSize; ++i) {
+   PThread.allocateUnusedWorker();
+  }
+ },
+ initWorker: function() {
+  noExitRuntime = false;
+ },
+ pthreads: {},
+ setExitStatus: function(status) {
+  EXITSTATUS = status;
+ },
+ terminateAllThreads: function() {
+  for (var t in PThread.pthreads) {
+   var pthread = PThread.pthreads[t];
+   if (pthread && pthread.worker) {
+    PThread.returnWorkerToPool(pthread.worker);
+   }
+  }
+  for (var i = 0; i < PThread.unusedWorkers.length; ++i) {
+   var worker = PThread.unusedWorkers[i];
+   worker.terminate();
+  }
+  PThread.unusedWorkers = [];
+ },
+ returnWorkerToPool: function(worker) {
+  PThread.runWithoutMainThreadQueuedCalls(function() {
+   delete PThread.pthreads[worker.pthread.threadInfoStruct];
+   PThread.unusedWorkers.push(worker);
+   PThread.runningWorkers.splice(PThread.runningWorkers.indexOf(worker), 1);
+   __emscripten_thread_free_data(worker.pthread.threadInfoStruct);
+   worker.pthread = undefined;
+  });
+ },
+ runWithoutMainThreadQueuedCalls: function(func) {
+  GROWABLE_HEAP_I32()[__emscripten_allow_main_runtime_queued_calls >>> 2] = 0;
+  try {
+   func();
+  } finally {
+   GROWABLE_HEAP_I32()[__emscripten_allow_main_runtime_queued_calls >>> 2] = 1;
+  }
+ },
+ receiveObjectTransfer: function(data) {},
+ threadInit: function() {
+  for (var i in PThread.tlsInitFunctions) {
+   if (PThread.tlsInitFunctions.hasOwnProperty(i)) PThread.tlsInitFunctions[i]();
+  }
+ },
+ loadWasmModuleToWorker: function(worker, onFinishedLoading) {
+  worker.onmessage = (e => {
+   var d = e["data"];
+   var cmd = d["cmd"];
+   if (worker.pthread) PThread.currentProxiedOperationCallerThread = worker.pthread.threadInfoStruct;
+   if (d["targetThread"] && d["targetThread"] != _pthread_self()) {
+    var thread = PThread.pthreads[d.targetThread];
+    if (thread) {
+     thread.worker.postMessage(d, d["transferList"]);
+    } else {
+     err('Internal error! Worker sent a message "' + cmd + '" to target pthread ' + d["targetThread"] + ", but that thread no longer exists!");
+    }
+    PThread.currentProxiedOperationCallerThread = undefined;
+    return;
+   }
+   if (cmd === "processProxyingQueue") {
+    _emscripten_proxy_execute_queue(d["queue"]);
+    Atomics.sub(GROWABLE_HEAP_I32(), d["queue"] >> 2, 1);
+   } else if (cmd === "spawnThread") {
+    spawnThread(d);
+   } else if (cmd === "cleanupThread") {
+    cleanupThread(d["thread"]);
+   } else if (cmd === "killThread") {
+    killThread(d["thread"]);
+   } else if (cmd === "cancelThread") {
+    cancelThread(d["thread"]);
+   } else if (cmd === "loaded") {
+    worker.loaded = true;
+    if (onFinishedLoading) onFinishedLoading(worker);
+    if (worker.runPthread) {
+     worker.runPthread();
+     delete worker.runPthread;
+    }
+   } else if (cmd === "print") {
+    out("Thread " + d["threadId"] + ": " + d["text"]);
+   } else if (cmd === "printErr") {
+    err("Thread " + d["threadId"] + ": " + d["text"]);
+   } else if (cmd === "alert") {
+    alert("Thread " + d["threadId"] + ": " + d["text"]);
+   } else if (d.target === "setimmediate") {
+    worker.postMessage(d);
+   } else if (cmd === "onAbort") {
+    if (Module["onAbort"]) {
+     Module["onAbort"](d["arg"]);
+    }
+   } else if (cmd) {
+    err("worker sent an unknown command " + cmd);
+   }
+   PThread.currentProxiedOperationCallerThread = undefined;
+  });
+  worker.onerror = (e => {
+   var message = "worker sent an error!";
+   err(message + " " + e.filename + ":" + e.lineno + ": " + e.message);
+   throw e;
+  });
+  if (ENVIRONMENT_IS_NODE) {
+   worker.on("message", function(data) {
+    worker.onmessage({
+     data: data
+    });
+   });
+   worker.on("error", function(e) {
+    worker.onerror(e);
+   });
+   worker.on("detachedExit", function() {});
+  }
+  worker.postMessage({
+   "cmd": "load",
+   "urlOrBlob": Module["mainScriptUrlOrBlob"] || _scriptDir,
+   "wasmMemory": wasmMemory,
+   "wasmModule": wasmModule
+  });
+ },
+ allocateUnusedWorker: function() {
+  var pthreadMainJs = locateFile("yazr.worker.js");
+  PThread.unusedWorkers.push(new Worker(pthreadMainJs));
+ },
+ getNewWorker: function() {
+  if (PThread.unusedWorkers.length == 0) {
+   PThread.allocateUnusedWorker();
+   PThread.loadWasmModuleToWorker(PThread.unusedWorkers[0]);
+  }
+  return PThread.unusedWorkers.pop();
+ }
+};
+
+function establishStackSpace() {
+ var pthread_ptr = _pthread_self();
+ var stackTop = GROWABLE_HEAP_I32()[pthread_ptr + 44 >>> 2];
+ var stackSize = GROWABLE_HEAP_I32()[pthread_ptr + 48 >>> 2];
+ var stackMax = stackTop - stackSize;
+ _emscripten_stack_set_limits(stackTop, stackMax);
+ stackRestore(stackTop);
+}
+
+Module["establishStackSpace"] = establishStackSpace;
+
+function exitOnMainThread(returnCode) {
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(1, 0, returnCode);
+ try {
+  _exit(returnCode);
+ } catch (e) {
+  handleException(e);
+ }
+}
+
+function invokeEntryPoint(ptr, arg) {
+ return function(a1) {
+  return dynCall_ii.apply(null, [ ptr, a1 ]);
+ }(arg);
+}
+
+Module["invokeEntryPoint"] = invokeEntryPoint;
+
+function jsStackTrace() {
+ var error = new Error();
+ if (!error.stack) {
+  try {
+   throw new Error();
+  } catch (e) {
+   error = e;
+  }
+  if (!error.stack) {
+   return "(no stack trace available)";
+  }
+ }
+ return error.stack.toString();
+}
+
+function registerTlsInit(tlsInitFunc) {
+ PThread.tlsInitFunctions.push(tlsInitFunc);
+}
+
+function setWasmTableEntry(idx, func) {
+ wasmTable.set(idx, func);
+ wasmTableMirror[idx] = func;
+}
+
+function stackTrace() {
+ var js = jsStackTrace();
+ if (Module["extraStackTrace"]) js += "\n" + Module["extraStackTrace"]();
+ return demangleAll(js);
+}
+
+function ___assert_fail(condition, filename, line, func) {
+ abort("Assertion failed: " + UTF8ToString(condition) + ", at: " + [ filename ? UTF8ToString(filename) : "unknown filename", line, func ? UTF8ToString(func) : "unknown function" ]);
+}
+
+function ___call_sighandler(fp, sig) {
+ (function(a1) {
+  dynCall_vi.apply(null, [ fp, a1 ]);
+ })(sig);
+}
+
+function ___cxa_allocate_exception(size) {
+ return _malloc(size + 16) + 16;
+}
+
+function ExceptionInfo(excPtr) {
+ this.excPtr = excPtr;
+ this.ptr = excPtr - 16;
+ this.set_type = function(type) {
+  GROWABLE_HEAP_I32()[this.ptr + 4 >>> 2] = type;
+ };
+ this.get_type = function() {
+  return GROWABLE_HEAP_I32()[this.ptr + 4 >>> 2];
+ };
+ this.set_destructor = function(destructor) {
+  GROWABLE_HEAP_I32()[this.ptr + 8 >>> 2] = destructor;
+ };
+ this.get_destructor = function() {
+  return GROWABLE_HEAP_I32()[this.ptr + 8 >>> 2];
+ };
+ this.set_refcount = function(refcount) {
+  GROWABLE_HEAP_I32()[this.ptr >>> 2] = refcount;
+ };
+ this.set_caught = function(caught) {
+  caught = caught ? 1 : 0;
+  GROWABLE_HEAP_I8()[this.ptr + 12 >>> 0] = caught;
+ };
+ this.get_caught = function() {
+  return GROWABLE_HEAP_I8()[this.ptr + 12 >>> 0] != 0;
+ };
+ this.set_rethrown = function(rethrown) {
+  rethrown = rethrown ? 1 : 0;
+  GROWABLE_HEAP_I8()[this.ptr + 13 >>> 0] = rethrown;
+ };
+ this.get_rethrown = function() {
+  return GROWABLE_HEAP_I8()[this.ptr + 13 >>> 0] != 0;
+ };
+ this.init = function(type, destructor) {
+  this.set_type(type);
+  this.set_destructor(destructor);
+  this.set_refcount(0);
+  this.set_caught(false);
+  this.set_rethrown(false);
+ };
+ this.add_ref = function() {
+  Atomics.add(GROWABLE_HEAP_I32(), this.ptr + 0 >> 2, 1);
+ };
+ this.release_ref = function() {
+  var prev = Atomics.sub(GROWABLE_HEAP_I32(), this.ptr + 0 >> 2, 1);
+  return prev === 1;
+ };
+}
+
+var exceptionLast = 0;
+
+var uncaughtExceptionCount = 0;
+
+function ___cxa_throw(ptr, type, destructor) {
+ var info = new ExceptionInfo(ptr);
+ info.init(type, destructor);
+ exceptionLast = ptr;
+ uncaughtExceptionCount++;
+ throw ptr;
+}
+
+function ___emscripten_init_main_thread_js(tb) {
+ __emscripten_thread_init(tb, !ENVIRONMENT_IS_WORKER, 1, !ENVIRONMENT_IS_WEB);
+ PThread.threadInit();
+}
+
+function ___emscripten_thread_cleanup(thread) {
+ if (!ENVIRONMENT_IS_PTHREAD) cleanupThread(thread); else postMessage({
+  "cmd": "cleanupThread",
+  "thread": thread
+ });
+}
+
+function pthreadCreateProxied(pthread_ptr, attr, start_routine, arg) {
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(2, 1, pthread_ptr, attr, start_routine, arg);
+ return ___pthread_create_js(pthread_ptr, attr, start_routine, arg);
+}
+
+function ___pthread_create_js(pthread_ptr, attr, start_routine, arg) {
+ if (typeof SharedArrayBuffer == "undefined") {
+  err("Current environment does not support SharedArrayBuffer, pthreads are not available!");
+  return 6;
+ }
+ var transferList = [];
+ var error = 0;
+ if (ENVIRONMENT_IS_PTHREAD && (transferList.length === 0 || error)) {
+  return pthreadCreateProxied(pthread_ptr, attr, start_routine, arg);
+ }
+ if (error) return error;
+ var threadParams = {
+  startRoutine: start_routine,
+  pthread_ptr: pthread_ptr,
+  arg: arg,
+  transferList: transferList
+ };
+ if (ENVIRONMENT_IS_PTHREAD) {
+  threadParams.cmd = "spawnThread";
+  postMessage(threadParams, transferList);
+  return 0;
+ }
+ return spawnThread(threadParams);
+}
+
 var PATH = {
- isAbs: path => path.charAt(0) === "/",
- splitPath: filename => {
+ splitPath: function(filename) {
   var splitPathRe = /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
   return splitPathRe.exec(filename).slice(1);
  },
- normalizeArray: (parts, allowAboveRoot) => {
+ normalizeArray: function(parts, allowAboveRoot) {
   var up = 0;
   for (var i = parts.length - 1; i >= 0; i--) {
    var last = parts[i];
@@ -2827,9 +3665,11 @@ var PATH = {
   }
   return parts;
  },
- normalize: path => {
-  var isAbsolute = PATH.isAbs(path), trailingSlash = path.substr(-1) === "/";
-  path = PATH.normalizeArray(path.split("/").filter(p => !!p), !isAbsolute).join("/");
+ normalize: function(path) {
+  var isAbsolute = path.charAt(0) === "/", trailingSlash = path.substr(-1) === "/";
+  path = PATH.normalizeArray(path.split("/").filter(function(p) {
+   return !!p;
+  }), !isAbsolute).join("/");
   if (!path && !isAbsolute) {
    path = ".";
   }
@@ -2838,7 +3678,7 @@ var PATH = {
   }
   return (isAbsolute ? "/" : "") + path;
  },
- dirname: path => {
+ dirname: function(path) {
   var result = PATH.splitPath(path), root = result[0], dir = result[1];
   if (!root && !dir) {
    return ".";
@@ -2848,7 +3688,7 @@ var PATH = {
   }
   return root + dir;
  },
- basename: path => {
+ basename: function(path) {
   if (path === "/") return "/";
   path = PATH.normalize(path);
   path = path.replace(/\/$/, "");
@@ -2856,11 +3696,14 @@ var PATH = {
   if (lastSlash === -1) return path;
   return path.substr(lastSlash + 1);
  },
+ extname: function(path) {
+  return PATH.splitPath(path)[3];
+ },
  join: function() {
-  var paths = Array.prototype.slice.call(arguments);
+  var paths = Array.prototype.slice.call(arguments, 0);
   return PATH.normalize(paths.join("/"));
  },
- join2: (l, r) => {
+ join2: function(l, r) {
   return PATH.normalize(l + "/" + r);
  }
 };
@@ -2868,17 +3711,21 @@ var PATH = {
 function getRandomDevice() {
  if (typeof crypto == "object" && typeof crypto["getRandomValues"] == "function") {
   var randomBuffer = new Uint8Array(1);
-  return () => {
+  return function() {
    crypto.getRandomValues(randomBuffer);
    return randomBuffer[0];
   };
  } else if (ENVIRONMENT_IS_NODE) {
   try {
    var crypto_module = require("crypto");
-   return () => crypto_module["randomBytes"](1)[0];
+   return function() {
+    return crypto_module["randomBytes"](1)[0];
+   };
   } catch (e) {}
  }
- return () => abort("randomDevice");
+ return function() {
+  abort("randomDevice");
+ };
 }
 
 var PATH_FS = {
@@ -2892,12 +3739,14 @@ var PATH_FS = {
     return "";
    }
    resolvedPath = path + "/" + resolvedPath;
-   resolvedAbsolute = PATH.isAbs(path);
+   resolvedAbsolute = path.charAt(0) === "/";
   }
-  resolvedPath = PATH.normalizeArray(resolvedPath.split("/").filter(p => !!p), !resolvedAbsolute).join("/");
+  resolvedPath = PATH.normalizeArray(resolvedPath.split("/").filter(function(p) {
+   return !!p;
+  }), !resolvedAbsolute).join("/");
   return (resolvedAbsolute ? "/" : "") + resolvedPath || ".";
  },
- relative: (from, to) => {
+ relative: function(from, to) {
   from = PATH_FS.resolve(from).substr(1);
   to = PATH_FS.resolve(to).substr(1);
   function trim(arr) {
@@ -2931,14 +3780,6 @@ var PATH_FS = {
  }
 };
 
-function intArrayFromString(stringy, dontAddNull, length) {
- var len = length > 0 ? length : lengthBytesUTF8(stringy) + 1;
- var u8array = new Array(len);
- var numBytesWritten = stringToUTF8Array(stringy, u8array, 0, u8array.length);
- if (dontAddNull) u8array.length = numBytesWritten;
- return u8array;
-}
-
 var TTY = {
  ttys: [],
  init: function() {},
@@ -2961,10 +3802,10 @@ var TTY = {
    stream.seekable = false;
   },
   close: function(stream) {
-   stream.tty.ops.fsync(stream.tty);
+   stream.tty.ops.flush(stream.tty);
   },
-  fsync: function(stream) {
-   stream.tty.ops.fsync(stream.tty);
+  flush: function(stream) {
+   stream.tty.ops.flush(stream.tty);
   },
   read: function(stream, buffer, offset, length, pos) {
    if (!stream.tty || !stream.tty.ops.get_char) {
@@ -3051,7 +3892,7 @@ var TTY = {
     if (val != 0) tty.output.push(val);
    }
   },
-  fsync: function(tty) {
+  flush: function(tty) {
    if (tty.output && tty.output.length > 0) {
     out(UTF8ArrayToString(tty.output, 0));
     tty.output = [];
@@ -3067,7 +3908,7 @@ var TTY = {
     if (val != 0) tty.output.push(val);
    }
   },
-  fsync: function(tty) {
+  flush: function(tty) {
    if (tty.output && tty.output.length > 0) {
     err(UTF8ArrayToString(tty.output, 0));
     tty.output = [];
@@ -3084,7 +3925,8 @@ function mmapAlloc(size) {
  size = alignMemory(size, 65536);
  var ptr = _emscripten_builtin_memalign(65536, size);
  if (!ptr) return 0;
- return zeroMemory(ptr, size);
+ zeroMemory(ptr, size);
+ return ptr;
 }
 
 var MEMFS = {
@@ -3358,7 +4200,10 @@ var MEMFS = {
    MEMFS.expandFileStorage(stream.node, offset + length);
    stream.node.usedBytes = Math.max(stream.node.usedBytes, offset + length);
   },
-  mmap: function(stream, length, position, prot, flags) {
+  mmap: function(stream, address, length, position, prot, flags) {
+   if (address !== 0) {
+    throw new FS.ErrnoError(28);
+   }
    if (!FS.isFile(stream.node.mode)) {
     throw new FS.ErrnoError(43);
    }
@@ -3404,11 +4249,11 @@ var MEMFS = {
 
 function asyncLoad(url, onload, onerror, noRunDep) {
  var dep = !noRunDep ? getUniqueRunDependency("al " + url) : "";
- readAsync(url, arrayBuffer => {
+ readAsync(url, function(arrayBuffer) {
   assert(arrayBuffer, 'Loading data file "' + url + '" failed (no arrayBuffer).');
   onload(new Uint8Array(arrayBuffer));
   if (dep) removeRunDependency(dep);
- }, event => {
+ }, function(event) {
   if (onerror) {
    onerror();
   } else {
@@ -3667,11 +4512,8 @@ var FS = {
  getStream: fd => FS.streams[fd],
  createStream: (stream, fd_start, fd_end) => {
   if (!FS.FSStream) {
-   FS.FSStream = function() {
-    this.shared = {};
-   };
-   FS.FSStream.prototype = {};
-   Object.defineProperties(FS.FSStream.prototype, {
+   FS.FSStream = function() {};
+   FS.FSStream.prototype = {
     object: {
      get: function() {
       return this.node;
@@ -3694,24 +4536,8 @@ var FS = {
      get: function() {
       return this.flags & 1024;
      }
-    },
-    flags: {
-     get: function() {
-      return this.shared.flags;
-     },
-     set: function(val) {
-      this.shared.flags = val;
-     }
-    },
-    position: {
-     get: function() {
-      return this.shared.position;
-     },
-     set: function(val) {
-      this.shared.position = val;
-     }
     }
-   });
+   };
   }
   stream = Object.assign(new FS.FSStream(), stream);
   var fd = FS.nextfd(fd_start, fd_end);
@@ -4173,7 +4999,7 @@ var FS = {
    timestamp: Math.max(atime, mtime)
   });
  },
- open: (path, flags, mode) => {
+ open: (path, flags, mode, fd_start, fd_end) => {
   if (path === "") {
    throw new FS.ErrnoError(44);
   }
@@ -4222,7 +5048,7 @@ var FS = {
     throw new FS.ErrnoError(errCode);
    }
   }
-  if (flags & 512 && !created) {
+  if (flags & 512) {
    FS.truncate(node, 0);
   }
   flags &= ~(128 | 512 | 131072);
@@ -4235,7 +5061,7 @@ var FS = {
    stream_ops: node.stream_ops,
    ungotten: [],
    error: false
-  });
+  }, fd_start, fd_end);
   if (stream.stream_ops.open) {
    stream.stream_ops.open(stream);
   }
@@ -4355,7 +5181,8 @@ var FS = {
   }
   stream.stream_ops.allocate(stream, offset, length);
  },
- mmap: (stream, length, position, prot, flags) => {
+ mmap: (stream, address, length, position, prot, flags) => {
+  address >>>= 0;
   if ((prot & 2) !== 0 && (flags & 2) === 0 && (stream.flags & 2097155) !== 2) {
    throw new FS.ErrnoError(2);
   }
@@ -4365,7 +5192,7 @@ var FS = {
   if (!stream.stream_ops.mmap) {
    throw new FS.ErrnoError(43);
   }
-  return stream.stream_ops.mmap(stream, length, position, prot, flags);
+  return stream.stream_ops.mmap(stream, address, length, position, prot, flags);
  },
  msync: (stream, buffer, offset, length, mmapFlags) => {
   offset >>>= 0;
@@ -4557,10 +5384,11 @@ var FS = {
  },
  findObject: (path, dontResolveLastLink) => {
   var ret = FS.analyzePath(path, dontResolveLastLink);
-  if (!ret.exists) {
+  if (ret.exists) {
+   return ret.object;
+  } else {
    return null;
   }
-  return ret.object;
  },
  analyzePath: (path, dontResolveLastLink) => {
   try {
@@ -4749,8 +5577,9 @@ var FS = {
     if (!(xhr.status >= 200 && xhr.status < 300 || xhr.status === 304)) throw new Error("Couldn't load " + url + ". Status: " + xhr.status);
     if (xhr.response !== undefined) {
      return new Uint8Array(xhr.response || []);
+    } else {
+     return intArrayFromString(xhr.responseText || "", true);
     }
-    return intArrayFromString(xhr.responseText || "", true);
    };
    var lazyArray = this;
    lazyArray.setDataGetter(chunkNum => {
@@ -4827,7 +5656,8 @@ var FS = {
     return fn.apply(null, arguments);
    };
   });
-  function writeChunks(stream, buffer, offset, length, position) {
+  stream_ops.read = ((stream, buffer, offset, length, position) => {
+   FS.forceLoadFile(node);
    var contents = stream.node.contents;
    if (position >= contents.length) return 0;
    var size = Math.min(contents.length - position, length);
@@ -4841,23 +5671,7 @@ var FS = {
     }
    }
    return size;
-  }
-  stream_ops.read = (stream, buffer, offset, length, position) => {
-   FS.forceLoadFile(node);
-   return writeChunks(stream, buffer, offset, length, position);
-  };
-  stream_ops.mmap = (stream, length, position, prot, flags) => {
-   FS.forceLoadFile(node);
-   var ptr = mmapAlloc(length);
-   if (!ptr) {
-    throw new FS.ErrnoError(48);
-   }
-   writeChunks(stream, GROWABLE_HEAP_I8(), ptr, length, position);
-   return {
-    ptr: ptr,
-    allocated: true
-   };
-  };
+  });
   node.stream_ops = stream_ops;
   return node;
  },
@@ -4905,12 +5719,12 @@ var FS = {
   } catch (e) {
    return onerror(e);
   }
-  openRequest.onupgradeneeded = () => {
+  openRequest.onupgradeneeded = (() => {
    out("creating db");
    var db = openRequest.result;
    db.createObjectStore(FS.DB_STORE_NAME);
-  };
-  openRequest.onsuccess = () => {
+  });
+  openRequest.onsuccess = (() => {
    var db = openRequest.result;
    var transaction = db.transaction([ FS.DB_STORE_NAME ], "readwrite");
    var files = transaction.objectStore(FS.DB_STORE_NAME);
@@ -4920,17 +5734,17 @@ var FS = {
    }
    paths.forEach(path => {
     var putRequest = files.put(FS.analyzePath(path).object.contents, path);
-    putRequest.onsuccess = () => {
+    putRequest.onsuccess = (() => {
      ok++;
      if (ok + fail == total) finish();
-    };
-    putRequest.onerror = () => {
+    });
+    putRequest.onerror = (() => {
      fail++;
      if (ok + fail == total) finish();
-    };
+    });
    });
    transaction.onerror = onerror;
-  };
+  });
   openRequest.onerror = onerror;
  },
  loadFilesFromDB: (paths, onload, onerror) => {
@@ -4943,7 +5757,7 @@ var FS = {
    return onerror(e);
   }
   openRequest.onupgradeneeded = onerror;
-  openRequest.onsuccess = () => {
+  openRequest.onsuccess = (() => {
    var db = openRequest.result;
    try {
     var transaction = db.transaction([ FS.DB_STORE_NAME ], "readonly");
@@ -4958,21 +5772,21 @@ var FS = {
    }
    paths.forEach(path => {
     var getRequest = files.get(path);
-    getRequest.onsuccess = () => {
+    getRequest.onsuccess = (() => {
      if (FS.analyzePath(path).exists) {
       FS.unlink(path);
      }
      FS.createDataFile(PATH.dirname(path), PATH.basename(path), getRequest.result, true, true, true);
      ok++;
      if (ok + fail == total) finish();
-    };
-    getRequest.onerror = () => {
+    });
+    getRequest.onerror = (() => {
      fail++;
      if (ok + fail == total) finish();
-    };
+    });
    });
    transaction.onerror = onerror;
-  };
+  });
   openRequest.onerror = onerror;
  }
 };
@@ -4980,14 +5794,15 @@ var FS = {
 var SYSCALLS = {
  DEFAULT_POLLMASK: 5,
  calculateAt: function(dirfd, path, allowEmpty) {
-  if (PATH.isAbs(path)) {
+  if (path[0] === "/") {
    return path;
   }
   var dir;
   if (dirfd === -100) {
    dir = FS.cwd();
   } else {
-   var dirstream = SYSCALLS.getStreamFromFD(dirfd);
+   var dirstream = FS.getStream(dirfd);
+   if (!dirstream) throw new FS.ErrnoError(8);
    dir = dirstream.path;
   }
   if (path.length == 0) {
@@ -5008,35 +5823,104 @@ var SYSCALLS = {
    throw e;
   }
   GROWABLE_HEAP_I32()[buf >>> 2] = stat.dev;
+  GROWABLE_HEAP_I32()[buf + 4 >>> 2] = 0;
   GROWABLE_HEAP_I32()[buf + 8 >>> 2] = stat.ino;
   GROWABLE_HEAP_I32()[buf + 12 >>> 2] = stat.mode;
-  GROWABLE_HEAP_U32()[buf + 16 >>> 2] = stat.nlink;
+  GROWABLE_HEAP_I32()[buf + 16 >>> 2] = stat.nlink;
   GROWABLE_HEAP_I32()[buf + 20 >>> 2] = stat.uid;
   GROWABLE_HEAP_I32()[buf + 24 >>> 2] = stat.gid;
   GROWABLE_HEAP_I32()[buf + 28 >>> 2] = stat.rdev;
+  GROWABLE_HEAP_I32()[buf + 32 >>> 2] = 0;
   tempI64 = [ stat.size >>> 0, (tempDouble = stat.size, +Math.abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math.min(+Math.floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math.ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0) ], 
   GROWABLE_HEAP_I32()[buf + 40 >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[buf + 44 >>> 2] = tempI64[1];
   GROWABLE_HEAP_I32()[buf + 48 >>> 2] = 4096;
   GROWABLE_HEAP_I32()[buf + 52 >>> 2] = stat.blocks;
-  tempI64 = [ Math.floor(stat.atime.getTime() / 1e3) >>> 0, (tempDouble = Math.floor(stat.atime.getTime() / 1e3), 
-  +Math.abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math.min(+Math.floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math.ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0) ], 
-  GROWABLE_HEAP_I32()[buf + 56 >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[buf + 60 >>> 2] = tempI64[1];
-  GROWABLE_HEAP_U32()[buf + 64 >>> 2] = 0;
-  tempI64 = [ Math.floor(stat.mtime.getTime() / 1e3) >>> 0, (tempDouble = Math.floor(stat.mtime.getTime() / 1e3), 
-  +Math.abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math.min(+Math.floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math.ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0) ], 
-  GROWABLE_HEAP_I32()[buf + 72 >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[buf + 76 >>> 2] = tempI64[1];
-  GROWABLE_HEAP_U32()[buf + 80 >>> 2] = 0;
-  tempI64 = [ Math.floor(stat.ctime.getTime() / 1e3) >>> 0, (tempDouble = Math.floor(stat.ctime.getTime() / 1e3), 
-  +Math.abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math.min(+Math.floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math.ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0) ], 
-  GROWABLE_HEAP_I32()[buf + 88 >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[buf + 92 >>> 2] = tempI64[1];
-  GROWABLE_HEAP_U32()[buf + 96 >>> 2] = 0;
+  GROWABLE_HEAP_I32()[buf + 56 >>> 2] = stat.atime.getTime() / 1e3 | 0;
+  GROWABLE_HEAP_I32()[buf + 60 >>> 2] = 0;
+  GROWABLE_HEAP_I32()[buf + 64 >>> 2] = stat.mtime.getTime() / 1e3 | 0;
+  GROWABLE_HEAP_I32()[buf + 68 >>> 2] = 0;
+  GROWABLE_HEAP_I32()[buf + 72 >>> 2] = stat.ctime.getTime() / 1e3 | 0;
+  GROWABLE_HEAP_I32()[buf + 76 >>> 2] = 0;
   tempI64 = [ stat.ino >>> 0, (tempDouble = stat.ino, +Math.abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math.min(+Math.floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math.ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0) ], 
-  GROWABLE_HEAP_I32()[buf + 104 >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[buf + 108 >>> 2] = tempI64[1];
+  GROWABLE_HEAP_I32()[buf + 80 >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[buf + 84 >>> 2] = tempI64[1];
   return 0;
  },
  doMsync: function(addr, stream, len, flags, offset) {
   var buffer = GROWABLE_HEAP_U8().slice(addr, addr + len);
   FS.msync(stream, buffer, offset, len, flags);
+ },
+ doMkdir: function(path, mode) {
+  path = PATH.normalize(path);
+  if (path[path.length - 1] === "/") path = path.substr(0, path.length - 1);
+  FS.mkdir(path, mode, 0);
+  return 0;
+ },
+ doMknod: function(path, mode, dev) {
+  switch (mode & 61440) {
+  case 32768:
+  case 8192:
+  case 24576:
+  case 4096:
+  case 49152:
+   break;
+
+  default:
+   return -28;
+  }
+  FS.mknod(path, mode, dev);
+  return 0;
+ },
+ doReadlink: function(path, buf, bufsize) {
+  if (bufsize <= 0) return -28;
+  var ret = FS.readlink(path);
+  var len = Math.min(bufsize, lengthBytesUTF8(ret));
+  var endChar = GROWABLE_HEAP_I8()[buf + len >>> 0];
+  stringToUTF8(ret, buf, bufsize + 1);
+  GROWABLE_HEAP_I8()[buf + len >>> 0] = endChar;
+  return len;
+ },
+ doAccess: function(path, amode) {
+  if (amode & ~7) {
+   return -28;
+  }
+  var lookup = FS.lookupPath(path, {
+   follow: true
+  });
+  var node = lookup.node;
+  if (!node) {
+   return -44;
+  }
+  var perms = "";
+  if (amode & 4) perms += "r";
+  if (amode & 2) perms += "w";
+  if (amode & 1) perms += "x";
+  if (perms && FS.nodePermissions(node, perms)) {
+   return -2;
+  }
+  return 0;
+ },
+ doReadv: function(stream, iov, iovcnt, offset) {
+  var ret = 0;
+  for (var i = 0; i < iovcnt; i++) {
+   var ptr = GROWABLE_HEAP_I32()[iov + i * 8 >>> 2];
+   var len = GROWABLE_HEAP_I32()[iov + (i * 8 + 4) >>> 2];
+   var curr = FS.read(stream, GROWABLE_HEAP_I8(), ptr, len, offset);
+   if (curr < 0) return -1;
+   ret += curr;
+   if (curr < len) break;
+  }
+  return ret;
+ },
+ doWritev: function(stream, iov, iovcnt, offset) {
+  var ret = 0;
+  for (var i = 0; i < iovcnt; i++) {
+   var ptr = GROWABLE_HEAP_I32()[iov + i * 8 >>> 2];
+   var len = GROWABLE_HEAP_I32()[iov + (i * 8 + 4) >>> 2];
+   var curr = FS.write(stream, GROWABLE_HEAP_I8(), ptr, len, offset);
+   if (curr < 0) return -1;
+   ret += curr;
+  }
+  return ret;
  },
  varargs: undefined,
  get: function() {
@@ -5052,508 +5936,14 @@ var SYSCALLS = {
   var stream = FS.getStream(fd);
   if (!stream) throw new FS.ErrnoError(8);
   return stream;
+ },
+ get64: function(low, high) {
+  return low;
  }
 };
-
-function _proc_exit(code) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(1, 1, code);
- EXITSTATUS = code;
- if (!keepRuntimeAlive()) {
-  PThread.terminateAllThreads();
-  if (Module["onExit"]) Module["onExit"](code);
-  ABORT = true;
- }
- quit_(code, new ExitStatus(code));
-}
-
-function exitJS(status, implicit) {
- EXITSTATUS = status;
- if (!implicit) {
-  if (ENVIRONMENT_IS_PTHREAD) {
-   exitOnMainThread(status);
-   throw "unwind";
-  } else {}
- }
- _proc_exit(status);
-}
-
-var _exit = exitJS;
-
-function handleException(e) {
- if (e instanceof ExitStatus || e == "unwind") {
-  return EXITSTATUS;
- }
- quit_(1, e);
-}
-
-var PThread = {
- unusedWorkers: [],
- runningWorkers: [],
- tlsInitFunctions: [],
- pthreads: {},
- init: function() {
-  if (ENVIRONMENT_IS_PTHREAD) {
-   PThread.initWorker();
-  } else {
-   PThread.initMainThread();
-  }
- },
- initMainThread: function() {
-  var pthreadPoolSize = 8;
-  while (pthreadPoolSize--) {
-   PThread.allocateUnusedWorker();
-  }
- },
- initWorker: function() {
-  noExitRuntime = false;
- },
- setExitStatus: function(status) {
-  EXITSTATUS = status;
- },
- terminateAllThreads: function() {
-  for (var worker of Object.values(PThread.pthreads)) {
-   PThread.returnWorkerToPool(worker);
-  }
-  for (var worker of PThread.unusedWorkers) {
-   worker.terminate();
-  }
-  PThread.unusedWorkers = [];
- },
- returnWorkerToPool: function(worker) {
-  var pthread_ptr = worker.pthread_ptr;
-  delete PThread.pthreads[pthread_ptr];
-  PThread.unusedWorkers.push(worker);
-  PThread.runningWorkers.splice(PThread.runningWorkers.indexOf(worker), 1);
-  worker.pthread_ptr = 0;
-  __emscripten_thread_free_data(pthread_ptr);
- },
- receiveObjectTransfer: function(data) {},
- threadInitTLS: function() {
-  PThread.tlsInitFunctions.forEach(f => f());
- },
- loadWasmModuleToWorker: function(worker, onFinishedLoading) {
-  worker.onmessage = e => {
-   var d = e["data"];
-   var cmd = d["cmd"];
-   if (worker.pthread_ptr) PThread.currentProxiedOperationCallerThread = worker.pthread_ptr;
-   if (d["targetThread"] && d["targetThread"] != _pthread_self()) {
-    var targetWorker = PThread.pthreads[d.targetThread];
-    if (targetWorker) {
-     targetWorker.postMessage(d, d["transferList"]);
-    } else {
-     err('Internal error! Worker sent a message "' + cmd + '" to target pthread ' + d["targetThread"] + ", but that thread no longer exists!");
-    }
-    PThread.currentProxiedOperationCallerThread = undefined;
-    return;
-   }
-   if (cmd === "processProxyingQueue") {
-    executeNotifiedProxyingQueue(d["queue"]);
-   } else if (cmd === "spawnThread") {
-    spawnThread(d);
-   } else if (cmd === "cleanupThread") {
-    cleanupThread(d["thread"]);
-   } else if (cmd === "killThread") {
-    killThread(d["thread"]);
-   } else if (cmd === "cancelThread") {
-    cancelThread(d["thread"]);
-   } else if (cmd === "loaded") {
-    worker.loaded = true;
-    if (onFinishedLoading) onFinishedLoading(worker);
-    if (worker.runPthread) {
-     worker.runPthread();
-     delete worker.runPthread;
-    }
-   } else if (cmd === "print") {
-    out("Thread " + d["threadId"] + ": " + d["text"]);
-   } else if (cmd === "printErr") {
-    err("Thread " + d["threadId"] + ": " + d["text"]);
-   } else if (cmd === "alert") {
-    alert("Thread " + d["threadId"] + ": " + d["text"]);
-   } else if (d.target === "setimmediate") {
-    worker.postMessage(d);
-   } else if (cmd === "onAbort") {
-    if (Module["onAbort"]) {
-     Module["onAbort"](d["arg"]);
-    }
-   } else if (cmd) {
-    err("worker sent an unknown command " + cmd);
-   }
-   PThread.currentProxiedOperationCallerThread = undefined;
-  };
-  worker.onerror = e => {
-   var message = "worker sent an error!";
-   err(message + " " + e.filename + ":" + e.lineno + ": " + e.message);
-   throw e;
-  };
-  if (ENVIRONMENT_IS_NODE) {
-   worker.on("message", function(data) {
-    worker.onmessage({
-     data: data
-    });
-   });
-   worker.on("error", function(e) {
-    worker.onerror(e);
-   });
-   worker.on("detachedExit", function() {});
-  }
-  worker.postMessage({
-   "cmd": "load",
-   "urlOrBlob": Module["mainScriptUrlOrBlob"] || _scriptDir,
-   "wasmMemory": wasmMemory,
-   "wasmModule": wasmModule
-  });
- },
- allocateUnusedWorker: function() {
-  var pthreadMainJs = locateFile("yazr.worker.js");
-  PThread.unusedWorkers.push(new Worker(pthreadMainJs));
- },
- getNewWorker: function() {
-  if (PThread.unusedWorkers.length == 0) {
-   PThread.allocateUnusedWorker();
-   PThread.loadWasmModuleToWorker(PThread.unusedWorkers[0]);
-  }
-  return PThread.unusedWorkers.pop();
- }
-};
-
-Module["PThread"] = PThread;
-
-function listenOnce(object, event, func) {
- object.addEventListener(event, func, {
-  "once": true
- });
-}
-
-function autoResumeAudioContext(ctx, elements) {
- if (!elements) {
-  elements = [ document, document.getElementById("canvas") ];
- }
- [ "keydown", "mousedown", "touchstart" ].forEach(function(event) {
-  elements.forEach(function(element) {
-   if (element) {
-    listenOnce(element, event, () => {
-     if (ctx.state === "suspended") ctx.resume();
-    });
-   }
-  });
- });
-}
-
-function callRuntimeCallbacks(callbacks) {
- while (callbacks.length > 0) {
-  callbacks.shift()(Module);
- }
-}
-
-function withStackSave(f) {
- var stack = stackSave();
- var ret = f();
- stackRestore(stack);
- return ret;
-}
-
-function demangle(func) {
- return func;
-}
-
-function demangleAll(text) {
- var regex = /\b_Z[\w\d_]+/g;
- return text.replace(regex, function(x) {
-  var y = demangle(x);
-  return x === y ? x : y + " [" + x + "]";
- });
-}
-
-function dynCallLegacy(sig, ptr, args) {
- var f = Module["dynCall_" + sig];
- return args && args.length ? f.apply(null, [ ptr ].concat(args)) : f.call(null, ptr);
-}
-
-var wasmTableMirror = [];
-
-function getWasmTableEntry(funcPtr) {
- var func = wasmTableMirror[funcPtr];
- if (!func) {
-  if (funcPtr >= wasmTableMirror.length) wasmTableMirror.length = funcPtr + 1;
-  wasmTableMirror[funcPtr] = func = wasmTable.get(funcPtr);
- }
- return func;
-}
-
-function dynCall(sig, ptr, args) {
- return dynCallLegacy(sig, ptr, args);
-}
-
-function establishStackSpace() {
- var pthread_ptr = _pthread_self();
- var stackTop = GROWABLE_HEAP_I32()[pthread_ptr + 44 >>> 2];
- var stackSize = GROWABLE_HEAP_I32()[pthread_ptr + 48 >>> 2];
- var stackMax = stackTop - stackSize;
- _emscripten_stack_set_limits(stackTop, stackMax);
- stackRestore(stackTop);
-}
-
-Module["establishStackSpace"] = establishStackSpace;
-
-function exitOnMainThread(returnCode) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(2, 0, returnCode);
- try {
-  _exit(returnCode);
- } catch (e) {
-  handleException(e);
- }
-}
-
-function getValue(ptr, type = "i8") {
- if (type.endsWith("*")) type = "*";
- switch (type) {
- case "i1":
-  return GROWABLE_HEAP_I8()[ptr >>> 0];
-
- case "i8":
-  return GROWABLE_HEAP_I8()[ptr >>> 0];
-
- case "i16":
-  return GROWABLE_HEAP_I16()[ptr >>> 1];
-
- case "i32":
-  return GROWABLE_HEAP_I32()[ptr >>> 2];
-
- case "i64":
-  return GROWABLE_HEAP_I32()[ptr >>> 2];
-
- case "float":
-  return GROWABLE_HEAP_F32()[ptr >>> 2];
-
- case "double":
-  return GROWABLE_HEAP_F64()[ptr >>> 3];
-
- case "*":
-  return GROWABLE_HEAP_U32()[ptr >>> 2];
-
- default:
-  abort("invalid type for getValue: " + type);
- }
- return null;
-}
-
-function invokeEntryPoint(ptr, arg) {
- var result = function(a1) {
-  return dynCall_ii.apply(null, [ ptr, a1 ]);
- }(arg);
- if (keepRuntimeAlive()) {
-  PThread.setExitStatus(result);
- } else {
-  __emscripten_thread_exit(result);
- }
-}
-
-Module["invokeEntryPoint"] = invokeEntryPoint;
-
-function jsStackTrace() {
- var error = new Error();
- if (!error.stack) {
-  try {
-   throw new Error();
-  } catch (e) {
-   error = e;
-  }
-  if (!error.stack) {
-   return "(no stack trace available)";
-  }
- }
- return error.stack.toString();
-}
-
-function registerTLSInit(tlsInitFunc) {
- PThread.tlsInitFunctions.push(tlsInitFunc);
-}
-
-function setValue(ptr, value, type = "i8") {
- if (type.endsWith("*")) type = "*";
- switch (type) {
- case "i1":
-  GROWABLE_HEAP_I8()[ptr >>> 0] = value;
-  break;
-
- case "i8":
-  GROWABLE_HEAP_I8()[ptr >>> 0] = value;
-  break;
-
- case "i16":
-  GROWABLE_HEAP_I16()[ptr >>> 1] = value;
-  break;
-
- case "i32":
-  GROWABLE_HEAP_I32()[ptr >>> 2] = value;
-  break;
-
- case "i64":
-  tempI64 = [ value >>> 0, (tempDouble = value, +Math.abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math.min(+Math.floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math.ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0) ], 
-  GROWABLE_HEAP_I32()[ptr >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[ptr + 4 >>> 2] = tempI64[1];
-  break;
-
- case "float":
-  GROWABLE_HEAP_F32()[ptr >>> 2] = value;
-  break;
-
- case "double":
-  GROWABLE_HEAP_F64()[ptr >>> 3] = value;
-  break;
-
- case "*":
-  GROWABLE_HEAP_U32()[ptr >>> 2] = value;
-  break;
-
- default:
-  abort("invalid type for setValue: " + type);
- }
-}
-
-function stackTrace() {
- var js = jsStackTrace();
- if (Module["extraStackTrace"]) js += "\n" + Module["extraStackTrace"]();
- return demangleAll(js);
-}
-
-function writeArrayToMemory(array, buffer) {
- GROWABLE_HEAP_I8().set(array, buffer >>> 0);
-}
-
-function ___assert_fail(condition, filename, line, func) {
- abort("Assertion failed: " + UTF8ToString(condition) + ", at: " + [ filename ? UTF8ToString(filename) : "unknown filename", line, func ? UTF8ToString(func) : "unknown function" ]);
-}
-
-function ___call_sighandler(fp, sig) {
- (function(a1) {
-  dynCall_vi.apply(null, [ fp, a1 ]);
- })(sig);
-}
-
-function ___cxa_allocate_exception(size) {
- return _malloc(size + 24) + 24;
-}
-
-function ExceptionInfo(excPtr) {
- this.excPtr = excPtr;
- this.ptr = excPtr - 24;
- this.set_type = function(type) {
-  GROWABLE_HEAP_U32()[this.ptr + 4 >>> 2] = type;
- };
- this.get_type = function() {
-  return GROWABLE_HEAP_U32()[this.ptr + 4 >>> 2];
- };
- this.set_destructor = function(destructor) {
-  GROWABLE_HEAP_U32()[this.ptr + 8 >>> 2] = destructor;
- };
- this.get_destructor = function() {
-  return GROWABLE_HEAP_U32()[this.ptr + 8 >>> 2];
- };
- this.set_refcount = function(refcount) {
-  GROWABLE_HEAP_I32()[this.ptr >>> 2] = refcount;
- };
- this.set_caught = function(caught) {
-  caught = caught ? 1 : 0;
-  GROWABLE_HEAP_I8()[this.ptr + 12 >>> 0] = caught;
- };
- this.get_caught = function() {
-  return GROWABLE_HEAP_I8()[this.ptr + 12 >>> 0] != 0;
- };
- this.set_rethrown = function(rethrown) {
-  rethrown = rethrown ? 1 : 0;
-  GROWABLE_HEAP_I8()[this.ptr + 13 >>> 0] = rethrown;
- };
- this.get_rethrown = function() {
-  return GROWABLE_HEAP_I8()[this.ptr + 13 >>> 0] != 0;
- };
- this.init = function(type, destructor) {
-  this.set_adjusted_ptr(0);
-  this.set_type(type);
-  this.set_destructor(destructor);
-  this.set_refcount(0);
-  this.set_caught(false);
-  this.set_rethrown(false);
- };
- this.add_ref = function() {
-  Atomics.add(GROWABLE_HEAP_I32(), this.ptr + 0 >> 2, 1);
- };
- this.release_ref = function() {
-  var prev = Atomics.sub(GROWABLE_HEAP_I32(), this.ptr + 0 >> 2, 1);
-  return prev === 1;
- };
- this.set_adjusted_ptr = function(adjustedPtr) {
-  GROWABLE_HEAP_U32()[this.ptr + 16 >>> 2] = adjustedPtr;
- };
- this.get_adjusted_ptr = function() {
-  return GROWABLE_HEAP_U32()[this.ptr + 16 >>> 2];
- };
- this.get_exception_ptr = function() {
-  var isPointer = ___cxa_is_pointer_type(this.get_type());
-  if (isPointer) {
-   return GROWABLE_HEAP_U32()[this.excPtr >>> 2];
-  }
-  var adjusted = this.get_adjusted_ptr();
-  if (adjusted !== 0) return adjusted;
-  return this.excPtr;
- };
-}
-
-var exceptionLast = 0;
-
-var uncaughtExceptionCount = 0;
-
-function ___cxa_throw(ptr, type, destructor) {
- var info = new ExceptionInfo(ptr);
- info.init(type, destructor);
- exceptionLast = ptr;
- uncaughtExceptionCount++;
- throw ptr;
-}
-
-function ___emscripten_init_main_thread_js(tb) {
- __emscripten_thread_init(tb, !ENVIRONMENT_IS_WORKER, 1, !ENVIRONMENT_IS_WEB);
- PThread.threadInitTLS();
-}
-
-function ___emscripten_thread_cleanup(thread) {
- if (!ENVIRONMENT_IS_PTHREAD) cleanupThread(thread); else postMessage({
-  "cmd": "cleanupThread",
-  "thread": thread
- });
-}
-
-function pthreadCreateProxied(pthread_ptr, attr, startRoutine, arg) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(3, 1, pthread_ptr, attr, startRoutine, arg);
- return ___pthread_create_js(pthread_ptr, attr, startRoutine, arg);
-}
-
-function ___pthread_create_js(pthread_ptr, attr, startRoutine, arg) {
- if (typeof SharedArrayBuffer == "undefined") {
-  err("Current environment does not support SharedArrayBuffer, pthreads are not available!");
-  return 6;
- }
- var transferList = [];
- var error = 0;
- if (ENVIRONMENT_IS_PTHREAD && (transferList.length === 0 || error)) {
-  return pthreadCreateProxied(pthread_ptr, attr, startRoutine, arg);
- }
- if (error) return error;
- var threadParams = {
-  startRoutine: startRoutine,
-  pthread_ptr: pthread_ptr,
-  arg: arg,
-  transferList: transferList
- };
- if (ENVIRONMENT_IS_PTHREAD) {
-  threadParams.cmd = "spawnThread";
-  postMessage(threadParams, transferList);
-  return 0;
- }
- return spawnThread(threadParams);
-}
 
 function ___syscall__newselect(nfds, readfds, writefds, exceptfds, timeout) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(4, 1, nfds, readfds, writefds, exceptfds, timeout);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(3, 1, nfds, readfds, writefds, exceptfds, timeout);
  try {
   var total = 0;
   var srcReadLow = readfds ? GROWABLE_HEAP_I32()[readfds >>> 2] : 0, srcReadHigh = readfds ? GROWABLE_HEAP_I32()[readfds + 4 >>> 2] : 0;
@@ -5572,7 +5962,8 @@ function ___syscall__newselect(nfds, readfds, writefds, exceptfds, timeout) {
    if (!check(fd, allLow, allHigh, mask)) {
     continue;
    }
-   var stream = SYSCALLS.getStreamFromFD(fd);
+   var stream = FS.getStream(fd);
+   if (!stream) throw new FS.ErrnoError(8);
    var flags = SYSCALLS.DEFAULT_POLLMASK;
    if (stream.stream_ops.poll) {
     flags = stream.stream_ops.poll(stream);
@@ -5610,7 +6001,7 @@ function ___syscall__newselect(nfds, readfds, writefds, exceptfds, timeout) {
 }
 
 function ___syscall_chdir(path) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(5, 1, path);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(4, 1, path);
  try {
   path = SYSCALLS.getStr(path);
   FS.chdir(path);
@@ -5622,13 +6013,13 @@ function ___syscall_chdir(path) {
 }
 
 function ___syscall_dup3(fd, suggestFD, flags) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(6, 1, fd, suggestFD, flags);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(5, 1, fd, suggestFD, flags);
  try {
   var old = SYSCALLS.getStreamFromFD(fd);
   if (old.fd === suggestFD) return -28;
   var suggest = FS.getStream(suggestFD);
   if (suggest) FS.close(suggest);
-  return FS.createStream(old, suggestFD, suggestFD + 1).fd;
+  return FS.open(old.path, old.flags, 0, suggestFD, suggestFD).fd;
  } catch (e) {
   if (typeof FS == "undefined" || !(e instanceof FS.ErrnoError)) throw e;
   return -e.errno;
@@ -5641,7 +6032,7 @@ function setErrNo(value) {
 }
 
 function ___syscall_fcntl64(fd, cmd, varargs) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(7, 1, fd, cmd, varargs);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(6, 1, fd, cmd, varargs);
  SYSCALLS.varargs = varargs;
  try {
   var stream = SYSCALLS.getStreamFromFD(fd);
@@ -5653,7 +6044,7 @@ function ___syscall_fcntl64(fd, cmd, varargs) {
      return -28;
     }
     var newStream;
-    newStream = FS.createStream(stream, arg);
+    newStream = FS.open(stream.path, stream.flags, 0, arg);
     return newStream.fd;
    }
 
@@ -5703,7 +6094,7 @@ function ___syscall_fcntl64(fd, cmd, varargs) {
 }
 
 function ___syscall_ioctl(fd, op, varargs) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(8, 1, fd, op, varargs);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(7, 1, fd, op, varargs);
  SYSCALLS.varargs = varargs;
  try {
   var stream = SYSCALLS.getStreamFromFD(fd);
@@ -5759,7 +6150,7 @@ function ___syscall_ioctl(fd, op, varargs) {
    }
 
   default:
-   return -28;
+   abort("bad ioctl syscall " + op);
   }
  } catch (e) {
   if (typeof FS == "undefined" || !(e instanceof FS.ErrnoError)) throw e;
@@ -5768,7 +6159,7 @@ function ___syscall_ioctl(fd, op, varargs) {
 }
 
 function ___syscall_lstat64(path, buf) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(9, 1, path, buf);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(8, 1, path, buf);
  try {
   path = SYSCALLS.getStr(path);
   return SYSCALLS.doStat(FS.lstat, path, buf);
@@ -5779,7 +6170,7 @@ function ___syscall_lstat64(path, buf) {
 }
 
 function ___syscall_openat(dirfd, path, flags, varargs) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(10, 1, dirfd, path, flags, varargs);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(9, 1, dirfd, path, flags, varargs);
  SYSCALLS.varargs = varargs;
  try {
   path = SYSCALLS.getStr(path);
@@ -5839,12 +6230,13 @@ var PIPEFS = {
    var pipe = stream.node.pipe;
    if ((stream.flags & 2097155) === 1) {
     return 256 | 4;
-   }
-   if (pipe.buckets.length > 0) {
-    for (var i = 0; i < pipe.buckets.length; i++) {
-     var bucket = pipe.buckets[i];
-     if (bucket.offset - bucket.roffset > 0) {
-      return 64 | 1;
+   } else {
+    if (pipe.buckets.length > 0) {
+     for (var i = 0; i < pipe.buckets.length; i++) {
+      var bucket = pipe.buckets[i];
+      if (bucket.offset - bucket.roffset > 0) {
+       return 64 | 1;
+      }
      }
     }
    }
@@ -5973,7 +6365,7 @@ var PIPEFS = {
 };
 
 function ___syscall_pipe(fdPtr) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(11, 1, fdPtr);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(10, 1, fdPtr);
  try {
   if (fdPtr == 0) {
    throw new FS.ErrnoError(21);
@@ -5989,7 +6381,7 @@ function ___syscall_pipe(fdPtr) {
 }
 
 function ___syscall_renameat(olddirfd, oldpath, newdirfd, newpath) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(12, 1, olddirfd, oldpath, newdirfd, newpath);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(11, 1, olddirfd, oldpath, newdirfd, newpath);
  try {
   oldpath = SYSCALLS.getStr(oldpath);
   newpath = SYSCALLS.getStr(newpath);
@@ -6004,7 +6396,7 @@ function ___syscall_renameat(olddirfd, oldpath, newdirfd, newpath) {
 }
 
 function ___syscall_rmdir(path) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(13, 1, path);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(12, 1, path);
  try {
   path = SYSCALLS.getStr(path);
   FS.rmdir(path);
@@ -6016,7 +6408,7 @@ function ___syscall_rmdir(path) {
 }
 
 function ___syscall_unlinkat(dirfd, path, flags) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(14, 1, dirfd, path, flags);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(13, 1, dirfd, path, flags);
  try {
   path = SYSCALLS.getStr(path);
   path = SYSCALLS.calculateAt(dirfd, path);
@@ -6048,19 +6440,14 @@ function __emscripten_get_now_is_monotonic() {
  return nowIsMonotonic;
 }
 
-function executeNotifiedProxyingQueue(queue) {
- Atomics.store(GROWABLE_HEAP_I32(), queue >> 2, 1);
- if (_pthread_self()) {
-  __emscripten_proxy_execute_task_queue(queue);
- }
- Atomics.compareExchange(GROWABLE_HEAP_I32(), queue >> 2, 1, 0);
-}
-
-Module["executeNotifiedProxyingQueue"] = executeNotifiedProxyingQueue;
-
-function __emscripten_notify_task_queue(targetThreadId, currThreadId, mainThreadId, queue) {
+function __emscripten_notify_proxying_queue(targetThreadId, currThreadId, mainThreadId, queue) {
  if (targetThreadId == currThreadId) {
-  setTimeout(() => executeNotifiedProxyingQueue(queue));
+  setTimeout(() => {
+   if (_pthread_self()) {
+    _emscripten_proxy_execute_queue(queue);
+   }
+   Atomics.sub(GROWABLE_HEAP_I32(), queue >> 2, 1);
+  });
  } else if (ENVIRONMENT_IS_PTHREAD) {
   postMessage({
    "targetThread": targetThreadId,
@@ -6068,7 +6455,8 @@ function __emscripten_notify_task_queue(targetThreadId, currThreadId, mainThread
    "queue": queue
   });
  } else {
-  var worker = PThread.pthreads[targetThreadId];
+  var pthread = PThread.pthreads[targetThreadId];
+  var worker = pthread && pthread.worker;
   if (!worker) {
    return;
   }
@@ -6088,12 +6476,8 @@ function __emscripten_throw_longjmp() {
  throw Infinity;
 }
 
-function readI53FromI64(ptr) {
- return GROWABLE_HEAP_U32()[ptr >>> 2] + GROWABLE_HEAP_I32()[ptr + 4 >>> 2] * 4294967296;
-}
-
 function __gmtime_js(time, tmPtr) {
- var date = new Date(readI53FromI64(time) * 1e3);
+ var date = new Date(GROWABLE_HEAP_I32()[time >>> 2] * 1e3);
  GROWABLE_HEAP_I32()[tmPtr >>> 2] = date.getUTCSeconds();
  GROWABLE_HEAP_I32()[tmPtr + 4 >>> 2] = date.getUTCMinutes();
  GROWABLE_HEAP_I32()[tmPtr + 8 >>> 2] = date.getUTCHours();
@@ -6107,7 +6491,7 @@ function __gmtime_js(time, tmPtr) {
 }
 
 function __localtime_js(time, tmPtr) {
- var date = new Date(readI53FromI64(time) * 1e3);
+ var date = new Date(GROWABLE_HEAP_I32()[time >>> 2] * 1e3);
  GROWABLE_HEAP_I32()[tmPtr >>> 2] = date.getSeconds();
  GROWABLE_HEAP_I32()[tmPtr + 4 >>> 2] = date.getMinutes();
  GROWABLE_HEAP_I32()[tmPtr + 8 >>> 2] = date.getHours();
@@ -6151,15 +6535,8 @@ function __mktime_js(tmPtr) {
  return date.getTime() / 1e3 | 0;
 }
 
-function allocateUTF8(str) {
- var size = lengthBytesUTF8(str) + 1;
- var ret = _malloc(size);
- if (ret) stringToUTF8Array(str, GROWABLE_HEAP_I8(), ret, size);
- return ret;
-}
-
 function _tzset_impl(timezone, daylight, tzname) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(15, 1, timezone, daylight, tzname);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(14, 1, timezone, daylight, tzname);
  var currentYear = new Date().getFullYear();
  var winter = new Date(currentYear, 0, 1);
  var summer = new Date(currentYear, 6, 1);
@@ -6177,11 +6554,11 @@ function _tzset_impl(timezone, daylight, tzname) {
  var winterNamePtr = allocateUTF8(winterName);
  var summerNamePtr = allocateUTF8(summerName);
  if (summerOffset < winterOffset) {
-  GROWABLE_HEAP_U32()[tzname >>> 2] = winterNamePtr;
-  GROWABLE_HEAP_U32()[tzname + 4 >>> 2] = summerNamePtr;
+  GROWABLE_HEAP_I32()[tzname >>> 2] = winterNamePtr;
+  GROWABLE_HEAP_I32()[tzname + 4 >>> 2] = summerNamePtr;
  } else {
-  GROWABLE_HEAP_U32()[tzname >>> 2] = summerNamePtr;
-  GROWABLE_HEAP_U32()[tzname + 4 >>> 2] = winterNamePtr;
+  GROWABLE_HEAP_I32()[tzname >>> 2] = summerNamePtr;
+  GROWABLE_HEAP_I32()[tzname + 4 >>> 2] = winterNamePtr;
  }
 }
 
@@ -6194,8 +6571,6 @@ function __tzset_js(timezone, daylight, tzname) {
 function _abort() {
  abort("");
 }
-
-function runtimeKeepalivePush() {}
 
 function _emscripten_set_main_loop_timing(mode, value) {
  Browser.mainLoop.timingMode = mode;
@@ -6222,7 +6597,7 @@ function _emscripten_set_main_loop_timing(mode, value) {
   if (typeof setImmediate == "undefined") {
    var setImmediates = [];
    var emscriptenMainLoopMessageId = "setimmediate";
-   var Browser_setImmediate_messageHandler = event => {
+   var Browser_setImmediate_messageHandler = function(event) {
     if (event.data === emscriptenMainLoopMessageId || event.data.target === emscriptenMainLoopMessageId) {
      event.stopPropagation();
      setImmediates.shift()();
@@ -6251,17 +6626,17 @@ function _emscripten_set_main_loop_timing(mode, value) {
 var _emscripten_get_now;
 
 if (ENVIRONMENT_IS_NODE) {
- _emscripten_get_now = () => {
+ _emscripten_get_now = (() => {
   var t = process["hrtime"]();
   return t[0] * 1e3 + t[1] / 1e6;
- };
+ });
 } else if (ENVIRONMENT_IS_PTHREAD) {
- _emscripten_get_now = () => performance.now() - Module["__performance_now_clock_drift"];
-} else _emscripten_get_now = () => performance.now();
+ _emscripten_get_now = (() => performance.now() - Module["__performance_now_clock_drift"]);
+} else _emscripten_get_now = (() => performance.now());
+
+function runtimeKeepalivePush() {}
 
 function maybeExit() {}
-
-function runtimeKeepalivePop() {}
 
 function setMainLoop(browserIterationFunc, fps, simulateInfiniteLoop, arg, noSetTiming) {
  assert(!Browser.mainLoop.func, "emscripten_set_main_loop: there can only be one main loop function at once: call emscripten_cancel_main_loop to cancel the previous one before setting a new one with different parameters.");
@@ -6322,8 +6697,12 @@ function setMainLoop(browserIterationFunc, fps, simulateInfiniteLoop, arg, noSet
  }
 }
 
-function callUserCallback(func) {
+function callUserCallback(func, synchronous) {
  if (ABORT) {
+  return;
+ }
+ if (synchronous) {
+  func();
   return;
  }
  try {
@@ -6334,21 +6713,14 @@ function callUserCallback(func) {
  }
 }
 
+function runtimeKeepalivePop() {}
+
 function safeSetTimeout(func, timeout) {
  runtimeKeepalivePush();
  return setTimeout(function() {
   runtimeKeepalivePop();
   callUserCallback(func);
  }, timeout);
-}
-
-function warnOnce(text) {
- if (!warnOnce.shown) warnOnce.shown = {};
- if (!warnOnce.shown[text]) {
-  warnOnce.shown[text] = 1;
-  if (ENVIRONMENT_IS_NODE) text = "warning: " + text;
-  err(text);
- }
 }
 
 var Browser = {
@@ -6418,12 +6790,12 @@ var Browser = {
    Browser.hasBlobConstructor = true;
   } catch (e) {
    Browser.hasBlobConstructor = false;
-   err("warning: no blob constructor, cannot create blobs with mimetypes");
+   out("warning: no blob constructor, cannot create blobs with mimetypes");
   }
-  Browser.BlobBuilder = typeof MozBlobBuilder != "undefined" ? MozBlobBuilder : typeof WebKitBlobBuilder != "undefined" ? WebKitBlobBuilder : !Browser.hasBlobConstructor ? err("warning: no BlobBuilder") : null;
+  Browser.BlobBuilder = typeof MozBlobBuilder != "undefined" ? MozBlobBuilder : typeof WebKitBlobBuilder != "undefined" ? WebKitBlobBuilder : !Browser.hasBlobConstructor ? out("warning: no BlobBuilder") : null;
   Browser.URLObject = typeof window != "undefined" ? window.URL ? window.URL : window.webkitURL : undefined;
   if (!Module.noImageDecoding && typeof Browser.URLObject == "undefined") {
-   err("warning: Browser does not support creating object URLs. Built-in browser image decoding will not be available.");
+   out("warning: Browser does not support creating object URLs. Built-in browser image decoding will not be available.");
    Module.noImageDecoding = true;
   }
   var imagePlugin = {};
@@ -6453,21 +6825,21 @@ var Browser = {
    }
    var url = Browser.URLObject.createObjectURL(b);
    var img = new Image();
-   img.onload = () => {
+   img.onload = (() => {
     assert(img.complete, "Image " + name + " could not be decoded");
     var canvas = document.createElement("canvas");
     canvas.width = img.width;
     canvas.height = img.height;
     var ctx = canvas.getContext("2d");
     ctx.drawImage(img, 0, 0);
-    preloadedImages[name] = canvas;
+    Module["preloadedImages"][name] = canvas;
     Browser.URLObject.revokeObjectURL(url);
     if (onload) onload(byteArray);
-   };
-   img.onerror = event => {
+   });
+   img.onerror = (event => {
     out("Image " + url + " could not be decoded");
     if (onerror) onerror();
-   };
+   });
    img.src = url;
   };
   Module["preloadPlugins"].push(imagePlugin);
@@ -6484,13 +6856,13 @@ var Browser = {
    function finish(audio) {
     if (done) return;
     done = true;
-    preloadedAudios[name] = audio;
+    Module["preloadedAudios"][name] = audio;
     if (onload) onload(byteArray);
    }
    function fail() {
     if (done) return;
     done = true;
-    preloadedAudios[name] = new Audio();
+    Module["preloadedAudios"][name] = new Audio();
     if (onerror) onerror();
    }
    if (Browser.hasBlobConstructor) {
@@ -6503,10 +6875,12 @@ var Browser = {
     }
     var url = Browser.URLObject.createObjectURL(b);
     var audio = new Audio();
-    audio.addEventListener("canplaythrough", () => finish(audio), false);
+    audio.addEventListener("canplaythrough", function() {
+     finish(audio);
+    }, false);
     audio.onerror = function audio_onerror(event) {
      if (done) return;
-     err("warning: browser could not fully decode audio " + name + ", trying slower base64 approach");
+     out("warning: browser could not fully decode audio " + name + ", trying slower base64 approach");
      function encode64(data) {
       var BASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
       var PAD = "=";
@@ -6548,15 +6922,15 @@ var Browser = {
   }
   var canvas = Module["canvas"];
   if (canvas) {
-   canvas.requestPointerLock = canvas["requestPointerLock"] || canvas["mozRequestPointerLock"] || canvas["webkitRequestPointerLock"] || canvas["msRequestPointerLock"] || (() => {});
-   canvas.exitPointerLock = document["exitPointerLock"] || document["mozExitPointerLock"] || document["webkitExitPointerLock"] || document["msExitPointerLock"] || (() => {});
+   canvas.requestPointerLock = canvas["requestPointerLock"] || canvas["mozRequestPointerLock"] || canvas["webkitRequestPointerLock"] || canvas["msRequestPointerLock"] || function() {};
+   canvas.exitPointerLock = document["exitPointerLock"] || document["mozExitPointerLock"] || document["webkitExitPointerLock"] || document["msExitPointerLock"] || function() {};
    canvas.exitPointerLock = canvas.exitPointerLock.bind(document);
    document.addEventListener("pointerlockchange", pointerLockChange, false);
    document.addEventListener("mozpointerlockchange", pointerLockChange, false);
    document.addEventListener("webkitpointerlockchange", pointerLockChange, false);
    document.addEventListener("mspointerlockchange", pointerLockChange, false);
    if (Module["elementPointerLock"]) {
-    canvas.addEventListener("click", ev => {
+    canvas.addEventListener("click", function(ev) {
      if (!Browser.pointerLock && Module["canvas"].requestPointerLock) {
       Module["canvas"].requestPointerLock();
       ev.preventDefault();
@@ -6658,7 +7032,11 @@ var Browser = {
   var canvasContainer = document.createElement("div");
   canvas.parentNode.insertBefore(canvasContainer, canvas);
   canvasContainer.appendChild(canvas);
-  canvasContainer.requestFullscreen = canvasContainer["requestFullscreen"] || canvasContainer["mozRequestFullScreen"] || canvasContainer["msRequestFullscreen"] || (canvasContainer["webkitRequestFullscreen"] ? () => canvasContainer["webkitRequestFullscreen"](Element["ALLOW_KEYBOARD_INPUT"]) : null) || (canvasContainer["webkitRequestFullScreen"] ? () => canvasContainer["webkitRequestFullScreen"](Element["ALLOW_KEYBOARD_INPUT"]) : null);
+  canvasContainer.requestFullscreen = canvasContainer["requestFullscreen"] || canvasContainer["mozRequestFullScreen"] || canvasContainer["msRequestFullscreen"] || (canvasContainer["webkitRequestFullscreen"] ? function() {
+   canvasContainer["webkitRequestFullscreen"](Element["ALLOW_KEYBOARD_INPUT"]);
+  } : null) || (canvasContainer["webkitRequestFullScreen"] ? function() {
+   canvasContainer["webkitRequestFullScreen"](Element["ALLOW_KEYBOARD_INPUT"]);
+  } : null);
   canvasContainer.requestFullscreen();
  },
  exitFullscreen: function() {
@@ -6961,17 +7339,18 @@ var EGL = {
 };
 
 function _eglBindAPI(api) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(16, 1, api);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(15, 1, api);
  if (api == 12448) {
   EGL.setErrorCode(12288);
   return 1;
+ } else {
+  EGL.setErrorCode(12300);
+  return 0;
  }
- EGL.setErrorCode(12300);
- return 0;
 }
 
 function _eglChooseConfig(display, attrib_list, configs, config_size, numConfigs) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(17, 1, display, attrib_list, configs, config_size, numConfigs);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(16, 1, display, attrib_list, configs, config_size, numConfigs);
  return EGL.chooseConfig(display, attrib_list, configs, config_size, numConfigs);
 }
 
@@ -7283,7 +7662,7 @@ var GL = {
 };
 
 function _eglCreateContext(display, config, hmm, contextAttribs) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(18, 1, display, config, hmm, contextAttribs);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(17, 1, display, config, hmm, contextAttribs);
  if (display != 62e3) {
   EGL.setErrorCode(12296);
   return 0;
@@ -7324,7 +7703,7 @@ function _eglCreateContext(display, config, hmm, contextAttribs) {
 }
 
 function _eglCreateWindowSurface(display, config, win, attrib_list) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(19, 1, display, config, win, attrib_list);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(18, 1, display, config, win, attrib_list);
  if (display != 62e3) {
   EGL.setErrorCode(12296);
   return 0;
@@ -7338,7 +7717,7 @@ function _eglCreateWindowSurface(display, config, win, attrib_list) {
 }
 
 function _eglDestroyContext(display, context) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(20, 1, display, context);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(19, 1, display, context);
  if (display != 62e3) {
   EGL.setErrorCode(12296);
   return 0;
@@ -7356,7 +7735,7 @@ function _eglDestroyContext(display, context) {
 }
 
 function _eglDestroySurface(display, surface) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(21, 1, display, surface);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(20, 1, display, surface);
  if (display != 62e3) {
   EGL.setErrorCode(12296);
   return 0;
@@ -7376,7 +7755,7 @@ function _eglDestroySurface(display, surface) {
 }
 
 function _eglGetConfigAttrib(display, config, attribute, value) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(22, 1, display, config, attribute, value);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(21, 1, display, config, attribute, value);
  if (display != 62e3) {
   EGL.setErrorCode(12296);
   return 0;
@@ -7514,35 +7893,36 @@ function _eglGetConfigAttrib(display, config, attribute, value) {
 }
 
 function _eglGetDisplay(nativeDisplayType) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(23, 1, nativeDisplayType);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(22, 1, nativeDisplayType);
  EGL.setErrorCode(12288);
  return 62e3;
 }
 
 function _eglGetError() {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(24, 1);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(23, 1);
  return EGL.errorCode;
 }
 
 function _eglInitialize(display, majorVersion, minorVersion) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(25, 1, display, majorVersion, minorVersion);
- if (display != 62e3) {
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(24, 1, display, majorVersion, minorVersion);
+ if (display == 62e3) {
+  if (majorVersion) {
+   GROWABLE_HEAP_I32()[majorVersion >>> 2] = 1;
+  }
+  if (minorVersion) {
+   GROWABLE_HEAP_I32()[minorVersion >>> 2] = 4;
+  }
+  EGL.defaultDisplayInitialized = true;
+  EGL.setErrorCode(12288);
+  return 1;
+ } else {
   EGL.setErrorCode(12296);
   return 0;
  }
- if (majorVersion) {
-  GROWABLE_HEAP_I32()[majorVersion >>> 2] = 1;
- }
- if (minorVersion) {
-  GROWABLE_HEAP_I32()[minorVersion >>> 2] = 4;
- }
- EGL.defaultDisplayInitialized = true;
- EGL.setErrorCode(12288);
- return 1;
 }
 
 function _eglMakeCurrent(display, draw, read, context) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(26, 1, display, draw, read, context);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(25, 1, display, draw, read, context);
  if (display != 62e3) {
   EGL.setErrorCode(12296);
   return 0;
@@ -7564,7 +7944,7 @@ function _eglMakeCurrent(display, draw, read, context) {
 }
 
 function _eglQueryString(display, name) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(27, 1, display, name);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(26, 1, display, name);
  if (display != 62e3) {
   EGL.setErrorCode(12296);
   return 0;
@@ -7598,7 +7978,7 @@ function _eglQueryString(display, name) {
 }
 
 function _eglSwapBuffers() {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(28, 1);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(27, 1);
  if (!EGL.defaultDisplayInitialized) {
   EGL.setErrorCode(12289);
  } else if (!Module.ctx) {
@@ -7613,7 +7993,7 @@ function _eglSwapBuffers() {
 }
 
 function _eglSwapInterval(display, interval) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(29, 1, display, interval);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(28, 1, display, interval);
  if (display != 62e3) {
   EGL.setErrorCode(12296);
   return 0;
@@ -7624,7 +8004,7 @@ function _eglSwapInterval(display, interval) {
 }
 
 function _eglTerminate(display) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(30, 1, display);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(29, 1, display);
  if (display != 62e3) {
   EGL.setErrorCode(12296);
   return 0;
@@ -7638,15 +8018,17 @@ function _eglTerminate(display) {
 }
 
 function _eglWaitClient() {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(31, 1);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(30, 1);
  EGL.setErrorCode(12288);
  return 1;
 }
 
-var _eglWaitGL = _eglWaitClient;
+function _eglWaitGL() {
+ return _eglWaitClient();
+}
 
 function _eglWaitNative(nativeEngineId) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(32, 1, nativeEngineId);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(31, 1, nativeEngineId);
  EGL.setErrorCode(12288);
  return 1;
 }
@@ -7658,8 +8040,9 @@ function readAsmConstArgs(sigPtr, buf) {
  var ch;
  buf >>= 2;
  while (ch = GROWABLE_HEAP_U8()[sigPtr++ >>> 0]) {
-  buf += ch != 105 & buf;
-  readAsmConstArgsArray.push(ch == 105 ? GROWABLE_HEAP_I32()[buf >>> 0] : GROWABLE_HEAP_F64()[buf++ >>> 1]);
+  var readAsmConstArgsDouble = ch < 105;
+  if (readAsmConstArgsDouble && buf & 1) buf++;
+  readAsmConstArgsArray.push(readAsmConstArgsDouble ? GROWABLE_HEAP_F64()[buf++ >>> 1] : GROWABLE_HEAP_I32()[buf >>> 0]);
   ++buf;
  }
  return readAsmConstArgsArray;
@@ -7668,6 +8051,11 @@ function readAsmConstArgs(sigPtr, buf) {
 function _emscripten_asm_const_int(code, sigPtr, argbuf) {
  var args = readAsmConstArgs(sigPtr, argbuf);
  return ASM_CONSTS[code].apply(null, args);
+}
+
+function _emscripten_cancel_main_loop() {
+ Browser.mainLoop.pause();
+ Browser.mainLoop.func = null;
 }
 
 function _emscripten_check_blocking_allowed() {
@@ -7835,7 +8223,7 @@ function _emscripten_get_canvas_element_size_calling_thread(target, width, heigh
 }
 
 function _emscripten_get_canvas_element_size_main_thread(target, width, height) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(34, 1, target, width, height);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(33, 1, target, width, height);
  return _emscripten_get_canvas_element_size_calling_thread(target, width, height);
 }
 
@@ -7843,8 +8231,9 @@ function _emscripten_get_canvas_element_size(target, width, height) {
  var canvas = findCanvasEventTarget(target);
  if (canvas) {
   return _emscripten_get_canvas_element_size_calling_thread(target, width, height);
+ } else {
+  return _emscripten_get_canvas_element_size_main_thread(target, width, height);
  }
- return _emscripten_get_canvas_element_size_main_thread(target, width, height);
 }
 
 function getCanvasElementSize(target) {
@@ -7880,7 +8269,7 @@ function _emscripten_set_canvas_element_size_calling_thread(target, width, heigh
 }
 
 function _emscripten_set_canvas_element_size_main_thread(target, width, height) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(35, 1, target, width, height);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(34, 1, target, width, height);
  return _emscripten_set_canvas_element_size_calling_thread(target, width, height);
 }
 
@@ -7888,8 +8277,9 @@ function _emscripten_set_canvas_element_size(target, width, height) {
  var canvas = findCanvasEventTarget(target);
  if (canvas) {
   return _emscripten_set_canvas_element_size_calling_thread(target, width, height);
+ } else {
+  return _emscripten_set_canvas_element_size_main_thread(target, width, height);
  }
- return _emscripten_set_canvas_element_size_main_thread(target, width, height);
 }
 
 function setCanvasElementSize(target, width, height) {
@@ -7973,7 +8363,7 @@ function getBoundingClientRect(e) {
  };
 }
 
-function JSEvents_resizeCanvasForFullscreen(target, strategy) {
+function _JSEvents_resizeCanvasForFullscreen(target, strategy) {
  var restoreOldStyle = registerRestoreOldStyle(target);
  var cssWidth = strategy.softFullscreen ? innerWidth : screen.width;
  var cssHeight = strategy.softFullscreen ? innerHeight : screen.height;
@@ -8021,9 +8411,9 @@ function JSEvents_resizeCanvasForFullscreen(target, strategy) {
  return restoreOldStyle;
 }
 
-function JSEvents_requestFullscreen(target, strategy) {
+function _JSEvents_requestFullscreen(target, strategy) {
  if (strategy.scaleMode != 0 || strategy.canvasResolutionScaleMode != 0) {
-  JSEvents_resizeCanvasForFullscreen(target, strategy);
+  _JSEvents_resizeCanvasForFullscreen(target, strategy);
  }
  if (target.requestFullscreen) {
   target.requestFullscreen();
@@ -8042,9 +8432,9 @@ function JSEvents_requestFullscreen(target, strategy) {
 }
 
 function _emscripten_exit_fullscreen() {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(33, 1);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(32, 1);
  if (!JSEvents.fullscreenEnabled()) return -1;
- JSEvents.removeDeferredCalls(JSEvents_requestFullscreen);
+ JSEvents.removeDeferredCalls(_JSEvents_requestFullscreen);
  var d = specialHTMLTargets[1];
  if (d.exitFullscreen) {
   d.fullscreenElement && d.exitFullscreen();
@@ -8064,14 +8454,15 @@ function requestPointerLock(target) {
  } else {
   if (document.body.requestPointerLock || document.body.msRequestPointerLock) {
    return -3;
+  } else {
+   return -1;
   }
-  return -1;
  }
  return 0;
 }
 
 function _emscripten_exit_pointerlock() {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(36, 1);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(35, 1);
  JSEvents.removeDeferredCalls(requestPointerLock);
  if (document.exitPointerLock) {
   document.exitPointerLock();
@@ -8081,6 +8472,12 @@ function _emscripten_exit_pointerlock() {
   return -1;
  }
  return 0;
+}
+
+function _emscripten_force_exit(status) {
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(36, 1, status);
+ noExitRuntime = false;
+ exit(status);
 }
 
 function _emscripten_get_device_pixel_ratio() {
@@ -8248,7 +8645,7 @@ function _emscripten_glBlitFramebuffer(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9) {
 
 function _emscripten_glBufferData(target, size, data, usage) {
  if (GL.currentContext.version >= 2) {
-  if (data && size) {
+  if (data) {
    GLctx.bufferData(target, GROWABLE_HEAP_U8(), usage, data, size);
   } else {
    GLctx.bufferData(target, size, usage);
@@ -8260,7 +8657,7 @@ function _emscripten_glBufferData(target, size, data, usage) {
 
 function _emscripten_glBufferSubData(target, offset, size, data) {
  if (GL.currentContext.version >= 2) {
-  size && GLctx.bufferSubData(target, offset, GROWABLE_HEAP_U8(), data, size);
+  GLctx.bufferSubData(target, offset, GROWABLE_HEAP_U8(), data, size);
   return;
  }
  GLctx.bufferSubData(target, offset, GROWABLE_HEAP_U8().subarray(data >>> 0, data + size >>> 0));
@@ -8320,7 +8717,7 @@ function _emscripten_glCompileShader(shader) {
 
 function _emscripten_glCompressedTexImage2D(target, level, internalFormat, width, height, border, imageSize, data) {
  if (GL.currentContext.version >= 2) {
-  if (GLctx.currentPixelUnpackBufferBinding || !imageSize) {
+  if (GLctx.currentPixelUnpackBufferBinding) {
    GLctx["compressedTexImage2D"](target, level, internalFormat, width, height, border, imageSize, data);
   } else {
    GLctx["compressedTexImage2D"](target, level, internalFormat, width, height, border, GROWABLE_HEAP_U8(), data, imageSize);
@@ -8340,7 +8737,7 @@ function _emscripten_glCompressedTexImage3D(target, level, internalFormat, width
 
 function _emscripten_glCompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, imageSize, data) {
  if (GL.currentContext.version >= 2) {
-  if (GLctx.currentPixelUnpackBufferBinding || !imageSize) {
+  if (GLctx.currentPixelUnpackBufferBinding) {
    GLctx["compressedTexSubImage2D"](target, level, xoffset, yoffset, width, height, format, imageSize, data);
   } else {
    GLctx["compressedTexSubImage2D"](target, level, xoffset, yoffset, width, height, format, GROWABLE_HEAP_U8(), data, imageSize);
@@ -8700,8 +9097,9 @@ function _emscripten_glFenceSync(condition, flags) {
   sync.name = id;
   GL.syncs[id] = sync;
   return id;
+ } else {
+  return 0;
  }
- return 0;
 }
 
 function _emscripten_glFinish() {
@@ -10235,7 +10633,7 @@ var miniTempWebGLFloatBuffers = [];
 
 function _emscripten_glUniform1fv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  count && GLctx.uniform1fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count);
+  GLctx.uniform1fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count);
   return;
  }
  if (count <= 288) {
@@ -10257,7 +10655,7 @@ var __miniTempWebGLIntBuffers = [];
 
 function _emscripten_glUniform1iv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  count && GLctx.uniform1iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count);
+  GLctx.uniform1iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count);
   return;
  }
  if (count <= 288) {
@@ -10276,7 +10674,7 @@ function _emscripten_glUniform1ui(location, v0) {
 }
 
 function _emscripten_glUniform1uiv(location, count, value) {
- count && GLctx.uniform1uiv(webglGetUniformLocation(location), GROWABLE_HEAP_U32(), value >> 2, count);
+ GLctx.uniform1uiv(webglGetUniformLocation(location), GROWABLE_HEAP_U32(), value >> 2, count);
 }
 
 function _emscripten_glUniform2f(location, v0, v1) {
@@ -10285,7 +10683,7 @@ function _emscripten_glUniform2f(location, v0, v1) {
 
 function _emscripten_glUniform2fv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  count && GLctx.uniform2fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 2);
+  GLctx.uniform2fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 2);
   return;
  }
  if (count <= 144) {
@@ -10306,7 +10704,7 @@ function _emscripten_glUniform2i(location, v0, v1) {
 
 function _emscripten_glUniform2iv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  count && GLctx.uniform2iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count * 2);
+  GLctx.uniform2iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count * 2);
   return;
  }
  if (count <= 144) {
@@ -10326,7 +10724,7 @@ function _emscripten_glUniform2ui(location, v0, v1) {
 }
 
 function _emscripten_glUniform2uiv(location, count, value) {
- count && GLctx.uniform2uiv(webglGetUniformLocation(location), GROWABLE_HEAP_U32(), value >> 2, count * 2);
+ GLctx.uniform2uiv(webglGetUniformLocation(location), GROWABLE_HEAP_U32(), value >> 2, count * 2);
 }
 
 function _emscripten_glUniform3f(location, v0, v1, v2) {
@@ -10335,7 +10733,7 @@ function _emscripten_glUniform3f(location, v0, v1, v2) {
 
 function _emscripten_glUniform3fv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  count && GLctx.uniform3fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 3);
+  GLctx.uniform3fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 3);
   return;
  }
  if (count <= 96) {
@@ -10357,7 +10755,7 @@ function _emscripten_glUniform3i(location, v0, v1, v2) {
 
 function _emscripten_glUniform3iv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  count && GLctx.uniform3iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count * 3);
+  GLctx.uniform3iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count * 3);
   return;
  }
  if (count <= 96) {
@@ -10378,7 +10776,7 @@ function _emscripten_glUniform3ui(location, v0, v1, v2) {
 }
 
 function _emscripten_glUniform3uiv(location, count, value) {
- count && GLctx.uniform3uiv(webglGetUniformLocation(location), GROWABLE_HEAP_U32(), value >> 2, count * 3);
+ GLctx.uniform3uiv(webglGetUniformLocation(location), GROWABLE_HEAP_U32(), value >> 2, count * 3);
 }
 
 function _emscripten_glUniform4f(location, v0, v1, v2, v3) {
@@ -10387,7 +10785,7 @@ function _emscripten_glUniform4f(location, v0, v1, v2, v3) {
 
 function _emscripten_glUniform4fv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  count && GLctx.uniform4fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 4);
+  GLctx.uniform4fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 4);
   return;
  }
  if (count <= 72) {
@@ -10413,7 +10811,7 @@ function _emscripten_glUniform4i(location, v0, v1, v2, v3) {
 
 function _emscripten_glUniform4iv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  count && GLctx.uniform4iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count * 4);
+  GLctx.uniform4iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count * 4);
   return;
  }
  if (count <= 72) {
@@ -10435,7 +10833,7 @@ function _emscripten_glUniform4ui(location, v0, v1, v2, v3) {
 }
 
 function _emscripten_glUniform4uiv(location, count, value) {
- count && GLctx.uniform4uiv(webglGetUniformLocation(location), GROWABLE_HEAP_U32(), value >> 2, count * 4);
+ GLctx.uniform4uiv(webglGetUniformLocation(location), GROWABLE_HEAP_U32(), value >> 2, count * 4);
 }
 
 function _emscripten_glUniformBlockBinding(program, uniformBlockIndex, uniformBlockBinding) {
@@ -10445,7 +10843,7 @@ function _emscripten_glUniformBlockBinding(program, uniformBlockIndex, uniformBl
 
 function _emscripten_glUniformMatrix2fv(location, count, transpose, value) {
  if (GL.currentContext.version >= 2) {
-  count && GLctx.uniformMatrix2fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 4);
+  GLctx.uniformMatrix2fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 4);
   return;
  }
  if (count <= 72) {
@@ -10463,16 +10861,16 @@ function _emscripten_glUniformMatrix2fv(location, count, transpose, value) {
 }
 
 function _emscripten_glUniformMatrix2x3fv(location, count, transpose, value) {
- count && GLctx.uniformMatrix2x3fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 6);
+ GLctx.uniformMatrix2x3fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 6);
 }
 
 function _emscripten_glUniformMatrix2x4fv(location, count, transpose, value) {
- count && GLctx.uniformMatrix2x4fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 8);
+ GLctx.uniformMatrix2x4fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 8);
 }
 
 function _emscripten_glUniformMatrix3fv(location, count, transpose, value) {
  if (GL.currentContext.version >= 2) {
-  count && GLctx.uniformMatrix3fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 9);
+  GLctx.uniformMatrix3fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 9);
   return;
  }
  if (count <= 32) {
@@ -10495,16 +10893,16 @@ function _emscripten_glUniformMatrix3fv(location, count, transpose, value) {
 }
 
 function _emscripten_glUniformMatrix3x2fv(location, count, transpose, value) {
- count && GLctx.uniformMatrix3x2fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 6);
+ GLctx.uniformMatrix3x2fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 6);
 }
 
 function _emscripten_glUniformMatrix3x4fv(location, count, transpose, value) {
- count && GLctx.uniformMatrix3x4fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 12);
+ GLctx.uniformMatrix3x4fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 12);
 }
 
 function _emscripten_glUniformMatrix4fv(location, count, transpose, value) {
  if (GL.currentContext.version >= 2) {
-  count && GLctx.uniformMatrix4fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 16);
+  GLctx.uniformMatrix4fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 16);
   return;
  }
  if (count <= 18) {
@@ -10537,11 +10935,11 @@ function _emscripten_glUniformMatrix4fv(location, count, transpose, value) {
 }
 
 function _emscripten_glUniformMatrix4x2fv(location, count, transpose, value) {
- count && GLctx.uniformMatrix4x2fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 8);
+ GLctx.uniformMatrix4x2fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 8);
 }
 
 function _emscripten_glUniformMatrix4x3fv(location, count, transpose, value) {
- count && GLctx.uniformMatrix4x3fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 12);
+ GLctx.uniformMatrix4x3fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 12);
 }
 
 function _emscripten_glUnmapBuffer(target) {
@@ -10690,7 +11088,7 @@ function _emscripten_glWaitSync(sync, flags, timeoutLo, timeoutHi) {
 }
 
 function _emscripten_has_asyncify() {
- return 0;
+ return false;
 }
 
 function reallyNegative(x) {
@@ -10719,12 +11117,6 @@ function unSign(value, bits) {
  return bits <= 32 ? 2 * Math.abs(1 << bits - 1) + value : Math.pow(2, bits) + value;
 }
 
-function strLen(ptr) {
- var end = ptr;
- while (GROWABLE_HEAP_U8()[end >>> 0]) ++end;
- return end - ptr;
-}
-
 function formatString(format, varargs) {
  var textIndex = format;
  var argIndex = varargs;
@@ -10740,7 +11132,7 @@ function formatString(format, varargs) {
   var ret;
   argIndex = prepVararg(argIndex, type);
   if (type === "double") {
-   ret = GROWABLE_HEAP_F64()[argIndex >>> 3];
+   ret = Number(GROWABLE_HEAP_F64()[argIndex >>> 3]);
    argIndex += 8;
   } else if (type == "i64") {
    ret = [ GROWABLE_HEAP_I32()[argIndex >>> 2], GROWABLE_HEAP_I32()[argIndex + 4 >>> 2] ];
@@ -11042,7 +11434,7 @@ function formatString(format, varargs) {
    case "s":
     {
      var arg = getNextArg("i8*");
-     var argLength = arg ? strLen(arg) : "(null)".length;
+     var argLength = arg ? _strlen(arg) : "(null)".length;
      if (precisionSet) argLength = Math.min(argLength, precision);
      if (!flagLeftAlign) {
       while (argLength < width--) {
@@ -11248,7 +11640,7 @@ function _emscripten_memcpy_big(dest, src, num) {
 function _emscripten_proxy_to_main_thread_js(index, sync) {
  var numCallArgs = arguments.length - 2;
  var outerArgs = arguments;
- return withStackSave(() => {
+ return withStackSave(function() {
   var serializedNumCallArgs = numCallArgs;
   var args = stackAlloc(serializedNumCallArgs * 8);
   var b = args >> 3;
@@ -11283,12 +11675,13 @@ function doRequestFullscreen(target, strategy) {
  var canPerformRequests = JSEvents.canPerformEventHandlerRequests();
  if (!canPerformRequests) {
   if (strategy.deferUntilInEventHandler) {
-   JSEvents.deferCall(JSEvents_requestFullscreen, 1, [ target, strategy ]);
+   JSEvents.deferCall(_JSEvents_requestFullscreen, 1, [ target, strategy ]);
    return 1;
+  } else {
+   return -2;
   }
-  return -2;
  }
- return JSEvents_requestFullscreen(target, strategy);
+ return _JSEvents_requestFullscreen(target, strategy);
 }
 
 function _emscripten_request_fullscreen_strategy(target, deferUntilInEventHandler, fullscreenStrategy) {
@@ -11317,13 +11710,14 @@ function _emscripten_request_pointerlock(target, deferUntilInEventHandler) {
   if (deferUntilInEventHandler) {
    JSEvents.deferCall(requestPointerLock, 2, [ target ]);
    return 1;
+  } else {
+   return -2;
   }
-  return -2;
  }
  return requestPointerLock(target);
 }
 
-function getHeapMax() {
+function _emscripten_get_heap_max() {
  return 4294901760;
 }
 
@@ -11341,7 +11735,7 @@ function _emscripten_resize_heap(requestedSize) {
  if (requestedSize <= oldSize) {
   return false;
  }
- var maxHeapSize = getHeapMax();
+ var maxHeapSize = _emscripten_get_heap_max();
  if (requestedSize > maxHeapSize) {
   return false;
  }
@@ -11957,7 +12351,9 @@ function _emscripten_webgl_do_create_context(target, attributes) {
  return contextHandle;
 }
 
-var _emscripten_webgl_create_context = _emscripten_webgl_do_create_context;
+function _emscripten_webgl_create_context(a0, a1) {
+ return _emscripten_webgl_do_create_context(a0, a1);
+}
 
 function _emscripten_webgl_destroy_context(contextHandle) {
  if (GL.currentContext == contextHandle) GL.currentContext = 0;
@@ -12004,7 +12400,9 @@ function _emscripten_webgl_do_get_current_context() {
  return GL.currentContext ? GL.currentContext.handle : 0;
 }
 
-var _emscripten_webgl_get_current_context = _emscripten_webgl_do_get_current_context;
+function _emscripten_webgl_get_current_context() {
+ return _emscripten_webgl_do_get_current_context();
+}
 
 function _emscripten_webgl_init_context_attributes(attributes) {
  var a = attributes >> 2;
@@ -12050,19 +12448,12 @@ function getEnvStrings() {
  return getEnvStrings.strings;
 }
 
-function writeAsciiToMemory(str, buffer, dontAddNull) {
- for (var i = 0; i < str.length; ++i) {
-  GROWABLE_HEAP_I8()[buffer++ >>> 0] = str.charCodeAt(i);
- }
- if (!dontAddNull) GROWABLE_HEAP_I8()[buffer >>> 0] = 0;
-}
-
 function _environ_get(__environ, environ_buf) {
  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(69, 1, __environ, environ_buf);
  var bufSize = 0;
  getEnvStrings().forEach(function(string, i) {
   var ptr = environ_buf + bufSize;
-  GROWABLE_HEAP_U32()[__environ + i * 4 >>> 2] = ptr;
+  GROWABLE_HEAP_I32()[__environ + i * 4 >>> 2] = ptr;
   writeAsciiToMemory(string, ptr);
   bufSize += string.length + 1;
  });
@@ -12072,12 +12463,12 @@ function _environ_get(__environ, environ_buf) {
 function _environ_sizes_get(penviron_count, penviron_buf_size) {
  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(70, 1, penviron_count, penviron_buf_size);
  var strings = getEnvStrings();
- GROWABLE_HEAP_U32()[penviron_count >>> 2] = strings.length;
+ GROWABLE_HEAP_I32()[penviron_count >>> 2] = strings.length;
  var bufSize = 0;
  strings.forEach(function(string) {
   bufSize += string.length + 1;
  });
- GROWABLE_HEAP_U32()[penviron_buf_size >>> 2] = bufSize;
+ GROWABLE_HEAP_I32()[penviron_buf_size >>> 2] = bufSize;
  return 0;
 }
 
@@ -12093,26 +12484,12 @@ function _fd_close(fd) {
  }
 }
 
-function doReadv(stream, iov, iovcnt, offset) {
- var ret = 0;
- for (var i = 0; i < iovcnt; i++) {
-  var ptr = GROWABLE_HEAP_U32()[iov >>> 2];
-  var len = GROWABLE_HEAP_U32()[iov + 4 >>> 2];
-  iov += 8;
-  var curr = FS.read(stream, GROWABLE_HEAP_I8(), ptr, len, offset);
-  if (curr < 0) return -1;
-  ret += curr;
-  if (curr < len) break;
- }
- return ret;
-}
-
 function _fd_read(fd, iov, iovcnt, pnum) {
  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(72, 1, fd, iov, iovcnt, pnum);
  try {
   var stream = SYSCALLS.getStreamFromFD(fd);
-  var num = doReadv(stream, iov, iovcnt);
-  GROWABLE_HEAP_U32()[pnum >>> 2] = num;
+  var num = SYSCALLS.doReadv(stream, iov, iovcnt);
+  GROWABLE_HEAP_I32()[pnum >>> 2] = num;
   return 0;
  } catch (e) {
   if (typeof FS == "undefined" || !(e instanceof FS.ErrnoError)) throw e;
@@ -12120,16 +12497,16 @@ function _fd_read(fd, iov, iovcnt, pnum) {
  }
 }
 
-function convertI32PairToI53Checked(lo, hi) {
- return hi + 2097152 >>> 0 < 4194305 - !!lo ? (lo >>> 0) + hi * 4294967296 : NaN;
-}
-
 function _fd_seek(fd, offset_low, offset_high, whence, newOffset) {
  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(73, 1, fd, offset_low, offset_high, whence, newOffset);
  try {
-  var offset = convertI32PairToI53Checked(offset_low, offset_high);
-  if (isNaN(offset)) return 61;
   var stream = SYSCALLS.getStreamFromFD(fd);
+  var HIGH_OFFSET = 4294967296;
+  var offset = offset_high * HIGH_OFFSET + (offset_low >>> 0);
+  var DOUBLE_LIMIT = 9007199254740992;
+  if (offset <= -DOUBLE_LIMIT || offset >= DOUBLE_LIMIT) {
+   return -61;
+  }
   FS.llseek(stream, offset, whence);
   tempI64 = [ stream.position >>> 0, (tempDouble = stream.position, +Math.abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math.min(+Math.floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math.ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0) ], 
   GROWABLE_HEAP_I32()[newOffset >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[newOffset + 4 >>> 2] = tempI64[1];
@@ -12141,30 +12518,21 @@ function _fd_seek(fd, offset_low, offset_high, whence, newOffset) {
  }
 }
 
-function doWritev(stream, iov, iovcnt, offset) {
- var ret = 0;
- for (var i = 0; i < iovcnt; i++) {
-  var ptr = GROWABLE_HEAP_U32()[iov >>> 2];
-  var len = GROWABLE_HEAP_U32()[iov + 4 >>> 2];
-  iov += 8;
-  var curr = FS.write(stream, GROWABLE_HEAP_I8(), ptr, len, offset);
-  if (curr < 0) return -1;
-  ret += curr;
- }
- return ret;
-}
-
 function _fd_write(fd, iov, iovcnt, pnum) {
  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(74, 1, fd, iov, iovcnt, pnum);
  try {
   var stream = SYSCALLS.getStreamFromFD(fd);
-  var num = doWritev(stream, iov, iovcnt);
-  GROWABLE_HEAP_U32()[pnum >>> 2] = num;
+  var num = SYSCALLS.doWritev(stream, iov, iovcnt);
+  GROWABLE_HEAP_I32()[pnum >>> 2] = num;
   return 0;
  } catch (e) {
   if (typeof FS == "undefined" || !(e instanceof FS.ErrnoError)) throw e;
   return e.errno;
  }
+}
+
+function _getTempRet0() {
+ return getTempRet0();
 }
 
 function _glActiveTexture(x0) {
@@ -12215,7 +12583,7 @@ function _glBlendFuncSeparate(x0, x1, x2, x3) {
 
 function _glBufferData(target, size, data, usage) {
  if (GL.currentContext.version >= 2) {
-  if (data && size) {
+  if (data) {
    GLctx.bufferData(target, GROWABLE_HEAP_U8(), usage, data, size);
   } else {
    GLctx.bufferData(target, size, usage);
@@ -12227,7 +12595,7 @@ function _glBufferData(target, size, data, usage) {
 
 function _glBufferSubData(target, offset, size, data) {
  if (GL.currentContext.version >= 2) {
-  size && GLctx.bufferSubData(target, offset, GROWABLE_HEAP_U8(), data, size);
+  GLctx.bufferSubData(target, offset, GROWABLE_HEAP_U8(), data, size);
   return;
  }
  GLctx.bufferSubData(target, offset, GROWABLE_HEAP_U8().subarray(data >>> 0, data + size >>> 0));
@@ -12263,7 +12631,7 @@ function _glCompileShader(shader) {
 
 function _glCompressedTexImage2D(target, level, internalFormat, width, height, border, imageSize, data) {
  if (GL.currentContext.version >= 2) {
-  if (GLctx.currentPixelUnpackBufferBinding || !imageSize) {
+  if (GLctx.currentPixelUnpackBufferBinding) {
    GLctx["compressedTexImage2D"](target, level, internalFormat, width, height, border, imageSize, data);
   } else {
    GLctx["compressedTexImage2D"](target, level, internalFormat, width, height, border, GROWABLE_HEAP_U8(), data, imageSize);
@@ -12275,7 +12643,7 @@ function _glCompressedTexImage2D(target, level, internalFormat, width, height, b
 
 function _glCompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, imageSize, data) {
  if (GL.currentContext.version >= 2) {
-  if (GLctx.currentPixelUnpackBufferBinding || !imageSize) {
+  if (GLctx.currentPixelUnpackBufferBinding) {
    GLctx["compressedTexSubImage2D"](target, level, xoffset, yoffset, width, height, format, imageSize, data);
   } else {
    GLctx["compressedTexSubImage2D"](target, level, xoffset, yoffset, width, height, format, GROWABLE_HEAP_U8(), data, imageSize);
@@ -12728,7 +13096,7 @@ function _glUniform1i(location, v0) {
 
 function _glUniform1iv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  count && GLctx.uniform1iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count);
+  GLctx.uniform1iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count);
   return;
  }
  if (count <= 288) {
@@ -12748,7 +13116,7 @@ function _glUniform4f(location, v0, v1, v2, v3) {
 
 function _glUniform4fv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  count && GLctx.uniform4fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 4);
+  GLctx.uniform4fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 4);
   return;
  }
  if (count <= 72) {
@@ -12770,7 +13138,7 @@ function _glUniform4fv(location, count, value) {
 
 function _glUniformMatrix3fv(location, count, transpose, value) {
  if (GL.currentContext.version >= 2) {
-  count && GLctx.uniformMatrix3fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 9);
+  GLctx.uniformMatrix3fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 9);
   return;
  }
  if (count <= 32) {
@@ -12794,7 +13162,7 @@ function _glUniformMatrix3fv(location, count, transpose, value) {
 
 function _glUniformMatrix4fv(location, count, transpose, value) {
  if (GL.currentContext.version >= 2) {
-  count && GLctx.uniformMatrix4fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 16);
+  GLctx.uniformMatrix4fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 16);
   return;
  }
  if (count <= 18) {
@@ -12852,6 +13220,10 @@ function _glVertexAttribPointer(index, size, type, normalized, stride, ptr) {
 
 function _glViewport(x0, x1, x2, x3) {
  GLctx["viewport"](x0, x1, x2, x3);
+}
+
+function _setTempRet0(val) {
+ setTempRet0(val);
 }
 
 function __isLeapYear(year) {
@@ -12997,10 +13369,12 @@ function _strftime(s, maxsize, format, tm) {
   if (compareByDay(firstWeekStartThisYear, thisDate) <= 0) {
    if (compareByDay(firstWeekStartNextYear, thisDate) <= 0) {
     return thisDate.getFullYear() + 1;
+   } else {
+    return thisDate.getFullYear();
    }
-   return thisDate.getFullYear();
+  } else {
+   return thisDate.getFullYear() - 1;
   }
-  return thisDate.getFullYear() - 1;
  }
  var EXPANSION_RULES_2 = {
   "%a": function(date) {
@@ -13054,8 +13428,9 @@ function _strftime(s, maxsize, format, tm) {
   "%p": function(date) {
    if (date.tm_hour >= 0 && date.tm_hour < 12) {
     return "AM";
+   } else {
+    return "PM";
    }
-   return "PM";
   },
   "%S": function(date) {
    return leadingNulls(date.tm_sec, 2);
@@ -13133,351 +13508,6 @@ function _strftime_l(s, maxsize, format, tm) {
  return _strftime(s, maxsize, format, tm);
 }
 
-function allocateUTF8OnStack(str) {
- var size = lengthBytesUTF8(str) + 1;
- var ret = stackAlloc(size);
- stringToUTF8Array(str, GROWABLE_HEAP_I8(), ret, size);
- return ret;
-}
-
-function uleb128Encode(n, target) {
- if (n < 128) {
-  target.push(n);
- } else {
-  target.push(n % 128 | 128, n >> 7);
- }
-}
-
-function sigToWasmTypes(sig) {
- var typeNames = {
-  "i": "i32",
-  "j": "i64",
-  "f": "f32",
-  "d": "f64",
-  "p": "i32"
- };
- var type = {
-  parameters: [],
-  results: sig[0] == "v" ? [] : [ typeNames[sig[0]] ]
- };
- for (var i = 1; i < sig.length; ++i) {
-  type.parameters.push(typeNames[sig[i]]);
- }
- return type;
-}
-
-function convertJsFunctionToWasm(func, sig) {
- if (typeof WebAssembly.Function == "function") {
-  return new WebAssembly.Function(sigToWasmTypes(sig), func);
- }
- var typeSectionBody = [ 1, 96 ];
- var sigRet = sig.slice(0, 1);
- var sigParam = sig.slice(1);
- var typeCodes = {
-  "i": 127,
-  "p": 127,
-  "j": 126,
-  "f": 125,
-  "d": 124
- };
- uleb128Encode(sigParam.length, typeSectionBody);
- for (var i = 0; i < sigParam.length; ++i) {
-  typeSectionBody.push(typeCodes[sigParam[i]]);
- }
- if (sigRet == "v") {
-  typeSectionBody.push(0);
- } else {
-  typeSectionBody.push(1, typeCodes[sigRet]);
- }
- var bytes = [ 0, 97, 115, 109, 1, 0, 0, 0, 1 ];
- uleb128Encode(typeSectionBody.length, bytes);
- bytes.push.apply(bytes, typeSectionBody);
- bytes.push(2, 7, 1, 1, 101, 1, 102, 0, 0, 7, 5, 1, 1, 102, 0, 0);
- var module = new WebAssembly.Module(new Uint8Array(bytes));
- var instance = new WebAssembly.Instance(module, {
-  "e": {
-   "f": func
-  }
- });
- var wrappedFunc = instance.exports["f"];
- return wrappedFunc;
-}
-
-function updateTableMap(offset, count) {
- if (functionsInTableMap) {
-  for (var i = offset; i < offset + count; i++) {
-   var item = getWasmTableEntry(i);
-   if (item) {
-    functionsInTableMap.set(item, i);
-   }
-  }
- }
-}
-
-var functionsInTableMap = undefined;
-
-var freeTableIndexes = [];
-
-function getEmptyTableSlot() {
- if (freeTableIndexes.length) {
-  return freeTableIndexes.pop();
- }
- try {
-  wasmTable.grow(1);
- } catch (err) {
-  if (!(err instanceof RangeError)) {
-   throw err;
-  }
-  throw "Unable to grow wasm table. Set ALLOW_TABLE_GROWTH.";
- }
- return wasmTable.length - 1;
-}
-
-function setWasmTableEntry(idx, func) {
- wasmTable.set(idx, func);
- wasmTableMirror[idx] = wasmTable.get(idx);
-}
-
-function addFunction(func, sig) {
- if (!functionsInTableMap) {
-  functionsInTableMap = new WeakMap();
-  updateTableMap(0, wasmTable.length);
- }
- if (functionsInTableMap.has(func)) {
-  return functionsInTableMap.get(func);
- }
- var ret = getEmptyTableSlot();
- try {
-  setWasmTableEntry(ret, func);
- } catch (err) {
-  if (!(err instanceof TypeError)) {
-   throw err;
-  }
-  var wrapped = convertJsFunctionToWasm(func, sig);
-  setWasmTableEntry(ret, wrapped);
- }
- functionsInTableMap.set(func, ret);
- return ret;
-}
-
-function removeFunction(index) {
- functionsInTableMap.delete(getWasmTableEntry(index));
- freeTableIndexes.push(index);
-}
-
-var ALLOC_NORMAL = 0;
-
-var ALLOC_STACK = 1;
-
-function allocate(slab, allocator) {
- var ret;
- if (allocator == ALLOC_STACK) {
-  ret = stackAlloc(slab.length);
- } else {
-  ret = _malloc(slab.length);
- }
- if (!slab.subarray && !slab.slice) {
-  slab = new Uint8Array(slab);
- }
- GROWABLE_HEAP_U8().set(slab, ret >>> 0);
- return ret;
-}
-
-function AsciiToString(ptr) {
- ptr >>>= 0;
- var str = "";
- while (1) {
-  var ch = GROWABLE_HEAP_U8()[ptr++ >>> 0];
-  if (!ch) return str;
-  str += String.fromCharCode(ch);
- }
-}
-
-function stringToAscii(str, outPtr) {
- return writeAsciiToMemory(str, outPtr, false);
-}
-
-var UTF16Decoder = typeof TextDecoder != "undefined" ? new TextDecoder("utf-16le") : undefined;
-
-function UTF16ToString(ptr, maxBytesToRead) {
- var endPtr = ptr;
- var idx = endPtr >> 1;
- var maxIdx = idx + maxBytesToRead / 2;
- while (!(idx >= maxIdx) && GROWABLE_HEAP_U16()[idx >>> 0]) ++idx;
- endPtr = idx << 1;
- if (endPtr - ptr > 32 && UTF16Decoder) {
-  return UTF16Decoder.decode(GROWABLE_HEAP_U8().slice(ptr, endPtr));
- } else {
-  var str = "";
-  for (var i = 0; !(i >= maxBytesToRead / 2); ++i) {
-   var codeUnit = GROWABLE_HEAP_I16()[ptr + i * 2 >>> 1];
-   if (codeUnit == 0) break;
-   str += String.fromCharCode(codeUnit);
-  }
-  return str;
- }
-}
-
-function stringToUTF16(str, outPtr, maxBytesToWrite) {
- if (maxBytesToWrite === undefined) {
-  maxBytesToWrite = 2147483647;
- }
- if (maxBytesToWrite < 2) return 0;
- maxBytesToWrite -= 2;
- var startPtr = outPtr;
- var numCharsToWrite = maxBytesToWrite < str.length * 2 ? maxBytesToWrite / 2 : str.length;
- for (var i = 0; i < numCharsToWrite; ++i) {
-  var codeUnit = str.charCodeAt(i);
-  GROWABLE_HEAP_I16()[outPtr >>> 1] = codeUnit;
-  outPtr += 2;
- }
- GROWABLE_HEAP_I16()[outPtr >>> 1] = 0;
- return outPtr - startPtr;
-}
-
-function lengthBytesUTF16(str) {
- return str.length * 2;
-}
-
-function UTF32ToString(ptr, maxBytesToRead) {
- var i = 0;
- var str = "";
- while (!(i >= maxBytesToRead / 4)) {
-  var utf32 = GROWABLE_HEAP_I32()[ptr + i * 4 >>> 2];
-  if (utf32 == 0) break;
-  ++i;
-  if (utf32 >= 65536) {
-   var ch = utf32 - 65536;
-   str += String.fromCharCode(55296 | ch >> 10, 56320 | ch & 1023);
-  } else {
-   str += String.fromCharCode(utf32);
-  }
- }
- return str;
-}
-
-function stringToUTF32(str, outPtr, maxBytesToWrite) {
- outPtr >>>= 0;
- if (maxBytesToWrite === undefined) {
-  maxBytesToWrite = 2147483647;
- }
- if (maxBytesToWrite < 4) return 0;
- var startPtr = outPtr;
- var endPtr = startPtr + maxBytesToWrite - 4;
- for (var i = 0; i < str.length; ++i) {
-  var codeUnit = str.charCodeAt(i);
-  if (codeUnit >= 55296 && codeUnit <= 57343) {
-   var trailSurrogate = str.charCodeAt(++i);
-   codeUnit = 65536 + ((codeUnit & 1023) << 10) | trailSurrogate & 1023;
-  }
-  GROWABLE_HEAP_I32()[outPtr >>> 2] = codeUnit;
-  outPtr += 4;
-  if (outPtr + 4 > endPtr) break;
- }
- GROWABLE_HEAP_I32()[outPtr >>> 2] = 0;
- return outPtr - startPtr;
-}
-
-function lengthBytesUTF32(str) {
- var len = 0;
- for (var i = 0; i < str.length; ++i) {
-  var codeUnit = str.charCodeAt(i);
-  if (codeUnit >= 55296 && codeUnit <= 57343) ++i;
-  len += 4;
- }
- return len;
-}
-
-function writeStringToMemory(string, buffer, dontAddNull) {
- warnOnce("writeStringToMemory is deprecated and should not be called! Use stringToUTF8() instead!");
- var lastChar, end;
- if (dontAddNull) {
-  end = buffer + lengthBytesUTF8(string);
-  lastChar = GROWABLE_HEAP_I8()[end >>> 0];
- }
- stringToUTF8(string, buffer, Infinity);
- if (dontAddNull) GROWABLE_HEAP_I8()[end >>> 0] = lastChar;
-}
-
-function intArrayToString(array) {
- var ret = [];
- for (var i = 0; i < array.length; i++) {
-  var chr = array[i];
-  if (chr > 255) {
-   if (ASSERTIONS) {
-    assert(false, "Character code " + chr + " (" + String.fromCharCode(chr) + ")  at offset " + i + " not in 0x00-0xFF.");
-   }
-   chr &= 255;
-  }
-  ret.push(String.fromCharCode(chr));
- }
- return ret.join("");
-}
-
-function getCFunc(ident) {
- var func = Module["_" + ident];
- return func;
-}
-
-function ccall(ident, returnType, argTypes, args, opts) {
- var toC = {
-  "string": str => {
-   var ret = 0;
-   if (str !== null && str !== undefined && str !== 0) {
-    var len = (str.length << 2) + 1;
-    ret = stackAlloc(len);
-    stringToUTF8(str, ret, len);
-   }
-   return ret;
-  },
-  "array": arr => {
-   var ret = stackAlloc(arr.length);
-   writeArrayToMemory(arr, ret);
-   return ret;
-  }
- };
- function convertReturnValue(ret) {
-  if (returnType === "string") {
-   return UTF8ToString(ret);
-  }
-  if (returnType === "boolean") return Boolean(ret);
-  return ret;
- }
- var func = getCFunc(ident);
- var cArgs = [];
- var stack = 0;
- if (args) {
-  for (var i = 0; i < args.length; i++) {
-   var converter = toC[argTypes[i]];
-   if (converter) {
-    if (stack === 0) stack = stackSave();
-    cArgs[i] = converter(args[i]);
-   } else {
-    cArgs[i] = args[i];
-   }
-  }
- }
- var ret = func.apply(null, cArgs);
- function onDone(ret) {
-  if (stack !== 0) stackRestore(stack);
-  return convertReturnValue(ret);
- }
- ret = onDone(ret);
- return ret;
-}
-
-function cwrap(ident, returnType, argTypes, opts) {
- argTypes = argTypes || [];
- var numericArgs = argTypes.every(type => type === "number" || type === "boolean");
- var numericRet = returnType !== "string";
- if (numericRet && numericArgs && !opts) {
-  return getCFunc(ident);
- }
- return function() {
-  return ccall(ident, returnType, argTypes, arguments, opts);
- };
-}
-
 PThread.init();
 
 var FSNode = function(parent, name, mode, rdev) {
@@ -13538,11 +13568,11 @@ Module["FS_createDataFile"] = FS.createDataFile;
 
 Module["FS_createPreloadedFile"] = FS.createPreloadedFile;
 
-Module["FS_unlink"] = FS.unlink;
-
 Module["FS_createLazyFile"] = FS.createLazyFile;
 
 Module["FS_createDevice"] = FS.createDevice;
+
+Module["FS_unlink"] = FS.unlink;
 
 Module["requestFullscreen"] = function Module_requestFullscreen(lockPointer, resizeCanvas) {
  Browser.requestFullscreen(lockPointer, resizeCanvas);
@@ -13572,10 +13602,6 @@ Module["createContext"] = function Module_createContext(canvas, useWebGL, setInM
  return Browser.createContext(canvas, useWebGL, setInModule, webGLContextAttributes);
 };
 
-var preloadedImages = {};
-
-var preloadedAudios = {};
-
 var GLctx;
 
 for (var i = 0; i < 32; ++i) tempFixedLengthArray.push(new Array(i));
@@ -13592,9 +13618,32 @@ for (var i = 0; i < 288; ++i) {
  __miniTempWebGLIntBuffers[i] = __miniTempWebGLIntBuffersStorage.subarray(0, i + 1);
 }
 
-var proxiedFunctionTable = [ null, _proc_exit, exitOnMainThread, pthreadCreateProxied, ___syscall__newselect, ___syscall_chdir, ___syscall_dup3, ___syscall_fcntl64, ___syscall_ioctl, ___syscall_lstat64, ___syscall_openat, ___syscall_pipe, ___syscall_renameat, ___syscall_rmdir, ___syscall_unlinkat, _tzset_impl, _eglBindAPI, _eglChooseConfig, _eglCreateContext, _eglCreateWindowSurface, _eglDestroyContext, _eglDestroySurface, _eglGetConfigAttrib, _eglGetDisplay, _eglGetError, _eglInitialize, _eglMakeCurrent, _eglQueryString, _eglSwapBuffers, _eglSwapInterval, _eglTerminate, _eglWaitClient, _eglWaitNative, _emscripten_exit_fullscreen, _emscripten_get_canvas_element_size_main_thread, _emscripten_set_canvas_element_size_main_thread, _emscripten_exit_pointerlock, _emscripten_get_device_pixel_ratio, _emscripten_get_element_css_size, _emscripten_get_gamepad_status, _emscripten_get_num_gamepads, _emscripten_get_screen_size, _emscripten_request_fullscreen_strategy, _emscripten_request_pointerlock, _emscripten_sample_gamepad_data, _emscripten_set_beforeunload_callback_on_thread, _emscripten_set_blur_callback_on_thread, _emscripten_set_element_css_size, _emscripten_set_focus_callback_on_thread, _emscripten_set_fullscreenchange_callback_on_thread, _emscripten_set_gamepadconnected_callback_on_thread, _emscripten_set_gamepaddisconnected_callback_on_thread, _emscripten_set_keydown_callback_on_thread, _emscripten_set_keypress_callback_on_thread, _emscripten_set_keyup_callback_on_thread, _emscripten_set_mousedown_callback_on_thread, _emscripten_set_mouseenter_callback_on_thread, _emscripten_set_mouseleave_callback_on_thread, _emscripten_set_mousemove_callback_on_thread, _emscripten_set_mouseup_callback_on_thread, _emscripten_set_pointerlockchange_callback_on_thread, _emscripten_set_resize_callback_on_thread, _emscripten_set_touchcancel_callback_on_thread, _emscripten_set_touchend_callback_on_thread, _emscripten_set_touchmove_callback_on_thread, _emscripten_set_touchstart_callback_on_thread, _emscripten_set_visibilitychange_callback_on_thread, _emscripten_set_wheel_callback_on_thread, _emscripten_set_window_title, _environ_get, _environ_sizes_get, _fd_close, _fd_read, _fd_seek, _fd_write ];
+var proxiedFunctionTable = [ null, exitOnMainThread, pthreadCreateProxied, ___syscall__newselect, ___syscall_chdir, ___syscall_dup3, ___syscall_fcntl64, ___syscall_ioctl, ___syscall_lstat64, ___syscall_openat, ___syscall_pipe, ___syscall_renameat, ___syscall_rmdir, ___syscall_unlinkat, _tzset_impl, _eglBindAPI, _eglChooseConfig, _eglCreateContext, _eglCreateWindowSurface, _eglDestroyContext, _eglDestroySurface, _eglGetConfigAttrib, _eglGetDisplay, _eglGetError, _eglInitialize, _eglMakeCurrent, _eglQueryString, _eglSwapBuffers, _eglSwapInterval, _eglTerminate, _eglWaitClient, _eglWaitNative, _emscripten_exit_fullscreen, _emscripten_get_canvas_element_size_main_thread, _emscripten_set_canvas_element_size_main_thread, _emscripten_exit_pointerlock, _emscripten_force_exit, _emscripten_get_device_pixel_ratio, _emscripten_get_element_css_size, _emscripten_get_gamepad_status, _emscripten_get_num_gamepads, _emscripten_get_screen_size, _emscripten_request_fullscreen_strategy, _emscripten_request_pointerlock, _emscripten_sample_gamepad_data, _emscripten_set_beforeunload_callback_on_thread, _emscripten_set_blur_callback_on_thread, _emscripten_set_element_css_size, _emscripten_set_focus_callback_on_thread, _emscripten_set_fullscreenchange_callback_on_thread, _emscripten_set_gamepadconnected_callback_on_thread, _emscripten_set_gamepaddisconnected_callback_on_thread, _emscripten_set_keydown_callback_on_thread, _emscripten_set_keypress_callback_on_thread, _emscripten_set_keyup_callback_on_thread, _emscripten_set_mousedown_callback_on_thread, _emscripten_set_mouseenter_callback_on_thread, _emscripten_set_mouseleave_callback_on_thread, _emscripten_set_mousemove_callback_on_thread, _emscripten_set_mouseup_callback_on_thread, _emscripten_set_pointerlockchange_callback_on_thread, _emscripten_set_resize_callback_on_thread, _emscripten_set_touchcancel_callback_on_thread, _emscripten_set_touchend_callback_on_thread, _emscripten_set_touchmove_callback_on_thread, _emscripten_set_touchstart_callback_on_thread, _emscripten_set_visibilitychange_callback_on_thread, _emscripten_set_wheel_callback_on_thread, _emscripten_set_window_title, _environ_get, _environ_sizes_get, _fd_close, _fd_read, _fd_seek, _fd_write ];
 
 var ASSERTIONS = false;
+
+function intArrayFromString(stringy, dontAddNull, length) {
+ var len = length > 0 ? length : lengthBytesUTF8(stringy) + 1;
+ var u8array = new Array(len);
+ var numBytesWritten = stringToUTF8Array(stringy, u8array, 0, u8array.length);
+ if (dontAddNull) u8array.length = numBytesWritten;
+ return u8array;
+}
+
+function intArrayToString(array) {
+ var ret = [];
+ for (var i = 0; i < array.length; i++) {
+  var chr = array[i];
+  if (chr > 255) {
+   if (ASSERTIONS) {
+    assert(false, "Character code " + chr + " (" + String.fromCharCode(chr) + ")  at offset " + i + " not in 0x00-0xFF.");
+   }
+   chr &= 255;
+  }
+  ret.push(String.fromCharCode(chr));
+ }
+ return ret.join("");
+}
 
 var decodeBase64 = typeof atob == "function" ? atob : function(input) {
  var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
@@ -13668,7 +13717,7 @@ var asmLibraryArg = {
  "_emscripten_date_now": __emscripten_date_now,
  "_emscripten_default_pthread_stack_size": __emscripten_default_pthread_stack_size,
  "_emscripten_get_now_is_monotonic": __emscripten_get_now_is_monotonic,
- "_emscripten_notify_task_queue": __emscripten_notify_task_queue,
+ "_emscripten_notify_proxying_queue": __emscripten_notify_proxying_queue,
  "_emscripten_set_offscreencanvas_size": __emscripten_set_offscreencanvas_size,
  "_emscripten_throw_longjmp": __emscripten_throw_longjmp,
  "_gmtime_js": __gmtime_js,
@@ -13694,9 +13743,11 @@ var asmLibraryArg = {
  "eglWaitGL": _eglWaitGL,
  "eglWaitNative": _eglWaitNative,
  "emscripten_asm_const_int": _emscripten_asm_const_int,
+ "emscripten_cancel_main_loop": _emscripten_cancel_main_loop,
  "emscripten_check_blocking_allowed": _emscripten_check_blocking_allowed,
  "emscripten_exit_fullscreen": _emscripten_exit_fullscreen,
  "emscripten_exit_pointerlock": _emscripten_exit_pointerlock,
+ "emscripten_force_exit": _emscripten_force_exit,
  "emscripten_get_canvas_element_size": _emscripten_get_canvas_element_size,
  "emscripten_get_device_pixel_ratio": _emscripten_get_device_pixel_ratio,
  "emscripten_get_element_css_size": _emscripten_get_element_css_size,
@@ -14029,6 +14080,7 @@ var asmLibraryArg = {
  "fd_read": _fd_read,
  "fd_seek": _fd_seek,
  "fd_write": _fd_write,
+ "getTempRet0": _getTempRet0,
  "glActiveTexture": _glActiveTexture,
  "glAttachShader": _glAttachShader,
  "glBindBuffer": _glBindBuffer,
@@ -14112,6 +14164,7 @@ var asmLibraryArg = {
  "glViewport": _glViewport,
  "invoke_vii": invoke_vii,
  "memory": wasmMemory,
+ "setTempRet0": _setTempRet0,
  "strftime": _strftime,
  "strftime_l": _strftime_l
 };
@@ -14123,11 +14176,19 @@ var ___wasm_call_ctors = Module["___wasm_call_ctors"] = function() {
 };
 
 var _main = Module["_main"] = function() {
- return (_main = Module["_main"] = Module["asm"]["__main_argc_argv"]).apply(null, arguments);
+ return (_main = Module["_main"] = Module["asm"]["main"]).apply(null, arguments);
 };
 
 var _memcpy = Module["_memcpy"] = function() {
  return (_memcpy = Module["_memcpy"] = Module["asm"]["memcpy"]).apply(null, arguments);
+};
+
+var _strlen = Module["_strlen"] = function() {
+ return (_strlen = Module["_strlen"] = Module["asm"]["strlen"]).apply(null, arguments);
+};
+
+var _pthread_self = Module["_pthread_self"] = function() {
+ return (_pthread_self = Module["_pthread_self"] = Module["asm"]["pthread_self"]).apply(null, arguments);
 };
 
 var _free = Module["_free"] = function() {
@@ -14146,12 +14207,8 @@ var _saveSetjmp = Module["_saveSetjmp"] = function() {
  return (_saveSetjmp = Module["_saveSetjmp"] = Module["asm"]["saveSetjmp"]).apply(null, arguments);
 };
 
-var _pthread_self = Module["_pthread_self"] = function() {
- return (_pthread_self = Module["_pthread_self"] = Module["asm"]["pthread_self"]).apply(null, arguments);
-};
-
-var __emscripten_tls_init = Module["__emscripten_tls_init"] = function() {
- return (__emscripten_tls_init = Module["__emscripten_tls_init"] = Module["asm"]["_emscripten_tls_init"]).apply(null, arguments);
+var _emscripten_tls_init = Module["_emscripten_tls_init"] = function() {
+ return (_emscripten_tls_init = Module["_emscripten_tls_init"] = Module["asm"]["emscripten_tls_init"]).apply(null, arguments);
 };
 
 var _emscripten_builtin_memalign = Module["_emscripten_builtin_memalign"] = function() {
@@ -14174,16 +14231,16 @@ var _emscripten_main_browser_thread_id = Module["_emscripten_main_browser_thread
  return (_emscripten_main_browser_thread_id = Module["_emscripten_main_browser_thread_id"] = Module["asm"]["emscripten_main_browser_thread_id"]).apply(null, arguments);
 };
 
+var _emscripten_proxy_execute_queue = Module["_emscripten_proxy_execute_queue"] = function() {
+ return (_emscripten_proxy_execute_queue = Module["_emscripten_proxy_execute_queue"] = Module["asm"]["emscripten_proxy_execute_queue"]).apply(null, arguments);
+};
+
 var _emscripten_run_in_main_runtime_thread_js = Module["_emscripten_run_in_main_runtime_thread_js"] = function() {
  return (_emscripten_run_in_main_runtime_thread_js = Module["_emscripten_run_in_main_runtime_thread_js"] = Module["asm"]["emscripten_run_in_main_runtime_thread_js"]).apply(null, arguments);
 };
 
 var _emscripten_dispatch_to_thread_ = Module["_emscripten_dispatch_to_thread_"] = function() {
  return (_emscripten_dispatch_to_thread_ = Module["_emscripten_dispatch_to_thread_"] = Module["asm"]["emscripten_dispatch_to_thread_"]).apply(null, arguments);
-};
-
-var __emscripten_proxy_execute_task_queue = Module["__emscripten_proxy_execute_task_queue"] = function() {
- return (__emscripten_proxy_execute_task_queue = Module["__emscripten_proxy_execute_task_queue"] = Module["asm"]["_emscripten_proxy_execute_task_queue"]).apply(null, arguments);
 };
 
 var __emscripten_thread_free_data = Module["__emscripten_thread_free_data"] = function() {
@@ -14214,24 +14271,28 @@ var stackAlloc = Module["stackAlloc"] = function() {
  return (stackAlloc = Module["stackAlloc"] = Module["asm"]["stackAlloc"]).apply(null, arguments);
 };
 
-var ___cxa_is_pointer_type = Module["___cxa_is_pointer_type"] = function() {
- return (___cxa_is_pointer_type = Module["___cxa_is_pointer_type"] = Module["asm"]["__cxa_is_pointer_type"]).apply(null, arguments);
-};
-
 var dynCall_v = Module["dynCall_v"] = function() {
  return (dynCall_v = Module["dynCall_v"] = Module["asm"]["dynCall_v"]).apply(null, arguments);
-};
-
-var dynCall_ii = Module["dynCall_ii"] = function() {
- return (dynCall_ii = Module["dynCall_ii"] = Module["asm"]["dynCall_ii"]).apply(null, arguments);
 };
 
 var dynCall_vi = Module["dynCall_vi"] = function() {
  return (dynCall_vi = Module["dynCall_vi"] = Module["asm"]["dynCall_vi"]).apply(null, arguments);
 };
 
+var dynCall_ii = Module["dynCall_ii"] = function() {
+ return (dynCall_ii = Module["dynCall_ii"] = Module["asm"]["dynCall_ii"]).apply(null, arguments);
+};
+
 var dynCall_iii = Module["dynCall_iii"] = function() {
  return (dynCall_iii = Module["dynCall_iii"] = Module["asm"]["dynCall_iii"]).apply(null, arguments);
+};
+
+var dynCall_iiiiii = Module["dynCall_iiiiii"] = function() {
+ return (dynCall_iiiiii = Module["dynCall_iiiiii"] = Module["asm"]["dynCall_iiiiii"]).apply(null, arguments);
+};
+
+var dynCall_iiii = Module["dynCall_iiii"] = function() {
+ return (dynCall_iiii = Module["dynCall_iiii"] = Module["asm"]["dynCall_iiii"]).apply(null, arguments);
 };
 
 var dynCall_viii = Module["dynCall_viii"] = function() {
@@ -14262,20 +14323,16 @@ var dynCall_viiiiiiiii = Module["dynCall_viiiiiiiii"] = function() {
  return (dynCall_viiiiiiiii = Module["dynCall_viiiiiiiii"] = Module["asm"]["dynCall_viiiiiiiii"]).apply(null, arguments);
 };
 
-var dynCall_iiiiii = Module["dynCall_iiiiii"] = function() {
- return (dynCall_iiiiii = Module["dynCall_iiiiii"] = Module["asm"]["dynCall_iiiiii"]).apply(null, arguments);
-};
-
-var dynCall_iiii = Module["dynCall_iiii"] = function() {
- return (dynCall_iiii = Module["dynCall_iiii"] = Module["asm"]["dynCall_iiii"]).apply(null, arguments);
-};
-
 var dynCall_viiiii = Module["dynCall_viiiii"] = function() {
  return (dynCall_viiiii = Module["dynCall_viiiii"] = Module["asm"]["dynCall_viiiii"]).apply(null, arguments);
 };
 
 var dynCall_viiiiii = Module["dynCall_viiiiii"] = function() {
  return (dynCall_viiiiii = Module["dynCall_viiiiii"] = Module["asm"]["dynCall_viiiiii"]).apply(null, arguments);
+};
+
+var dynCall_viiiiiiiiiii = Module["dynCall_viiiiiiiiiii"] = function() {
+ return (dynCall_viiiiiiiiiii = Module["dynCall_viiiiiiiiiii"] = Module["asm"]["dynCall_viiiiiiiiiii"]).apply(null, arguments);
 };
 
 var dynCall_viiii = Module["dynCall_viiii"] = function() {
@@ -14286,36 +14343,32 @@ var dynCall_iiiii = Module["dynCall_iiiii"] = function() {
  return (dynCall_iiiii = Module["dynCall_iiiii"] = Module["asm"]["dynCall_iiiii"]).apply(null, arguments);
 };
 
-var dynCall_jiji = Module["dynCall_jiji"] = function() {
- return (dynCall_jiji = Module["dynCall_jiji"] = Module["asm"]["dynCall_jiji"]).apply(null, arguments);
-};
-
 var dynCall_ji = Module["dynCall_ji"] = function() {
  return (dynCall_ji = Module["dynCall_ji"] = Module["asm"]["dynCall_ji"]).apply(null, arguments);
 };
 
-var dynCall_iiiiiiii = Module["dynCall_iiiiiiii"] = function() {
- return (dynCall_iiiiiiii = Module["dynCall_iiiiiiii"] = Module["asm"]["dynCall_iiiiiiii"]).apply(null, arguments);
-};
-
-var dynCall_iiiiiiiiii = Module["dynCall_iiiiiiiiii"] = function() {
- return (dynCall_iiiiiiiiii = Module["dynCall_iiiiiiiiii"] = Module["asm"]["dynCall_iiiiiiiiii"]).apply(null, arguments);
-};
-
-var dynCall_iiiiiiiiiiiiiiff = Module["dynCall_iiiiiiiiiiiiiiff"] = function() {
- return (dynCall_iiiiiiiiiiiiiiff = Module["dynCall_iiiiiiiiiiiiiiff"] = Module["asm"]["dynCall_iiiiiiiiiiiiiiff"]).apply(null, arguments);
+var dynCall_jiji = Module["dynCall_jiji"] = function() {
+ return (dynCall_jiji = Module["dynCall_jiji"] = Module["asm"]["dynCall_jiji"]).apply(null, arguments);
 };
 
 var dynCall_iiiiiiiii = Module["dynCall_iiiiiiiii"] = function() {
  return (dynCall_iiiiiiiii = Module["dynCall_iiiiiiiii"] = Module["asm"]["dynCall_iiiiiiiii"]).apply(null, arguments);
 };
 
-var dynCall_viiiiiiiiiii = Module["dynCall_viiiiiiiiiii"] = function() {
- return (dynCall_viiiiiiiiiii = Module["dynCall_viiiiiiiiiii"] = Module["asm"]["dynCall_viiiiiiiiiii"]).apply(null, arguments);
+var dynCall_iiiiiiii = Module["dynCall_iiiiiiii"] = function() {
+ return (dynCall_iiiiiiii = Module["dynCall_iiiiiiii"] = Module["asm"]["dynCall_iiiiiiii"]).apply(null, arguments);
 };
 
 var dynCall_iiiiiidii = Module["dynCall_iiiiiidii"] = function() {
  return (dynCall_iiiiiidii = Module["dynCall_iiiiiidii"] = Module["asm"]["dynCall_iiiiiidii"]).apply(null, arguments);
+};
+
+var dynCall_iiiiiiiiiiiiiiff = Module["dynCall_iiiiiiiiiiiiiiff"] = function() {
+ return (dynCall_iiiiiiiiiiiiiiff = Module["dynCall_iiiiiiiiiiiiiiff"] = Module["asm"]["dynCall_iiiiiiiiiiiiiiff"]).apply(null, arguments);
+};
+
+var dynCall_iiiiiiiiii = Module["dynCall_iiiiiiiiii"] = function() {
+ return (dynCall_iiiiiiiiii = Module["dynCall_iiiiiiiiii"] = Module["asm"]["dynCall_iiiiiiiiii"]).apply(null, arguments);
 };
 
 var dynCall_iiiiiii = Module["dynCall_iiiiiii"] = function() {
@@ -14354,12 +14407,28 @@ var dynCall_vif = Module["dynCall_vif"] = function() {
  return (dynCall_vif = Module["dynCall_vif"] = Module["asm"]["dynCall_vif"]).apply(null, arguments);
 };
 
+var dynCall_viff = Module["dynCall_viff"] = function() {
+ return (dynCall_viff = Module["dynCall_viff"] = Module["asm"]["dynCall_viff"]).apply(null, arguments);
+};
+
+var dynCall_vifff = Module["dynCall_vifff"] = function() {
+ return (dynCall_vifff = Module["dynCall_vifff"] = Module["asm"]["dynCall_vifff"]).apply(null, arguments);
+};
+
 var dynCall_viiffifj = Module["dynCall_viiffifj"] = function() {
  return (dynCall_viiffifj = Module["dynCall_viiffifj"] = Module["asm"]["dynCall_viiffifj"]).apply(null, arguments);
 };
 
+var dynCall_viiiffifj = Module["dynCall_viiiffifj"] = function() {
+ return (dynCall_viiiffifj = Module["dynCall_viiiffifj"] = Module["asm"]["dynCall_viiiffifj"]).apply(null, arguments);
+};
+
 var dynCall_viiffifffj = Module["dynCall_viiffifffj"] = function() {
  return (dynCall_viiffifffj = Module["dynCall_viiffifffj"] = Module["asm"]["dynCall_viiffifffj"]).apply(null, arguments);
+};
+
+var dynCall_viiiffifffj = Module["dynCall_viiiffifffj"] = function() {
+ return (dynCall_viiiffifffj = Module["dynCall_viiiffifffj"] = Module["asm"]["dynCall_viiiffifffj"]).apply(null, arguments);
 };
 
 var dynCall_viif = Module["dynCall_viif"] = function() {
@@ -14380,14 +14449,6 @@ var dynCall_vff = Module["dynCall_vff"] = function() {
 
 var dynCall_vfi = Module["dynCall_vfi"] = function() {
  return (dynCall_vfi = Module["dynCall_vfi"] = Module["asm"]["dynCall_vfi"]).apply(null, arguments);
-};
-
-var dynCall_viff = Module["dynCall_viff"] = function() {
- return (dynCall_viff = Module["dynCall_viff"] = Module["asm"]["dynCall_viff"]).apply(null, arguments);
-};
-
-var dynCall_vifff = Module["dynCall_vifff"] = function() {
- return (dynCall_vifff = Module["dynCall_vifff"] = Module["asm"]["dynCall_vifff"]).apply(null, arguments);
 };
 
 var dynCall_viffff = Module["dynCall_viffff"] = function() {
@@ -14426,6 +14487,8 @@ var dynCall_iiiiiijj = Module["dynCall_iiiiiijj"] = function() {
  return (dynCall_iiiiiijj = Module["dynCall_iiiiiijj"] = Module["asm"]["dynCall_iiiiiijj"]).apply(null, arguments);
 };
 
+var __emscripten_allow_main_runtime_queued_calls = Module["__emscripten_allow_main_runtime_queued_calls"] = 332152;
+
 function invoke_vii(index, a1, a2) {
  var sp = stackSave();
  try {
@@ -14455,11 +14518,23 @@ Module["FS_unlink"] = FS.unlink;
 
 Module["keepRuntimeAlive"] = keepRuntimeAlive;
 
+Module["PThread"] = PThread;
+
+Module["PThread"] = PThread;
+
 Module["wasmMemory"] = wasmMemory;
 
 Module["ExitStatus"] = ExitStatus;
 
 var calledRun;
+
+function ExitStatus(status) {
+ this.name = "ExitStatus";
+ this.message = "Program terminated with exit(" + status + ")";
+ this.status = status;
+}
+
+var calledMain = false;
 
 dependenciesFulfilled = function runCaller() {
  if (!calledRun) run();
@@ -14469,20 +14544,21 @@ dependenciesFulfilled = function runCaller() {
 function callMain(args) {
  var entryFunction = Module["_main"];
  args = args || [];
- args.unshift(thisProgram);
- var argc = args.length;
+ var argc = args.length + 1;
  var argv = stackAlloc((argc + 1) * 4);
- var argv_ptr = argv >> 2;
- args.forEach(arg => {
-  GROWABLE_HEAP_I32()[argv_ptr++ >>> 0] = allocateUTF8OnStack(arg);
- });
- GROWABLE_HEAP_I32()[argv_ptr >>> 0] = 0;
+ GROWABLE_HEAP_I32()[argv >>> 2] = allocateUTF8OnStack(thisProgram);
+ for (var i = 1; i < argc; i++) {
+  GROWABLE_HEAP_I32()[(argv >> 2) + i >>> 0] = allocateUTF8OnStack(args[i - 1]);
+ }
+ GROWABLE_HEAP_I32()[(argv >> 2) + argc >>> 0] = 0;
  try {
   var ret = entryFunction(argc, argv);
-  exitJS(ret, true);
+  exit(ret, true);
   return ret;
  } catch (e) {
   return handleException(e);
+ } finally {
+  calledMain = true;
  }
 }
 
@@ -14524,6 +14600,29 @@ function run(args) {
  } else {
   doRun();
  }
+}
+
+Module["run"] = run;
+
+function exit(status, implicit) {
+ EXITSTATUS = status;
+ if (!implicit) {
+  if (ENVIRONMENT_IS_PTHREAD) {
+   exitOnMainThread(status);
+   throw "unwind";
+  } else {}
+ }
+ procExit(status);
+}
+
+function procExit(code) {
+ EXITSTATUS = code;
+ if (!keepRuntimeAlive()) {
+  PThread.terminateAllThreads();
+  if (Module["onExit"]) Module["onExit"](code);
+  ABORT = true;
+ }
+ quit_(code, new ExitStatus(code));
 }
 
 if (Module["preInit"]) {
