@@ -76,7 +76,6 @@ Module.expectedDataFileDownloads++;
   }
   var REMOTE_PACKAGE_NAME = Module["locateFile"] ? Module["locateFile"](REMOTE_PACKAGE_BASE, "") : REMOTE_PACKAGE_BASE;
   var REMOTE_PACKAGE_SIZE = metadata["remote_package_size"];
-  var PACKAGE_UUID = metadata["package_uuid"];
   function fetchRemotePackage(packageName, packageSize, callback, errback) {
    if (typeof process === "object" && typeof process.versions === "object" && typeof process.versions.node === "string") {
     require("fs").readFile(packageName, function(err, contents) {
@@ -153,40 +152,62 @@ Module.expectedDataFileDownloads++;
    }
    Module["FS_createPath"]("/", "data", true, true);
    Module["FS_createPath"]("/data", "ZGUI", true, true);
+   Module["FS_createPath"]("/data/ZGUI", "CocosProject", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject", "cocosstudio", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio", "BNUI", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio", "Default", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default", "effekseer", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default/effekseer", "Texture", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default", "live2d", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default/live2d", "Hiyori", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori", "Hiyori.2048", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori", "motions", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default", "materials", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default", "scripts", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default", "spine", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default/spine", "Button_girl", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default", "textures", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio", "Resources", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Resources", "TongYong2", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2", "AnNiu", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2/AnNiu", "JiChu", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2", "ChuangTi", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2/ChuangTi", "2_3Ji", true, true);
+   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2", "TuDi", true, true);
+   Module["FS_createPath"]("/data/ZGUI", "Font", true, true);
    Module["FS_createPath"]("/data/ZGUI", "Image", true, true);
    Module["FS_createPath"]("/data/ZGUI", "Lua", true, true);
-   Module["FS_createPath"]("/data/ZGUI", "Font", true, true);
+   Module["FS_createPath"]("/data", "bgfx_shader", true, true);
+   Module["FS_createPath"]("/data/bgfx_shader", "android", true, true);
+   Module["FS_createPath"]("/data/bgfx_shader", "asmjs", true, true);
+   Module["FS_createPath"]("/data/bgfx_shader", "ios", true, true);
+   Module["FS_createPath"]("/data/bgfx_shader", "osx", true, true);
+   Module["FS_createPath"]("/data/bgfx_shader", "windows", true, true);
+   Module["FS_createPath"]("/data", "font", true, true);
    Module["FS_createPath"]("/data", "image", true, true);
-   Module["FS_createPath"]("/data/image", "ui", true, true);
-   Module["FS_createPath"]("/data/image/ui", "dpad16", true, true);
-   Module["FS_createPath"]("/data/image/ui", "joystick32", true, true);
-   Module["FS_createPath"]("/data/image/ui", "button16", true, true);
+   Module["FS_createPath"]("/data/image", "animation", true, true);
+   Module["FS_createPath"]("/data/image/animation", "blood", true, true);
+   Module["FS_createPath"]("/data/image/animation", "wizard", true, true);
    Module["FS_createPath"]("/data/image", "flappy_duck", true, true);
    Module["FS_createPath"]("/data/image/flappy_duck", "duck", true, true);
-   Module["FS_createPath"]("/data/image", "animation", true, true);
-   Module["FS_createPath"]("/data/image/animation", "wizard", true, true);
-   Module["FS_createPath"]("/data/image/animation", "blood", true, true);
    Module["FS_createPath"]("/data/image", "font", true, true);
+   Module["FS_createPath"]("/data/image", "ui", true, true);
+   Module["FS_createPath"]("/data/image/ui", "button16", true, true);
+   Module["FS_createPath"]("/data/image/ui", "dpad16", true, true);
+   Module["FS_createPath"]("/data/image/ui", "joystick32", true, true);
    Module["FS_createPath"]("/data", "lua", true, true);
-   Module["FS_createPath"]("/data/lua", "nes", true, true);
-   Module["FS_createPath"]("/data/lua/nes", "libs", true, true);
+   Module["FS_createPath"]("/data/lua", "app", true, true);
+   Module["FS_createPath"]("/data/lua/app", "game", true, true);
    Module["FS_createPath"]("/data/lua", "core", true, true);
    Module["FS_createPath"]("/data/lua/core", "components", true, true);
-   Module["FS_createPath"]("/data/lua/core", "systems", true, true);
    Module["FS_createPath"]("/data/lua/core", "data", true, true);
    Module["FS_createPath"]("/data/lua/core", "entities", true, true);
    Module["FS_createPath"]("/data/lua/core/entities", "ui", true, true);
-   Module["FS_createPath"]("/data/lua", "app", true, true);
-   Module["FS_createPath"]("/data/lua/app", "game", true, true);
-   Module["FS_createPath"]("/data/lua", "utils", true, true);
+   Module["FS_createPath"]("/data/lua/core", "systems", true, true);
    Module["FS_createPath"]("/data/lua", "libs", true, true);
-   Module["FS_createPath"]("/data", "font", true, true);
-   Module["FS_createPath"]("/data", "bgfx_shader", true, true);
-   Module["FS_createPath"]("/data/bgfx_shader", "asmjs", true, true);
-   Module["FS_createPath"]("/data/bgfx_shader", "osx", true, true);
-   Module["FS_createPath"]("/data/bgfx_shader", "ios", true, true);
-   Module["FS_createPath"]("/data/bgfx_shader", "android", true, true);
-   Module["FS_createPath"]("/data/bgfx_shader", "windows", true, true);
+   Module["FS_createPath"]("/data/lua", "nes", true, true);
+   Module["FS_createPath"]("/data/lua/nes", "libs", true, true);
+   Module["FS_createPath"]("/data/lua", "utils", true, true);
    function DataRequest(start, end, audio) {
     this.start = start;
     this.end = end;
@@ -217,7 +238,7 @@ Module.expectedDataFileDownloads++;
    }
    function processPackageData(arrayBuffer) {
     assert(arrayBuffer, "Loading data file failed.");
-    assert(arrayBuffer instanceof ArrayBuffer, "bad input to processPackageData");
+    assert(arrayBuffer.constructor.name === ArrayBuffer.name, "bad input to processPackageData");
     var byteArray = new Uint8Array(arrayBuffer);
     var curr;
     DataRequest.prototype.byteArray = byteArray;
@@ -248,1536 +269,1943 @@ Module.expectedDataFileDownloads++;
  };
  loadPackage({
   "files": [ {
-   "filename": "/data/.DS_Store",
+   "filename": "/data/ZGUI/CocosProject/CocosProject.ccs",
    "start": 0,
-   "end": 6148
-  }, {
-   "filename": "/data/history.txt",
-   "start": 6148,
-   "end": 6149
-  }, {
-   "filename": "/data/ZGUI/Image/Daisy.png",
-   "start": 6149,
-   "end": 706465
-  }, {
-   "filename": "/data/ZGUI/Image/e21.png",
-   "start": 706465,
-   "end": 708373
-  }, {
-   "filename": "/data/ZGUI/Image/e35.png",
-   "start": 708373,
-   "end": 710302
-  }, {
-   "filename": "/data/ZGUI/Image/e34.png",
-   "start": 710302,
-   "end": 712188
-  }, {
-   "filename": "/data/ZGUI/Image/e20.png",
-   "start": 712188,
-   "end": 714119
-  }, {
-   "filename": "/data/ZGUI/Image/e36.png",
-   "start": 714119,
-   "end": 716016
-  }, {
-   "filename": "/data/ZGUI/Image/e22.png",
-   "start": 716016,
-   "end": 717961
-  }, {
-   "filename": "/data/ZGUI/Image/e23.png",
-   "start": 717961,
-   "end": 719912
-  }, {
-   "filename": "/data/ZGUI/Image/e37.png",
-   "start": 719912,
-   "end": 721794
-  }, {
-   "filename": "/data/ZGUI/Image/e33.png",
-   "start": 721794,
-   "end": 723660
-  }, {
-   "filename": "/data/ZGUI/Image/e27.png",
-   "start": 723660,
-   "end": 725538
-  }, {
-   "filename": "/data/ZGUI/Image/e26.png",
-   "start": 725538,
-   "end": 727434
-  }, {
-   "filename": "/data/ZGUI/Image/e32.png",
-   "start": 727434,
-   "end": 729308
-  }, {
-   "filename": "/data/ZGUI/Image/Galaxy.png",
-   "start": 729308,
-   "end": 1929520
-  }, {
-   "filename": "/data/ZGUI/Image/e18.png",
-   "start": 1929520,
-   "end": 1931438
-  }, {
-   "filename": "/data/ZGUI/Image/e24.png",
-   "start": 1931438,
-   "end": 1933362
-  }, {
-   "filename": "/data/ZGUI/Image/e30.png",
-   "start": 1933362,
-   "end": 1935252
-  }, {
-   "filename": "/data/ZGUI/Image/e31.png",
-   "start": 1935252,
-   "end": 1937148
-  }, {
-   "filename": "/data/ZGUI/Image/e25.png",
-   "start": 1937148,
-   "end": 1939077
-  }, {
-   "filename": "/data/ZGUI/Image/e19.png",
-   "start": 1939077,
-   "end": 1940998
-  }, {
-   "filename": "/data/ZGUI/Image/ca10.png",
-   "start": 1940998,
-   "end": 1941556
-  }, {
-   "filename": "/data/ZGUI/Image/e42.png",
-   "start": 1941556,
-   "end": 1943343
-  }, {
-   "filename": "/data/ZGUI/Image/e56.png",
-   "start": 1943343,
-   "end": 1945161
-  }, {
-   "filename": "/data/ZGUI/Image/e57.png",
-   "start": 1945161,
-   "end": 1947016
-  }, {
-   "filename": "/data/ZGUI/Image/e43.png",
-   "start": 1947016,
-   "end": 1948807
-  }, {
-   "filename": "/data/ZGUI/Image/e8.png",
-   "start": 1948807,
-   "end": 1950706
-  }, {
-   "filename": "/data/ZGUI/Image/e55.png",
-   "start": 1950706,
-   "end": 1952588
-  }, {
-   "filename": "/data/ZGUI/Image/e41.png",
-   "start": 1952588,
-   "end": 1954437
-  }, {
-   "filename": "/data/ZGUI/Image/e40.png",
-   "start": 1954437,
-   "end": 1956276
-  }, {
-   "filename": "/data/ZGUI/Image/e54.png",
-   "start": 1956276,
-   "end": 1958145
-  }, {
-   "filename": "/data/ZGUI/Image/e9.png",
-   "start": 1958145,
-   "end": 1960031
-  }, {
-   "filename": "/data/ZGUI/Image/ca9.png",
-   "start": 1960031,
-   "end": 1960624
-  }, {
-   "filename": "/data/ZGUI/Image/e50.png",
-   "start": 1960624,
-   "end": 1962396
-  }, {
-   "filename": "/data/ZGUI/Image/e44.png",
-   "start": 1962396,
-   "end": 1964225
-  }, {
-   "filename": "/data/ZGUI/Image/e45.png",
-   "start": 1964225,
-   "end": 1966053
-  }, {
-   "filename": "/data/ZGUI/Image/e51.png",
-   "start": 1966053,
-   "end": 1967844
-  }, {
-   "filename": "/data/ZGUI/Image/ca8.png",
-   "start": 1967844,
-   "end": 1968478
-  }, {
-   "filename": "/data/ZGUI/Image/e47.png",
-   "start": 1968478,
-   "end": 1970203
-  }, {
-   "filename": "/data/ZGUI/Image/e53.png",
-   "start": 1970203,
-   "end": 1972034
-  }, {
-   "filename": "/data/ZGUI/Image/e52.png",
-   "start": 1972034,
-   "end": 1973842
-  }, {
-   "filename": "/data/ZGUI/Image/e46.png",
-   "start": 1973842,
-   "end": 1975587
-  }, {
-   "filename": "/data/ZGUI/Image/ca6.png",
-   "start": 1975587,
-   "end": 1976242
-  }, {
-   "filename": "/data/ZGUI/Image/e2.png",
-   "start": 1976242,
-   "end": 1978172
-  }, {
-   "filename": "/data/ZGUI/Image/e3.png",
-   "start": 1978172,
-   "end": 1980079
-  }, {
-   "filename": "/data/ZGUI/Image/ca7.png",
-   "start": 1980079,
-   "end": 1980738
-  }, {
-   "filename": "/data/ZGUI/Image/ca5.png",
-   "start": 1980738,
-   "end": 1981393
-  }, {
-   "filename": "/data/ZGUI/Image/e1.png",
-   "start": 1981393,
-   "end": 1983320
-  }, {
-   "filename": "/data/ZGUI/Image/e60.png",
-   "start": 1983320,
-   "end": 1985185
-  }, {
-   "filename": "/data/ZGUI/Image/e48.png",
-   "start": 1985185,
-   "end": 1986926
-  }, {
-   "filename": "/data/ZGUI/Image/e49.png",
-   "start": 1986926,
-   "end": 1988637
-  }, {
-   "filename": "/data/ZGUI/Image/ca4.png",
-   "start": 1988637,
-   "end": 1989292
-  }, {
-   "filename": "/data/ZGUI/Image/e4.png",
-   "start": 1989292,
-   "end": 1991169
-  }, {
-   "filename": "/data/ZGUI/Image/e59.png",
-   "start": 1991169,
-   "end": 1993004
-  }, {
-   "filename": "/data/ZGUI/Image/e58.png",
-   "start": 1993004,
-   "end": 1994864
-  }, {
-   "filename": "/data/ZGUI/Image/e5.png",
-   "start": 1994864,
-   "end": 1996765
-  }, {
-   "filename": "/data/ZGUI/Image/ca1.png",
-   "start": 1996765,
-   "end": 1997299
-  }, {
-   "filename": "/data/ZGUI/Image/resurrect-64-32x.png",
-   "start": 1997299,
-   "end": 1998101
-  }, {
-   "filename": "/data/ZGUI/Image/ca3.png",
-   "start": 1998101,
-   "end": 1998717
-  }, {
-   "filename": "/data/ZGUI/Image/e7.png",
-   "start": 1998717,
-   "end": 2000565
-  }, {
-   "filename": "/data/ZGUI/Image/e6.png",
-   "start": 2000565,
-   "end": 2002463
-  }, {
-   "filename": "/data/ZGUI/Image/ca2.png",
-   "start": 2002463,
-   "end": 2003039
-  }, {
-   "filename": "/data/ZGUI/Image/c1.png",
-   "start": 2003039,
-   "end": 2003739
-  }, {
-   "filename": "/data/ZGUI/Image/e14.png",
-   "start": 2003739,
-   "end": 2005755
-  }, {
-   "filename": "/data/ZGUI/Image/e28.png",
-   "start": 2005755,
-   "end": 2007626
-  }, {
-   "filename": "/data/ZGUI/Image/e29.png",
-   "start": 2007626,
-   "end": 2009496
-  }, {
-   "filename": "/data/ZGUI/Image/e15.png",
-   "start": 2009496,
-   "end": 2011460
-  }, {
-   "filename": "/data/ZGUI/Image/c0.png",
-   "start": 2011460,
-   "end": 2012153
-  }, {
-   "filename": "/data/ZGUI/Image/cf.png",
-   "start": 2012153,
-   "end": 2013366
-  }, {
-   "filename": "/data/ZGUI/Image/cff.png",
-   "start": 2013366,
-   "end": 2014797
-  }, {
-   "filename": "/data/ZGUI/Image/c2.png",
-   "start": 2014797,
-   "end": 2015473
-  }, {
-   "filename": "/data/ZGUI/Image/e17.png",
-   "start": 2015473,
-   "end": 2017396
-  }, {
-   "filename": "/data/ZGUI/Image/e16.png",
-   "start": 2017396,
-   "end": 2019337
-  }, {
-   "filename": "/data/ZGUI/Image/c3.png",
-   "start": 2019337,
-   "end": 2020040
-  }, {
-   "filename": "/data/ZGUI/Image/c7.png",
-   "start": 2020040,
-   "end": 2020736
-  }, {
-   "filename": "/data/ZGUI/Image/e12.png",
-   "start": 2020736,
-   "end": 2022695
-  }, {
-   "filename": "/data/ZGUI/Image/e13.png",
-   "start": 2022695,
-   "end": 2024665
-  }, {
-   "filename": "/data/ZGUI/Image/c6.png",
-   "start": 2024665,
-   "end": 2025692
-  }, {
-   "filename": "/data/ZGUI/Image/c4.png",
-   "start": 2025692,
-   "end": 2026387
-  }, {
-   "filename": "/data/ZGUI/Image/e39.png",
-   "start": 2026387,
-   "end": 2028286
-  }, {
-   "filename": "/data/ZGUI/Image/e11.png",
-   "start": 2028286,
-   "end": 2030253
-  }, {
-   "filename": "/data/ZGUI/Image/e10.png",
-   "start": 2030253,
-   "end": 2032214
-  }, {
-   "filename": "/data/ZGUI/Image/e38.png",
-   "start": 2032214,
-   "end": 2034133
-  }, {
-   "filename": "/data/ZGUI/Image/c5.png",
-   "start": 2034133,
-   "end": 2037174
-  }, {
-   "filename": "/data/ZGUI/Lua/anim_planet.lua",
-   "start": 2037174,
-   "end": 2037695
-  }, {
-   "filename": "/data/ZGUI/Lua/skeleton_head.lua",
-   "start": 2037695,
-   "end": 2037893
-  }, {
-   "filename": "/data/ZGUI/Lua/text_s.lua",
-   "start": 2037893,
-   "end": 2038112
-  }, {
-   "filename": "/data/ZGUI/Lua/hittest.lua",
-   "start": 2038112,
-   "end": 2040946
-  }, {
-   "filename": "/data/ZGUI/Lua/debug_panel.lua",
-   "start": 2040946,
-   "end": 2047769
-  }, {
-   "filename": "/data/ZGUI/Lua/anim_card_light.lua",
-   "start": 2047769,
-   "end": 2048382
-  }, {
-   "filename": "/data/ZGUI/Lua/skeleton_hand_l.lua",
-   "start": 2048382,
-   "end": 2048578
-  }, {
-   "filename": "/data/ZGUI/Lua/clip_s.lua",
-   "start": 2048578,
-   "end": 2048800
-  }, {
-   "filename": "/data/ZGUI/Lua/animation.lua",
-   "start": 2048800,
-   "end": 2049444
-  }, {
-   "filename": "/data/ZGUI/Lua/clickable.lua",
-   "start": 2049444,
-   "end": 2051188
-  }, {
-   "filename": "/data/ZGUI/Lua/clip.lua",
-   "start": 2051188,
-   "end": 2052347
-  }, {
-   "filename": "/data/ZGUI/Lua/anim_card2.lua",
-   "start": 2052347,
-   "end": 2053628
-  }, {
-   "filename": "/data/ZGUI/Lua/test.lua",
-   "start": 2053628,
-   "end": 2055446
-  }, {
-   "filename": "/data/ZGUI/Lua/screen.lua",
-   "start": 2055446,
-   "end": 2058196
-  }, {
-   "filename": "/data/ZGUI/Lua/debug_panel_s.lua",
-   "start": 2058196,
-   "end": 2058431
-  }, {
-   "filename": "/data/ZGUI/Lua/text_sdf.lua",
-   "start": 2058431,
-   "end": 2060586
-  }, {
-   "filename": "/data/ZGUI/Lua/z_object.lua",
-   "start": 2060586,
-   "end": 2061667
-  }, {
-   "filename": "/data/ZGUI/Lua/animation_s.lua",
-   "start": 2061667,
-   "end": 2061898
-  }, {
-   "filename": "/data/ZGUI/Lua/anim_card.lua",
-   "start": 2061898,
-   "end": 2063182
-  }, {
-   "filename": "/data/ZGUI/Lua/skeleton_hand_r.lua",
-   "start": 2063182,
-   "end": 2063378
-  }, {
-   "filename": "/data/ZGUI/Lua/scene.lua",
-   "start": 2063378,
-   "end": 2066141
-  }, {
-   "filename": "/data/ZGUI/Lua/text.lua",
-   "start": 2066141,
-   "end": 2067866
-  }, {
-   "filename": "/data/ZGUI/Lua/button.lua",
-   "start": 2067866,
-   "end": 2070582
+   "end": 1294
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/BNUI/BNUIDebugDlg.csd",
+   "start": 1294,
+   "end": 14857
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/BNUI/TestFile.csb",
+   "start": 14857,
+   "end": 21273
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/BNUI/TestFile.csd",
+   "start": 21273,
+   "end": 34948
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/BNUI/TestFile_0.csd",
+   "start": 34948,
+   "end": 48514
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Button_Disable.png",
+   "start": 48514,
+   "end": 49625
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Button_Normal.png",
+   "start": 49625,
+   "end": 50738
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Button_Press.png",
+   "start": 50738,
+   "end": 51891
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/CheckBoxNode_Disable.png",
+   "start": 51891,
+   "end": 53122
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/CheckBoxNode_Normal.png",
+   "start": 53122,
+   "end": 54363
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/CheckBox_Disable.png",
+   "start": 54363,
+   "end": 55567
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/CheckBox_Normal.png",
+   "start": 55567,
+   "end": 56771
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/CheckBox_Press.png",
+   "start": 56771,
+   "end": 58014
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/DemoPlayer.ExportJson",
+   "start": 58014,
+   "end": 103521
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/DemoPlayer0.plist",
+   "start": 103521,
+   "end": 108051
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/DemoPlayer0.png",
+   "start": 108051,
+   "end": 121369
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/ImageFile.png",
+   "start": 121369,
+   "end": 123104
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Light_Ambint.png",
+   "start": 123104,
+   "end": 124378
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Light_Directional.png",
+   "start": 124378,
+   "end": 125516
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Light_Point.png",
+   "start": 125516,
+   "end": 126870
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Light_Spot.png",
+   "start": 126870,
+   "end": 128124
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/LoadingBarFile.png",
+   "start": 128124,
+   "end": 129239
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Slice3D.png",
+   "start": 129239,
+   "end": 131012
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/SliderNode_Disable.png",
+   "start": 131012,
+   "end": 132687
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/SliderNode_Normal.png",
+   "start": 132687,
+   "end": 134365
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/SliderNode_Press.png",
+   "start": 134365,
+   "end": 135932
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Slider_Back.png",
+   "start": 135932,
+   "end": 137098
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Slider_PressBar.png",
+   "start": 137098,
+   "end": 138185
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Sprite.png",
+   "start": 138185,
+   "end": 139958
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Sprite3D.png",
+   "start": 139958,
+   "end": 141731
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/TextAtlas.png",
+   "start": 141731,
+   "end": 144852
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/alpha.png",
+   "start": 144852,
+   "end": 147642
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/arrowX.png",
+   "start": 147642,
+   "end": 148671
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/arrowY.png",
+   "start": 148671,
+   "end": 149711
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/arrowZ.png",
+   "start": 149711,
+   "end": 150706
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/camera.c3b",
+   "start": 150706,
+   "end": 160678
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/defaultBMFont.fnt",
+   "start": 160678,
+   "end": 189869
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/defaultBMFont.png",
+   "start": 189869,
+   "end": 304046
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/defaultMap.png",
+   "start": 304046,
+   "end": 321279
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/defaultMap.tmx",
+   "start": 321279,
+   "end": 321701
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/defaultParticle.plist",
+   "start": 321701,
+   "end": 329830
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Homing_Laser01.efk",
+   "start": 329830,
+   "end": 330900
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Simple_Distortion.efk",
+   "start": 330900,
+   "end": 333094
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Burst01.png",
+   "start": 333094,
+   "end": 368277
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Cloud01.png",
+   "start": 368277,
+   "end": 388934
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Flame01.png",
+   "start": 388934,
+   "end": 402056
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/LaserMain01.png",
+   "start": 402056,
+   "end": 407535
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/LaserMain02.png",
+   "start": 407535,
+   "end": 409727
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle01.png",
+   "start": 409727,
+   "end": 416809
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle02.png",
+   "start": 416809,
+   "end": 424039
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle03.png",
+   "start": 424039,
+   "end": 434988
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle04_bokashi_hard.png",
+   "start": 434988,
+   "end": 449120
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle04_bokashi_soft.png",
+   "start": 449120,
+   "end": 464470
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle04_bokashistrong_hard.png",
+   "start": 464470,
+   "end": 477593
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle04_bokashistrong_soft.png",
+   "start": 477593,
+   "end": 492238
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle04_clear_hard.png",
+   "start": 492238,
+   "end": 505784
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle04_clear_soft.png",
+   "start": 505784,
+   "end": 520217
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Splash01.png",
+   "start": 520217,
+   "end": 588558
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/SwordLine01.png",
+   "start": 588558,
+   "end": 595051
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Thunder01.png",
+   "start": 595051,
+   "end": 615049
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Wind01.png",
+   "start": 615049,
+   "end": 625614
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/wind02.png",
+   "start": 625614,
+   "end": 659051
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/empty.c3t",
+   "start": 659051,
+   "end": 663246
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/Hiyori.2048/texture_00.png",
+   "start": 663246,
+   "end": 2488832
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/Hiyori.2048/texture_01.png",
+   "start": 2488832,
+   "end": 5000934
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/Hiyori.moc3",
+   "start": 5000934,
+   "end": 5444326
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/Hiyori.model3.json",
+   "start": 5444326,
+   "end": 5446025
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/Hiyori.physics3.json",
+   "start": 5446025,
+   "end": 5472189
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/Hiyori.pose3.json",
+   "start": 5472189,
+   "end": 5472355
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/Hiyori.userdata3.json",
+   "start": 5472355,
+   "end": 5472978
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m01.motion3.json",
+   "start": 5472978,
+   "end": 5483680
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m02.motion3.json",
+   "start": 5483680,
+   "end": 5497939
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m03.motion3.json",
+   "start": 5497939,
+   "end": 5510747
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m04.motion3.json",
+   "start": 5510747,
+   "end": 5519538
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m05.motion3.json",
+   "start": 5519538,
+   "end": 5535544
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m06.motion3.json",
+   "start": 5535544,
+   "end": 5554983
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m07.motion3.json",
+   "start": 5554983,
+   "end": 5564693
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m08.motion3.json",
+   "start": 5564693,
+   "end": 5575332
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m09.motion3.json",
+   "start": 5575332,
+   "end": 5586887
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m10.motion3.json",
+   "start": 5586887,
+   "end": 5596434
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/materials/default.material",
+   "start": 5596434,
+   "end": 5596732
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/missing-font.fnt",
+   "start": 5596732,
+   "end": 5621830
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/missing-font.png",
+   "start": 5621830,
+   "end": 5732670
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/missing.png",
+   "start": 5732670,
+   "end": 5741244
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/scripts/default.pu",
+   "start": 5741244,
+   "end": 5741968
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/skeleton.png",
+   "start": 5741968,
+   "end": 5743514
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/skeleton@2x.png",
+   "start": 5743514,
+   "end": 5745693
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/skybox.png",
+   "start": 5745693,
+   "end": 5748571
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/spine/Button_girl/anniu.atlas",
+   "start": 5748571,
+   "end": 5749111
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/spine/Button_girl/anniu.json",
+   "start": 5749111,
+   "end": 5846889
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/spine/Button_girl/anniu.png",
+   "start": 5846889,
+   "end": 5856653
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/textures/default.png",
+   "start": 5856653,
+   "end": 5886553
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/white.png",
+   "start": 5886553,
+   "end": 5886672
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2/AnNiu/JiChu/TongYong2_AnNiu_JiChu_Btn_1Ji_Lv.png",
+   "start": 5886672,
+   "end": 5891622
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2/AnNiu/JiChu/TongYong2_AnNiu_JiChu_Btn_2Ji.png",
+   "start": 5891622,
+   "end": 5894727
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2/AnNiu/JiChu/TongYong2_AnNiu_JiChu_Btn_GuanBi_3Ji.png",
+   "start": 5894727,
+   "end": 5901019
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2/ChuangTi/2_3Ji/TongYong2_ChuangTi_2_3Ji_Pnl_2Ji.png",
+   "start": 5901019,
+   "end": 5936401
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2/TuDi/TongYong2_TuDi_FenKuaiMian.png",
+   "start": 5936401,
+   "end": 5940336
+  }, {
+   "filename": "/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2/TuDi/TongYong2_TuDi_WenBenKuang.png",
+   "start": 5940336,
+   "end": 5941494
   }, {
    "filename": "/data/ZGUI/Font/chinese.msyh.ttf",
-   "start": 2070582,
-   "end": 17115024
+   "start": 5941494,
+   "end": 20985936
   }, {
    "filename": "/data/ZGUI/Font/zpix.ttf",
-   "start": 17115024,
-   "end": 21795372
-  }, {
-   "filename": "/data/image/sprite16.png",
-   "start": 21795372,
-   "end": 21795533
-  }, {
-   "filename": "/data/image/.DS_Store",
-   "start": 21795533,
-   "end": 21801681
-  }, {
-   "filename": "/data/image/yapre_text.png",
-   "start": 21801681,
-   "end": 21801878
-  }, {
-   "filename": "/data/image/splash.png",
-   "start": 21801878,
-   "end": 21803730
-  }, {
-   "filename": "/data/image/yapre.png",
-   "start": 21803730,
-   "end": 21804194
-  }, {
-   "filename": "/data/image/mario.png",
-   "start": 21804194,
-   "end": 21804492
-  }, {
-   "filename": "/data/image/ui/blank2.png",
-   "start": 21804492,
-   "end": 21804583
-  }, {
-   "filename": "/data/image/ui/dpad16/l1.png",
-   "start": 21804583,
-   "end": 21804765
-  }, {
-   "filename": "/data/image/ui/dpad16/u2.png",
-   "start": 21804765,
-   "end": 21804958
-  }, {
-   "filename": "/data/image/ui/dpad16/l2.png",
-   "start": 21804958,
-   "end": 21805139
-  }, {
-   "filename": "/data/image/ui/dpad16/u1.png",
-   "start": 21805139,
-   "end": 21805321
-  }, {
-   "filename": "/data/image/ui/dpad16/r2.png",
-   "start": 21805321,
-   "end": 21805509
-  }, {
-   "filename": "/data/image/ui/dpad16/r1.png",
-   "start": 21805509,
-   "end": 21805706
-  }, {
-   "filename": "/data/image/ui/dpad16/d1.png",
-   "start": 21805706,
-   "end": 21805883
-  }, {
-   "filename": "/data/image/ui/dpad16/d2.png",
-   "start": 21805883,
-   "end": 21806053
-  }, {
-   "filename": "/data/image/ui/joystick32/4.png",
-   "start": 21806053,
-   "end": 21806290
-  }, {
-   "filename": "/data/image/ui/joystick32/5.png",
-   "start": 21806290,
-   "end": 21806532
-  }, {
-   "filename": "/data/image/ui/joystick32/6.png",
-   "start": 21806532,
-   "end": 21806753
-  }, {
-   "filename": "/data/image/ui/joystick32/2.png",
-   "start": 21806753,
-   "end": 21806952
-  }, {
-   "filename": "/data/image/ui/joystick32/3.png",
-   "start": 21806952,
-   "end": 21807169
-  }, {
-   "filename": "/data/image/ui/joystick32/1.png",
-   "start": 21807169,
-   "end": 21807384
-  }, {
-   "filename": "/data/image/ui/button16/2.png",
-   "start": 21807384,
-   "end": 21807547
-  }, {
-   "filename": "/data/image/ui/button16/3.png",
-   "start": 21807547,
-   "end": 21807714
-  }, {
-   "filename": "/data/image/ui/button16/1.png",
-   "start": 21807714,
-   "end": 21807879
-  }, {
-   "filename": "/data/image/flappy_duck/skybg1.png",
-   "start": 21807879,
-   "end": 21808971
-  }, {
-   "filename": "/data/image/flappy_duck/skybg2.png",
-   "start": 21808971,
-   "end": 21809728
-  }, {
-   "filename": "/data/image/flappy_duck/cactus.png",
-   "start": 21809728,
-   "end": 21809924
-  }, {
-   "filename": "/data/image/flappy_duck/duck_head.png",
-   "start": 21809924,
-   "end": 21810216
-  }, {
-   "filename": "/data/image/flappy_duck/stars.png",
-   "start": 21810216,
-   "end": 21811077
-  }, {
-   "filename": "/data/image/flappy_duck/duck/down2.png",
-   "start": 21811077,
-   "end": 21811321
-  }, {
-   "filename": "/data/image/flappy_duck/duck/down1.png",
-   "start": 21811321,
-   "end": 21811573
-  }, {
-   "filename": "/data/image/flappy_duck/duck/up2.png",
-   "start": 21811573,
-   "end": 21811822
-  }, {
-   "filename": "/data/image/flappy_duck/duck/up1.png",
-   "start": 21811822,
-   "end": 21812083
-  }, {
-   "filename": "/data/image/animation/wizard/8.png",
-   "start": 21812083,
-   "end": 21813387
-  }, {
-   "filename": "/data/image/animation/wizard/9.png",
-   "start": 21813387,
-   "end": 21814658
-  }, {
-   "filename": "/data/image/animation/wizard/14.png",
-   "start": 21814658,
-   "end": 21815887
-  }, {
-   "filename": "/data/image/animation/wizard/15.png",
-   "start": 21815887,
-   "end": 21817085
-  }, {
-   "filename": "/data/image/animation/wizard/16.png",
-   "start": 21817085,
-   "end": 21818365
-  }, {
-   "filename": "/data/image/animation/wizard/12.png",
-   "start": 21818365,
-   "end": 21819626
-  }, {
-   "filename": "/data/image/animation/wizard/13.png",
-   "start": 21819626,
-   "end": 21820861
-  }, {
-   "filename": "/data/image/animation/wizard/11.png",
-   "start": 21820861,
-   "end": 21822099
-  }, {
-   "filename": "/data/image/animation/wizard/10.png",
-   "start": 21822099,
-   "end": 21823364
-  }, {
-   "filename": "/data/image/animation/wizard/4.png",
-   "start": 21823364,
-   "end": 21824604
-  }, {
-   "filename": "/data/image/animation/wizard/5.png",
-   "start": 21824604,
-   "end": 21825824
-  }, {
-   "filename": "/data/image/animation/wizard/7.png",
-   "start": 21825824,
-   "end": 21827091
-  }, {
-   "filename": "/data/image/animation/wizard/6.png",
-   "start": 21827091,
-   "end": 21828343
-  }, {
-   "filename": "/data/image/animation/wizard/2.png",
-   "start": 21828343,
-   "end": 21829593
-  }, {
-   "filename": "/data/image/animation/wizard/3.png",
-   "start": 21829593,
-   "end": 21830827
-  }, {
-   "filename": "/data/image/animation/wizard/1.png",
-   "start": 21830827,
-   "end": 21832058
-  }, {
-   "filename": "/data/image/animation/blood/8.png",
-   "start": 21832058,
-   "end": 21832655
-  }, {
-   "filename": "/data/image/animation/blood/9.png",
-   "start": 21832655,
-   "end": 21833149
-  }, {
-   "filename": "/data/image/animation/blood/14.png",
-   "start": 21833149,
-   "end": 21833537
-  }, {
-   "filename": "/data/image/animation/blood/15.png",
-   "start": 21833537,
-   "end": 21833903
-  }, {
-   "filename": "/data/image/animation/blood/17.png",
-   "start": 21833903,
-   "end": 21834230
-  }, {
-   "filename": "/data/image/animation/blood/16.png",
-   "start": 21834230,
-   "end": 21834557
-  }, {
-   "filename": "/data/image/animation/blood/12.png",
-   "start": 21834557,
-   "end": 21834995
-  }, {
-   "filename": "/data/image/animation/blood/13.png",
-   "start": 21834995,
-   "end": 21835394
-  }, {
-   "filename": "/data/image/animation/blood/11.png",
-   "start": 21835394,
-   "end": 21835831
-  }, {
-   "filename": "/data/image/animation/blood/10.png",
-   "start": 21835831,
-   "end": 21836338
-  }, {
-   "filename": "/data/image/animation/blood/20.png",
-   "start": 21836338,
-   "end": 21836675
-  }, {
-   "filename": "/data/image/animation/blood/18.png",
-   "start": 21836675,
-   "end": 21837002
-  }, {
-   "filename": "/data/image/animation/blood/19.png",
-   "start": 21837002,
-   "end": 21837329
-  }, {
-   "filename": "/data/image/animation/blood/4.png",
-   "start": 21837329,
-   "end": 21838243
-  }, {
-   "filename": "/data/image/animation/blood/5.png",
-   "start": 21838243,
-   "end": 21839119
-  }, {
-   "filename": "/data/image/animation/blood/7.png",
-   "start": 21839119,
-   "end": 21839778
-  }, {
-   "filename": "/data/image/animation/blood/6.png",
-   "start": 21839778,
-   "end": 21840543
-  }, {
-   "filename": "/data/image/animation/blood/2.png",
-   "start": 21840543,
-   "end": 21841281
-  }, {
-   "filename": "/data/image/animation/blood/3.png",
-   "start": 21841281,
-   "end": 21842128
-  }, {
-   "filename": "/data/image/animation/blood/1.png",
-   "start": 21842128,
-   "end": 21842522
-  }, {
-   "filename": "/data/image/font/88.png",
-   "start": 21842522,
-   "end": 21842635
-  }, {
-   "filename": "/data/image/font/77.png",
-   "start": 21842635,
-   "end": 21842742
-  }, {
-   "filename": "/data/image/font/63.png",
-   "start": 21842742,
-   "end": 21842851
-  }, {
-   "filename": "/data/image/font/62.png",
-   "start": 21842851,
-   "end": 21842958
-  }, {
-   "filename": "/data/image/font/76.png",
-   "start": 21842958,
-   "end": 21843054
-  }, {
-   "filename": "/data/image/font/89.png",
-   "start": 21843054,
-   "end": 21843158
-  }, {
-   "filename": "/data/image/font/60.png",
-   "start": 21843158,
-   "end": 21843260
-  }, {
-   "filename": "/data/image/font/74.png",
-   "start": 21843260,
-   "end": 21843356
-  }, {
-   "filename": "/data/image/font/48.png",
-   "start": 21843356,
-   "end": 21843460
-  }, {
-   "filename": "/data/image/font/49.png",
-   "start": 21843460,
-   "end": 21843560
-  }, {
-   "filename": "/data/image/font/75.png",
-   "start": 21843560,
-   "end": 21843673
-  }, {
-   "filename": "/data/image/font/61.png",
-   "start": 21843673,
-   "end": 21843771
-  }, {
-   "filename": "/data/image/font/59.png",
-   "start": 21843771,
-   "end": 21843868
-  }, {
-   "filename": "/data/image/font/65.png",
-   "start": 21843868,
-   "end": 21843979
-  }, {
-   "filename": "/data/image/font/71.png",
-   "start": 21843979,
-   "end": 21844093
-  }, {
-   "filename": "/data/image/font/70.png",
-   "start": 21844093,
-   "end": 21844192
-  }, {
-   "filename": "/data/image/font/64.png",
-   "start": 21844192,
-   "end": 21844314
-  }, {
-   "filename": "/data/image/font/58.png",
-   "start": 21844314,
-   "end": 21844405
-  }, {
-   "filename": "/data/image/font/99.png",
-   "start": 21844405,
-   "end": 21844505
-  }, {
-   "filename": "/data/image/font/72.png",
-   "start": 21844505,
-   "end": 21844614
-  }, {
-   "filename": "/data/image/font/66.png",
-   "start": 21844614,
-   "end": 21844720
-  }, {
-   "filename": "/data/image/font/67.png",
-   "start": 21844720,
-   "end": 21844823
-  }, {
-   "filename": "/data/image/font/73.png",
-   "start": 21844823,
-   "end": 21844911
-  }, {
-   "filename": "/data/image/font/98.png",
-   "start": 21844911,
-   "end": 21845018
-  }, {
-   "filename": "/data/image/font/115.png",
-   "start": 21845018,
-   "end": 21845123
-  }, {
-   "filename": "/data/image/font/101.png",
-   "start": 21845123,
-   "end": 21845230
-  }, {
-   "filename": "/data/image/font/100.png",
-   "start": 21845230,
-   "end": 21845337
-  }, {
-   "filename": "/data/image/font/114.png",
-   "start": 21845337,
-   "end": 21845437
-  }, {
-   "filename": "/data/image/font/102.png",
-   "start": 21845437,
-   "end": 21845537
-  }, {
-   "filename": "/data/image/font/116.png",
-   "start": 21845537,
-   "end": 21845630
-  }, {
-   "filename": "/data/image/font/117.png",
-   "start": 21845630,
-   "end": 21845731
-  }, {
-   "filename": "/data/image/font/103.png",
-   "start": 21845731,
-   "end": 21845844
-  }, {
-   "filename": "/data/image/font/107.png",
-   "start": 21845844,
-   "end": 21845949
-  }, {
-   "filename": "/data/image/font/113.png",
-   "start": 21845949,
-   "end": 21846052
-  }, {
-   "filename": "/data/image/font/112.png",
-   "start": 21846052,
-   "end": 21846160
-  }, {
-   "filename": "/data/image/font/106.png",
-   "start": 21846160,
-   "end": 21846266
-  }, {
-   "filename": "/data/image/font/110.png",
-   "start": 21846266,
-   "end": 21846366
-  }, {
-   "filename": "/data/image/font/104.png",
-   "start": 21846366,
-   "end": 21846470
-  }, {
-   "filename": "/data/image/font/39.png",
-   "start": 21846470,
-   "end": 21846568
-  }, {
-   "filename": "/data/image/font/38.png",
-   "start": 21846568,
-   "end": 21846679
-  }, {
-   "filename": "/data/image/font/105.png",
-   "start": 21846679,
-   "end": 21846773
-  }, {
-   "filename": "/data/image/font/111.png",
-   "start": 21846773,
-   "end": 21846878
-  }, {
-   "filename": "/data/image/font/108.png",
-   "start": 21846878,
-   "end": 21846966
-  }, {
-   "filename": "/data/image/font/120.png",
-   "start": 21846966,
-   "end": 21847079
-  }, {
-   "filename": "/data/image/font/35.png",
-   "start": 21847079,
-   "end": 21847177
-  }, {
-   "filename": "/data/image/font/34.png",
-   "start": 21847177,
-   "end": 21847272
-  }, {
-   "filename": "/data/image/font/121.png",
-   "start": 21847272,
-   "end": 21847381
-  }, {
-   "filename": "/data/image/font/109.png",
-   "start": 21847381,
-   "end": 21847484
-  }, {
-   "filename": "/data/image/font/123.png",
-   "start": 21847484,
-   "end": 21847591
-  }, {
-   "filename": "/data/image/font/36.png",
-   "start": 21847591,
-   "end": 21847706
-  }, {
-   "filename": "/data/image/font/37.png",
-   "start": 21847706,
-   "end": 21847818
-  }, {
-   "filename": "/data/image/font/122.png",
-   "start": 21847818,
-   "end": 21847930
-  }, {
-   "filename": "/data/image/font/126.png",
-   "start": 21847930,
-   "end": 21848027
-  }, {
-   "filename": "/data/image/font/33.png",
-   "start": 21848027,
-   "end": 21848118
-  }, {
-   "filename": "/data/image/font/32.png",
-   "start": 21848118,
-   "end": 21848196
-  }, {
-   "filename": "/data/image/font/127.png",
-   "start": 21848196,
-   "end": 21848301
-  }, {
-   "filename": "/data/image/font/125.png",
-   "start": 21848301,
-   "end": 21848402
-  }, {
-   "filename": "/data/image/font/119.png",
-   "start": 21848402,
-   "end": 21848503
-  }, {
-   "filename": "/data/image/font/118.png",
-   "start": 21848503,
-   "end": 21848604
-  }, {
-   "filename": "/data/image/font/124.png",
-   "start": 21848604,
-   "end": 21848693
-  }, {
-   "filename": "/data/image/font/95.png",
-   "start": 21848693,
-   "end": 21848785
-  }, {
-   "filename": "/data/image/font/81.png",
-   "start": 21848785,
-   "end": 21848899
-  }, {
-   "filename": "/data/image/font/56.png",
-   "start": 21848899,
-   "end": 21849005
-  }, {
-   "filename": "/data/image/font/42.png",
-   "start": 21849005,
-   "end": 21849116
-  }, {
-   "filename": "/data/image/font/43.png",
-   "start": 21849116,
-   "end": 21849221
-  }, {
-   "filename": "/data/image/font/57.png",
-   "start": 21849221,
-   "end": 21849331
-  }, {
-   "filename": "/data/image/font/80.png",
-   "start": 21849331,
-   "end": 21849438
-  }, {
-   "filename": "/data/image/font/94.png",
-   "start": 21849438,
-   "end": 21849539
-  }, {
-   "filename": "/data/image/font/-1.png",
-   "start": 21849539,
-   "end": 21849642
-  }, {
-   "filename": "/data/image/font/82.png",
-   "start": 21849642,
-   "end": 21849745
-  }, {
-   "filename": "/data/image/font/96.png",
-   "start": 21849745,
-   "end": 21849840
-  }, {
-   "filename": "/data/image/font/41.png",
-   "start": 21849840,
-   "end": 21849932
-  }, {
-   "filename": "/data/image/font/55.png",
-   "start": 21849932,
-   "end": 21850033
-  }, {
-   "filename": "/data/image/font/69.png",
-   "start": 21850033,
-   "end": 21850136
-  }, {
-   "filename": "/data/image/font/68.png",
-   "start": 21850136,
-   "end": 21850240
-  }, {
-   "filename": "/data/image/font/54.png",
-   "start": 21850240,
-   "end": 21850354
-  }, {
-   "filename": "/data/image/font/40.png",
-   "start": 21850354,
-   "end": 21850453
-  }, {
-   "filename": "/data/image/font/97.png",
-   "start": 21850453,
-   "end": 21850560
-  }, {
-   "filename": "/data/image/font/83.png",
-   "start": 21850560,
-   "end": 21850677
-  }, {
-   "filename": "/data/image/font/87.png",
-   "start": 21850677,
-   "end": 21850791
-  }, {
-   "filename": "/data/image/font/93.png",
-   "start": 21850791,
-   "end": 21850885
-  }, {
-   "filename": "/data/image/font/78.png",
-   "start": 21850885,
-   "end": 21850994
-  }, {
-   "filename": "/data/image/font/44.png",
-   "start": 21850994,
-   "end": 21851090
-  }, {
-   "filename": "/data/image/font/50.png",
-   "start": 21851090,
-   "end": 21851196
-  }, {
-   "filename": "/data/image/font/51.png",
-   "start": 21851196,
-   "end": 21851304
-  }, {
-   "filename": "/data/image/font/45.png",
-   "start": 21851304,
-   "end": 21851398
-  }, {
-   "filename": "/data/image/font/79.png",
-   "start": 21851398,
-   "end": 21851502
-  }, {
-   "filename": "/data/image/font/92.png",
-   "start": 21851502,
-   "end": 21851602
-  }, {
-   "filename": "/data/image/font/86.png",
-   "start": 21851602,
-   "end": 21851704
-  }, {
-   "filename": "/data/image/font/90.png",
-   "start": 21851704,
-   "end": 21851809
-  }, {
-   "filename": "/data/image/font/84.png",
-   "start": 21851809,
-   "end": 21851903
-  }, {
-   "filename": "/data/image/font/53.png",
-   "start": 21851903,
-   "end": 21852012
-  }, {
-   "filename": "/data/image/font/47.png",
-   "start": 21852012,
-   "end": 21852115
-  }, {
-   "filename": "/data/image/font/46.png",
-   "start": 21852115,
-   "end": 21852202
-  }, {
-   "filename": "/data/image/font/52.png",
-   "start": 21852202,
-   "end": 21852310
-  }, {
-   "filename": "/data/image/font/85.png",
-   "start": 21852310,
-   "end": 21852415
-  }, {
-   "filename": "/data/image/font/91.png",
-   "start": 21852415,
-   "end": 21852513
-  }, {
-   "filename": "/data/lua/.DS_Store",
-   "start": 21852513,
-   "end": 21858661
-  }, {
-   "filename": "/data/lua/yazrXnes.lua",
-   "start": 21858661,
-   "end": 21862468
-  }, {
-   "filename": "/data/lua/yazr.lua",
-   "start": 21862468,
-   "end": 21863191
-  }, {
-   "filename": "/data/lua/nes/palette.lua",
-   "start": 21863191,
-   "end": 21868608
-  }, {
-   "filename": "/data/lua/nes/cpu.lua",
-   "start": 21868608,
-   "end": 21902496
-  }, {
-   "filename": "/data/lua/nes/apu.lua",
-   "start": 21902496,
-   "end": 21931294
-  }, {
-   "filename": "/data/lua/nes/pads.lua",
-   "start": 21931294,
-   "end": 21933661
-  }, {
-   "filename": "/data/lua/nes/rom.lua",
-   "start": 21933661,
-   "end": 21951181
-  }, {
-   "filename": "/data/lua/nes/nes.lua",
-   "start": 21951181,
-   "end": 21953629
-  }, {
-   "filename": "/data/lua/nes/utils.lua",
-   "start": 21953629,
-   "end": 21960969
-  }, {
-   "filename": "/data/lua/nes/ppu.lua",
-   "start": 21960969,
-   "end": 22010517
-  }, {
-   "filename": "/data/lua/nes/libs/complex.lua",
-   "start": 22010517,
-   "end": 22023252
-  }, {
-   "filename": "/data/lua/nes/libs/profile.lua",
-   "start": 22023252,
-   "end": 22030735
-  }, {
-   "filename": "/data/lua/nes/libs/serpent.lua",
-   "start": 22030735,
-   "end": 22041796
-  }, {
-   "filename": "/data/lua/core/serialization.lua",
-   "start": 22041796,
-   "end": 22044312
-  }, {
-   "filename": "/data/lua/core/_init.lua",
-   "start": 22044312,
-   "end": 22044503
-  }, {
-   "filename": "/data/lua/core/yecs.lua",
-   "start": 22044503,
-   "end": 22057016
-  }, {
-   "filename": "/data/lua/core/splash_screen.lua",
-   "start": 22057016,
-   "end": 22058361
-  }, {
-   "filename": "/data/lua/core/components/sprite_text.lua",
-   "start": 22058361,
-   "end": 22061284
-  }, {
-   "filename": "/data/lua/core/components/tick.lua",
-   "start": 22061284,
-   "end": 22062231
-  }, {
-   "filename": "/data/lua/core/components/size.lua",
-   "start": 22062231,
-   "end": 22062332
-  }, {
-   "filename": "/data/lua/core/components/position.lua",
-   "start": 22062332,
-   "end": 22062440
-  }, {
-   "filename": "/data/lua/core/components/animation.lua",
-   "start": 22062440,
-   "end": 22065273
-  }, {
-   "filename": "/data/lua/core/components/_init.lua",
-   "start": 22065273,
-   "end": 22065678
-  }, {
-   "filename": "/data/lua/core/components/layout.lua",
-   "start": 22065678,
-   "end": 22071831
-  }, {
-   "filename": "/data/lua/core/components/sprite.lua",
-   "start": 22071831,
-   "end": 22072774
-  }, {
-   "filename": "/data/lua/core/components/data.lua",
-   "start": 22072774,
-   "end": 22072844
-  }, {
-   "filename": "/data/lua/core/components/tree.lua",
-   "start": 22072844,
-   "end": 22074608
-  }, {
-   "filename": "/data/lua/core/components/tags.lua",
-   "start": 22074608,
-   "end": 22074678
-  }, {
-   "filename": "/data/lua/core/components/input.lua",
-   "start": 22074678,
-   "end": 22076312
-  }, {
-   "filename": "/data/lua/core/components/text.lua",
-   "start": 22076312,
-   "end": 22077518
-  }, {
-   "filename": "/data/lua/core/systems/tick.lua",
-   "start": 22077518,
-   "end": 22079318
-  }, {
-   "filename": "/data/lua/core/systems/dummy.lua",
-   "start": 22079318,
-   "end": 22079709
-  }, {
-   "filename": "/data/lua/core/systems/_init.lua",
-   "start": 22079709,
-   "end": 22079858
-  }, {
-   "filename": "/data/lua/core/systems/sprite.lua",
-   "start": 22079858,
-   "end": 22081606
-  }, {
-   "filename": "/data/lua/core/systems/tree.lua",
-   "start": 22081606,
-   "end": 22083408
-  }, {
-   "filename": "/data/lua/core/systems/input.lua",
-   "start": 22083408,
-   "end": 22087475
-  }, {
-   "filename": "/data/lua/core/data/palette_data.lua",
-   "start": 22087475,
-   "end": 22088732
-  }, {
-   "filename": "/data/lua/core/data/font_data.lua",
-   "start": 22088732,
-   "end": 22090218
-  }, {
-   "filename": "/data/lua/core/data/emscripten_keycode_mapping.lua",
-   "start": 22090218,
-   "end": 22091272
-  }, {
-   "filename": "/data/lua/core/entities/_init.lua",
-   "start": 22091272,
-   "end": 22091301
-  }, {
-   "filename": "/data/lua/core/entities/ui/palette.lua",
-   "start": 22091301,
-   "end": 22092185
-  }, {
-   "filename": "/data/lua/core/entities/ui/progress.lua",
-   "start": 22092185,
-   "end": 22093879
-  }, {
-   "filename": "/data/lua/core/entities/ui/joystick.lua",
-   "start": 22093879,
-   "end": 22097028
-  }, {
-   "filename": "/data/lua/core/entities/ui/dpad.lua",
-   "start": 22097028,
-   "end": 22099861
-  }, {
-   "filename": "/data/lua/core/entities/ui/label.lua",
-   "start": 22099861,
-   "end": 22100399
-  }, {
-   "filename": "/data/lua/core/entities/ui/_init.lua",
-   "start": 22100399,
-   "end": 22100765
-  }, {
-   "filename": "/data/lua/core/entities/ui/panel.lua",
-   "start": 22100765,
-   "end": 22101635
-  }, {
-   "filename": "/data/lua/core/entities/ui/progress_selector.lua",
-   "start": 22101635,
-   "end": 22103604
-  }, {
-   "filename": "/data/lua/core/entities/ui/sprite_label.lua",
-   "start": 22103604,
-   "end": 22104250
-  }, {
-   "filename": "/data/lua/core/entities/ui/image.lua",
-   "start": 22104250,
-   "end": 22107245
-  }, {
-   "filename": "/data/lua/core/entities/ui/button.lua",
-   "start": 22107245,
-   "end": 22110408
-  }, {
-   "filename": "/data/lua/app/app.lua",
-   "start": 22110408,
-   "end": 22110995
-  }, {
-   "filename": "/data/lua/app/rewind_controller.lua",
-   "start": 22110995,
-   "end": 22116329
-  }, {
-   "filename": "/data/lua/app/_init.lua",
-   "start": 22116329,
-   "end": 22116371
-  }, {
-   "filename": "/data/lua/app/test_world.lua",
-   "start": 22116371,
-   "end": 22119836
-  }, {
-   "filename": "/data/lua/app/game/world_image.lua",
-   "start": 22119836,
-   "end": 22122651
-  }, {
-   "filename": "/data/lua/app/game/world_dungeon.lua",
-   "start": 22122651,
-   "end": 22124378
-  }, {
-   "filename": "/data/lua/app/game/world_mario_music.lua",
-   "start": 22124378,
-   "end": 22130225
-  }, {
-   "filename": "/data/lua/app/game/_init.lua",
-   "start": 22130225,
-   "end": 22134113
-  }, {
-   "filename": "/data/lua/app/game/world_palette.lua",
-   "start": 22134113,
-   "end": 22134615
-  }, {
-   "filename": "/data/lua/app/game/world_flappy_duck.lua",
-   "start": 22134615,
-   "end": 22147538
-  }, {
-   "filename": "/data/lua/app/game/world_label.lua",
-   "start": 22147538,
-   "end": 22150371
-  }, {
-   "filename": "/data/lua/app/game/world_word_slide_maker.lua",
-   "start": 22150371,
-   "end": 22151719
-  }, {
-   "filename": "/data/lua/app/game/world_slides.lua",
-   "start": 22151719,
-   "end": 22153312
-  }, {
-   "filename": "/data/lua/utils/eval.lua",
-   "start": 22153312,
-   "end": 22153726
-  }, {
-   "filename": "/data/lua/utils/package_path.lua",
-   "start": 22153726,
-   "end": 22154003
-  }, {
-   "filename": "/data/lua/utils/uuid.lua",
-   "start": 22154003,
-   "end": 22154298
-  }, {
-   "filename": "/data/lua/utils/log.lua",
-   "start": 22154298,
-   "end": 22155119
-  }, {
-   "filename": "/data/lua/utils/copy.lua",
-   "start": 22155119,
-   "end": 22155895
-  }, {
-   "filename": "/data/lua/utils/reload.lua",
-   "start": 22155895,
-   "end": 22172422
-  }, {
-   "filename": "/data/lua/libs/debugger.lua",
-   "start": 22172422,
-   "end": 22197182
-  }, {
-   "filename": "/data/lua/libs/table_save.lua",
-   "start": 22197182,
-   "end": 22201935
-  }, {
-   "filename": "/data/lua/libs/rx.lua",
-   "start": 22201935,
-   "end": 22268121
-  }, {
-   "filename": "/data/lua/libs/strict.lua",
-   "start": 22268121,
-   "end": 22269328
-  }, {
-   "filename": "/data/font/zpix.ttf",
-   "start": 22269328,
-   "end": 26949676
-  }, {
-   "filename": "/data/bgfx_shader/windows.varying.def.sc",
-   "start": 26949676,
-   "end": 26949914
-  }, {
-   "filename": "/data/bgfx_shader/.DS_Store",
-   "start": 26949914,
-   "end": 26956062
-  }, {
-   "filename": "/data/bgfx_shader/v_simple.bin",
-   "start": 26956062,
-   "end": 26956395
-  }, {
-   "filename": "/data/bgfx_shader/varying.def.sc",
-   "start": 26956395,
-   "end": 26956634
-  }, {
-   "filename": "/data/bgfx_shader/v_zgui.sc",
-   "start": 26956634,
-   "end": 26957040
-  }, {
-   "filename": "/data/bgfx_shader/v_simple.sc",
-   "start": 26957040,
-   "end": 26957280
-  }, {
-   "filename": "/data/bgfx_shader/f_simple.sc",
-   "start": 26957280,
-   "end": 26957475
-  }, {
-   "filename": "/data/bgfx_shader/f_zgui.sc",
-   "start": 26957475,
-   "end": 26958671
-  }, {
-   "filename": "/data/bgfx_shader/bgfx_shader.sh",
-   "start": 26958671,
-   "end": 26982263
-  }, {
-   "filename": "/data/bgfx_shader/f_simple.bin",
-   "start": 26982263,
-   "end": 26982356
-  }, {
-   "filename": "/data/bgfx_shader/asmjs/v_zgui.bin",
-   "start": 26982356,
-   "end": 26982971
-  }, {
-   "filename": "/data/bgfx_shader/asmjs/v_simple.bin",
-   "start": 26982971,
-   "end": 26983406
-  }, {
-   "filename": "/data/bgfx_shader/asmjs/f_simple.bin",
-   "start": 26983406,
-   "end": 26983704
-  }, {
-   "filename": "/data/bgfx_shader/asmjs/f_zgui.bin",
-   "start": 26983704,
-   "end": 26985408
-  }, {
-   "filename": "/data/bgfx_shader/osx/v_zgui.bin",
-   "start": 26985408,
-   "end": 26986526
-  }, {
-   "filename": "/data/bgfx_shader/osx/v_simple.bin",
-   "start": 26986526,
-   "end": 26987328
-  }, {
-   "filename": "/data/bgfx_shader/osx/f_simple.bin",
-   "start": 26987328,
-   "end": 26988042
-  }, {
-   "filename": "/data/bgfx_shader/osx/f_zgui.bin",
-   "start": 26988042,
-   "end": 26989812
-  }, {
-   "filename": "/data/bgfx_shader/ios/v_zgui.bin",
-   "start": 26989812,
-   "end": 26990930
-  }, {
-   "filename": "/data/bgfx_shader/ios/v_simple.bin",
-   "start": 26990930,
-   "end": 26991732
-  }, {
-   "filename": "/data/bgfx_shader/ios/f_simple.bin",
-   "start": 26991732,
-   "end": 26992446
-  }, {
-   "filename": "/data/bgfx_shader/ios/f_zgui.bin",
-   "start": 26992446,
-   "end": 26994216
-  }, {
-   "filename": "/data/bgfx_shader/android/v_zgui.bin",
-   "start": 26994216,
-   "end": 26994831
-  }, {
-   "filename": "/data/bgfx_shader/android/v_simple.bin",
-   "start": 26994831,
-   "end": 26995266
+   "start": 20985936,
+   "end": 25666284
+  }, {
+   "filename": "/data/ZGUI/Image/CalibrationFloorDiffuse.png",
+   "start": 25666284,
+   "end": 26223106
+  }, {
+   "filename": "/data/ZGUI/Image/CalibrationGreyscaleDarkDiffuse.png",
+   "start": 26223106,
+   "end": 26234076
+  }, {
+   "filename": "/data/ZGUI/Image/CalibrationGreyscaleLightDiffuse.png",
+   "start": 26234076,
+   "end": 26244916
+  }, {
+   "filename": "/data/ZGUI/Image/CalibrationRulerDiffuse.png",
+   "start": 26244916,
+   "end": 26318611
+  }, {
+   "filename": "/data/ZGUI/Image/CalibrationRulerDiffuse_1.png",
+   "start": 26318611,
+   "end": 26385767
+  }, {
+   "filename": "/data/ZGUI/Image/Daisy.png",
+   "start": 26385767,
+   "end": 27086083
+  }, {
+   "filename": "/data/ZGUI/Image/Daisy_debug.png",
+   "start": 27086083,
+   "end": 27630647
+  }, {
+   "filename": "/data/ZGUI/Image/Galaxy.png",
+   "start": 27630647,
+   "end": 28830859
+  }, {
+   "filename": "/data/ZGUI/Image/c0.png",
+   "start": 28830859,
+   "end": 28831552
+  }, {
+   "filename": "/data/ZGUI/Image/c1.png",
+   "start": 28831552,
+   "end": 28832252
+  }, {
+   "filename": "/data/ZGUI/Image/c2.png",
+   "start": 28832252,
+   "end": 28832928
+  }, {
+   "filename": "/data/ZGUI/Image/c3.png",
+   "start": 28832928,
+   "end": 28833631
+  }, {
+   "filename": "/data/ZGUI/Image/c4.png",
+   "start": 28833631,
+   "end": 28834326
+  }, {
+   "filename": "/data/ZGUI/Image/c5.png",
+   "start": 28834326,
+   "end": 28837367
+  }, {
+   "filename": "/data/ZGUI/Image/c6.png",
+   "start": 28837367,
+   "end": 28838394
+  }, {
+   "filename": "/data/ZGUI/Image/c7.png",
+   "start": 28838394,
+   "end": 28839090
+  }, {
+   "filename": "/data/ZGUI/Image/ca1.png",
+   "start": 28839090,
+   "end": 28839624
+  }, {
+   "filename": "/data/ZGUI/Image/ca10.png",
+   "start": 28839624,
+   "end": 28840182
+  }, {
+   "filename": "/data/ZGUI/Image/ca2.png",
+   "start": 28840182,
+   "end": 28840758
+  }, {
+   "filename": "/data/ZGUI/Image/ca3.png",
+   "start": 28840758,
+   "end": 28841374
+  }, {
+   "filename": "/data/ZGUI/Image/ca4.png",
+   "start": 28841374,
+   "end": 28842029
+  }, {
+   "filename": "/data/ZGUI/Image/ca5.png",
+   "start": 28842029,
+   "end": 28842684
+  }, {
+   "filename": "/data/ZGUI/Image/ca6.png",
+   "start": 28842684,
+   "end": 28843339
+  }, {
+   "filename": "/data/ZGUI/Image/ca7.png",
+   "start": 28843339,
+   "end": 28843998
+  }, {
+   "filename": "/data/ZGUI/Image/ca8.png",
+   "start": 28843998,
+   "end": 28844632
+  }, {
+   "filename": "/data/ZGUI/Image/ca9.png",
+   "start": 28844632,
+   "end": 28845225
+  }, {
+   "filename": "/data/ZGUI/Image/cf.png",
+   "start": 28845225,
+   "end": 28846438
+  }, {
+   "filename": "/data/ZGUI/Image/cff.png",
+   "start": 28846438,
+   "end": 28847869
+  }, {
+   "filename": "/data/ZGUI/Image/e1.png",
+   "start": 28847869,
+   "end": 28849796
+  }, {
+   "filename": "/data/ZGUI/Image/e10.png",
+   "start": 28849796,
+   "end": 28851757
+  }, {
+   "filename": "/data/ZGUI/Image/e11.png",
+   "start": 28851757,
+   "end": 28853724
+  }, {
+   "filename": "/data/ZGUI/Image/e12.png",
+   "start": 28853724,
+   "end": 28855683
+  }, {
+   "filename": "/data/ZGUI/Image/e13.png",
+   "start": 28855683,
+   "end": 28857653
+  }, {
+   "filename": "/data/ZGUI/Image/e14.png",
+   "start": 28857653,
+   "end": 28859669
+  }, {
+   "filename": "/data/ZGUI/Image/e15.png",
+   "start": 28859669,
+   "end": 28861633
+  }, {
+   "filename": "/data/ZGUI/Image/e16.png",
+   "start": 28861633,
+   "end": 28863574
+  }, {
+   "filename": "/data/ZGUI/Image/e17.png",
+   "start": 28863574,
+   "end": 28865497
+  }, {
+   "filename": "/data/ZGUI/Image/e18.png",
+   "start": 28865497,
+   "end": 28867415
+  }, {
+   "filename": "/data/ZGUI/Image/e19.png",
+   "start": 28867415,
+   "end": 28869336
+  }, {
+   "filename": "/data/ZGUI/Image/e2.png",
+   "start": 28869336,
+   "end": 28871266
+  }, {
+   "filename": "/data/ZGUI/Image/e20.png",
+   "start": 28871266,
+   "end": 28873197
+  }, {
+   "filename": "/data/ZGUI/Image/e21.png",
+   "start": 28873197,
+   "end": 28875105
+  }, {
+   "filename": "/data/ZGUI/Image/e22.png",
+   "start": 28875105,
+   "end": 28877050
+  }, {
+   "filename": "/data/ZGUI/Image/e23.png",
+   "start": 28877050,
+   "end": 28879001
+  }, {
+   "filename": "/data/ZGUI/Image/e24.png",
+   "start": 28879001,
+   "end": 28880925
+  }, {
+   "filename": "/data/ZGUI/Image/e25.png",
+   "start": 28880925,
+   "end": 28882854
+  }, {
+   "filename": "/data/ZGUI/Image/e26.png",
+   "start": 28882854,
+   "end": 28884750
+  }, {
+   "filename": "/data/ZGUI/Image/e27.png",
+   "start": 28884750,
+   "end": 28886628
+  }, {
+   "filename": "/data/ZGUI/Image/e28.png",
+   "start": 28886628,
+   "end": 28888499
+  }, {
+   "filename": "/data/ZGUI/Image/e29.png",
+   "start": 28888499,
+   "end": 28890369
+  }, {
+   "filename": "/data/ZGUI/Image/e3.png",
+   "start": 28890369,
+   "end": 28892276
+  }, {
+   "filename": "/data/ZGUI/Image/e30.png",
+   "start": 28892276,
+   "end": 28894166
+  }, {
+   "filename": "/data/ZGUI/Image/e31.png",
+   "start": 28894166,
+   "end": 28896062
+  }, {
+   "filename": "/data/ZGUI/Image/e32.png",
+   "start": 28896062,
+   "end": 28897936
+  }, {
+   "filename": "/data/ZGUI/Image/e33.png",
+   "start": 28897936,
+   "end": 28899802
+  }, {
+   "filename": "/data/ZGUI/Image/e34.png",
+   "start": 28899802,
+   "end": 28901688
+  }, {
+   "filename": "/data/ZGUI/Image/e35.png",
+   "start": 28901688,
+   "end": 28903617
+  }, {
+   "filename": "/data/ZGUI/Image/e36.png",
+   "start": 28903617,
+   "end": 28905514
+  }, {
+   "filename": "/data/ZGUI/Image/e37.png",
+   "start": 28905514,
+   "end": 28907396
+  }, {
+   "filename": "/data/ZGUI/Image/e38.png",
+   "start": 28907396,
+   "end": 28909315
+  }, {
+   "filename": "/data/ZGUI/Image/e39.png",
+   "start": 28909315,
+   "end": 28911214
+  }, {
+   "filename": "/data/ZGUI/Image/e4.png",
+   "start": 28911214,
+   "end": 28913091
+  }, {
+   "filename": "/data/ZGUI/Image/e40.png",
+   "start": 28913091,
+   "end": 28914930
+  }, {
+   "filename": "/data/ZGUI/Image/e41.png",
+   "start": 28914930,
+   "end": 28916779
+  }, {
+   "filename": "/data/ZGUI/Image/e42.png",
+   "start": 28916779,
+   "end": 28918566
+  }, {
+   "filename": "/data/ZGUI/Image/e43.png",
+   "start": 28918566,
+   "end": 28920357
+  }, {
+   "filename": "/data/ZGUI/Image/e44.png",
+   "start": 28920357,
+   "end": 28922186
+  }, {
+   "filename": "/data/ZGUI/Image/e45.png",
+   "start": 28922186,
+   "end": 28924014
+  }, {
+   "filename": "/data/ZGUI/Image/e46.png",
+   "start": 28924014,
+   "end": 28925759
+  }, {
+   "filename": "/data/ZGUI/Image/e47.png",
+   "start": 28925759,
+   "end": 28927484
+  }, {
+   "filename": "/data/ZGUI/Image/e48.png",
+   "start": 28927484,
+   "end": 28929225
+  }, {
+   "filename": "/data/ZGUI/Image/e49.png",
+   "start": 28929225,
+   "end": 28930936
+  }, {
+   "filename": "/data/ZGUI/Image/e5.png",
+   "start": 28930936,
+   "end": 28932837
+  }, {
+   "filename": "/data/ZGUI/Image/e50.png",
+   "start": 28932837,
+   "end": 28934609
+  }, {
+   "filename": "/data/ZGUI/Image/e51.png",
+   "start": 28934609,
+   "end": 28936400
+  }, {
+   "filename": "/data/ZGUI/Image/e52.png",
+   "start": 28936400,
+   "end": 28938208
+  }, {
+   "filename": "/data/ZGUI/Image/e53.png",
+   "start": 28938208,
+   "end": 28940039
+  }, {
+   "filename": "/data/ZGUI/Image/e54.png",
+   "start": 28940039,
+   "end": 28941908
+  }, {
+   "filename": "/data/ZGUI/Image/e55.png",
+   "start": 28941908,
+   "end": 28943790
+  }, {
+   "filename": "/data/ZGUI/Image/e56.png",
+   "start": 28943790,
+   "end": 28945608
+  }, {
+   "filename": "/data/ZGUI/Image/e57.png",
+   "start": 28945608,
+   "end": 28947463
+  }, {
+   "filename": "/data/ZGUI/Image/e58.png",
+   "start": 28947463,
+   "end": 28949323
+  }, {
+   "filename": "/data/ZGUI/Image/e59.png",
+   "start": 28949323,
+   "end": 28951158
+  }, {
+   "filename": "/data/ZGUI/Image/e6.png",
+   "start": 28951158,
+   "end": 28953056
+  }, {
+   "filename": "/data/ZGUI/Image/e60.png",
+   "start": 28953056,
+   "end": 28954921
+  }, {
+   "filename": "/data/ZGUI/Image/e7.png",
+   "start": 28954921,
+   "end": 28956769
+  }, {
+   "filename": "/data/ZGUI/Image/e8.png",
+   "start": 28956769,
+   "end": 28958668
+  }, {
+   "filename": "/data/ZGUI/Image/e9.png",
+   "start": 28958668,
+   "end": 28960554
+  }, {
+   "filename": "/data/ZGUI/Image/empty.png",
+   "start": 28960554,
+   "end": 28961421
+  }, {
+   "filename": "/data/ZGUI/Image/resurrect-64-32x.png",
+   "start": 28961421,
+   "end": 28962223
+  }, {
+   "filename": "/data/ZGUI/Lua/anim_card.lua",
+   "start": 28962223,
+   "end": 28963519
+  }, {
+   "filename": "/data/ZGUI/Lua/anim_card2.lua",
+   "start": 28963519,
+   "end": 28964812
+  }, {
+   "filename": "/data/ZGUI/Lua/anim_card_light.lua",
+   "start": 28964812,
+   "end": 28965428
+  }, {
+   "filename": "/data/ZGUI/Lua/anim_planet.lua",
+   "start": 28965428,
+   "end": 28966403
+  }, {
+   "filename": "/data/ZGUI/Lua/animation.lua",
+   "start": 28966403,
+   "end": 28967041
+  }, {
+   "filename": "/data/ZGUI/Lua/animation_s.lua",
+   "start": 28967041,
+   "end": 28967272
+  }, {
+   "filename": "/data/ZGUI/Lua/button.lua",
+   "start": 28967272,
+   "end": 28970017
+  }, {
+   "filename": "/data/ZGUI/Lua/clickable.lua",
+   "start": 28970017,
+   "end": 28971743
+  }, {
+   "filename": "/data/ZGUI/Lua/clip.lua",
+   "start": 28971743,
+   "end": 28972914
+  }, {
+   "filename": "/data/ZGUI/Lua/clip_s.lua",
+   "start": 28972914,
+   "end": 28973136
+  }, {
+   "filename": "/data/ZGUI/Lua/debug_panel.lua",
+   "start": 28973136,
+   "end": 28984268
+  }, {
+   "filename": "/data/ZGUI/Lua/debug_panel_s.lua",
+   "start": 28984268,
+   "end": 28984503
+  }, {
+   "filename": "/data/ZGUI/Lua/hittest.lua",
+   "start": 28984503,
+   "end": 28987365
+  }, {
+   "filename": "/data/ZGUI/Lua/scene.lua",
+   "start": 28987365,
+   "end": 28990140
+  }, {
+   "filename": "/data/ZGUI/Lua/screen.lua",
+   "start": 28990140,
+   "end": 28992902
+  }, {
+   "filename": "/data/ZGUI/Lua/skeleton_hand_l.lua",
+   "start": 28992902,
+   "end": 28993098
+  }, {
+   "filename": "/data/ZGUI/Lua/skeleton_hand_r.lua",
+   "start": 28993098,
+   "end": 28993294
+  }, {
+   "filename": "/data/ZGUI/Lua/skeleton_head.lua",
+   "start": 28993294,
+   "end": 28993492
+  }, {
+   "filename": "/data/ZGUI/Lua/test.lua",
+   "start": 28993492,
+   "end": 28997203
+  }, {
+   "filename": "/data/ZGUI/Lua/text.lua",
+   "start": 28997203,
+   "end": 28999034
+  }, {
+   "filename": "/data/ZGUI/Lua/text_s.lua",
+   "start": 28999034,
+   "end": 28999253
+  }, {
+   "filename": "/data/ZGUI/Lua/text_sdf.lua",
+   "start": 28999253,
+   "end": 29001145
+  }, {
+   "filename": "/data/ZGUI/Lua/z_object.lua",
+   "start": 29001145,
+   "end": 29002210
+  }, {
+   "filename": "/data/ZGUI/Lua/zgui_anim.lua",
+   "start": 29002210,
+   "end": 29004454
+  }, {
+   "filename": "/data/ZGUI/_CopyTemplates.xml",
+   "start": 29004454,
+   "end": 29004551
   }, {
    "filename": "/data/bgfx_shader/android/f_simple.bin",
-   "start": 26995266,
-   "end": 26995564
+   "start": 29004551,
+   "end": 29004849
   }, {
    "filename": "/data/bgfx_shader/android/f_zgui.bin",
-   "start": 26995564,
-   "end": 26997268
+   "start": 29004849,
+   "end": 29006599
   }, {
-   "filename": "/data/bgfx_shader/windows/v_zgui.bin",
-   "start": 26997268,
-   "end": 26997778
+   "filename": "/data/bgfx_shader/android/v_simple.bin",
+   "start": 29006599,
+   "end": 29007034
   }, {
-   "filename": "/data/bgfx_shader/windows/v_simple.bin",
-   "start": 26997778,
-   "end": 26998133
+   "filename": "/data/bgfx_shader/android/v_zgui.bin",
+   "start": 29007034,
+   "end": 29007733
+  }, {
+   "filename": "/data/bgfx_shader/asmjs/f_simple.bin",
+   "start": 29007733,
+   "end": 29008031
+  }, {
+   "filename": "/data/bgfx_shader/asmjs/f_zgui.bin",
+   "start": 29008031,
+   "end": 29009781
+  }, {
+   "filename": "/data/bgfx_shader/asmjs/v_simple.bin",
+   "start": 29009781,
+   "end": 29010216
+  }, {
+   "filename": "/data/bgfx_shader/asmjs/v_zgui.bin",
+   "start": 29010216,
+   "end": 29010915
+  }, {
+   "filename": "/data/bgfx_shader/bgfx_shader.sh",
+   "start": 29010915,
+   "end": 29034507
+  }, {
+   "filename": "/data/bgfx_shader/f_simple.sc",
+   "start": 29034507,
+   "end": 29034702
+  }, {
+   "filename": "/data/bgfx_shader/f_zgui.sc",
+   "start": 29034702,
+   "end": 29035910
+  }, {
+   "filename": "/data/bgfx_shader/ios/f_simple.bin",
+   "start": 29035910,
+   "end": 29036624
+  }, {
+   "filename": "/data/bgfx_shader/ios/f_zgui.bin",
+   "start": 29036624,
+   "end": 29038470
+  }, {
+   "filename": "/data/bgfx_shader/ios/v_simple.bin",
+   "start": 29038470,
+   "end": 29039272
+  }, {
+   "filename": "/data/bgfx_shader/ios/v_zgui.bin",
+   "start": 29039272,
+   "end": 29040547
+  }, {
+   "filename": "/data/bgfx_shader/osx/f_simple.bin",
+   "start": 29040547,
+   "end": 29041261
+  }, {
+   "filename": "/data/bgfx_shader/osx/f_zgui.bin",
+   "start": 29041261,
+   "end": 29043107
+  }, {
+   "filename": "/data/bgfx_shader/osx/v_simple.bin",
+   "start": 29043107,
+   "end": 29043909
+  }, {
+   "filename": "/data/bgfx_shader/osx/v_zgui.bin",
+   "start": 29043909,
+   "end": 29045184
+  }, {
+   "filename": "/data/bgfx_shader/v_simple.sc",
+   "start": 29045184,
+   "end": 29045424
+  }, {
+   "filename": "/data/bgfx_shader/v_zgui.sc",
+   "start": 29045424,
+   "end": 29045887
+  }, {
+   "filename": "/data/bgfx_shader/varying.def.sc",
+   "start": 29045887,
+   "end": 29046203
+  }, {
+   "filename": "/data/bgfx_shader/windows.varying.def.sc",
+   "start": 29046203,
+   "end": 29046518
   }, {
    "filename": "/data/bgfx_shader/windows/f_simple.bin",
-   "start": 26998133,
-   "end": 26998355
+   "start": 29046518,
+   "end": 29046740
   }, {
    "filename": "/data/bgfx_shader/windows/f_zgui.bin",
-   "start": 26998355,
-   "end": 26999973
+   "start": 29046740,
+   "end": 29048404
+  }, {
+   "filename": "/data/bgfx_shader/windows/v_simple.bin",
+   "start": 29048404,
+   "end": 29048759
+  }, {
+   "filename": "/data/bgfx_shader/windows/v_zgui.bin",
+   "start": 29048759,
+   "end": 29049341
+  }, {
+   "filename": "/data/font/zpix.ttf",
+   "start": 29049341,
+   "end": 33729689
+  }, {
+   "filename": "/data/history.txt",
+   "start": 33729689,
+   "end": 33729690
+  }, {
+   "filename": "/data/image/animation/blood/1.png",
+   "start": 33729690,
+   "end": 33730084
+  }, {
+   "filename": "/data/image/animation/blood/10.png",
+   "start": 33730084,
+   "end": 33730591
+  }, {
+   "filename": "/data/image/animation/blood/11.png",
+   "start": 33730591,
+   "end": 33731028
+  }, {
+   "filename": "/data/image/animation/blood/12.png",
+   "start": 33731028,
+   "end": 33731466
+  }, {
+   "filename": "/data/image/animation/blood/13.png",
+   "start": 33731466,
+   "end": 33731865
+  }, {
+   "filename": "/data/image/animation/blood/14.png",
+   "start": 33731865,
+   "end": 33732253
+  }, {
+   "filename": "/data/image/animation/blood/15.png",
+   "start": 33732253,
+   "end": 33732619
+  }, {
+   "filename": "/data/image/animation/blood/16.png",
+   "start": 33732619,
+   "end": 33732946
+  }, {
+   "filename": "/data/image/animation/blood/17.png",
+   "start": 33732946,
+   "end": 33733273
+  }, {
+   "filename": "/data/image/animation/blood/18.png",
+   "start": 33733273,
+   "end": 33733600
+  }, {
+   "filename": "/data/image/animation/blood/19.png",
+   "start": 33733600,
+   "end": 33733927
+  }, {
+   "filename": "/data/image/animation/blood/2.png",
+   "start": 33733927,
+   "end": 33734665
+  }, {
+   "filename": "/data/image/animation/blood/20.png",
+   "start": 33734665,
+   "end": 33735002
+  }, {
+   "filename": "/data/image/animation/blood/3.png",
+   "start": 33735002,
+   "end": 33735849
+  }, {
+   "filename": "/data/image/animation/blood/4.png",
+   "start": 33735849,
+   "end": 33736763
+  }, {
+   "filename": "/data/image/animation/blood/5.png",
+   "start": 33736763,
+   "end": 33737639
+  }, {
+   "filename": "/data/image/animation/blood/6.png",
+   "start": 33737639,
+   "end": 33738404
+  }, {
+   "filename": "/data/image/animation/blood/7.png",
+   "start": 33738404,
+   "end": 33739063
+  }, {
+   "filename": "/data/image/animation/blood/8.png",
+   "start": 33739063,
+   "end": 33739660
+  }, {
+   "filename": "/data/image/animation/blood/9.png",
+   "start": 33739660,
+   "end": 33740154
+  }, {
+   "filename": "/data/image/animation/wizard/1.png",
+   "start": 33740154,
+   "end": 33741385
+  }, {
+   "filename": "/data/image/animation/wizard/10.png",
+   "start": 33741385,
+   "end": 33742650
+  }, {
+   "filename": "/data/image/animation/wizard/11.png",
+   "start": 33742650,
+   "end": 33743888
+  }, {
+   "filename": "/data/image/animation/wizard/12.png",
+   "start": 33743888,
+   "end": 33745149
+  }, {
+   "filename": "/data/image/animation/wizard/13.png",
+   "start": 33745149,
+   "end": 33746384
+  }, {
+   "filename": "/data/image/animation/wizard/14.png",
+   "start": 33746384,
+   "end": 33747613
+  }, {
+   "filename": "/data/image/animation/wizard/15.png",
+   "start": 33747613,
+   "end": 33748811
+  }, {
+   "filename": "/data/image/animation/wizard/16.png",
+   "start": 33748811,
+   "end": 33750091
+  }, {
+   "filename": "/data/image/animation/wizard/2.png",
+   "start": 33750091,
+   "end": 33751341
+  }, {
+   "filename": "/data/image/animation/wizard/3.png",
+   "start": 33751341,
+   "end": 33752575
+  }, {
+   "filename": "/data/image/animation/wizard/4.png",
+   "start": 33752575,
+   "end": 33753815
+  }, {
+   "filename": "/data/image/animation/wizard/5.png",
+   "start": 33753815,
+   "end": 33755035
+  }, {
+   "filename": "/data/image/animation/wizard/6.png",
+   "start": 33755035,
+   "end": 33756287
+  }, {
+   "filename": "/data/image/animation/wizard/7.png",
+   "start": 33756287,
+   "end": 33757554
+  }, {
+   "filename": "/data/image/animation/wizard/8.png",
+   "start": 33757554,
+   "end": 33758858
+  }, {
+   "filename": "/data/image/animation/wizard/9.png",
+   "start": 33758858,
+   "end": 33760129
+  }, {
+   "filename": "/data/image/flappy_duck/cactus.png",
+   "start": 33760129,
+   "end": 33760325
+  }, {
+   "filename": "/data/image/flappy_duck/duck/down1.png",
+   "start": 33760325,
+   "end": 33760577
+  }, {
+   "filename": "/data/image/flappy_duck/duck/down2.png",
+   "start": 33760577,
+   "end": 33760821
+  }, {
+   "filename": "/data/image/flappy_duck/duck/up1.png",
+   "start": 33760821,
+   "end": 33761082
+  }, {
+   "filename": "/data/image/flappy_duck/duck/up2.png",
+   "start": 33761082,
+   "end": 33761331
+  }, {
+   "filename": "/data/image/flappy_duck/duck_head.png",
+   "start": 33761331,
+   "end": 33761623
+  }, {
+   "filename": "/data/image/flappy_duck/skybg1.png",
+   "start": 33761623,
+   "end": 33762715
+  }, {
+   "filename": "/data/image/flappy_duck/skybg2.png",
+   "start": 33762715,
+   "end": 33763472
+  }, {
+   "filename": "/data/image/flappy_duck/stars.png",
+   "start": 33763472,
+   "end": 33764333
+  }, {
+   "filename": "/data/image/font/-1.png",
+   "start": 33764333,
+   "end": 33764436
+  }, {
+   "filename": "/data/image/font/100.png",
+   "start": 33764436,
+   "end": 33764543
+  }, {
+   "filename": "/data/image/font/101.png",
+   "start": 33764543,
+   "end": 33764650
+  }, {
+   "filename": "/data/image/font/102.png",
+   "start": 33764650,
+   "end": 33764750
+  }, {
+   "filename": "/data/image/font/103.png",
+   "start": 33764750,
+   "end": 33764863
+  }, {
+   "filename": "/data/image/font/104.png",
+   "start": 33764863,
+   "end": 33764967
+  }, {
+   "filename": "/data/image/font/105.png",
+   "start": 33764967,
+   "end": 33765061
+  }, {
+   "filename": "/data/image/font/106.png",
+   "start": 33765061,
+   "end": 33765167
+  }, {
+   "filename": "/data/image/font/107.png",
+   "start": 33765167,
+   "end": 33765272
+  }, {
+   "filename": "/data/image/font/108.png",
+   "start": 33765272,
+   "end": 33765360
+  }, {
+   "filename": "/data/image/font/109.png",
+   "start": 33765360,
+   "end": 33765463
+  }, {
+   "filename": "/data/image/font/110.png",
+   "start": 33765463,
+   "end": 33765563
+  }, {
+   "filename": "/data/image/font/111.png",
+   "start": 33765563,
+   "end": 33765668
+  }, {
+   "filename": "/data/image/font/112.png",
+   "start": 33765668,
+   "end": 33765776
+  }, {
+   "filename": "/data/image/font/113.png",
+   "start": 33765776,
+   "end": 33765879
+  }, {
+   "filename": "/data/image/font/114.png",
+   "start": 33765879,
+   "end": 33765979
+  }, {
+   "filename": "/data/image/font/115.png",
+   "start": 33765979,
+   "end": 33766084
+  }, {
+   "filename": "/data/image/font/116.png",
+   "start": 33766084,
+   "end": 33766177
+  }, {
+   "filename": "/data/image/font/117.png",
+   "start": 33766177,
+   "end": 33766278
+  }, {
+   "filename": "/data/image/font/118.png",
+   "start": 33766278,
+   "end": 33766379
+  }, {
+   "filename": "/data/image/font/119.png",
+   "start": 33766379,
+   "end": 33766480
+  }, {
+   "filename": "/data/image/font/120.png",
+   "start": 33766480,
+   "end": 33766593
+  }, {
+   "filename": "/data/image/font/121.png",
+   "start": 33766593,
+   "end": 33766702
+  }, {
+   "filename": "/data/image/font/122.png",
+   "start": 33766702,
+   "end": 33766814
+  }, {
+   "filename": "/data/image/font/123.png",
+   "start": 33766814,
+   "end": 33766921
+  }, {
+   "filename": "/data/image/font/124.png",
+   "start": 33766921,
+   "end": 33767010
+  }, {
+   "filename": "/data/image/font/125.png",
+   "start": 33767010,
+   "end": 33767111
+  }, {
+   "filename": "/data/image/font/126.png",
+   "start": 33767111,
+   "end": 33767208
+  }, {
+   "filename": "/data/image/font/127.png",
+   "start": 33767208,
+   "end": 33767313
+  }, {
+   "filename": "/data/image/font/32.png",
+   "start": 33767313,
+   "end": 33767391
+  }, {
+   "filename": "/data/image/font/33.png",
+   "start": 33767391,
+   "end": 33767482
+  }, {
+   "filename": "/data/image/font/34.png",
+   "start": 33767482,
+   "end": 33767577
+  }, {
+   "filename": "/data/image/font/35.png",
+   "start": 33767577,
+   "end": 33767675
+  }, {
+   "filename": "/data/image/font/36.png",
+   "start": 33767675,
+   "end": 33767790
+  }, {
+   "filename": "/data/image/font/37.png",
+   "start": 33767790,
+   "end": 33767902
+  }, {
+   "filename": "/data/image/font/38.png",
+   "start": 33767902,
+   "end": 33768013
+  }, {
+   "filename": "/data/image/font/39.png",
+   "start": 33768013,
+   "end": 33768111
+  }, {
+   "filename": "/data/image/font/40.png",
+   "start": 33768111,
+   "end": 33768210
+  }, {
+   "filename": "/data/image/font/41.png",
+   "start": 33768210,
+   "end": 33768302
+  }, {
+   "filename": "/data/image/font/42.png",
+   "start": 33768302,
+   "end": 33768413
+  }, {
+   "filename": "/data/image/font/43.png",
+   "start": 33768413,
+   "end": 33768518
+  }, {
+   "filename": "/data/image/font/44.png",
+   "start": 33768518,
+   "end": 33768614
+  }, {
+   "filename": "/data/image/font/45.png",
+   "start": 33768614,
+   "end": 33768708
+  }, {
+   "filename": "/data/image/font/46.png",
+   "start": 33768708,
+   "end": 33768795
+  }, {
+   "filename": "/data/image/font/47.png",
+   "start": 33768795,
+   "end": 33768898
+  }, {
+   "filename": "/data/image/font/48.png",
+   "start": 33768898,
+   "end": 33769002
+  }, {
+   "filename": "/data/image/font/49.png",
+   "start": 33769002,
+   "end": 33769102
+  }, {
+   "filename": "/data/image/font/50.png",
+   "start": 33769102,
+   "end": 33769208
+  }, {
+   "filename": "/data/image/font/51.png",
+   "start": 33769208,
+   "end": 33769316
+  }, {
+   "filename": "/data/image/font/52.png",
+   "start": 33769316,
+   "end": 33769424
+  }, {
+   "filename": "/data/image/font/53.png",
+   "start": 33769424,
+   "end": 33769533
+  }, {
+   "filename": "/data/image/font/54.png",
+   "start": 33769533,
+   "end": 33769647
+  }, {
+   "filename": "/data/image/font/55.png",
+   "start": 33769647,
+   "end": 33769748
+  }, {
+   "filename": "/data/image/font/56.png",
+   "start": 33769748,
+   "end": 33769854
+  }, {
+   "filename": "/data/image/font/57.png",
+   "start": 33769854,
+   "end": 33769964
+  }, {
+   "filename": "/data/image/font/58.png",
+   "start": 33769964,
+   "end": 33770055
+  }, {
+   "filename": "/data/image/font/59.png",
+   "start": 33770055,
+   "end": 33770152
+  }, {
+   "filename": "/data/image/font/60.png",
+   "start": 33770152,
+   "end": 33770254
+  }, {
+   "filename": "/data/image/font/61.png",
+   "start": 33770254,
+   "end": 33770352
+  }, {
+   "filename": "/data/image/font/62.png",
+   "start": 33770352,
+   "end": 33770459
+  }, {
+   "filename": "/data/image/font/63.png",
+   "start": 33770459,
+   "end": 33770568
+  }, {
+   "filename": "/data/image/font/64.png",
+   "start": 33770568,
+   "end": 33770690
+  }, {
+   "filename": "/data/image/font/65.png",
+   "start": 33770690,
+   "end": 33770801
+  }, {
+   "filename": "/data/image/font/66.png",
+   "start": 33770801,
+   "end": 33770907
+  }, {
+   "filename": "/data/image/font/67.png",
+   "start": 33770907,
+   "end": 33771010
+  }, {
+   "filename": "/data/image/font/68.png",
+   "start": 33771010,
+   "end": 33771114
+  }, {
+   "filename": "/data/image/font/69.png",
+   "start": 33771114,
+   "end": 33771217
+  }, {
+   "filename": "/data/image/font/70.png",
+   "start": 33771217,
+   "end": 33771316
+  }, {
+   "filename": "/data/image/font/71.png",
+   "start": 33771316,
+   "end": 33771430
+  }, {
+   "filename": "/data/image/font/72.png",
+   "start": 33771430,
+   "end": 33771539
+  }, {
+   "filename": "/data/image/font/73.png",
+   "start": 33771539,
+   "end": 33771627
+  }, {
+   "filename": "/data/image/font/74.png",
+   "start": 33771627,
+   "end": 33771723
+  }, {
+   "filename": "/data/image/font/75.png",
+   "start": 33771723,
+   "end": 33771836
+  }, {
+   "filename": "/data/image/font/76.png",
+   "start": 33771836,
+   "end": 33771932
+  }, {
+   "filename": "/data/image/font/77.png",
+   "start": 33771932,
+   "end": 33772039
+  }, {
+   "filename": "/data/image/font/78.png",
+   "start": 33772039,
+   "end": 33772148
+  }, {
+   "filename": "/data/image/font/79.png",
+   "start": 33772148,
+   "end": 33772252
+  }, {
+   "filename": "/data/image/font/80.png",
+   "start": 33772252,
+   "end": 33772359
+  }, {
+   "filename": "/data/image/font/81.png",
+   "start": 33772359,
+   "end": 33772473
+  }, {
+   "filename": "/data/image/font/82.png",
+   "start": 33772473,
+   "end": 33772576
+  }, {
+   "filename": "/data/image/font/83.png",
+   "start": 33772576,
+   "end": 33772693
+  }, {
+   "filename": "/data/image/font/84.png",
+   "start": 33772693,
+   "end": 33772787
+  }, {
+   "filename": "/data/image/font/85.png",
+   "start": 33772787,
+   "end": 33772892
+  }, {
+   "filename": "/data/image/font/86.png",
+   "start": 33772892,
+   "end": 33772994
+  }, {
+   "filename": "/data/image/font/87.png",
+   "start": 33772994,
+   "end": 33773108
+  }, {
+   "filename": "/data/image/font/88.png",
+   "start": 33773108,
+   "end": 33773221
+  }, {
+   "filename": "/data/image/font/89.png",
+   "start": 33773221,
+   "end": 33773325
+  }, {
+   "filename": "/data/image/font/90.png",
+   "start": 33773325,
+   "end": 33773430
+  }, {
+   "filename": "/data/image/font/91.png",
+   "start": 33773430,
+   "end": 33773528
+  }, {
+   "filename": "/data/image/font/92.png",
+   "start": 33773528,
+   "end": 33773628
+  }, {
+   "filename": "/data/image/font/93.png",
+   "start": 33773628,
+   "end": 33773722
+  }, {
+   "filename": "/data/image/font/94.png",
+   "start": 33773722,
+   "end": 33773823
+  }, {
+   "filename": "/data/image/font/95.png",
+   "start": 33773823,
+   "end": 33773915
+  }, {
+   "filename": "/data/image/font/96.png",
+   "start": 33773915,
+   "end": 33774010
+  }, {
+   "filename": "/data/image/font/97.png",
+   "start": 33774010,
+   "end": 33774117
+  }, {
+   "filename": "/data/image/font/98.png",
+   "start": 33774117,
+   "end": 33774224
+  }, {
+   "filename": "/data/image/font/99.png",
+   "start": 33774224,
+   "end": 33774324
+  }, {
+   "filename": "/data/image/mario.png",
+   "start": 33774324,
+   "end": 33774622
+  }, {
+   "filename": "/data/image/splash.png",
+   "start": 33774622,
+   "end": 33776474
+  }, {
+   "filename": "/data/image/sprite16.png",
+   "start": 33776474,
+   "end": 33776635
+  }, {
+   "filename": "/data/image/ui/blank2.png",
+   "start": 33776635,
+   "end": 33776726
+  }, {
+   "filename": "/data/image/ui/button16/1.png",
+   "start": 33776726,
+   "end": 33776891
+  }, {
+   "filename": "/data/image/ui/button16/2.png",
+   "start": 33776891,
+   "end": 33777054
+  }, {
+   "filename": "/data/image/ui/button16/3.png",
+   "start": 33777054,
+   "end": 33777221
+  }, {
+   "filename": "/data/image/ui/dpad16/d1.png",
+   "start": 33777221,
+   "end": 33777398
+  }, {
+   "filename": "/data/image/ui/dpad16/d2.png",
+   "start": 33777398,
+   "end": 33777568
+  }, {
+   "filename": "/data/image/ui/dpad16/l1.png",
+   "start": 33777568,
+   "end": 33777750
+  }, {
+   "filename": "/data/image/ui/dpad16/l2.png",
+   "start": 33777750,
+   "end": 33777931
+  }, {
+   "filename": "/data/image/ui/dpad16/r1.png",
+   "start": 33777931,
+   "end": 33778128
+  }, {
+   "filename": "/data/image/ui/dpad16/r2.png",
+   "start": 33778128,
+   "end": 33778316
+  }, {
+   "filename": "/data/image/ui/dpad16/u1.png",
+   "start": 33778316,
+   "end": 33778498
+  }, {
+   "filename": "/data/image/ui/dpad16/u2.png",
+   "start": 33778498,
+   "end": 33778691
+  }, {
+   "filename": "/data/image/ui/joystick32/1.png",
+   "start": 33778691,
+   "end": 33778906
+  }, {
+   "filename": "/data/image/ui/joystick32/2.png",
+   "start": 33778906,
+   "end": 33779105
+  }, {
+   "filename": "/data/image/ui/joystick32/3.png",
+   "start": 33779105,
+   "end": 33779322
+  }, {
+   "filename": "/data/image/ui/joystick32/4.png",
+   "start": 33779322,
+   "end": 33779559
+  }, {
+   "filename": "/data/image/ui/joystick32/5.png",
+   "start": 33779559,
+   "end": 33779801
+  }, {
+   "filename": "/data/image/ui/joystick32/6.png",
+   "start": 33779801,
+   "end": 33780022
+  }, {
+   "filename": "/data/image/yapre.png",
+   "start": 33780022,
+   "end": 33780486
+  }, {
+   "filename": "/data/image/yapre_text.png",
+   "start": 33780486,
+   "end": 33780683
+  }, {
+   "filename": "/data/lua/app/_init.lua",
+   "start": 33780683,
+   "end": 33780725
+  }, {
+   "filename": "/data/lua/app/app.lua",
+   "start": 33780725,
+   "end": 33781312
+  }, {
+   "filename": "/data/lua/app/game/_init.lua",
+   "start": 33781312,
+   "end": 33785200
+  }, {
+   "filename": "/data/lua/app/game/world_dungeon.lua",
+   "start": 33785200,
+   "end": 33786927
+  }, {
+   "filename": "/data/lua/app/game/world_flappy_duck.lua",
+   "start": 33786927,
+   "end": 33799850
+  }, {
+   "filename": "/data/lua/app/game/world_image.lua",
+   "start": 33799850,
+   "end": 33802665
+  }, {
+   "filename": "/data/lua/app/game/world_label.lua",
+   "start": 33802665,
+   "end": 33805498
+  }, {
+   "filename": "/data/lua/app/game/world_mario_music.lua",
+   "start": 33805498,
+   "end": 33811345
+  }, {
+   "filename": "/data/lua/app/game/world_palette.lua",
+   "start": 33811345,
+   "end": 33811847
+  }, {
+   "filename": "/data/lua/app/game/world_slides.lua",
+   "start": 33811847,
+   "end": 33813440
+  }, {
+   "filename": "/data/lua/app/game/world_word_slide_maker.lua",
+   "start": 33813440,
+   "end": 33814788
+  }, {
+   "filename": "/data/lua/app/rewind_controller.lua",
+   "start": 33814788,
+   "end": 33820122
+  }, {
+   "filename": "/data/lua/app/test_world.lua",
+   "start": 33820122,
+   "end": 33823587
+  }, {
+   "filename": "/data/lua/core/_init.lua",
+   "start": 33823587,
+   "end": 33823778
+  }, {
+   "filename": "/data/lua/core/components/_init.lua",
+   "start": 33823778,
+   "end": 33824183
+  }, {
+   "filename": "/data/lua/core/components/animation.lua",
+   "start": 33824183,
+   "end": 33827016
+  }, {
+   "filename": "/data/lua/core/components/data.lua",
+   "start": 33827016,
+   "end": 33827086
+  }, {
+   "filename": "/data/lua/core/components/input.lua",
+   "start": 33827086,
+   "end": 33828720
+  }, {
+   "filename": "/data/lua/core/components/layout.lua",
+   "start": 33828720,
+   "end": 33834873
+  }, {
+   "filename": "/data/lua/core/components/position.lua",
+   "start": 33834873,
+   "end": 33834981
+  }, {
+   "filename": "/data/lua/core/components/size.lua",
+   "start": 33834981,
+   "end": 33835082
+  }, {
+   "filename": "/data/lua/core/components/sprite.lua",
+   "start": 33835082,
+   "end": 33836025
+  }, {
+   "filename": "/data/lua/core/components/sprite_text.lua",
+   "start": 33836025,
+   "end": 33838948
+  }, {
+   "filename": "/data/lua/core/components/tags.lua",
+   "start": 33838948,
+   "end": 33839018
+  }, {
+   "filename": "/data/lua/core/components/text.lua",
+   "start": 33839018,
+   "end": 33840224
+  }, {
+   "filename": "/data/lua/core/components/tick.lua",
+   "start": 33840224,
+   "end": 33841171
+  }, {
+   "filename": "/data/lua/core/components/tree.lua",
+   "start": 33841171,
+   "end": 33842935
+  }, {
+   "filename": "/data/lua/core/data/emscripten_keycode_mapping.lua",
+   "start": 33842935,
+   "end": 33843989
+  }, {
+   "filename": "/data/lua/core/data/font_data.lua",
+   "start": 33843989,
+   "end": 33845475
+  }, {
+   "filename": "/data/lua/core/data/palette_data.lua",
+   "start": 33845475,
+   "end": 33846732
+  }, {
+   "filename": "/data/lua/core/entities/_init.lua",
+   "start": 33846732,
+   "end": 33846761
+  }, {
+   "filename": "/data/lua/core/entities/ui/_init.lua",
+   "start": 33846761,
+   "end": 33847127
+  }, {
+   "filename": "/data/lua/core/entities/ui/button.lua",
+   "start": 33847127,
+   "end": 33850290
+  }, {
+   "filename": "/data/lua/core/entities/ui/dpad.lua",
+   "start": 33850290,
+   "end": 33853123
+  }, {
+   "filename": "/data/lua/core/entities/ui/image.lua",
+   "start": 33853123,
+   "end": 33856118
+  }, {
+   "filename": "/data/lua/core/entities/ui/joystick.lua",
+   "start": 33856118,
+   "end": 33859267
+  }, {
+   "filename": "/data/lua/core/entities/ui/label.lua",
+   "start": 33859267,
+   "end": 33859805
+  }, {
+   "filename": "/data/lua/core/entities/ui/palette.lua",
+   "start": 33859805,
+   "end": 33860689
+  }, {
+   "filename": "/data/lua/core/entities/ui/panel.lua",
+   "start": 33860689,
+   "end": 33861559
+  }, {
+   "filename": "/data/lua/core/entities/ui/progress.lua",
+   "start": 33861559,
+   "end": 33863253
+  }, {
+   "filename": "/data/lua/core/entities/ui/progress_selector.lua",
+   "start": 33863253,
+   "end": 33865222
+  }, {
+   "filename": "/data/lua/core/entities/ui/sprite_label.lua",
+   "start": 33865222,
+   "end": 33865868
+  }, {
+   "filename": "/data/lua/core/serialization.lua",
+   "start": 33865868,
+   "end": 33868384
+  }, {
+   "filename": "/data/lua/core/splash_screen.lua",
+   "start": 33868384,
+   "end": 33869729
+  }, {
+   "filename": "/data/lua/core/systems/_init.lua",
+   "start": 33869729,
+   "end": 33869878
+  }, {
+   "filename": "/data/lua/core/systems/dummy.lua",
+   "start": 33869878,
+   "end": 33870269
+  }, {
+   "filename": "/data/lua/core/systems/input.lua",
+   "start": 33870269,
+   "end": 33874336
+  }, {
+   "filename": "/data/lua/core/systems/sprite.lua",
+   "start": 33874336,
+   "end": 33876084
+  }, {
+   "filename": "/data/lua/core/systems/tick.lua",
+   "start": 33876084,
+   "end": 33877884
+  }, {
+   "filename": "/data/lua/core/systems/tree.lua",
+   "start": 33877884,
+   "end": 33879686
+  }, {
+   "filename": "/data/lua/core/yecs.lua",
+   "start": 33879686,
+   "end": 33892199
+  }, {
+   "filename": "/data/lua/libs/debugger.lua",
+   "start": 33892199,
+   "end": 33916959
+  }, {
+   "filename": "/data/lua/libs/rx.lua",
+   "start": 33916959,
+   "end": 33983145
+  }, {
+   "filename": "/data/lua/libs/strict.lua",
+   "start": 33983145,
+   "end": 33984352
+  }, {
+   "filename": "/data/lua/libs/table_save.lua",
+   "start": 33984352,
+   "end": 33989105
+  }, {
+   "filename": "/data/lua/nes/apu.lua",
+   "start": 33989105,
+   "end": 34017903
+  }, {
+   "filename": "/data/lua/nes/cpu.lua",
+   "start": 34017903,
+   "end": 34051791
+  }, {
+   "filename": "/data/lua/nes/libs/complex.lua",
+   "start": 34051791,
+   "end": 34064526
+  }, {
+   "filename": "/data/lua/nes/libs/profile.lua",
+   "start": 34064526,
+   "end": 34072009
+  }, {
+   "filename": "/data/lua/nes/libs/serpent.lua",
+   "start": 34072009,
+   "end": 34083070
+  }, {
+   "filename": "/data/lua/nes/nes.lua",
+   "start": 34083070,
+   "end": 34085518
+  }, {
+   "filename": "/data/lua/nes/pads.lua",
+   "start": 34085518,
+   "end": 34087885
+  }, {
+   "filename": "/data/lua/nes/palette.lua",
+   "start": 34087885,
+   "end": 34093302
+  }, {
+   "filename": "/data/lua/nes/ppu.lua",
+   "start": 34093302,
+   "end": 34142850
+  }, {
+   "filename": "/data/lua/nes/rom.lua",
+   "start": 34142850,
+   "end": 34160370
+  }, {
+   "filename": "/data/lua/nes/utils.lua",
+   "start": 34160370,
+   "end": 34167710
+  }, {
+   "filename": "/data/lua/utils/copy.lua",
+   "start": 34167710,
+   "end": 34168486
+  }, {
+   "filename": "/data/lua/utils/eval.lua",
+   "start": 34168486,
+   "end": 34168900
+  }, {
+   "filename": "/data/lua/utils/log.lua",
+   "start": 34168900,
+   "end": 34169721
+  }, {
+   "filename": "/data/lua/utils/package_path.lua",
+   "start": 34169721,
+   "end": 34169998
+  }, {
+   "filename": "/data/lua/utils/reload.lua",
+   "start": 34169998,
+   "end": 34186525
+  }, {
+   "filename": "/data/lua/utils/uuid.lua",
+   "start": 34186525,
+   "end": 34186820
+  }, {
+   "filename": "/data/lua/yazr.lua",
+   "start": 34186820,
+   "end": 34187543
+  }, {
+   "filename": "/data/lua/yazrXnes.lua",
+   "start": 34187543,
+   "end": 34191350
   } ],
-  "remote_package_size": 26999973,
-  "package_uuid": "6116fa1d-1033-4306-be61-a935b37e3b42"
+  "remote_package_size": 34191350
  });
 })();
 
@@ -1826,43 +2254,34 @@ function logExceptionOnExit(e) {
  err("exiting due to exception: " + toLog);
 }
 
-var fs;
-
-var nodePath;
-
-var requireNodeFS;
-
 if (ENVIRONMENT_IS_NODE) {
  if (ENVIRONMENT_IS_WORKER) {
   scriptDirectory = require("path").dirname(scriptDirectory) + "/";
  } else {
   scriptDirectory = __dirname + "/";
  }
- requireNodeFS = (() => {
-  if (!nodePath) {
-   fs = require("fs");
-   nodePath = require("path");
-  }
- });
- read_ = function shell_read(filename, binary) {
-  requireNodeFS();
+ var fs, nodePath;
+ if (typeof require === "function") {
+  fs = require("fs");
+  nodePath = require("path");
+ }
+ read_ = (filename, binary) => {
   filename = nodePath["normalize"](filename);
   return fs.readFileSync(filename, binary ? undefined : "utf8");
  };
- readBinary = (filename => {
+ readBinary = filename => {
   var ret = read_(filename, true);
   if (!ret.buffer) {
    ret = new Uint8Array(ret);
   }
   return ret;
- });
- readAsync = ((filename, onload, onerror) => {
-  requireNodeFS();
+ };
+ readAsync = (filename, onload, onerror) => {
   filename = nodePath["normalize"](filename);
   fs.readFile(filename, function(err, data) {
    if (err) onerror(err); else onload(data.buffer);
   });
- });
+ };
  if (process["argv"].length > 1) {
   thisProgram = process["argv"][1].replace(/\\/g, "/");
  }
@@ -1878,14 +2297,14 @@ if (ENVIRONMENT_IS_NODE) {
  process["on"]("unhandledRejection", function(reason) {
   throw reason;
  });
- quit_ = ((status, toThrow) => {
+ quit_ = (status, toThrow) => {
   if (keepRuntimeAlive()) {
    process["exitCode"] = status;
    throw toThrow;
   }
   logExceptionOnExit(toThrow);
   process["exit"](status);
- });
+ };
  Module["inspect"] = function() {
   return "[Emscripten Module object]";
  };
@@ -1909,37 +2328,37 @@ if (ENVIRONMENT_IS_NODE) {
   scriptDirectory = "";
  }
  if (!ENVIRONMENT_IS_NODE) {
-  read_ = (url => {
+  read_ = url => {
    var xhr = new XMLHttpRequest();
    xhr.open("GET", url, false);
    xhr.send(null);
    return xhr.responseText;
-  });
+  };
   if (ENVIRONMENT_IS_WORKER) {
-   readBinary = (url => {
+   readBinary = url => {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, false);
     xhr.responseType = "arraybuffer";
     xhr.send(null);
     return new Uint8Array(xhr.response);
-   });
+   };
   }
-  readAsync = ((url, onload, onerror) => {
+  readAsync = (url, onload, onerror) => {
    var xhr = new XMLHttpRequest();
    xhr.open("GET", url, true);
    xhr.responseType = "arraybuffer";
-   xhr.onload = (() => {
+   xhr.onload = () => {
     if (xhr.status == 200 || xhr.status == 0 && xhr.response) {
      onload(xhr.response);
      return;
     }
     onerror();
-   });
+   };
    xhr.onerror = onerror;
    xhr.send(null);
-  });
+  };
  }
- setWindowTitle = (title => document.title = title);
+ setWindowTitle = title => document.title = title;
 } else {}
 
 if (ENVIRONMENT_IS_NODE) {
@@ -1953,9 +2372,8 @@ var defaultPrint = console.log.bind(console);
 var defaultPrintErr = console.warn.bind(console);
 
 if (ENVIRONMENT_IS_NODE) {
- requireNodeFS();
- defaultPrint = (str => fs.writeSync(1, str + "\n"));
- defaultPrintErr = (str => fs.writeSync(2, str + "\n"));
+ defaultPrint = str => fs.writeSync(1, str + "\n");
+ defaultPrintErr = str => fs.writeSync(2, str + "\n");
 }
 
 var out = Module["print"] || defaultPrint;
@@ -1980,15 +2398,19 @@ function getNativeTypeSize(type) {
  switch (type) {
  case "i1":
  case "i8":
+ case "u8":
   return 1;
 
  case "i16":
+ case "u16":
   return 2;
 
  case "i32":
+ case "u32":
   return 4;
 
  case "i64":
+ case "u64":
   return 8;
 
  case "float":
@@ -2001,134 +2423,16 @@ function getNativeTypeSize(type) {
   {
    if (type[type.length - 1] === "*") {
     return POINTER_SIZE;
-   } else if (type[0] === "i") {
+   }
+   if (type[0] === "i") {
     const bits = Number(type.substr(1));
     assert(bits % 8 === 0, "getNativeTypeSize invalid bits " + bits + ", type " + type);
     return bits / 8;
-   } else {
-    return 0;
    }
+   return 0;
   }
  }
 }
-
-function warnOnce(text) {
- if (!warnOnce.shown) warnOnce.shown = {};
- if (!warnOnce.shown[text]) {
-  warnOnce.shown[text] = 1;
-  err(text);
- }
-}
-
-function convertJsFunctionToWasm(func, sig) {
- if (typeof WebAssembly.Function == "function") {
-  var typeNames = {
-   "i": "i32",
-   "j": "i64",
-   "f": "f32",
-   "d": "f64"
-  };
-  var type = {
-   parameters: [],
-   results: sig[0] == "v" ? [] : [ typeNames[sig[0]] ]
-  };
-  for (var i = 1; i < sig.length; ++i) {
-   type.parameters.push(typeNames[sig[i]]);
-  }
-  return new WebAssembly.Function(type, func);
- }
- var typeSection = [ 1, 0, 1, 96 ];
- var sigRet = sig.slice(0, 1);
- var sigParam = sig.slice(1);
- var typeCodes = {
-  "i": 127,
-  "j": 126,
-  "f": 125,
-  "d": 124
- };
- typeSection.push(sigParam.length);
- for (var i = 0; i < sigParam.length; ++i) {
-  typeSection.push(typeCodes[sigParam[i]]);
- }
- if (sigRet == "v") {
-  typeSection.push(0);
- } else {
-  typeSection = typeSection.concat([ 1, typeCodes[sigRet] ]);
- }
- typeSection[1] = typeSection.length - 2;
- var bytes = new Uint8Array([ 0, 97, 115, 109, 1, 0, 0, 0 ].concat(typeSection, [ 2, 7, 1, 1, 101, 1, 102, 0, 0, 7, 5, 1, 1, 102, 0, 0 ]));
- var module = new WebAssembly.Module(bytes);
- var instance = new WebAssembly.Instance(module, {
-  "e": {
-   "f": func
-  }
- });
- var wrappedFunc = instance.exports["f"];
- return wrappedFunc;
-}
-
-var freeTableIndexes = [];
-
-var functionsInTableMap;
-
-function getEmptyTableSlot() {
- if (freeTableIndexes.length) {
-  return freeTableIndexes.pop();
- }
- try {
-  wasmTable.grow(1);
- } catch (err) {
-  if (!(err instanceof RangeError)) {
-   throw err;
-  }
-  throw "Unable to grow wasm table. Set ALLOW_TABLE_GROWTH.";
- }
- return wasmTable.length - 1;
-}
-
-function updateTableMap(offset, count) {
- for (var i = offset; i < offset + count; i++) {
-  var item = getWasmTableEntry(i);
-  if (item) {
-   functionsInTableMap.set(item, i);
-  }
- }
-}
-
-function addFunction(func, sig) {
- if (!functionsInTableMap) {
-  functionsInTableMap = new WeakMap();
-  updateTableMap(0, wasmTable.length);
- }
- if (functionsInTableMap.has(func)) {
-  return functionsInTableMap.get(func);
- }
- var ret = getEmptyTableSlot();
- try {
-  setWasmTableEntry(ret, func);
- } catch (err) {
-  if (!(err instanceof TypeError)) {
-   throw err;
-  }
-  var wrapped = convertJsFunctionToWasm(func, sig);
-  setWasmTableEntry(ret, wrapped);
- }
- functionsInTableMap.set(func, ret);
- return ret;
-}
-
-function removeFunction(index) {
- functionsInTableMap.delete(getWasmTableEntry(index));
- freeTableIndexes.push(index);
-}
-
-var tempRet0 = 0;
-
-var setTempRet0 = value => {
- tempRet0 = value;
-};
-
-var getTempRet0 = () => tempRet0;
 
 var Atomics_load = Atomics.load;
 
@@ -2146,73 +2450,6 @@ if (typeof WebAssembly != "object") {
  abort("no native wasm support detected");
 }
 
-function setValue(ptr, value, type = "i8", noSafe) {
- if (type.charAt(type.length - 1) === "*") type = "i32";
- switch (type) {
- case "i1":
-  GROWABLE_HEAP_I8()[ptr >>> 0] = value;
-  break;
-
- case "i8":
-  GROWABLE_HEAP_I8()[ptr >>> 0] = value;
-  break;
-
- case "i16":
-  GROWABLE_HEAP_I16()[ptr >>> 1] = value;
-  break;
-
- case "i32":
-  GROWABLE_HEAP_I32()[ptr >>> 2] = value;
-  break;
-
- case "i64":
-  tempI64 = [ value >>> 0, (tempDouble = value, +Math.abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math.min(+Math.floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math.ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0) ], 
-  GROWABLE_HEAP_I32()[ptr >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[ptr + 4 >>> 2] = tempI64[1];
-  break;
-
- case "float":
-  GROWABLE_HEAP_F32()[ptr >>> 2] = value;
-  break;
-
- case "double":
-  GROWABLE_HEAP_F64()[ptr >>> 3] = value;
-  break;
-
- default:
-  abort("invalid type for setValue: " + type);
- }
-}
-
-function getValue(ptr, type = "i8", noSafe) {
- if (type.charAt(type.length - 1) === "*") type = "i32";
- switch (type) {
- case "i1":
-  return GROWABLE_HEAP_I8()[ptr >>> 0];
-
- case "i8":
-  return GROWABLE_HEAP_I8()[ptr >>> 0];
-
- case "i16":
-  return GROWABLE_HEAP_I16()[ptr >>> 1];
-
- case "i32":
-  return GROWABLE_HEAP_I32()[ptr >>> 2];
-
- case "i64":
-  return GROWABLE_HEAP_I32()[ptr >>> 2];
-
- case "float":
-  return GROWABLE_HEAP_F32()[ptr >>> 2];
-
- case "double":
-  return Number(GROWABLE_HEAP_F64()[ptr >>> 3]);
-
- default:
-  abort("invalid type for getValue: " + type);
- }
- return null;
-}
-
 var wasmMemory;
 
 var wasmModule;
@@ -2227,88 +2464,6 @@ function assert(condition, text) {
  }
 }
 
-function getCFunc(ident) {
- var func = Module["_" + ident];
- return func;
-}
-
-function ccall(ident, returnType, argTypes, args, opts) {
- var toC = {
-  "string": function(str) {
-   var ret = 0;
-   if (str !== null && str !== undefined && str !== 0) {
-    var len = (str.length << 2) + 1;
-    ret = stackAlloc(len);
-    stringToUTF8(str, ret, len);
-   }
-   return ret;
-  },
-  "array": function(arr) {
-   var ret = stackAlloc(arr.length);
-   writeArrayToMemory(arr, ret);
-   return ret;
-  }
- };
- function convertReturnValue(ret) {
-  if (returnType === "string") return UTF8ToString(ret);
-  if (returnType === "boolean") return Boolean(ret);
-  return ret;
- }
- var func = getCFunc(ident);
- var cArgs = [];
- var stack = 0;
- if (args) {
-  for (var i = 0; i < args.length; i++) {
-   var converter = toC[argTypes[i]];
-   if (converter) {
-    if (stack === 0) stack = stackSave();
-    cArgs[i] = converter(args[i]);
-   } else {
-    cArgs[i] = args[i];
-   }
-  }
- }
- var ret = func.apply(null, cArgs);
- function onDone(ret) {
-  if (stack !== 0) stackRestore(stack);
-  return convertReturnValue(ret);
- }
- ret = onDone(ret);
- return ret;
-}
-
-function cwrap(ident, returnType, argTypes, opts) {
- argTypes = argTypes || [];
- var numericArgs = argTypes.every(function(type) {
-  return type === "number";
- });
- var numericRet = returnType !== "string";
- if (numericRet && numericArgs && !opts) {
-  return getCFunc(ident);
- }
- return function() {
-  return ccall(ident, returnType, argTypes, arguments, opts);
- };
-}
-
-var ALLOC_NORMAL = 0;
-
-var ALLOC_STACK = 1;
-
-function allocate(slab, allocator) {
- var ret;
- if (allocator == ALLOC_STACK) {
-  ret = stackAlloc(slab.length);
- } else {
-  ret = _malloc(slab.length);
- }
- if (!slab.subarray && !slab.slice) {
-  slab = new Uint8Array(slab);
- }
- GROWABLE_HEAP_U8().set(slab, ret >>> 0);
- return ret;
-}
-
 var UTF8Decoder = typeof TextDecoder != "undefined" ? new TextDecoder("utf8") : undefined;
 
 function UTF8ArrayToString(heapOrArray, idx, maxBytesToRead) {
@@ -2318,31 +2473,30 @@ function UTF8ArrayToString(heapOrArray, idx, maxBytesToRead) {
  while (heapOrArray[endPtr] && !(endPtr >= endIdx)) ++endPtr;
  if (endPtr - idx > 16 && heapOrArray.buffer && UTF8Decoder) {
   return UTF8Decoder.decode(heapOrArray.buffer instanceof SharedArrayBuffer ? heapOrArray.slice(idx, endPtr) : heapOrArray.subarray(idx, endPtr));
- } else {
-  var str = "";
-  while (idx < endPtr) {
-   var u0 = heapOrArray[idx++];
-   if (!(u0 & 128)) {
-    str += String.fromCharCode(u0);
-    continue;
-   }
-   var u1 = heapOrArray[idx++] & 63;
-   if ((u0 & 224) == 192) {
-    str += String.fromCharCode((u0 & 31) << 6 | u1);
-    continue;
-   }
-   var u2 = heapOrArray[idx++] & 63;
-   if ((u0 & 240) == 224) {
-    u0 = (u0 & 15) << 12 | u1 << 6 | u2;
-   } else {
-    u0 = (u0 & 7) << 18 | u1 << 12 | u2 << 6 | heapOrArray[idx++] & 63;
-   }
-   if (u0 < 65536) {
-    str += String.fromCharCode(u0);
-   } else {
-    var ch = u0 - 65536;
-    str += String.fromCharCode(55296 | ch >> 10, 56320 | ch & 1023);
-   }
+ }
+ var str = "";
+ while (idx < endPtr) {
+  var u0 = heapOrArray[idx++];
+  if (!(u0 & 128)) {
+   str += String.fromCharCode(u0);
+   continue;
+  }
+  var u1 = heapOrArray[idx++] & 63;
+  if ((u0 & 224) == 192) {
+   str += String.fromCharCode((u0 & 31) << 6 | u1);
+   continue;
+  }
+  var u2 = heapOrArray[idx++] & 63;
+  if ((u0 & 240) == 224) {
+   u0 = (u0 & 15) << 12 | u1 << 6 | u2;
+  } else {
+   u0 = (u0 & 7) << 18 | u1 << 12 | u2 << 6 | heapOrArray[idx++] & 63;
+  }
+  if (u0 < 65536) {
+   str += String.fromCharCode(u0);
+  } else {
+   var ch = u0 - 65536;
+   str += String.fromCharCode(55296 | ch >> 10, 56320 | ch & 1023);
   }
  }
  return str;
@@ -2395,152 +2549,19 @@ function stringToUTF8(str, outPtr, maxBytesToWrite) {
 function lengthBytesUTF8(str) {
  var len = 0;
  for (var i = 0; i < str.length; ++i) {
-  var u = str.charCodeAt(i);
-  if (u >= 55296 && u <= 57343) u = 65536 + ((u & 1023) << 10) | str.charCodeAt(++i) & 1023;
-  if (u <= 127) ++len; else if (u <= 2047) len += 2; else if (u <= 65535) len += 3; else len += 4;
- }
- return len;
-}
-
-function AsciiToString(ptr) {
- ptr >>>= 0;
- var str = "";
- while (1) {
-  var ch = GROWABLE_HEAP_U8()[ptr++ >>> 0];
-  if (!ch) return str;
-  str += String.fromCharCode(ch);
- }
-}
-
-function stringToAscii(str, outPtr) {
- return writeAsciiToMemory(str, outPtr, false);
-}
-
-var UTF16Decoder = typeof TextDecoder != "undefined" ? new TextDecoder("utf-16le") : undefined;
-
-function UTF16ToString(ptr, maxBytesToRead) {
- var endPtr = ptr;
- var idx = endPtr >> 1;
- var maxIdx = idx + maxBytesToRead / 2;
- while (!(idx >= maxIdx) && GROWABLE_HEAP_U16()[idx >>> 0]) ++idx;
- endPtr = idx << 1;
- if (endPtr - ptr > 32 && UTF16Decoder) {
-  return UTF16Decoder.decode(GROWABLE_HEAP_U8().slice(ptr, endPtr));
- } else {
-  var str = "";
-  for (var i = 0; !(i >= maxBytesToRead / 2); ++i) {
-   var codeUnit = GROWABLE_HEAP_I16()[ptr + i * 2 >>> 1];
-   if (codeUnit == 0) break;
-   str += String.fromCharCode(codeUnit);
-  }
-  return str;
- }
-}
-
-function stringToUTF16(str, outPtr, maxBytesToWrite) {
- if (maxBytesToWrite === undefined) {
-  maxBytesToWrite = 2147483647;
- }
- if (maxBytesToWrite < 2) return 0;
- maxBytesToWrite -= 2;
- var startPtr = outPtr;
- var numCharsToWrite = maxBytesToWrite < str.length * 2 ? maxBytesToWrite / 2 : str.length;
- for (var i = 0; i < numCharsToWrite; ++i) {
-  var codeUnit = str.charCodeAt(i);
-  GROWABLE_HEAP_I16()[outPtr >>> 1] = codeUnit;
-  outPtr += 2;
- }
- GROWABLE_HEAP_I16()[outPtr >>> 1] = 0;
- return outPtr - startPtr;
-}
-
-function lengthBytesUTF16(str) {
- return str.length * 2;
-}
-
-function UTF32ToString(ptr, maxBytesToRead) {
- var i = 0;
- var str = "";
- while (!(i >= maxBytesToRead / 4)) {
-  var utf32 = GROWABLE_HEAP_I32()[ptr + i * 4 >>> 2];
-  if (utf32 == 0) break;
-  ++i;
-  if (utf32 >= 65536) {
-   var ch = utf32 - 65536;
-   str += String.fromCharCode(55296 | ch >> 10, 56320 | ch & 1023);
+  var c = str.charCodeAt(i);
+  if (c <= 127) {
+   len++;
+  } else if (c <= 2047) {
+   len += 2;
+  } else if (c >= 55296 && c <= 57343) {
+   len += 4;
+   ++i;
   } else {
-   str += String.fromCharCode(utf32);
+   len += 3;
   }
- }
- return str;
-}
-
-function stringToUTF32(str, outPtr, maxBytesToWrite) {
- outPtr >>>= 0;
- if (maxBytesToWrite === undefined) {
-  maxBytesToWrite = 2147483647;
- }
- if (maxBytesToWrite < 4) return 0;
- var startPtr = outPtr;
- var endPtr = startPtr + maxBytesToWrite - 4;
- for (var i = 0; i < str.length; ++i) {
-  var codeUnit = str.charCodeAt(i);
-  if (codeUnit >= 55296 && codeUnit <= 57343) {
-   var trailSurrogate = str.charCodeAt(++i);
-   codeUnit = 65536 + ((codeUnit & 1023) << 10) | trailSurrogate & 1023;
-  }
-  GROWABLE_HEAP_I32()[outPtr >>> 2] = codeUnit;
-  outPtr += 4;
-  if (outPtr + 4 > endPtr) break;
- }
- GROWABLE_HEAP_I32()[outPtr >>> 2] = 0;
- return outPtr - startPtr;
-}
-
-function lengthBytesUTF32(str) {
- var len = 0;
- for (var i = 0; i < str.length; ++i) {
-  var codeUnit = str.charCodeAt(i);
-  if (codeUnit >= 55296 && codeUnit <= 57343) ++i;
-  len += 4;
  }
  return len;
-}
-
-function allocateUTF8(str) {
- var size = lengthBytesUTF8(str) + 1;
- var ret = _malloc(size);
- if (ret) stringToUTF8Array(str, GROWABLE_HEAP_I8(), ret, size);
- return ret;
-}
-
-function allocateUTF8OnStack(str) {
- var size = lengthBytesUTF8(str) + 1;
- var ret = stackAlloc(size);
- stringToUTF8Array(str, GROWABLE_HEAP_I8(), ret, size);
- return ret;
-}
-
-function writeStringToMemory(string, buffer, dontAddNull) {
- warnOnce("writeStringToMemory is deprecated and should not be called! Use stringToUTF8() instead!");
- var lastChar, end;
- if (dontAddNull) {
-  end = buffer + lengthBytesUTF8(string);
-  lastChar = GROWABLE_HEAP_I8()[end >>> 0];
- }
- stringToUTF8(string, buffer, Infinity);
- if (dontAddNull) GROWABLE_HEAP_I8()[end >>> 0] = lastChar;
-}
-
-function writeArrayToMemory(array, buffer) {
- GROWABLE_HEAP_I8().set(array, buffer >>> 0);
-}
-
-function writeAsciiToMemory(str, buffer, dontAddNull) {
- for (var i = 0; i < str.length; ++i) {
-  GROWABLE_HEAP_I8()[buffer++ >>> 0] = str.charCodeAt(i);
- }
- if (!dontAddNull) GROWABLE_HEAP_I8()[buffer >>> 0] = 0;
 }
 
 var HEAP, buffer, HEAP8, HEAPU8, HEAP16, HEAPU16, HEAP32, HEAPU32, HEAPF32, HEAPF64;
@@ -2561,7 +2582,7 @@ function updateGlobalBufferAndViews(buf) {
  Module["HEAPF64"] = HEAPF64 = new Float64Array(buf);
 }
 
-var TOTAL_STACK = 5242880;
+var STACK_SIZE = 5242880;
 
 var INITIAL_MEMORY = Module["INITIAL_MEMORY"] || 209715200;
 
@@ -2580,7 +2601,7 @@ if (ENVIRONMENT_IS_PTHREAD) {
   if (!(wasmMemory.buffer instanceof SharedArrayBuffer)) {
    err("requested a shared WebAssembly.Memory but the returned buffer is not a SharedArrayBuffer, indicating that while the browser has SharedArrayBuffer it does not have WebAssembly threads support - you may need to set a flag");
    if (ENVIRONMENT_IS_NODE) {
-    console.log("(on node you may need: --experimental-wasm-threads --experimental-wasm-bulk-memory and also use a recent version)");
+    err("(on node you may need: --experimental-wasm-threads --experimental-wasm-bulk-memory and/or recent version)");
    }
    throw Error("bad memory");
   }
@@ -2702,26 +2723,15 @@ function removeRunDependency(id) {
  }
 }
 
-Module["preloadedImages"] = {};
-
-Module["preloadedAudios"] = {};
-
 function abort(what) {
- if (ENVIRONMENT_IS_PTHREAD) {
-  postMessage({
-   "cmd": "onAbort",
-   "arg": what
-  });
- } else {
-  if (Module["onAbort"]) {
-   Module["onAbort"](what);
-  }
+ if (Module["onAbort"]) {
+  Module["onAbort"](what);
  }
  what = "Aborted(" + what + ")";
  err(what);
  ABORT = true;
  EXITSTATUS = 1;
- what += ". Build with -s ASSERTIONS=1 for more info.";
+ what += ". Build with -sASSERTIONS for more info.";
  var e = new WebAssembly.RuntimeError(what);
  throw e;
 }
@@ -2751,9 +2761,8 @@ function getBinary(file) {
   }
   if (readBinary) {
    return readBinary(file);
-  } else {
-   throw "both async and sync fetching of the wasm failed";
   }
+  throw "both async and sync fetching of the wasm failed";
  } catch (err) {
   abort(err);
  }
@@ -2795,7 +2804,7 @@ function createWasm() {
  function receiveInstance(instance, module) {
   var exports = instance.exports;
   Module["asm"] = exports;
-  registerTlsInit(Module["asm"]["emscripten_tls_init"]);
+  registerTLSInit(Module["asm"]["_emscripten_tls_init"]);
   wasmTable = Module["asm"]["__indirect_function_table"];
   addOnInit(Module["asm"]["__wasm_call_ctors"]);
   wasmModule = module;
@@ -2825,7 +2834,7 @@ function createWasm() {
   });
  }
  function instantiateAsync() {
-  if (!wasmBinary && typeof WebAssembly.instantiateStreaming == "function" && !isDataURI(wasmBinaryFile) && !isFileURI(wasmBinaryFile) && typeof fetch == "function") {
+  if (!wasmBinary && typeof WebAssembly.instantiateStreaming == "function" && !isDataURI(wasmBinaryFile) && !isFileURI(wasmBinaryFile) && !ENVIRONMENT_IS_NODE && typeof fetch == "function") {
    return fetch(wasmBinaryFile, {
     credentials: "same-origin"
    }).then(function(response) {
@@ -2858,7 +2867,7 @@ var tempDouble;
 var tempI64;
 
 var ASM_CONSTS = {
- 332628: function($0) {
+ 409452: $0 => {
   var str = UTF8ToString($0) + "\n\n" + "Abort/Retry/Ignore/AlwaysIgnore? [ariA] :";
   var reply = window.prompt(str, "i");
   if (reply === null) {
@@ -2866,7 +2875,7 @@ var ASM_CONSTS = {
   }
   return allocate(intArrayFromString(reply), "i8", ALLOC_NORMAL);
  },
- 332853: function() {
+ 409677: () => {
   if (typeof AudioContext !== "undefined") {
    return 1;
   } else if (typeof webkitAudioContext !== "undefined") {
@@ -2874,7 +2883,7 @@ var ASM_CONSTS = {
   }
   return 0;
  },
- 332990: function() {
+ 409814: () => {
   if (typeof navigator.mediaDevices !== "undefined" && typeof navigator.mediaDevices.getUserMedia !== "undefined") {
    return 1;
   } else if (typeof navigator.webkitGetUserMedia !== "undefined") {
@@ -2882,7 +2891,7 @@ var ASM_CONSTS = {
   }
   return 0;
  },
- 333214: function($0) {
+ 410038: $0 => {
   if (typeof Module["SDL2"] === "undefined") {
    Module["SDL2"] = {};
   }
@@ -2904,11 +2913,11 @@ var ASM_CONSTS = {
   }
   return SDL2.audioContext === undefined ? -1 : 0;
  },
- 333707: function() {
+ 410531: () => {
   var SDL2 = Module["SDL2"];
   return SDL2.audioContext.sampleRate;
  },
- 333775: function($0, $1, $2, $3) {
+ 410599: ($0, $1, $2, $3) => {
   var SDL2 = Module["SDL2"];
   var have_microphone = function(stream) {
    if (SDL2.capture.silenceTimer !== undefined) {
@@ -2949,7 +2958,7 @@ var ASM_CONSTS = {
    }, have_microphone, no_microphone);
   }
  },
- 335427: function($0, $1, $2, $3) {
+ 412251: ($0, $1, $2, $3) => {
   var SDL2 = Module["SDL2"];
   SDL2.audio.scriptProcessorNode = SDL2.audioContext["createScriptProcessor"]($1, 0, $0);
   SDL2.audio.scriptProcessorNode["onaudioprocess"] = function(e) {
@@ -2961,7 +2970,7 @@ var ASM_CONSTS = {
   };
   SDL2.audio.scriptProcessorNode["connect"](SDL2.audioContext["destination"]);
  },
- 335837: function($0, $1) {
+ 412661: ($0, $1) => {
   var SDL2 = Module["SDL2"];
   var numChannels = SDL2.capture.currentCaptureBuffer.numberOfChannels;
   for (var c = 0; c < numChannels; ++c) {
@@ -2980,7 +2989,7 @@ var ASM_CONSTS = {
    }
   }
  },
- 336442: function($0, $1) {
+ 413266: ($0, $1) => {
   var SDL2 = Module["SDL2"];
   var numChannels = SDL2.audio.currentOutputBuffer["numberOfChannels"];
   for (var c = 0; c < numChannels; ++c) {
@@ -2993,7 +3002,7 @@ var ASM_CONSTS = {
    }
   }
  },
- 336922: function($0) {
+ 413746: $0 => {
   var SDL2 = Module["SDL2"];
   if ($0) {
    if (SDL2.capture.silenceTimer !== undefined) {
@@ -3031,7 +3040,7 @@ var ASM_CONSTS = {
    SDL2.audioContext = undefined;
   }
  },
- 338094: function($0, $1, $2) {
+ 414918: ($0, $1, $2) => {
   var w = $0;
   var h = $1;
   var pixels = $2;
@@ -3103,7 +3112,7 @@ var ASM_CONSTS = {
   SDL2.ctx.putImageData(SDL2.image, 0, 0);
   return 0;
  },
- 339573: function($0, $1, $2, $3, $4) {
+ 416397: ($0, $1, $2, $3, $4) => {
   var w = $0;
   var h = $1;
   var hot_x = $2;
@@ -3140,144 +3149,59 @@ var ASM_CONSTS = {
   stringToUTF8(url, urlBuf, url.length + 1);
   return urlBuf;
  },
- 340562: function($0) {
+ 417386: $0 => {
   if (Module["canvas"]) {
    Module["canvas"].style["cursor"] = UTF8ToString($0);
   }
   return 0;
  },
- 340655: function() {
+ 417479: () => {
   if (Module["canvas"]) {
    Module["canvas"].style["cursor"] = "none";
   }
  },
- 340724: function() {
+ 417548: () => {
   return window.innerWidth;
  },
- 340754: function() {
+ 417578: () => {
   return window.innerHeight;
  },
- 340785: function() {
+ 417609: () => {
   debugger;
  }
 };
 
-function listenOnce(object, event, func) {
- object.addEventListener(event, func, {
-  "once": true
- });
-}
-
-function autoResumeAudioContext(ctx, elements) {
- if (!elements) {
-  elements = [ document, document.getElementById("canvas") ];
- }
- [ "keydown", "mousedown", "touchstart" ].forEach(function(event) {
-  elements.forEach(function(element) {
-   if (element) {
-    listenOnce(element, event, function() {
-     if (ctx.state === "suspended") ctx.resume();
-    });
-   }
-  });
- });
-}
-
-function callRuntimeCallbacks(callbacks) {
- while (callbacks.length > 0) {
-  var callback = callbacks.shift();
-  if (typeof callback == "function") {
-   callback(Module);
-   continue;
-  }
-  var func = callback.func;
-  if (typeof func == "number") {
-   if (callback.arg === undefined) {
-    (function() {
-     dynCall_v.call(null, func);
-    })();
-   } else {
-    (function(a1) {
-     dynCall_vi.apply(null, [ func, a1 ]);
-    })(callback.arg);
-   }
-  } else {
-   func(callback.arg === undefined ? null : callback.arg);
-  }
- }
-}
-
-function withStackSave(f) {
- var stack = stackSave();
- var ret = f();
- stackRestore(stack);
- return ret;
-}
-
-function demangle(func) {
- return func;
-}
-
-function demangleAll(text) {
- var regex = /\b_Z[\w\d_]+/g;
- return text.replace(regex, function(x) {
-  var y = demangle(x);
-  return x === y ? x : y + " [" + x + "]";
- });
-}
-
-function dynCallLegacy(sig, ptr, args) {
- var f = Module["dynCall_" + sig];
- return args && args.length ? f.apply(null, [ ptr ].concat(args)) : f.call(null, ptr);
-}
-
-var wasmTableMirror = [];
-
-function getWasmTableEntry(funcPtr) {
- var func = wasmTableMirror[funcPtr];
- if (!func) {
-  if (funcPtr >= wasmTableMirror.length) wasmTableMirror.length = funcPtr + 1;
-  wasmTableMirror[funcPtr] = func = wasmTable.get(funcPtr);
- }
- return func;
-}
-
-function dynCall(sig, ptr, args) {
- return dynCallLegacy(sig, ptr, args);
+function ExitStatus(status) {
+ this.name = "ExitStatus";
+ this.message = "Program terminated with exit(" + status + ")";
+ this.status = status;
 }
 
 function killThread(pthread_ptr) {
- GROWABLE_HEAP_I32()[pthread_ptr >>> 2] = 0;
- var pthread = PThread.pthreads[pthread_ptr];
+ var worker = PThread.pthreads[pthread_ptr];
  delete PThread.pthreads[pthread_ptr];
- pthread.worker.terminate();
+ worker.terminate();
  __emscripten_thread_free_data(pthread_ptr);
- PThread.runningWorkers.splice(PThread.runningWorkers.indexOf(pthread.worker), 1);
- pthread.worker.pthread = undefined;
+ PThread.runningWorkers.splice(PThread.runningWorkers.indexOf(worker), 1);
+ worker.pthread_ptr = 0;
 }
 
 function cancelThread(pthread_ptr) {
- var pthread = PThread.pthreads[pthread_ptr];
- pthread.worker.postMessage({
+ var worker = PThread.pthreads[pthread_ptr];
+ worker.postMessage({
   "cmd": "cancel"
  });
 }
 
 function cleanupThread(pthread_ptr) {
- var pthread = PThread.pthreads[pthread_ptr];
- if (pthread) {
-  GROWABLE_HEAP_I32()[pthread_ptr >>> 2] = 0;
-  var worker = pthread.worker;
-  PThread.returnWorkerToPool(worker);
- }
+ var worker = PThread.pthreads[pthread_ptr];
+ assert(worker);
+ PThread.returnWorkerToPool(worker);
 }
 
 function zeroMemory(address, size) {
  GROWABLE_HEAP_U8().fill(0, address, address + size);
-}
-
-function ptrToString(ptr) {
- return "0x" + ptr.toString(16).padStart(8, "0");
+ return address;
 }
 
 function spawnThread(threadParams) {
@@ -3286,21 +3210,18 @@ function spawnThread(threadParams) {
   return 6;
  }
  PThread.runningWorkers.push(worker);
- var pthread = PThread.pthreads[threadParams.pthread_ptr] = {
-  worker: worker,
-  threadInfoStruct: threadParams.pthread_ptr
- };
- worker.pthread = pthread;
+ PThread.pthreads[threadParams.pthread_ptr] = worker;
+ worker.pthread_ptr = threadParams.pthread_ptr;
  var msg = {
   "cmd": "run",
   "start_routine": threadParams.startRoutine,
   "arg": threadParams.arg,
-  "threadInfoStruct": threadParams.pthread_ptr
+  "pthread_ptr": threadParams.pthread_ptr
  };
- worker.runPthread = (() => {
+ worker.runPthread = () => {
   msg.time = performance.now();
   worker.postMessage(msg, threadParams.transferList);
- });
+ };
  if (worker.loaded) {
   worker.runPthread();
   delete worker.runPthread;
@@ -3308,343 +3229,13 @@ function spawnThread(threadParams) {
  return 0;
 }
 
-function _exit(status) {
- exit(status);
-}
-
-function handleException(e) {
- if (e instanceof ExitStatus || e == "unwind") {
-  return EXITSTATUS;
- }
- quit_(1, e);
-}
-
-var PThread = {
- unusedWorkers: [],
- runningWorkers: [],
- tlsInitFunctions: [],
- init: function() {
-  if (ENVIRONMENT_IS_PTHREAD) {
-   PThread.initWorker();
-  } else {
-   PThread.initMainThread();
-  }
- },
- initMainThread: function() {
-  var pthreadPoolSize = 8;
-  for (var i = 0; i < pthreadPoolSize; ++i) {
-   PThread.allocateUnusedWorker();
-  }
- },
- initWorker: function() {
-  noExitRuntime = false;
- },
- pthreads: {},
- setExitStatus: function(status) {
-  EXITSTATUS = status;
- },
- terminateAllThreads: function() {
-  for (var t in PThread.pthreads) {
-   var pthread = PThread.pthreads[t];
-   if (pthread && pthread.worker) {
-    PThread.returnWorkerToPool(pthread.worker);
-   }
-  }
-  for (var i = 0; i < PThread.unusedWorkers.length; ++i) {
-   var worker = PThread.unusedWorkers[i];
-   worker.terminate();
-  }
-  PThread.unusedWorkers = [];
- },
- returnWorkerToPool: function(worker) {
-  PThread.runWithoutMainThreadQueuedCalls(function() {
-   delete PThread.pthreads[worker.pthread.threadInfoStruct];
-   PThread.unusedWorkers.push(worker);
-   PThread.runningWorkers.splice(PThread.runningWorkers.indexOf(worker), 1);
-   __emscripten_thread_free_data(worker.pthread.threadInfoStruct);
-   worker.pthread = undefined;
-  });
- },
- runWithoutMainThreadQueuedCalls: function(func) {
-  GROWABLE_HEAP_I32()[__emscripten_allow_main_runtime_queued_calls >>> 2] = 0;
-  try {
-   func();
-  } finally {
-   GROWABLE_HEAP_I32()[__emscripten_allow_main_runtime_queued_calls >>> 2] = 1;
-  }
- },
- receiveObjectTransfer: function(data) {},
- threadInit: function() {
-  for (var i in PThread.tlsInitFunctions) {
-   if (PThread.tlsInitFunctions.hasOwnProperty(i)) PThread.tlsInitFunctions[i]();
-  }
- },
- loadWasmModuleToWorker: function(worker, onFinishedLoading) {
-  worker.onmessage = (e => {
-   var d = e["data"];
-   var cmd = d["cmd"];
-   if (worker.pthread) PThread.currentProxiedOperationCallerThread = worker.pthread.threadInfoStruct;
-   if (d["targetThread"] && d["targetThread"] != _pthread_self()) {
-    var thread = PThread.pthreads[d.targetThread];
-    if (thread) {
-     thread.worker.postMessage(d, d["transferList"]);
-    } else {
-     err('Internal error! Worker sent a message "' + cmd + '" to target pthread ' + d["targetThread"] + ", but that thread no longer exists!");
-    }
-    PThread.currentProxiedOperationCallerThread = undefined;
-    return;
-   }
-   if (cmd === "processProxyingQueue") {
-    _emscripten_proxy_execute_queue(d["queue"]);
-    Atomics.sub(GROWABLE_HEAP_I32(), d["queue"] >> 2, 1);
-   } else if (cmd === "spawnThread") {
-    spawnThread(d);
-   } else if (cmd === "cleanupThread") {
-    cleanupThread(d["thread"]);
-   } else if (cmd === "killThread") {
-    killThread(d["thread"]);
-   } else if (cmd === "cancelThread") {
-    cancelThread(d["thread"]);
-   } else if (cmd === "loaded") {
-    worker.loaded = true;
-    if (onFinishedLoading) onFinishedLoading(worker);
-    if (worker.runPthread) {
-     worker.runPthread();
-     delete worker.runPthread;
-    }
-   } else if (cmd === "print") {
-    out("Thread " + d["threadId"] + ": " + d["text"]);
-   } else if (cmd === "printErr") {
-    err("Thread " + d["threadId"] + ": " + d["text"]);
-   } else if (cmd === "alert") {
-    alert("Thread " + d["threadId"] + ": " + d["text"]);
-   } else if (d.target === "setimmediate") {
-    worker.postMessage(d);
-   } else if (cmd === "onAbort") {
-    if (Module["onAbort"]) {
-     Module["onAbort"](d["arg"]);
-    }
-   } else if (cmd) {
-    err("worker sent an unknown command " + cmd);
-   }
-   PThread.currentProxiedOperationCallerThread = undefined;
-  });
-  worker.onerror = (e => {
-   var message = "worker sent an error!";
-   err(message + " " + e.filename + ":" + e.lineno + ": " + e.message);
-   throw e;
-  });
-  if (ENVIRONMENT_IS_NODE) {
-   worker.on("message", function(data) {
-    worker.onmessage({
-     data: data
-    });
-   });
-   worker.on("error", function(e) {
-    worker.onerror(e);
-   });
-   worker.on("detachedExit", function() {});
-  }
-  worker.postMessage({
-   "cmd": "load",
-   "urlOrBlob": Module["mainScriptUrlOrBlob"] || _scriptDir,
-   "wasmMemory": wasmMemory,
-   "wasmModule": wasmModule
-  });
- },
- allocateUnusedWorker: function() {
-  var pthreadMainJs = locateFile("yazr.worker.js");
-  PThread.unusedWorkers.push(new Worker(pthreadMainJs));
- },
- getNewWorker: function() {
-  if (PThread.unusedWorkers.length == 0) {
-   PThread.allocateUnusedWorker();
-   PThread.loadWasmModuleToWorker(PThread.unusedWorkers[0]);
-  }
-  return PThread.unusedWorkers.pop();
- }
-};
-
-function establishStackSpace() {
- var pthread_ptr = _pthread_self();
- var stackTop = GROWABLE_HEAP_I32()[pthread_ptr + 44 >>> 2];
- var stackSize = GROWABLE_HEAP_I32()[pthread_ptr + 48 >>> 2];
- var stackMax = stackTop - stackSize;
- _emscripten_stack_set_limits(stackTop, stackMax);
- stackRestore(stackTop);
-}
-
-Module["establishStackSpace"] = establishStackSpace;
-
-function exitOnMainThread(returnCode) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(1, 0, returnCode);
- try {
-  _exit(returnCode);
- } catch (e) {
-  handleException(e);
- }
-}
-
-function invokeEntryPoint(ptr, arg) {
- return function(a1) {
-  return dynCall_ii.apply(null, [ ptr, a1 ]);
- }(arg);
-}
-
-Module["invokeEntryPoint"] = invokeEntryPoint;
-
-function jsStackTrace() {
- var error = new Error();
- if (!error.stack) {
-  try {
-   throw new Error();
-  } catch (e) {
-   error = e;
-  }
-  if (!error.stack) {
-   return "(no stack trace available)";
-  }
- }
- return error.stack.toString();
-}
-
-function registerTlsInit(tlsInitFunc) {
- PThread.tlsInitFunctions.push(tlsInitFunc);
-}
-
-function setWasmTableEntry(idx, func) {
- wasmTable.set(idx, func);
- wasmTableMirror[idx] = func;
-}
-
-function stackTrace() {
- var js = jsStackTrace();
- if (Module["extraStackTrace"]) js += "\n" + Module["extraStackTrace"]();
- return demangleAll(js);
-}
-
-function ___assert_fail(condition, filename, line, func) {
- abort("Assertion failed: " + UTF8ToString(condition) + ", at: " + [ filename ? UTF8ToString(filename) : "unknown filename", line, func ? UTF8ToString(func) : "unknown function" ]);
-}
-
-function ___call_sighandler(fp, sig) {
- (function(a1) {
-  dynCall_vi.apply(null, [ fp, a1 ]);
- })(sig);
-}
-
-function ___cxa_allocate_exception(size) {
- return _malloc(size + 16) + 16;
-}
-
-function ExceptionInfo(excPtr) {
- this.excPtr = excPtr;
- this.ptr = excPtr - 16;
- this.set_type = function(type) {
-  GROWABLE_HEAP_I32()[this.ptr + 4 >>> 2] = type;
- };
- this.get_type = function() {
-  return GROWABLE_HEAP_I32()[this.ptr + 4 >>> 2];
- };
- this.set_destructor = function(destructor) {
-  GROWABLE_HEAP_I32()[this.ptr + 8 >>> 2] = destructor;
- };
- this.get_destructor = function() {
-  return GROWABLE_HEAP_I32()[this.ptr + 8 >>> 2];
- };
- this.set_refcount = function(refcount) {
-  GROWABLE_HEAP_I32()[this.ptr >>> 2] = refcount;
- };
- this.set_caught = function(caught) {
-  caught = caught ? 1 : 0;
-  GROWABLE_HEAP_I8()[this.ptr + 12 >>> 0] = caught;
- };
- this.get_caught = function() {
-  return GROWABLE_HEAP_I8()[this.ptr + 12 >>> 0] != 0;
- };
- this.set_rethrown = function(rethrown) {
-  rethrown = rethrown ? 1 : 0;
-  GROWABLE_HEAP_I8()[this.ptr + 13 >>> 0] = rethrown;
- };
- this.get_rethrown = function() {
-  return GROWABLE_HEAP_I8()[this.ptr + 13 >>> 0] != 0;
- };
- this.init = function(type, destructor) {
-  this.set_type(type);
-  this.set_destructor(destructor);
-  this.set_refcount(0);
-  this.set_caught(false);
-  this.set_rethrown(false);
- };
- this.add_ref = function() {
-  Atomics.add(GROWABLE_HEAP_I32(), this.ptr + 0 >> 2, 1);
- };
- this.release_ref = function() {
-  var prev = Atomics.sub(GROWABLE_HEAP_I32(), this.ptr + 0 >> 2, 1);
-  return prev === 1;
- };
-}
-
-var exceptionLast = 0;
-
-var uncaughtExceptionCount = 0;
-
-function ___cxa_throw(ptr, type, destructor) {
- var info = new ExceptionInfo(ptr);
- info.init(type, destructor);
- exceptionLast = ptr;
- uncaughtExceptionCount++;
- throw ptr;
-}
-
-function ___emscripten_init_main_thread_js(tb) {
- __emscripten_thread_init(tb, !ENVIRONMENT_IS_WORKER, 1, !ENVIRONMENT_IS_WEB);
- PThread.threadInit();
-}
-
-function ___emscripten_thread_cleanup(thread) {
- if (!ENVIRONMENT_IS_PTHREAD) cleanupThread(thread); else postMessage({
-  "cmd": "cleanupThread",
-  "thread": thread
- });
-}
-
-function pthreadCreateProxied(pthread_ptr, attr, start_routine, arg) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(2, 1, pthread_ptr, attr, start_routine, arg);
- return ___pthread_create_js(pthread_ptr, attr, start_routine, arg);
-}
-
-function ___pthread_create_js(pthread_ptr, attr, start_routine, arg) {
- if (typeof SharedArrayBuffer == "undefined") {
-  err("Current environment does not support SharedArrayBuffer, pthreads are not available!");
-  return 6;
- }
- var transferList = [];
- var error = 0;
- if (ENVIRONMENT_IS_PTHREAD && (transferList.length === 0 || error)) {
-  return pthreadCreateProxied(pthread_ptr, attr, start_routine, arg);
- }
- if (error) return error;
- var threadParams = {
-  startRoutine: start_routine,
-  pthread_ptr: pthread_ptr,
-  arg: arg,
-  transferList: transferList
- };
- if (ENVIRONMENT_IS_PTHREAD) {
-  threadParams.cmd = "spawnThread";
-  postMessage(threadParams, transferList);
-  return 0;
- }
- return spawnThread(threadParams);
-}
-
 var PATH = {
- splitPath: function(filename) {
+ isAbs: path => path.charAt(0) === "/",
+ splitPath: filename => {
   var splitPathRe = /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
   return splitPathRe.exec(filename).slice(1);
  },
- normalizeArray: function(parts, allowAboveRoot) {
+ normalizeArray: (parts, allowAboveRoot) => {
   var up = 0;
   for (var i = parts.length - 1; i >= 0; i--) {
    var last = parts[i];
@@ -3665,11 +3256,9 @@ var PATH = {
   }
   return parts;
  },
- normalize: function(path) {
-  var isAbsolute = path.charAt(0) === "/", trailingSlash = path.substr(-1) === "/";
-  path = PATH.normalizeArray(path.split("/").filter(function(p) {
-   return !!p;
-  }), !isAbsolute).join("/");
+ normalize: path => {
+  var isAbsolute = PATH.isAbs(path), trailingSlash = path.substr(-1) === "/";
+  path = PATH.normalizeArray(path.split("/").filter(p => !!p), !isAbsolute).join("/");
   if (!path && !isAbsolute) {
    path = ".";
   }
@@ -3678,7 +3267,7 @@ var PATH = {
   }
   return (isAbsolute ? "/" : "") + path;
  },
- dirname: function(path) {
+ dirname: path => {
   var result = PATH.splitPath(path), root = result[0], dir = result[1];
   if (!root && !dir) {
    return ".";
@@ -3688,7 +3277,7 @@ var PATH = {
   }
   return root + dir;
  },
- basename: function(path) {
+ basename: path => {
   if (path === "/") return "/";
   path = PATH.normalize(path);
   path = path.replace(/\/$/, "");
@@ -3696,14 +3285,11 @@ var PATH = {
   if (lastSlash === -1) return path;
   return path.substr(lastSlash + 1);
  },
- extname: function(path) {
-  return PATH.splitPath(path)[3];
- },
  join: function() {
-  var paths = Array.prototype.slice.call(arguments, 0);
+  var paths = Array.prototype.slice.call(arguments);
   return PATH.normalize(paths.join("/"));
  },
- join2: function(l, r) {
+ join2: (l, r) => {
   return PATH.normalize(l + "/" + r);
  }
 };
@@ -3711,21 +3297,17 @@ var PATH = {
 function getRandomDevice() {
  if (typeof crypto == "object" && typeof crypto["getRandomValues"] == "function") {
   var randomBuffer = new Uint8Array(1);
-  return function() {
+  return () => {
    crypto.getRandomValues(randomBuffer);
    return randomBuffer[0];
   };
  } else if (ENVIRONMENT_IS_NODE) {
   try {
    var crypto_module = require("crypto");
-   return function() {
-    return crypto_module["randomBytes"](1)[0];
-   };
+   return () => crypto_module["randomBytes"](1)[0];
   } catch (e) {}
  }
- return function() {
-  abort("randomDevice");
- };
+ return () => abort("randomDevice");
 }
 
 var PATH_FS = {
@@ -3739,14 +3321,12 @@ var PATH_FS = {
     return "";
    }
    resolvedPath = path + "/" + resolvedPath;
-   resolvedAbsolute = path.charAt(0) === "/";
+   resolvedAbsolute = PATH.isAbs(path);
   }
-  resolvedPath = PATH.normalizeArray(resolvedPath.split("/").filter(function(p) {
-   return !!p;
-  }), !resolvedAbsolute).join("/");
+  resolvedPath = PATH.normalizeArray(resolvedPath.split("/").filter(p => !!p), !resolvedAbsolute).join("/");
   return (resolvedAbsolute ? "/" : "") + resolvedPath || ".";
  },
- relative: function(from, to) {
+ relative: (from, to) => {
   from = PATH_FS.resolve(from).substr(1);
   to = PATH_FS.resolve(to).substr(1);
   function trim(arr) {
@@ -3780,6 +3360,14 @@ var PATH_FS = {
  }
 };
 
+function intArrayFromString(stringy, dontAddNull, length) {
+ var len = length > 0 ? length : lengthBytesUTF8(stringy) + 1;
+ var u8array = new Array(len);
+ var numBytesWritten = stringToUTF8Array(stringy, u8array, 0, u8array.length);
+ if (dontAddNull) u8array.length = numBytesWritten;
+ return u8array;
+}
+
 var TTY = {
  ttys: [],
  init: function() {},
@@ -3802,10 +3390,10 @@ var TTY = {
    stream.seekable = false;
   },
   close: function(stream) {
-   stream.tty.ops.flush(stream.tty);
+   stream.tty.ops.fsync(stream.tty);
   },
-  flush: function(stream) {
-   stream.tty.ops.flush(stream.tty);
+  fsync: function(stream) {
+   stream.tty.ops.fsync(stream.tty);
   },
   read: function(stream, buffer, offset, length, pos) {
    if (!stream.tty || !stream.tty.ops.get_char) {
@@ -3892,7 +3480,7 @@ var TTY = {
     if (val != 0) tty.output.push(val);
    }
   },
-  flush: function(tty) {
+  fsync: function(tty) {
    if (tty.output && tty.output.length > 0) {
     out(UTF8ArrayToString(tty.output, 0));
     tty.output = [];
@@ -3908,7 +3496,7 @@ var TTY = {
     if (val != 0) tty.output.push(val);
    }
   },
-  flush: function(tty) {
+  fsync: function(tty) {
    if (tty.output && tty.output.length > 0) {
     err(UTF8ArrayToString(tty.output, 0));
     tty.output = [];
@@ -3925,8 +3513,7 @@ function mmapAlloc(size) {
  size = alignMemory(size, 65536);
  var ptr = _emscripten_builtin_memalign(65536, size);
  if (!ptr) return 0;
- zeroMemory(ptr, size);
- return ptr;
+ return zeroMemory(ptr, size);
 }
 
 var MEMFS = {
@@ -4200,10 +3787,7 @@ var MEMFS = {
    MEMFS.expandFileStorage(stream.node, offset + length);
    stream.node.usedBytes = Math.max(stream.node.usedBytes, offset + length);
   },
-  mmap: function(stream, address, length, position, prot, flags) {
-   if (address !== 0) {
-    throw new FS.ErrnoError(28);
-   }
+  mmap: function(stream, length, position, prot, flags) {
    if (!FS.isFile(stream.node.mode)) {
     throw new FS.ErrnoError(43);
    }
@@ -4235,13 +3819,7 @@ var MEMFS = {
    };
   },
   msync: function(stream, buffer, offset, length, mmapFlags) {
-   if (!FS.isFile(stream.node.mode)) {
-    throw new FS.ErrnoError(43);
-   }
-   if (mmapFlags & 2) {
-    return 0;
-   }
-   var bytesWritten = MEMFS.stream_ops.write(stream, buffer, 0, length, offset, false);
+   MEMFS.stream_ops.write(stream, buffer, 0, length, offset, false);
    return 0;
   }
  }
@@ -4249,11 +3827,11 @@ var MEMFS = {
 
 function asyncLoad(url, onload, onerror, noRunDep) {
  var dep = !noRunDep ? getUniqueRunDependency("al " + url) : "";
- readAsync(url, function(arrayBuffer) {
+ readAsync(url, arrayBuffer => {
   assert(arrayBuffer, 'Loading data file "' + url + '" failed (no arrayBuffer).');
   onload(new Uint8Array(arrayBuffer));
   if (dep) removeRunDependency(dep);
- }, function(event) {
+ }, event => {
   if (onerror) {
    onerror();
   } else {
@@ -4278,7 +3856,7 @@ var FS = {
  filesystems: null,
  syncFSRequests: 0,
  lookupPath: (path, opts = {}) => {
-  path = PATH_FS.resolve(FS.cwd(), path);
+  path = PATH_FS.resolve(path);
   if (!path) return {
    path: "",
    node: null
@@ -4291,7 +3869,7 @@ var FS = {
   if (opts.recurse_count > 8) {
    throw new FS.ErrnoError(32);
   }
-  var parts = PATH.normalizeArray(path.split("/").filter(p => !!p), false);
+  var parts = path.split("/").filter(p => !!p);
   var current = FS.root;
   var current_path = "/";
   for (var i = 0; i < parts.length; i++) {
@@ -4512,8 +4090,11 @@ var FS = {
  getStream: fd => FS.streams[fd],
  createStream: (stream, fd_start, fd_end) => {
   if (!FS.FSStream) {
-   FS.FSStream = function() {};
-   FS.FSStream.prototype = {
+   FS.FSStream = function() {
+    this.shared = {};
+   };
+   FS.FSStream.prototype = {};
+   Object.defineProperties(FS.FSStream.prototype, {
     object: {
      get: function() {
       return this.node;
@@ -4536,8 +4117,24 @@ var FS = {
      get: function() {
       return this.flags & 1024;
      }
+    },
+    flags: {
+     get: function() {
+      return this.shared.flags;
+     },
+     set: function(val) {
+      this.shared.flags = val;
+     }
+    },
+    position: {
+     get: function() {
+      return this.shared.position;
+     },
+     set: function(val) {
+      this.shared.position = val;
+     }
     }
-   };
+   });
   }
   stream = Object.assign(new FS.FSStream(), stream);
   var fd = FS.nextfd(fd_start, fd_end);
@@ -4999,7 +4596,7 @@ var FS = {
    timestamp: Math.max(atime, mtime)
   });
  },
- open: (path, flags, mode, fd_start, fd_end) => {
+ open: (path, flags, mode) => {
   if (path === "") {
    throw new FS.ErrnoError(44);
   }
@@ -5048,7 +4645,7 @@ var FS = {
     throw new FS.ErrnoError(errCode);
    }
   }
-  if (flags & 512) {
+  if (flags & 512 && !created) {
    FS.truncate(node, 0);
   }
   flags &= ~(128 | 512 | 131072);
@@ -5061,7 +4658,7 @@ var FS = {
    stream_ops: node.stream_ops,
    ungotten: [],
    error: false
-  }, fd_start, fd_end);
+  });
   if (stream.stream_ops.open) {
    stream.stream_ops.open(stream);
   }
@@ -5181,8 +4778,7 @@ var FS = {
   }
   stream.stream_ops.allocate(stream, offset, length);
  },
- mmap: (stream, address, length, position, prot, flags) => {
-  address >>>= 0;
+ mmap: (stream, length, position, prot, flags) => {
   if ((prot & 2) !== 0 && (flags & 2) === 0 && (stream.flags & 2097155) !== 2) {
    throw new FS.ErrnoError(2);
   }
@@ -5192,11 +4788,11 @@ var FS = {
   if (!stream.stream_ops.mmap) {
    throw new FS.ErrnoError(43);
   }
-  return stream.stream_ops.mmap(stream, address, length, position, prot, flags);
+  return stream.stream_ops.mmap(stream, length, position, prot, flags);
  },
  msync: (stream, buffer, offset, length, mmapFlags) => {
   offset >>>= 0;
-  if (!stream || !stream.stream_ops.msync) {
+  if (!stream.stream_ops.msync) {
    return 0;
   }
   return stream.stream_ops.msync(stream, buffer, offset, length, mmapFlags);
@@ -5384,11 +4980,10 @@ var FS = {
  },
  findObject: (path, dontResolveLastLink) => {
   var ret = FS.analyzePath(path, dontResolveLastLink);
-  if (ret.exists) {
-   return ret.object;
-  } else {
+  if (!ret.exists) {
    return null;
   }
+  return ret.object;
  },
  analyzePath: (path, dontResolveLastLink) => {
   try {
@@ -5577,9 +5172,8 @@ var FS = {
     if (!(xhr.status >= 200 && xhr.status < 300 || xhr.status === 304)) throw new Error("Couldn't load " + url + ". Status: " + xhr.status);
     if (xhr.response !== undefined) {
      return new Uint8Array(xhr.response || []);
-    } else {
-     return intArrayFromString(xhr.responseText || "", true);
     }
+    return intArrayFromString(xhr.responseText || "", true);
    };
    var lazyArray = this;
    lazyArray.setDataGetter(chunkNum => {
@@ -5656,8 +5250,7 @@ var FS = {
     return fn.apply(null, arguments);
    };
   });
-  stream_ops.read = ((stream, buffer, offset, length, position) => {
-   FS.forceLoadFile(node);
+  function writeChunks(stream, buffer, offset, length, position) {
    var contents = stream.node.contents;
    if (position >= contents.length) return 0;
    var size = Math.min(contents.length - position, length);
@@ -5671,7 +5264,23 @@ var FS = {
     }
    }
    return size;
-  });
+  }
+  stream_ops.read = (stream, buffer, offset, length, position) => {
+   FS.forceLoadFile(node);
+   return writeChunks(stream, buffer, offset, length, position);
+  };
+  stream_ops.mmap = (stream, length, position, prot, flags) => {
+   FS.forceLoadFile(node);
+   var ptr = mmapAlloc(length);
+   if (!ptr) {
+    throw new FS.ErrnoError(48);
+   }
+   writeChunks(stream, GROWABLE_HEAP_I8(), ptr, length, position);
+   return {
+    ptr: ptr,
+    allocated: true
+   };
+  };
   node.stream_ops = stream_ops;
   return node;
  },
@@ -5719,12 +5328,12 @@ var FS = {
   } catch (e) {
    return onerror(e);
   }
-  openRequest.onupgradeneeded = (() => {
+  openRequest.onupgradeneeded = () => {
    out("creating db");
    var db = openRequest.result;
    db.createObjectStore(FS.DB_STORE_NAME);
-  });
-  openRequest.onsuccess = (() => {
+  };
+  openRequest.onsuccess = () => {
    var db = openRequest.result;
    var transaction = db.transaction([ FS.DB_STORE_NAME ], "readwrite");
    var files = transaction.objectStore(FS.DB_STORE_NAME);
@@ -5734,17 +5343,17 @@ var FS = {
    }
    paths.forEach(path => {
     var putRequest = files.put(FS.analyzePath(path).object.contents, path);
-    putRequest.onsuccess = (() => {
+    putRequest.onsuccess = () => {
      ok++;
      if (ok + fail == total) finish();
-    });
-    putRequest.onerror = (() => {
+    };
+    putRequest.onerror = () => {
      fail++;
      if (ok + fail == total) finish();
-    });
+    };
    });
    transaction.onerror = onerror;
-  });
+  };
   openRequest.onerror = onerror;
  },
  loadFilesFromDB: (paths, onload, onerror) => {
@@ -5757,7 +5366,7 @@ var FS = {
    return onerror(e);
   }
   openRequest.onupgradeneeded = onerror;
-  openRequest.onsuccess = (() => {
+  openRequest.onsuccess = () => {
    var db = openRequest.result;
    try {
     var transaction = db.transaction([ FS.DB_STORE_NAME ], "readonly");
@@ -5772,21 +5381,21 @@ var FS = {
    }
    paths.forEach(path => {
     var getRequest = files.get(path);
-    getRequest.onsuccess = (() => {
+    getRequest.onsuccess = () => {
      if (FS.analyzePath(path).exists) {
       FS.unlink(path);
      }
      FS.createDataFile(PATH.dirname(path), PATH.basename(path), getRequest.result, true, true, true);
      ok++;
      if (ok + fail == total) finish();
-    });
-    getRequest.onerror = (() => {
+    };
+    getRequest.onerror = () => {
      fail++;
      if (ok + fail == total) finish();
-    });
+    };
    });
    transaction.onerror = onerror;
-  });
+  };
   openRequest.onerror = onerror;
  }
 };
@@ -5794,15 +5403,14 @@ var FS = {
 var SYSCALLS = {
  DEFAULT_POLLMASK: 5,
  calculateAt: function(dirfd, path, allowEmpty) {
-  if (path[0] === "/") {
+  if (PATH.isAbs(path)) {
    return path;
   }
   var dir;
   if (dirfd === -100) {
    dir = FS.cwd();
   } else {
-   var dirstream = FS.getStream(dirfd);
-   if (!dirstream) throw new FS.ErrnoError(8);
+   var dirstream = SYSCALLS.getStreamFromFD(dirfd);
    dir = dirstream.path;
   }
   if (path.length == 0) {
@@ -5823,104 +5431,42 @@ var SYSCALLS = {
    throw e;
   }
   GROWABLE_HEAP_I32()[buf >>> 2] = stat.dev;
-  GROWABLE_HEAP_I32()[buf + 4 >>> 2] = 0;
   GROWABLE_HEAP_I32()[buf + 8 >>> 2] = stat.ino;
   GROWABLE_HEAP_I32()[buf + 12 >>> 2] = stat.mode;
-  GROWABLE_HEAP_I32()[buf + 16 >>> 2] = stat.nlink;
+  GROWABLE_HEAP_U32()[buf + 16 >>> 2] = stat.nlink;
   GROWABLE_HEAP_I32()[buf + 20 >>> 2] = stat.uid;
   GROWABLE_HEAP_I32()[buf + 24 >>> 2] = stat.gid;
   GROWABLE_HEAP_I32()[buf + 28 >>> 2] = stat.rdev;
-  GROWABLE_HEAP_I32()[buf + 32 >>> 2] = 0;
   tempI64 = [ stat.size >>> 0, (tempDouble = stat.size, +Math.abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math.min(+Math.floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math.ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0) ], 
   GROWABLE_HEAP_I32()[buf + 40 >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[buf + 44 >>> 2] = tempI64[1];
   GROWABLE_HEAP_I32()[buf + 48 >>> 2] = 4096;
   GROWABLE_HEAP_I32()[buf + 52 >>> 2] = stat.blocks;
-  GROWABLE_HEAP_I32()[buf + 56 >>> 2] = stat.atime.getTime() / 1e3 | 0;
-  GROWABLE_HEAP_I32()[buf + 60 >>> 2] = 0;
-  GROWABLE_HEAP_I32()[buf + 64 >>> 2] = stat.mtime.getTime() / 1e3 | 0;
-  GROWABLE_HEAP_I32()[buf + 68 >>> 2] = 0;
-  GROWABLE_HEAP_I32()[buf + 72 >>> 2] = stat.ctime.getTime() / 1e3 | 0;
-  GROWABLE_HEAP_I32()[buf + 76 >>> 2] = 0;
+  tempI64 = [ Math.floor(stat.atime.getTime() / 1e3) >>> 0, (tempDouble = Math.floor(stat.atime.getTime() / 1e3), 
+  +Math.abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math.min(+Math.floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math.ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0) ], 
+  GROWABLE_HEAP_I32()[buf + 56 >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[buf + 60 >>> 2] = tempI64[1];
+  GROWABLE_HEAP_U32()[buf + 64 >>> 2] = 0;
+  tempI64 = [ Math.floor(stat.mtime.getTime() / 1e3) >>> 0, (tempDouble = Math.floor(stat.mtime.getTime() / 1e3), 
+  +Math.abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math.min(+Math.floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math.ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0) ], 
+  GROWABLE_HEAP_I32()[buf + 72 >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[buf + 76 >>> 2] = tempI64[1];
+  GROWABLE_HEAP_U32()[buf + 80 >>> 2] = 0;
+  tempI64 = [ Math.floor(stat.ctime.getTime() / 1e3) >>> 0, (tempDouble = Math.floor(stat.ctime.getTime() / 1e3), 
+  +Math.abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math.min(+Math.floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math.ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0) ], 
+  GROWABLE_HEAP_I32()[buf + 88 >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[buf + 92 >>> 2] = tempI64[1];
+  GROWABLE_HEAP_U32()[buf + 96 >>> 2] = 0;
   tempI64 = [ stat.ino >>> 0, (tempDouble = stat.ino, +Math.abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math.min(+Math.floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math.ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0) ], 
-  GROWABLE_HEAP_I32()[buf + 80 >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[buf + 84 >>> 2] = tempI64[1];
+  GROWABLE_HEAP_I32()[buf + 104 >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[buf + 108 >>> 2] = tempI64[1];
   return 0;
  },
  doMsync: function(addr, stream, len, flags, offset) {
+  if (!FS.isFile(stream.node.mode)) {
+   throw new FS.ErrnoError(43);
+  }
+  if (flags & 2) {
+   return 0;
+  }
+  addr >>>= 0;
   var buffer = GROWABLE_HEAP_U8().slice(addr, addr + len);
   FS.msync(stream, buffer, offset, len, flags);
- },
- doMkdir: function(path, mode) {
-  path = PATH.normalize(path);
-  if (path[path.length - 1] === "/") path = path.substr(0, path.length - 1);
-  FS.mkdir(path, mode, 0);
-  return 0;
- },
- doMknod: function(path, mode, dev) {
-  switch (mode & 61440) {
-  case 32768:
-  case 8192:
-  case 24576:
-  case 4096:
-  case 49152:
-   break;
-
-  default:
-   return -28;
-  }
-  FS.mknod(path, mode, dev);
-  return 0;
- },
- doReadlink: function(path, buf, bufsize) {
-  if (bufsize <= 0) return -28;
-  var ret = FS.readlink(path);
-  var len = Math.min(bufsize, lengthBytesUTF8(ret));
-  var endChar = GROWABLE_HEAP_I8()[buf + len >>> 0];
-  stringToUTF8(ret, buf, bufsize + 1);
-  GROWABLE_HEAP_I8()[buf + len >>> 0] = endChar;
-  return len;
- },
- doAccess: function(path, amode) {
-  if (amode & ~7) {
-   return -28;
-  }
-  var lookup = FS.lookupPath(path, {
-   follow: true
-  });
-  var node = lookup.node;
-  if (!node) {
-   return -44;
-  }
-  var perms = "";
-  if (amode & 4) perms += "r";
-  if (amode & 2) perms += "w";
-  if (amode & 1) perms += "x";
-  if (perms && FS.nodePermissions(node, perms)) {
-   return -2;
-  }
-  return 0;
- },
- doReadv: function(stream, iov, iovcnt, offset) {
-  var ret = 0;
-  for (var i = 0; i < iovcnt; i++) {
-   var ptr = GROWABLE_HEAP_I32()[iov + i * 8 >>> 2];
-   var len = GROWABLE_HEAP_I32()[iov + (i * 8 + 4) >>> 2];
-   var curr = FS.read(stream, GROWABLE_HEAP_I8(), ptr, len, offset);
-   if (curr < 0) return -1;
-   ret += curr;
-   if (curr < len) break;
-  }
-  return ret;
- },
- doWritev: function(stream, iov, iovcnt, offset) {
-  var ret = 0;
-  for (var i = 0; i < iovcnt; i++) {
-   var ptr = GROWABLE_HEAP_I32()[iov + i * 8 >>> 2];
-   var len = GROWABLE_HEAP_I32()[iov + (i * 8 + 4) >>> 2];
-   var curr = FS.write(stream, GROWABLE_HEAP_I8(), ptr, len, offset);
-   if (curr < 0) return -1;
-   ret += curr;
-  }
-  return ret;
  },
  varargs: undefined,
  get: function() {
@@ -5936,14 +5482,470 @@ var SYSCALLS = {
   var stream = FS.getStream(fd);
   if (!stream) throw new FS.ErrnoError(8);
   return stream;
- },
- get64: function(low, high) {
-  return low;
  }
 };
 
+function _proc_exit(code) {
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(1, 1, code);
+ EXITSTATUS = code;
+ if (!keepRuntimeAlive()) {
+  PThread.terminateAllThreads();
+  if (Module["onExit"]) Module["onExit"](code);
+  ABORT = true;
+ }
+ quit_(code, new ExitStatus(code));
+}
+
+function exitJS(status, implicit) {
+ EXITSTATUS = status;
+ if (!implicit) {
+  if (ENVIRONMENT_IS_PTHREAD) {
+   exitOnMainThread(status);
+   throw "unwind";
+  } else {}
+ }
+ _proc_exit(status);
+}
+
+var _exit = exitJS;
+
+function handleException(e) {
+ if (e instanceof ExitStatus || e == "unwind") {
+  return EXITSTATUS;
+ }
+ quit_(1, e);
+}
+
+var PThread = {
+ unusedWorkers: [],
+ runningWorkers: [],
+ tlsInitFunctions: [],
+ pthreads: {},
+ init: function() {
+  if (ENVIRONMENT_IS_PTHREAD) {
+   PThread.initWorker();
+  } else {
+   PThread.initMainThread();
+  }
+ },
+ initMainThread: function() {
+  var pthreadPoolSize = 8;
+  while (pthreadPoolSize--) {
+   PThread.allocateUnusedWorker();
+  }
+ },
+ initWorker: function() {
+  noExitRuntime = false;
+ },
+ setExitStatus: function(status) {
+  EXITSTATUS = status;
+ },
+ terminateAllThreads: function() {
+  for (var worker of Object.values(PThread.pthreads)) {
+   PThread.returnWorkerToPool(worker);
+  }
+  for (var worker of PThread.unusedWorkers) {
+   worker.terminate();
+  }
+  PThread.unusedWorkers = [];
+ },
+ returnWorkerToPool: function(worker) {
+  var pthread_ptr = worker.pthread_ptr;
+  delete PThread.pthreads[pthread_ptr];
+  PThread.unusedWorkers.push(worker);
+  PThread.runningWorkers.splice(PThread.runningWorkers.indexOf(worker), 1);
+  worker.pthread_ptr = 0;
+  __emscripten_thread_free_data(pthread_ptr);
+ },
+ receiveObjectTransfer: function(data) {},
+ threadInitTLS: function() {
+  PThread.tlsInitFunctions.forEach(f => f());
+ },
+ loadWasmModuleToWorker: function(worker, onFinishedLoading) {
+  worker.onmessage = e => {
+   var d = e["data"];
+   var cmd = d["cmd"];
+   if (worker.pthread_ptr) PThread.currentProxiedOperationCallerThread = worker.pthread_ptr;
+   if (d["targetThread"] && d["targetThread"] != _pthread_self()) {
+    var targetWorker = PThread.pthreads[d.targetThread];
+    if (targetWorker) {
+     targetWorker.postMessage(d, d["transferList"]);
+    } else {
+     err('Internal error! Worker sent a message "' + cmd + '" to target pthread ' + d["targetThread"] + ", but that thread no longer exists!");
+    }
+    PThread.currentProxiedOperationCallerThread = undefined;
+    return;
+   }
+   if (cmd === "processProxyingQueue") {
+    executeNotifiedProxyingQueue(d["queue"]);
+   } else if (cmd === "spawnThread") {
+    spawnThread(d);
+   } else if (cmd === "cleanupThread") {
+    cleanupThread(d["thread"]);
+   } else if (cmd === "killThread") {
+    killThread(d["thread"]);
+   } else if (cmd === "cancelThread") {
+    cancelThread(d["thread"]);
+   } else if (cmd === "loaded") {
+    worker.loaded = true;
+    if (onFinishedLoading) onFinishedLoading(worker);
+    if (worker.runPthread) {
+     worker.runPthread();
+     delete worker.runPthread;
+    }
+   } else if (cmd === "print") {
+    out("Thread " + d["threadId"] + ": " + d["text"]);
+   } else if (cmd === "printErr") {
+    err("Thread " + d["threadId"] + ": " + d["text"]);
+   } else if (cmd === "alert") {
+    alert("Thread " + d["threadId"] + ": " + d["text"]);
+   } else if (d.target === "setimmediate") {
+    worker.postMessage(d);
+   } else if (cmd === "callHandler") {
+    Module[d["handler"]](...d["args"]);
+   } else if (cmd) {
+    err("worker sent an unknown command " + cmd);
+   }
+   PThread.currentProxiedOperationCallerThread = undefined;
+  };
+  worker.onerror = e => {
+   var message = "worker sent an error!";
+   err(message + " " + e.filename + ":" + e.lineno + ": " + e.message);
+   throw e;
+  };
+  if (ENVIRONMENT_IS_NODE) {
+   worker.on("message", function(data) {
+    worker.onmessage({
+     data: data
+    });
+   });
+   worker.on("error", function(e) {
+    worker.onerror(e);
+   });
+   worker.on("detachedExit", function() {});
+  }
+  var handlers = [];
+  var knownHandlers = [ "onExit", "onAbort", "print", "printErr" ];
+  for (var handler of knownHandlers) {
+   if (Module.hasOwnProperty(handler)) {
+    handlers.push(handler);
+   }
+  }
+  worker.postMessage({
+   "cmd": "load",
+   "handlers": handlers,
+   "urlOrBlob": Module["mainScriptUrlOrBlob"] || _scriptDir,
+   "wasmMemory": wasmMemory,
+   "wasmModule": wasmModule
+  });
+ },
+ allocateUnusedWorker: function() {
+  var pthreadMainJs = locateFile("yazr.worker.js");
+  PThread.unusedWorkers.push(new Worker(pthreadMainJs));
+ },
+ getNewWorker: function() {
+  if (PThread.unusedWorkers.length == 0) {
+   PThread.allocateUnusedWorker();
+   PThread.loadWasmModuleToWorker(PThread.unusedWorkers[0]);
+  }
+  return PThread.unusedWorkers.pop();
+ }
+};
+
+Module["PThread"] = PThread;
+
+function listenOnce(object, event, func) {
+ object.addEventListener(event, func, {
+  "once": true
+ });
+}
+
+function autoResumeAudioContext(ctx, elements) {
+ if (!elements) {
+  elements = [ document, document.getElementById("canvas") ];
+ }
+ [ "keydown", "mousedown", "touchstart" ].forEach(function(event) {
+  elements.forEach(function(element) {
+   if (element) {
+    listenOnce(element, event, () => {
+     if (ctx.state === "suspended") ctx.resume();
+    });
+   }
+  });
+ });
+}
+
+function callRuntimeCallbacks(callbacks) {
+ while (callbacks.length > 0) {
+  callbacks.shift()(Module);
+ }
+}
+
+function dynCallLegacy(sig, ptr, args) {
+ var f = Module["dynCall_" + sig];
+ return args && args.length ? f.apply(null, [ ptr ].concat(args)) : f.call(null, ptr);
+}
+
+var wasmTableMirror = [];
+
+function getWasmTableEntry(funcPtr) {
+ var func = wasmTableMirror[funcPtr];
+ if (!func) {
+  if (funcPtr >= wasmTableMirror.length) wasmTableMirror.length = funcPtr + 1;
+  wasmTableMirror[funcPtr] = func = wasmTable.get(funcPtr);
+ }
+ return func;
+}
+
+function dynCall(sig, ptr, args) {
+ return dynCallLegacy(sig, ptr, args);
+}
+
+function establishStackSpace() {
+ var pthread_ptr = _pthread_self();
+ var stackTop = GROWABLE_HEAP_I32()[pthread_ptr + 52 >>> 2];
+ var stackSize = GROWABLE_HEAP_I32()[pthread_ptr + 56 >>> 2];
+ var stackMax = stackTop - stackSize;
+ _emscripten_stack_set_limits(stackTop, stackMax);
+ stackRestore(stackTop);
+}
+
+Module["establishStackSpace"] = establishStackSpace;
+
+function exitOnMainThread(returnCode) {
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(2, 0, returnCode);
+ try {
+  _exit(returnCode);
+ } catch (e) {
+  handleException(e);
+ }
+}
+
+function getValue(ptr, type = "i8") {
+ if (type.endsWith("*")) type = "*";
+ switch (type) {
+ case "i1":
+  return GROWABLE_HEAP_I8()[ptr >>> 0];
+
+ case "i8":
+  return GROWABLE_HEAP_I8()[ptr >>> 0];
+
+ case "i16":
+  return GROWABLE_HEAP_I16()[ptr >>> 1];
+
+ case "i32":
+  return GROWABLE_HEAP_I32()[ptr >>> 2];
+
+ case "i64":
+  return GROWABLE_HEAP_I32()[ptr >>> 2];
+
+ case "float":
+  return GROWABLE_HEAP_F32()[ptr >>> 2];
+
+ case "double":
+  return GROWABLE_HEAP_F64()[ptr >>> 3];
+
+ case "*":
+  return GROWABLE_HEAP_U32()[ptr >>> 2];
+
+ default:
+  abort("invalid type for getValue: " + type);
+ }
+ return null;
+}
+
+function invokeEntryPoint(ptr, arg) {
+ var result = function(a1) {
+  return dynCall_ii.apply(null, [ ptr, a1 ]);
+ }(arg);
+ if (keepRuntimeAlive()) {
+  PThread.setExitStatus(result);
+ } else {
+  __emscripten_thread_exit(result);
+ }
+}
+
+Module["invokeEntryPoint"] = invokeEntryPoint;
+
+function registerTLSInit(tlsInitFunc) {
+ PThread.tlsInitFunctions.push(tlsInitFunc);
+}
+
+function setValue(ptr, value, type = "i8") {
+ if (type.endsWith("*")) type = "*";
+ switch (type) {
+ case "i1":
+  GROWABLE_HEAP_I8()[ptr >>> 0] = value;
+  break;
+
+ case "i8":
+  GROWABLE_HEAP_I8()[ptr >>> 0] = value;
+  break;
+
+ case "i16":
+  GROWABLE_HEAP_I16()[ptr >>> 1] = value;
+  break;
+
+ case "i32":
+  GROWABLE_HEAP_I32()[ptr >>> 2] = value;
+  break;
+
+ case "i64":
+  tempI64 = [ value >>> 0, (tempDouble = value, +Math.abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math.min(+Math.floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math.ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0) ], 
+  GROWABLE_HEAP_I32()[ptr >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[ptr + 4 >>> 2] = tempI64[1];
+  break;
+
+ case "float":
+  GROWABLE_HEAP_F32()[ptr >>> 2] = value;
+  break;
+
+ case "double":
+  GROWABLE_HEAP_F64()[ptr >>> 3] = value;
+  break;
+
+ case "*":
+  GROWABLE_HEAP_U32()[ptr >>> 2] = value;
+  break;
+
+ default:
+  abort("invalid type for setValue: " + type);
+ }
+}
+
+function ___assert_fail(condition, filename, line, func) {
+ abort("Assertion failed: " + UTF8ToString(condition) + ", at: " + [ filename ? UTF8ToString(filename) : "unknown filename", line, func ? UTF8ToString(func) : "unknown function" ]);
+}
+
+function ___call_sighandler(fp, sig) {
+ (function(a1) {
+  dynCall_vi.apply(null, [ fp, a1 ]);
+ })(sig);
+}
+
+function ___cxa_allocate_exception(size) {
+ return _malloc(size + 24) + 24;
+}
+
+function ExceptionInfo(excPtr) {
+ this.excPtr = excPtr;
+ this.ptr = excPtr - 24;
+ this.set_type = function(type) {
+  GROWABLE_HEAP_U32()[this.ptr + 4 >>> 2] = type;
+ };
+ this.get_type = function() {
+  return GROWABLE_HEAP_U32()[this.ptr + 4 >>> 2];
+ };
+ this.set_destructor = function(destructor) {
+  GROWABLE_HEAP_U32()[this.ptr + 8 >>> 2] = destructor;
+ };
+ this.get_destructor = function() {
+  return GROWABLE_HEAP_U32()[this.ptr + 8 >>> 2];
+ };
+ this.set_refcount = function(refcount) {
+  GROWABLE_HEAP_I32()[this.ptr >>> 2] = refcount;
+ };
+ this.set_caught = function(caught) {
+  caught = caught ? 1 : 0;
+  GROWABLE_HEAP_I8()[this.ptr + 12 >>> 0] = caught;
+ };
+ this.get_caught = function() {
+  return GROWABLE_HEAP_I8()[this.ptr + 12 >>> 0] != 0;
+ };
+ this.set_rethrown = function(rethrown) {
+  rethrown = rethrown ? 1 : 0;
+  GROWABLE_HEAP_I8()[this.ptr + 13 >>> 0] = rethrown;
+ };
+ this.get_rethrown = function() {
+  return GROWABLE_HEAP_I8()[this.ptr + 13 >>> 0] != 0;
+ };
+ this.init = function(type, destructor) {
+  this.set_adjusted_ptr(0);
+  this.set_type(type);
+  this.set_destructor(destructor);
+  this.set_refcount(0);
+  this.set_caught(false);
+  this.set_rethrown(false);
+ };
+ this.add_ref = function() {
+  Atomics.add(GROWABLE_HEAP_I32(), this.ptr + 0 >> 2, 1);
+ };
+ this.release_ref = function() {
+  var prev = Atomics.sub(GROWABLE_HEAP_I32(), this.ptr + 0 >> 2, 1);
+  return prev === 1;
+ };
+ this.set_adjusted_ptr = function(adjustedPtr) {
+  GROWABLE_HEAP_U32()[this.ptr + 16 >>> 2] = adjustedPtr;
+ };
+ this.get_adjusted_ptr = function() {
+  return GROWABLE_HEAP_U32()[this.ptr + 16 >>> 2];
+ };
+ this.get_exception_ptr = function() {
+  var isPointer = ___cxa_is_pointer_type(this.get_type());
+  if (isPointer) {
+   return GROWABLE_HEAP_U32()[this.excPtr >>> 2];
+  }
+  var adjusted = this.get_adjusted_ptr();
+  if (adjusted !== 0) return adjusted;
+  return this.excPtr;
+ };
+}
+
+var exceptionLast = 0;
+
+var uncaughtExceptionCount = 0;
+
+function ___cxa_throw(ptr, type, destructor) {
+ var info = new ExceptionInfo(ptr);
+ info.init(type, destructor);
+ exceptionLast = ptr;
+ uncaughtExceptionCount++;
+ throw ptr;
+}
+
+function ___emscripten_init_main_thread_js(tb) {
+ __emscripten_thread_init(tb, !ENVIRONMENT_IS_WORKER, 1, !ENVIRONMENT_IS_WEB);
+ PThread.threadInitTLS();
+}
+
+function ___emscripten_thread_cleanup(thread) {
+ if (!ENVIRONMENT_IS_PTHREAD) cleanupThread(thread); else postMessage({
+  "cmd": "cleanupThread",
+  "thread": thread
+ });
+}
+
+function pthreadCreateProxied(pthread_ptr, attr, startRoutine, arg) {
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(3, 1, pthread_ptr, attr, startRoutine, arg);
+ return ___pthread_create_js(pthread_ptr, attr, startRoutine, arg);
+}
+
+function ___pthread_create_js(pthread_ptr, attr, startRoutine, arg) {
+ if (typeof SharedArrayBuffer == "undefined") {
+  err("Current environment does not support SharedArrayBuffer, pthreads are not available!");
+  return 6;
+ }
+ var transferList = [];
+ var error = 0;
+ if (ENVIRONMENT_IS_PTHREAD && (transferList.length === 0 || error)) {
+  return pthreadCreateProxied(pthread_ptr, attr, startRoutine, arg);
+ }
+ if (error) return error;
+ var threadParams = {
+  startRoutine: startRoutine,
+  pthread_ptr: pthread_ptr,
+  arg: arg,
+  transferList: transferList
+ };
+ if (ENVIRONMENT_IS_PTHREAD) {
+  threadParams.cmd = "spawnThread";
+  postMessage(threadParams, transferList);
+  return 0;
+ }
+ return spawnThread(threadParams);
+}
+
 function ___syscall__newselect(nfds, readfds, writefds, exceptfds, timeout) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(3, 1, nfds, readfds, writefds, exceptfds, timeout);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(4, 1, nfds, readfds, writefds, exceptfds, timeout);
  try {
   var total = 0;
   var srcReadLow = readfds ? GROWABLE_HEAP_I32()[readfds >>> 2] : 0, srcReadHigh = readfds ? GROWABLE_HEAP_I32()[readfds + 4 >>> 2] : 0;
@@ -5962,8 +5964,7 @@ function ___syscall__newselect(nfds, readfds, writefds, exceptfds, timeout) {
    if (!check(fd, allLow, allHigh, mask)) {
     continue;
    }
-   var stream = FS.getStream(fd);
-   if (!stream) throw new FS.ErrnoError(8);
+   var stream = SYSCALLS.getStreamFromFD(fd);
    var flags = SYSCALLS.DEFAULT_POLLMASK;
    if (stream.stream_ops.poll) {
     flags = stream.stream_ops.poll(stream);
@@ -6001,7 +6002,7 @@ function ___syscall__newselect(nfds, readfds, writefds, exceptfds, timeout) {
 }
 
 function ___syscall_chdir(path) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(4, 1, path);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(5, 1, path);
  try {
   path = SYSCALLS.getStr(path);
   FS.chdir(path);
@@ -6013,13 +6014,13 @@ function ___syscall_chdir(path) {
 }
 
 function ___syscall_dup3(fd, suggestFD, flags) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(5, 1, fd, suggestFD, flags);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(6, 1, fd, suggestFD, flags);
  try {
   var old = SYSCALLS.getStreamFromFD(fd);
   if (old.fd === suggestFD) return -28;
   var suggest = FS.getStream(suggestFD);
   if (suggest) FS.close(suggest);
-  return FS.open(old.path, old.flags, 0, suggestFD, suggestFD).fd;
+  return FS.createStream(old, suggestFD, suggestFD + 1).fd;
  } catch (e) {
   if (typeof FS == "undefined" || !(e instanceof FS.ErrnoError)) throw e;
   return -e.errno;
@@ -6032,7 +6033,7 @@ function setErrNo(value) {
 }
 
 function ___syscall_fcntl64(fd, cmd, varargs) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(6, 1, fd, cmd, varargs);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(7, 1, fd, cmd, varargs);
  SYSCALLS.varargs = varargs;
  try {
   var stream = SYSCALLS.getStreamFromFD(fd);
@@ -6044,7 +6045,7 @@ function ___syscall_fcntl64(fd, cmd, varargs) {
      return -28;
     }
     var newStream;
-    newStream = FS.open(stream.path, stream.flags, 0, arg);
+    newStream = FS.createStream(stream, arg);
     return newStream.fd;
    }
 
@@ -6094,7 +6095,7 @@ function ___syscall_fcntl64(fd, cmd, varargs) {
 }
 
 function ___syscall_ioctl(fd, op, varargs) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(7, 1, fd, op, varargs);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(8, 1, fd, op, varargs);
  SYSCALLS.varargs = varargs;
  try {
   var stream = SYSCALLS.getStreamFromFD(fd);
@@ -6150,7 +6151,7 @@ function ___syscall_ioctl(fd, op, varargs) {
    }
 
   default:
-   abort("bad ioctl syscall " + op);
+   return -28;
   }
  } catch (e) {
   if (typeof FS == "undefined" || !(e instanceof FS.ErrnoError)) throw e;
@@ -6159,7 +6160,7 @@ function ___syscall_ioctl(fd, op, varargs) {
 }
 
 function ___syscall_lstat64(path, buf) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(8, 1, path, buf);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(9, 1, path, buf);
  try {
   path = SYSCALLS.getStr(path);
   return SYSCALLS.doStat(FS.lstat, path, buf);
@@ -6170,7 +6171,7 @@ function ___syscall_lstat64(path, buf) {
 }
 
 function ___syscall_openat(dirfd, path, flags, varargs) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(9, 1, dirfd, path, flags, varargs);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(10, 1, dirfd, path, flags, varargs);
  SYSCALLS.varargs = varargs;
  try {
   path = SYSCALLS.getStr(path);
@@ -6230,13 +6231,12 @@ var PIPEFS = {
    var pipe = stream.node.pipe;
    if ((stream.flags & 2097155) === 1) {
     return 256 | 4;
-   } else {
-    if (pipe.buckets.length > 0) {
-     for (var i = 0; i < pipe.buckets.length; i++) {
-      var bucket = pipe.buckets[i];
-      if (bucket.offset - bucket.roffset > 0) {
-       return 64 | 1;
-      }
+   }
+   if (pipe.buckets.length > 0) {
+    for (var i = 0; i < pipe.buckets.length; i++) {
+     var bucket = pipe.buckets[i];
+     if (bucket.offset - bucket.roffset > 0) {
+      return 64 | 1;
      }
     }
    }
@@ -6365,7 +6365,7 @@ var PIPEFS = {
 };
 
 function ___syscall_pipe(fdPtr) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(10, 1, fdPtr);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(11, 1, fdPtr);
  try {
   if (fdPtr == 0) {
    throw new FS.ErrnoError(21);
@@ -6381,7 +6381,7 @@ function ___syscall_pipe(fdPtr) {
 }
 
 function ___syscall_renameat(olddirfd, oldpath, newdirfd, newpath) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(11, 1, olddirfd, oldpath, newdirfd, newpath);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(12, 1, olddirfd, oldpath, newdirfd, newpath);
  try {
   oldpath = SYSCALLS.getStr(oldpath);
   newpath = SYSCALLS.getStr(newpath);
@@ -6396,7 +6396,7 @@ function ___syscall_renameat(olddirfd, oldpath, newdirfd, newpath) {
 }
 
 function ___syscall_rmdir(path) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(12, 1, path);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(13, 1, path);
  try {
   path = SYSCALLS.getStr(path);
   FS.rmdir(path);
@@ -6408,7 +6408,7 @@ function ___syscall_rmdir(path) {
 }
 
 function ___syscall_unlinkat(dirfd, path, flags) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(13, 1, dirfd, path, flags);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(14, 1, dirfd, path, flags);
  try {
   path = SYSCALLS.getStr(path);
   path = SYSCALLS.calculateAt(dirfd, path);
@@ -6426,10 +6426,6 @@ function ___syscall_unlinkat(dirfd, path, flags) {
  }
 }
 
-function __emscripten_date_now() {
- return Date.now();
-}
-
 function __emscripten_default_pthread_stack_size() {
  return 2097152;
 }
@@ -6440,14 +6436,19 @@ function __emscripten_get_now_is_monotonic() {
  return nowIsMonotonic;
 }
 
-function __emscripten_notify_proxying_queue(targetThreadId, currThreadId, mainThreadId, queue) {
+function executeNotifiedProxyingQueue(queue) {
+ Atomics.store(GROWABLE_HEAP_I32(), queue >> 2, 1);
+ if (_pthread_self()) {
+  __emscripten_proxy_execute_task_queue(queue);
+ }
+ Atomics.compareExchange(GROWABLE_HEAP_I32(), queue >> 2, 1, 0);
+}
+
+Module["executeNotifiedProxyingQueue"] = executeNotifiedProxyingQueue;
+
+function __emscripten_notify_task_queue(targetThreadId, currThreadId, mainThreadId, queue) {
  if (targetThreadId == currThreadId) {
-  setTimeout(() => {
-   if (_pthread_self()) {
-    _emscripten_proxy_execute_queue(queue);
-   }
-   Atomics.sub(GROWABLE_HEAP_I32(), queue >> 2, 1);
-  });
+  setTimeout(() => executeNotifiedProxyingQueue(queue));
  } else if (ENVIRONMENT_IS_PTHREAD) {
   postMessage({
    "targetThread": targetThreadId,
@@ -6455,8 +6456,7 @@ function __emscripten_notify_proxying_queue(targetThreadId, currThreadId, mainTh
    "queue": queue
   });
  } else {
-  var pthread = PThread.pthreads[targetThreadId];
-  var worker = pthread && pthread.worker;
+  var worker = PThread.pthreads[targetThreadId];
   if (!worker) {
    return;
   }
@@ -6476,8 +6476,12 @@ function __emscripten_throw_longjmp() {
  throw Infinity;
 }
 
+function readI53FromI64(ptr) {
+ return GROWABLE_HEAP_U32()[ptr >>> 2] + GROWABLE_HEAP_I32()[ptr + 4 >>> 2] * 4294967296;
+}
+
 function __gmtime_js(time, tmPtr) {
- var date = new Date(GROWABLE_HEAP_I32()[time >>> 2] * 1e3);
+ var date = new Date(readI53FromI64(time) * 1e3);
  GROWABLE_HEAP_I32()[tmPtr >>> 2] = date.getUTCSeconds();
  GROWABLE_HEAP_I32()[tmPtr + 4 >>> 2] = date.getUTCMinutes();
  GROWABLE_HEAP_I32()[tmPtr + 8 >>> 2] = date.getUTCHours();
@@ -6490,8 +6494,23 @@ function __gmtime_js(time, tmPtr) {
  GROWABLE_HEAP_I32()[tmPtr + 28 >>> 2] = yday;
 }
 
+function __isLeapYear(year) {
+ return year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
+}
+
+var __MONTH_DAYS_LEAP_CUMULATIVE = [ 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335 ];
+
+var __MONTH_DAYS_REGULAR_CUMULATIVE = [ 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 ];
+
+function __yday_from_date(date) {
+ var isLeapYear = __isLeapYear(date.getFullYear());
+ var monthDaysCumulative = isLeapYear ? __MONTH_DAYS_LEAP_CUMULATIVE : __MONTH_DAYS_REGULAR_CUMULATIVE;
+ var yday = monthDaysCumulative[date.getMonth()] + date.getDate() - 1;
+ return yday;
+}
+
 function __localtime_js(time, tmPtr) {
- var date = new Date(GROWABLE_HEAP_I32()[time >>> 2] * 1e3);
+ var date = new Date(readI53FromI64(time) * 1e3);
  GROWABLE_HEAP_I32()[tmPtr >>> 2] = date.getSeconds();
  GROWABLE_HEAP_I32()[tmPtr + 4 >>> 2] = date.getMinutes();
  GROWABLE_HEAP_I32()[tmPtr + 8 >>> 2] = date.getHours();
@@ -6499,10 +6518,10 @@ function __localtime_js(time, tmPtr) {
  GROWABLE_HEAP_I32()[tmPtr + 16 >>> 2] = date.getMonth();
  GROWABLE_HEAP_I32()[tmPtr + 20 >>> 2] = date.getFullYear() - 1900;
  GROWABLE_HEAP_I32()[tmPtr + 24 >>> 2] = date.getDay();
- var start = new Date(date.getFullYear(), 0, 1);
- var yday = (date.getTime() - start.getTime()) / (1e3 * 60 * 60 * 24) | 0;
+ var yday = __yday_from_date(date) | 0;
  GROWABLE_HEAP_I32()[tmPtr + 28 >>> 2] = yday;
  GROWABLE_HEAP_I32()[tmPtr + 36 >>> 2] = -(date.getTimezoneOffset() * 60);
+ var start = new Date(date.getFullYear(), 0, 1);
  var summerOffset = new Date(date.getFullYear(), 6, 1).getTimezoneOffset();
  var winterOffset = start.getTimezoneOffset();
  var dst = (summerOffset != winterOffset && date.getTimezoneOffset() == Math.min(winterOffset, summerOffset)) | 0;
@@ -6525,25 +6544,32 @@ function __mktime_js(tmPtr) {
   date.setTime(date.getTime() + (trueOffset - guessedOffset) * 6e4);
  }
  GROWABLE_HEAP_I32()[tmPtr + 24 >>> 2] = date.getDay();
- var yday = (date.getTime() - start.getTime()) / (1e3 * 60 * 60 * 24) | 0;
+ var yday = __yday_from_date(date) | 0;
  GROWABLE_HEAP_I32()[tmPtr + 28 >>> 2] = yday;
  GROWABLE_HEAP_I32()[tmPtr >>> 2] = date.getSeconds();
  GROWABLE_HEAP_I32()[tmPtr + 4 >>> 2] = date.getMinutes();
  GROWABLE_HEAP_I32()[tmPtr + 8 >>> 2] = date.getHours();
  GROWABLE_HEAP_I32()[tmPtr + 12 >>> 2] = date.getDate();
  GROWABLE_HEAP_I32()[tmPtr + 16 >>> 2] = date.getMonth();
+ GROWABLE_HEAP_I32()[tmPtr + 20 >>> 2] = date.getYear();
  return date.getTime() / 1e3 | 0;
 }
 
-function _tzset_impl(timezone, daylight, tzname) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(14, 1, timezone, daylight, tzname);
+function allocateUTF8(str) {
+ var size = lengthBytesUTF8(str) + 1;
+ var ret = _malloc(size);
+ if (ret) stringToUTF8Array(str, GROWABLE_HEAP_I8(), ret, size);
+ return ret;
+}
+
+function __tzset_js(timezone, daylight, tzname) {
  var currentYear = new Date().getFullYear();
  var winter = new Date(currentYear, 0, 1);
  var summer = new Date(currentYear, 6, 1);
  var winterOffset = winter.getTimezoneOffset();
  var summerOffset = summer.getTimezoneOffset();
  var stdTimezoneOffset = Math.max(winterOffset, summerOffset);
- GROWABLE_HEAP_I32()[timezone >>> 2] = stdTimezoneOffset * 60;
+ GROWABLE_HEAP_U32()[timezone >>> 2] = stdTimezoneOffset * 60;
  GROWABLE_HEAP_I32()[daylight >>> 2] = Number(winterOffset != summerOffset);
  function extractZone(date) {
   var match = date.toTimeString().match(/\(([A-Za-z ]+)\)$/);
@@ -6554,23 +6580,19 @@ function _tzset_impl(timezone, daylight, tzname) {
  var winterNamePtr = allocateUTF8(winterName);
  var summerNamePtr = allocateUTF8(summerName);
  if (summerOffset < winterOffset) {
-  GROWABLE_HEAP_I32()[tzname >>> 2] = winterNamePtr;
-  GROWABLE_HEAP_I32()[tzname + 4 >>> 2] = summerNamePtr;
+  GROWABLE_HEAP_U32()[tzname >>> 2] = winterNamePtr;
+  GROWABLE_HEAP_U32()[tzname + 4 >>> 2] = summerNamePtr;
  } else {
-  GROWABLE_HEAP_I32()[tzname >>> 2] = summerNamePtr;
-  GROWABLE_HEAP_I32()[tzname + 4 >>> 2] = winterNamePtr;
+  GROWABLE_HEAP_U32()[tzname >>> 2] = summerNamePtr;
+  GROWABLE_HEAP_U32()[tzname + 4 >>> 2] = winterNamePtr;
  }
-}
-
-function __tzset_js(timezone, daylight, tzname) {
- if (__tzset_js.called) return;
- __tzset_js.called = true;
- _tzset_impl(timezone, daylight, tzname);
 }
 
 function _abort() {
  abort("");
 }
+
+function runtimeKeepalivePush() {}
 
 function _emscripten_set_main_loop_timing(mode, value) {
  Browser.mainLoop.timingMode = mode;
@@ -6597,7 +6619,7 @@ function _emscripten_set_main_loop_timing(mode, value) {
   if (typeof setImmediate == "undefined") {
    var setImmediates = [];
    var emscriptenMainLoopMessageId = "setimmediate";
-   var Browser_setImmediate_messageHandler = function(event) {
+   var Browser_setImmediate_messageHandler = event => {
     if (event.data === emscriptenMainLoopMessageId || event.data.target === emscriptenMainLoopMessageId) {
      event.stopPropagation();
      setImmediates.shift()();
@@ -6626,17 +6648,17 @@ function _emscripten_set_main_loop_timing(mode, value) {
 var _emscripten_get_now;
 
 if (ENVIRONMENT_IS_NODE) {
- _emscripten_get_now = (() => {
+ _emscripten_get_now = () => {
   var t = process["hrtime"]();
   return t[0] * 1e3 + t[1] / 1e6;
- });
+ };
 } else if (ENVIRONMENT_IS_PTHREAD) {
- _emscripten_get_now = (() => performance.now() - Module["__performance_now_clock_drift"]);
-} else _emscripten_get_now = (() => performance.now());
-
-function runtimeKeepalivePush() {}
+ _emscripten_get_now = () => performance.now() - Module["__performance_now_clock_drift"];
+} else _emscripten_get_now = () => performance.now();
 
 function maybeExit() {}
+
+function runtimeKeepalivePop() {}
 
 function setMainLoop(browserIterationFunc, fps, simulateInfiniteLoop, arg, noSetTiming) {
  assert(!Browser.mainLoop.func, "emscripten_set_main_loop: there can only be one main loop function at once: call emscripten_cancel_main_loop to cancel the previous one before setting a new one with different parameters.");
@@ -6697,12 +6719,8 @@ function setMainLoop(browserIterationFunc, fps, simulateInfiniteLoop, arg, noSet
  }
 }
 
-function callUserCallback(func, synchronous) {
+function callUserCallback(func) {
  if (ABORT) {
-  return;
- }
- if (synchronous) {
-  func();
   return;
  }
  try {
@@ -6713,14 +6731,21 @@ function callUserCallback(func, synchronous) {
  }
 }
 
-function runtimeKeepalivePop() {}
-
 function safeSetTimeout(func, timeout) {
  runtimeKeepalivePush();
  return setTimeout(function() {
   runtimeKeepalivePop();
   callUserCallback(func);
  }, timeout);
+}
+
+function warnOnce(text) {
+ if (!warnOnce.shown) warnOnce.shown = {};
+ if (!warnOnce.shown[text]) {
+  warnOnce.shown[text] = 1;
+  if (ENVIRONMENT_IS_NODE) text = "warning: " + text;
+  err(text);
+ }
 }
 
 var Browser = {
@@ -6790,12 +6815,12 @@ var Browser = {
    Browser.hasBlobConstructor = true;
   } catch (e) {
    Browser.hasBlobConstructor = false;
-   out("warning: no blob constructor, cannot create blobs with mimetypes");
+   err("warning: no blob constructor, cannot create blobs with mimetypes");
   }
-  Browser.BlobBuilder = typeof MozBlobBuilder != "undefined" ? MozBlobBuilder : typeof WebKitBlobBuilder != "undefined" ? WebKitBlobBuilder : !Browser.hasBlobConstructor ? out("warning: no BlobBuilder") : null;
+  Browser.BlobBuilder = typeof MozBlobBuilder != "undefined" ? MozBlobBuilder : typeof WebKitBlobBuilder != "undefined" ? WebKitBlobBuilder : !Browser.hasBlobConstructor ? err("warning: no BlobBuilder") : null;
   Browser.URLObject = typeof window != "undefined" ? window.URL ? window.URL : window.webkitURL : undefined;
   if (!Module.noImageDecoding && typeof Browser.URLObject == "undefined") {
-   out("warning: Browser does not support creating object URLs. Built-in browser image decoding will not be available.");
+   err("warning: Browser does not support creating object URLs. Built-in browser image decoding will not be available.");
    Module.noImageDecoding = true;
   }
   var imagePlugin = {};
@@ -6825,21 +6850,21 @@ var Browser = {
    }
    var url = Browser.URLObject.createObjectURL(b);
    var img = new Image();
-   img.onload = (() => {
+   img.onload = () => {
     assert(img.complete, "Image " + name + " could not be decoded");
     var canvas = document.createElement("canvas");
     canvas.width = img.width;
     canvas.height = img.height;
     var ctx = canvas.getContext("2d");
     ctx.drawImage(img, 0, 0);
-    Module["preloadedImages"][name] = canvas;
+    preloadedImages[name] = canvas;
     Browser.URLObject.revokeObjectURL(url);
     if (onload) onload(byteArray);
-   });
-   img.onerror = (event => {
+   };
+   img.onerror = event => {
     out("Image " + url + " could not be decoded");
     if (onerror) onerror();
-   });
+   };
    img.src = url;
   };
   Module["preloadPlugins"].push(imagePlugin);
@@ -6856,13 +6881,13 @@ var Browser = {
    function finish(audio) {
     if (done) return;
     done = true;
-    Module["preloadedAudios"][name] = audio;
+    preloadedAudios[name] = audio;
     if (onload) onload(byteArray);
    }
    function fail() {
     if (done) return;
     done = true;
-    Module["preloadedAudios"][name] = new Audio();
+    preloadedAudios[name] = new Audio();
     if (onerror) onerror();
    }
    if (Browser.hasBlobConstructor) {
@@ -6875,12 +6900,10 @@ var Browser = {
     }
     var url = Browser.URLObject.createObjectURL(b);
     var audio = new Audio();
-    audio.addEventListener("canplaythrough", function() {
-     finish(audio);
-    }, false);
+    audio.addEventListener("canplaythrough", () => finish(audio), false);
     audio.onerror = function audio_onerror(event) {
      if (done) return;
-     out("warning: browser could not fully decode audio " + name + ", trying slower base64 approach");
+     err("warning: browser could not fully decode audio " + name + ", trying slower base64 approach");
      function encode64(data) {
       var BASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
       var PAD = "=";
@@ -6922,15 +6945,15 @@ var Browser = {
   }
   var canvas = Module["canvas"];
   if (canvas) {
-   canvas.requestPointerLock = canvas["requestPointerLock"] || canvas["mozRequestPointerLock"] || canvas["webkitRequestPointerLock"] || canvas["msRequestPointerLock"] || function() {};
-   canvas.exitPointerLock = document["exitPointerLock"] || document["mozExitPointerLock"] || document["webkitExitPointerLock"] || document["msExitPointerLock"] || function() {};
+   canvas.requestPointerLock = canvas["requestPointerLock"] || canvas["mozRequestPointerLock"] || canvas["webkitRequestPointerLock"] || canvas["msRequestPointerLock"] || (() => {});
+   canvas.exitPointerLock = document["exitPointerLock"] || document["mozExitPointerLock"] || document["webkitExitPointerLock"] || document["msExitPointerLock"] || (() => {});
    canvas.exitPointerLock = canvas.exitPointerLock.bind(document);
    document.addEventListener("pointerlockchange", pointerLockChange, false);
    document.addEventListener("mozpointerlockchange", pointerLockChange, false);
    document.addEventListener("webkitpointerlockchange", pointerLockChange, false);
    document.addEventListener("mspointerlockchange", pointerLockChange, false);
    if (Module["elementPointerLock"]) {
-    canvas.addEventListener("click", function(ev) {
+    canvas.addEventListener("click", ev => {
      if (!Browser.pointerLock && Module["canvas"].requestPointerLock) {
       Module["canvas"].requestPointerLock();
       ev.preventDefault();
@@ -7032,11 +7055,7 @@ var Browser = {
   var canvasContainer = document.createElement("div");
   canvas.parentNode.insertBefore(canvasContainer, canvas);
   canvasContainer.appendChild(canvas);
-  canvasContainer.requestFullscreen = canvasContainer["requestFullscreen"] || canvasContainer["mozRequestFullScreen"] || canvasContainer["msRequestFullscreen"] || (canvasContainer["webkitRequestFullscreen"] ? function() {
-   canvasContainer["webkitRequestFullscreen"](Element["ALLOW_KEYBOARD_INPUT"]);
-  } : null) || (canvasContainer["webkitRequestFullScreen"] ? function() {
-   canvasContainer["webkitRequestFullScreen"](Element["ALLOW_KEYBOARD_INPUT"]);
-  } : null);
+  canvasContainer.requestFullscreen = canvasContainer["requestFullscreen"] || canvasContainer["mozRequestFullScreen"] || canvasContainer["msRequestFullscreen"] || (canvasContainer["webkitRequestFullscreen"] ? () => canvasContainer["webkitRequestFullscreen"](Element["ALLOW_KEYBOARD_INPUT"]) : null) || (canvasContainer["webkitRequestFullScreen"] ? () => canvasContainer["webkitRequestFullScreen"](Element["ALLOW_KEYBOARD_INPUT"]) : null);
   canvasContainer.requestFullscreen();
  },
  exitFullscreen: function() {
@@ -7068,8 +7087,8 @@ var Browser = {
   var RAF = Browser.fakeRequestAnimationFrame;
   RAF(func);
  },
- safeSetTimeout: function(func) {
-  return safeSetTimeout(func);
+ safeSetTimeout: function(func, timeout) {
+  return safeSetTimeout(func, timeout);
  },
  safeRequestAnimationFrame: function(func) {
   runtimeKeepalivePush();
@@ -7343,10 +7362,9 @@ function _eglBindAPI(api) {
  if (api == 12448) {
   EGL.setErrorCode(12288);
   return 1;
- } else {
-  EGL.setErrorCode(12300);
-  return 0;
  }
+ EGL.setErrorCode(12300);
+ return 0;
 }
 
 function _eglChooseConfig(display, attrib_list, configs, config_size, numConfigs) {
@@ -7905,20 +7923,19 @@ function _eglGetError() {
 
 function _eglInitialize(display, majorVersion, minorVersion) {
  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(24, 1, display, majorVersion, minorVersion);
- if (display == 62e3) {
-  if (majorVersion) {
-   GROWABLE_HEAP_I32()[majorVersion >>> 2] = 1;
-  }
-  if (minorVersion) {
-   GROWABLE_HEAP_I32()[minorVersion >>> 2] = 4;
-  }
-  EGL.defaultDisplayInitialized = true;
-  EGL.setErrorCode(12288);
-  return 1;
- } else {
+ if (display != 62e3) {
   EGL.setErrorCode(12296);
   return 0;
  }
+ if (majorVersion) {
+  GROWABLE_HEAP_I32()[majorVersion >>> 2] = 1;
+ }
+ if (minorVersion) {
+  GROWABLE_HEAP_I32()[minorVersion >>> 2] = 4;
+ }
+ EGL.defaultDisplayInitialized = true;
+ EGL.setErrorCode(12288);
+ return 1;
 }
 
 function _eglMakeCurrent(display, draw, read, context) {
@@ -8023,9 +8040,7 @@ function _eglWaitClient() {
  return 1;
 }
 
-function _eglWaitGL() {
- return _eglWaitClient();
-}
+var _eglWaitGL = _eglWaitClient;
 
 function _eglWaitNative(nativeEngineId) {
  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(31, 1, nativeEngineId);
@@ -8040,9 +8055,8 @@ function readAsmConstArgs(sigPtr, buf) {
  var ch;
  buf >>= 2;
  while (ch = GROWABLE_HEAP_U8()[sigPtr++ >>> 0]) {
-  var readAsmConstArgsDouble = ch < 105;
-  if (readAsmConstArgsDouble && buf & 1) buf++;
-  readAsmConstArgsArray.push(readAsmConstArgsDouble ? GROWABLE_HEAP_F64()[buf++ >>> 1] : GROWABLE_HEAP_I32()[buf >>> 0]);
+  buf += ch != 105 & buf;
+  readAsmConstArgsArray.push(ch == 105 ? GROWABLE_HEAP_I32()[buf >>> 0] : GROWABLE_HEAP_F64()[buf++ >>> 1]);
   ++buf;
  }
  return readAsmConstArgsArray;
@@ -8053,15 +8067,21 @@ function _emscripten_asm_const_int(code, sigPtr, argbuf) {
  return ASM_CONSTS[code].apply(null, args);
 }
 
-function _emscripten_cancel_main_loop() {
- Browser.mainLoop.pause();
- Browser.mainLoop.func = null;
-}
-
 function _emscripten_check_blocking_allowed() {
  if (ENVIRONMENT_IS_NODE) return;
  if (ENVIRONMENT_IS_WORKER) return;
  warnOnce("Blocking on the main thread is very dangerous, see https://emscripten.org/docs/porting/pthreads.html#blocking-on-the-main-browser-thread");
+}
+
+function _emscripten_date_now() {
+ return Date.now();
+}
+
+function withStackSave(f) {
+ var stack = stackSave();
+ var ret = f();
+ stackRestore(stack);
+ return ret;
 }
 
 var JSEvents = {
@@ -8231,9 +8251,8 @@ function _emscripten_get_canvas_element_size(target, width, height) {
  var canvas = findCanvasEventTarget(target);
  if (canvas) {
   return _emscripten_get_canvas_element_size_calling_thread(target, width, height);
- } else {
-  return _emscripten_get_canvas_element_size_main_thread(target, width, height);
  }
+ return _emscripten_get_canvas_element_size_main_thread(target, width, height);
 }
 
 function getCanvasElementSize(target) {
@@ -8277,9 +8296,8 @@ function _emscripten_set_canvas_element_size(target, width, height) {
  var canvas = findCanvasEventTarget(target);
  if (canvas) {
   return _emscripten_set_canvas_element_size_calling_thread(target, width, height);
- } else {
-  return _emscripten_set_canvas_element_size_main_thread(target, width, height);
  }
+ return _emscripten_set_canvas_element_size_main_thread(target, width, height);
 }
 
 function setCanvasElementSize(target, width, height) {
@@ -8363,7 +8381,7 @@ function getBoundingClientRect(e) {
  };
 }
 
-function _JSEvents_resizeCanvasForFullscreen(target, strategy) {
+function JSEvents_resizeCanvasForFullscreen(target, strategy) {
  var restoreOldStyle = registerRestoreOldStyle(target);
  var cssWidth = strategy.softFullscreen ? innerWidth : screen.width;
  var cssHeight = strategy.softFullscreen ? innerHeight : screen.height;
@@ -8411,9 +8429,9 @@ function _JSEvents_resizeCanvasForFullscreen(target, strategy) {
  return restoreOldStyle;
 }
 
-function _JSEvents_requestFullscreen(target, strategy) {
+function JSEvents_requestFullscreen(target, strategy) {
  if (strategy.scaleMode != 0 || strategy.canvasResolutionScaleMode != 0) {
-  _JSEvents_resizeCanvasForFullscreen(target, strategy);
+  JSEvents_resizeCanvasForFullscreen(target, strategy);
  }
  if (target.requestFullscreen) {
   target.requestFullscreen();
@@ -8434,7 +8452,7 @@ function _JSEvents_requestFullscreen(target, strategy) {
 function _emscripten_exit_fullscreen() {
  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(32, 1);
  if (!JSEvents.fullscreenEnabled()) return -1;
- JSEvents.removeDeferredCalls(_JSEvents_requestFullscreen);
+ JSEvents.removeDeferredCalls(JSEvents_requestFullscreen);
  var d = specialHTMLTargets[1];
  if (d.exitFullscreen) {
   d.fullscreenElement && d.exitFullscreen();
@@ -8454,9 +8472,8 @@ function requestPointerLock(target) {
  } else {
   if (document.body.requestPointerLock || document.body.msRequestPointerLock) {
    return -3;
-  } else {
-   return -1;
   }
+  return -1;
  }
  return 0;
 }
@@ -8474,19 +8491,13 @@ function _emscripten_exit_pointerlock() {
  return 0;
 }
 
-function _emscripten_force_exit(status) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(36, 1, status);
- noExitRuntime = false;
- exit(status);
-}
-
 function _emscripten_get_device_pixel_ratio() {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(37, 1);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(36, 1);
  return typeof devicePixelRatio == "number" && devicePixelRatio || 1;
 }
 
 function _emscripten_get_element_css_size(target, width, height) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(38, 1, target, width, height);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(37, 1, target, width, height);
  target = findEventTarget(target);
  if (!target) return -4;
  var rect = getBoundingClientRect(target);
@@ -8523,7 +8534,7 @@ function fillGamepadEventData(eventStruct, e) {
 }
 
 function _emscripten_get_gamepad_status(index, gamepadState) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(39, 1, index, gamepadState);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(38, 1, index, gamepadState);
  if (index < 0 || index >= JSEvents.lastGamepadState.length) return -5;
  if (!JSEvents.lastGamepadState[index]) return -7;
  fillGamepadEventData(gamepadState, JSEvents.lastGamepadState[index]);
@@ -8531,12 +8542,12 @@ function _emscripten_get_gamepad_status(index, gamepadState) {
 }
 
 function _emscripten_get_num_gamepads() {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(40, 1);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(39, 1);
  return JSEvents.lastGamepadState.length;
 }
 
 function _emscripten_get_screen_size(width, height) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(41, 1, width, height);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(40, 1, width, height);
  GROWABLE_HEAP_I32()[width >>> 2] = screen.width;
  GROWABLE_HEAP_I32()[height >>> 2] = screen.height;
 }
@@ -8645,7 +8656,7 @@ function _emscripten_glBlitFramebuffer(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9) {
 
 function _emscripten_glBufferData(target, size, data, usage) {
  if (GL.currentContext.version >= 2) {
-  if (data) {
+  if (data && size) {
    GLctx.bufferData(target, GROWABLE_HEAP_U8(), usage, data, size);
   } else {
    GLctx.bufferData(target, size, usage);
@@ -8657,7 +8668,7 @@ function _emscripten_glBufferData(target, size, data, usage) {
 
 function _emscripten_glBufferSubData(target, offset, size, data) {
  if (GL.currentContext.version >= 2) {
-  GLctx.bufferSubData(target, offset, GROWABLE_HEAP_U8(), data, size);
+  size && GLctx.bufferSubData(target, offset, GROWABLE_HEAP_U8(), data, size);
   return;
  }
  GLctx.bufferSubData(target, offset, GROWABLE_HEAP_U8().subarray(data >>> 0, data + size >>> 0));
@@ -8717,7 +8728,7 @@ function _emscripten_glCompileShader(shader) {
 
 function _emscripten_glCompressedTexImage2D(target, level, internalFormat, width, height, border, imageSize, data) {
  if (GL.currentContext.version >= 2) {
-  if (GLctx.currentPixelUnpackBufferBinding) {
+  if (GLctx.currentPixelUnpackBufferBinding || !imageSize) {
    GLctx["compressedTexImage2D"](target, level, internalFormat, width, height, border, imageSize, data);
   } else {
    GLctx["compressedTexImage2D"](target, level, internalFormat, width, height, border, GROWABLE_HEAP_U8(), data, imageSize);
@@ -8737,7 +8748,7 @@ function _emscripten_glCompressedTexImage3D(target, level, internalFormat, width
 
 function _emscripten_glCompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, imageSize, data) {
  if (GL.currentContext.version >= 2) {
-  if (GLctx.currentPixelUnpackBufferBinding) {
+  if (GLctx.currentPixelUnpackBufferBinding || !imageSize) {
    GLctx["compressedTexSubImage2D"](target, level, xoffset, yoffset, width, height, format, imageSize, data);
   } else {
    GLctx["compressedTexSubImage2D"](target, level, xoffset, yoffset, width, height, format, GROWABLE_HEAP_U8(), data, imageSize);
@@ -9097,9 +9108,8 @@ function _emscripten_glFenceSync(condition, flags) {
   sync.name = id;
   GL.syncs[id] = sync;
   return id;
- } else {
-  return 0;
  }
+ return 0;
 }
 
 function _emscripten_glFinish() {
@@ -10633,7 +10643,7 @@ var miniTempWebGLFloatBuffers = [];
 
 function _emscripten_glUniform1fv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  GLctx.uniform1fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count);
+  count && GLctx.uniform1fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count);
   return;
  }
  if (count <= 288) {
@@ -10655,7 +10665,7 @@ var __miniTempWebGLIntBuffers = [];
 
 function _emscripten_glUniform1iv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  GLctx.uniform1iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count);
+  count && GLctx.uniform1iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count);
   return;
  }
  if (count <= 288) {
@@ -10674,7 +10684,7 @@ function _emscripten_glUniform1ui(location, v0) {
 }
 
 function _emscripten_glUniform1uiv(location, count, value) {
- GLctx.uniform1uiv(webglGetUniformLocation(location), GROWABLE_HEAP_U32(), value >> 2, count);
+ count && GLctx.uniform1uiv(webglGetUniformLocation(location), GROWABLE_HEAP_U32(), value >> 2, count);
 }
 
 function _emscripten_glUniform2f(location, v0, v1) {
@@ -10683,7 +10693,7 @@ function _emscripten_glUniform2f(location, v0, v1) {
 
 function _emscripten_glUniform2fv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  GLctx.uniform2fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 2);
+  count && GLctx.uniform2fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 2);
   return;
  }
  if (count <= 144) {
@@ -10704,7 +10714,7 @@ function _emscripten_glUniform2i(location, v0, v1) {
 
 function _emscripten_glUniform2iv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  GLctx.uniform2iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count * 2);
+  count && GLctx.uniform2iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count * 2);
   return;
  }
  if (count <= 144) {
@@ -10724,7 +10734,7 @@ function _emscripten_glUniform2ui(location, v0, v1) {
 }
 
 function _emscripten_glUniform2uiv(location, count, value) {
- GLctx.uniform2uiv(webglGetUniformLocation(location), GROWABLE_HEAP_U32(), value >> 2, count * 2);
+ count && GLctx.uniform2uiv(webglGetUniformLocation(location), GROWABLE_HEAP_U32(), value >> 2, count * 2);
 }
 
 function _emscripten_glUniform3f(location, v0, v1, v2) {
@@ -10733,7 +10743,7 @@ function _emscripten_glUniform3f(location, v0, v1, v2) {
 
 function _emscripten_glUniform3fv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  GLctx.uniform3fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 3);
+  count && GLctx.uniform3fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 3);
   return;
  }
  if (count <= 96) {
@@ -10755,7 +10765,7 @@ function _emscripten_glUniform3i(location, v0, v1, v2) {
 
 function _emscripten_glUniform3iv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  GLctx.uniform3iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count * 3);
+  count && GLctx.uniform3iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count * 3);
   return;
  }
  if (count <= 96) {
@@ -10776,7 +10786,7 @@ function _emscripten_glUniform3ui(location, v0, v1, v2) {
 }
 
 function _emscripten_glUniform3uiv(location, count, value) {
- GLctx.uniform3uiv(webglGetUniformLocation(location), GROWABLE_HEAP_U32(), value >> 2, count * 3);
+ count && GLctx.uniform3uiv(webglGetUniformLocation(location), GROWABLE_HEAP_U32(), value >> 2, count * 3);
 }
 
 function _emscripten_glUniform4f(location, v0, v1, v2, v3) {
@@ -10785,7 +10795,7 @@ function _emscripten_glUniform4f(location, v0, v1, v2, v3) {
 
 function _emscripten_glUniform4fv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  GLctx.uniform4fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 4);
+  count && GLctx.uniform4fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 4);
   return;
  }
  if (count <= 72) {
@@ -10811,7 +10821,7 @@ function _emscripten_glUniform4i(location, v0, v1, v2, v3) {
 
 function _emscripten_glUniform4iv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  GLctx.uniform4iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count * 4);
+  count && GLctx.uniform4iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count * 4);
   return;
  }
  if (count <= 72) {
@@ -10833,7 +10843,7 @@ function _emscripten_glUniform4ui(location, v0, v1, v2, v3) {
 }
 
 function _emscripten_glUniform4uiv(location, count, value) {
- GLctx.uniform4uiv(webglGetUniformLocation(location), GROWABLE_HEAP_U32(), value >> 2, count * 4);
+ count && GLctx.uniform4uiv(webglGetUniformLocation(location), GROWABLE_HEAP_U32(), value >> 2, count * 4);
 }
 
 function _emscripten_glUniformBlockBinding(program, uniformBlockIndex, uniformBlockBinding) {
@@ -10843,7 +10853,7 @@ function _emscripten_glUniformBlockBinding(program, uniformBlockIndex, uniformBl
 
 function _emscripten_glUniformMatrix2fv(location, count, transpose, value) {
  if (GL.currentContext.version >= 2) {
-  GLctx.uniformMatrix2fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 4);
+  count && GLctx.uniformMatrix2fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 4);
   return;
  }
  if (count <= 72) {
@@ -10861,16 +10871,16 @@ function _emscripten_glUniformMatrix2fv(location, count, transpose, value) {
 }
 
 function _emscripten_glUniformMatrix2x3fv(location, count, transpose, value) {
- GLctx.uniformMatrix2x3fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 6);
+ count && GLctx.uniformMatrix2x3fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 6);
 }
 
 function _emscripten_glUniformMatrix2x4fv(location, count, transpose, value) {
- GLctx.uniformMatrix2x4fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 8);
+ count && GLctx.uniformMatrix2x4fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 8);
 }
 
 function _emscripten_glUniformMatrix3fv(location, count, transpose, value) {
  if (GL.currentContext.version >= 2) {
-  GLctx.uniformMatrix3fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 9);
+  count && GLctx.uniformMatrix3fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 9);
   return;
  }
  if (count <= 32) {
@@ -10893,16 +10903,16 @@ function _emscripten_glUniformMatrix3fv(location, count, transpose, value) {
 }
 
 function _emscripten_glUniformMatrix3x2fv(location, count, transpose, value) {
- GLctx.uniformMatrix3x2fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 6);
+ count && GLctx.uniformMatrix3x2fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 6);
 }
 
 function _emscripten_glUniformMatrix3x4fv(location, count, transpose, value) {
- GLctx.uniformMatrix3x4fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 12);
+ count && GLctx.uniformMatrix3x4fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 12);
 }
 
 function _emscripten_glUniformMatrix4fv(location, count, transpose, value) {
  if (GL.currentContext.version >= 2) {
-  GLctx.uniformMatrix4fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 16);
+  count && GLctx.uniformMatrix4fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 16);
   return;
  }
  if (count <= 18) {
@@ -10935,11 +10945,11 @@ function _emscripten_glUniformMatrix4fv(location, count, transpose, value) {
 }
 
 function _emscripten_glUniformMatrix4x2fv(location, count, transpose, value) {
- GLctx.uniformMatrix4x2fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 8);
+ count && GLctx.uniformMatrix4x2fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 8);
 }
 
 function _emscripten_glUniformMatrix4x3fv(location, count, transpose, value) {
- GLctx.uniformMatrix4x3fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 12);
+ count && GLctx.uniformMatrix4x3fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 12);
 }
 
 function _emscripten_glUnmapBuffer(target) {
@@ -11088,7 +11098,7 @@ function _emscripten_glWaitSync(sync, flags, timeoutLo, timeoutHi) {
 }
 
 function _emscripten_has_asyncify() {
- return false;
+ return 0;
 }
 
 function reallyNegative(x) {
@@ -11117,6 +11127,12 @@ function unSign(value, bits) {
  return bits <= 32 ? 2 * Math.abs(1 << bits - 1) + value : Math.pow(2, bits) + value;
 }
 
+function strLen(ptr) {
+ var end = ptr;
+ while (GROWABLE_HEAP_U8()[end >>> 0]) ++end;
+ return end - ptr;
+}
+
 function formatString(format, varargs) {
  var textIndex = format;
  var argIndex = varargs;
@@ -11132,7 +11148,7 @@ function formatString(format, varargs) {
   var ret;
   argIndex = prepVararg(argIndex, type);
   if (type === "double") {
-   ret = Number(GROWABLE_HEAP_F64()[argIndex >>> 3]);
+   ret = GROWABLE_HEAP_F64()[argIndex >>> 3];
    argIndex += 8;
   } else if (type == "i64") {
    ret = [ GROWABLE_HEAP_I32()[argIndex >>> 2], GROWABLE_HEAP_I32()[argIndex + 4 >>> 2] ];
@@ -11434,7 +11450,7 @@ function formatString(format, varargs) {
    case "s":
     {
      var arg = getNextArg("i8*");
-     var argLength = arg ? _strlen(arg) : "(null)".length;
+     var argLength = arg ? strLen(arg) : "(null)".length;
      if (precisionSet) argLength = Math.min(argLength, precision);
      if (!flagLeftAlign) {
       while (argLength < width--) {
@@ -11520,6 +11536,21 @@ function traverseStack(args) {
  args = caller ? caller.arguments : [];
  if (first) str = "";
  return [ args, funcname, str ];
+}
+
+function jsStackTrace() {
+ var error = new Error();
+ if (!error.stack) {
+  try {
+   throw new Error();
+  } catch (e) {
+   error = e;
+  }
+  if (!error.stack) {
+   return "(no stack trace available)";
+  }
+ }
+ return error.stack.toString();
 }
 
 function _emscripten_get_callstack_js(flags) {
@@ -11640,7 +11671,7 @@ function _emscripten_memcpy_big(dest, src, num) {
 function _emscripten_proxy_to_main_thread_js(index, sync) {
  var numCallArgs = arguments.length - 2;
  var outerArgs = arguments;
- return withStackSave(function() {
+ return withStackSave(() => {
   var serializedNumCallArgs = numCallArgs;
   var args = stackAlloc(serializedNumCallArgs * 8);
   var b = args >> 3;
@@ -11675,17 +11706,16 @@ function doRequestFullscreen(target, strategy) {
  var canPerformRequests = JSEvents.canPerformEventHandlerRequests();
  if (!canPerformRequests) {
   if (strategy.deferUntilInEventHandler) {
-   JSEvents.deferCall(_JSEvents_requestFullscreen, 1, [ target, strategy ]);
+   JSEvents.deferCall(JSEvents_requestFullscreen, 1, [ target, strategy ]);
    return 1;
-  } else {
-   return -2;
   }
+  return -2;
  }
- return _JSEvents_requestFullscreen(target, strategy);
+ return JSEvents_requestFullscreen(target, strategy);
 }
 
 function _emscripten_request_fullscreen_strategy(target, deferUntilInEventHandler, fullscreenStrategy) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(42, 1, target, deferUntilInEventHandler, fullscreenStrategy);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(41, 1, target, deferUntilInEventHandler, fullscreenStrategy);
  var strategy = {
   scaleMode: GROWABLE_HEAP_I32()[fullscreenStrategy >>> 2],
   canvasResolutionScaleMode: GROWABLE_HEAP_I32()[fullscreenStrategy + 4 >>> 2],
@@ -11699,7 +11729,7 @@ function _emscripten_request_fullscreen_strategy(target, deferUntilInEventHandle
 }
 
 function _emscripten_request_pointerlock(target, deferUntilInEventHandler) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(43, 1, target, deferUntilInEventHandler);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(42, 1, target, deferUntilInEventHandler);
  target = findEventTarget(target);
  if (!target) return -4;
  if (!target.requestPointerLock && !target.msRequestPointerLock) {
@@ -11710,14 +11740,13 @@ function _emscripten_request_pointerlock(target, deferUntilInEventHandler) {
   if (deferUntilInEventHandler) {
    JSEvents.deferCall(requestPointerLock, 2, [ target ]);
    return 1;
-  } else {
-   return -2;
   }
+  return -2;
  }
  return requestPointerLock(target);
 }
 
-function _emscripten_get_heap_max() {
+function getHeapMax() {
  return 4294901760;
 }
 
@@ -11735,7 +11764,7 @@ function _emscripten_resize_heap(requestedSize) {
  if (requestedSize <= oldSize) {
   return false;
  }
- var maxHeapSize = _emscripten_get_heap_max();
+ var maxHeapSize = getHeapMax();
  if (requestedSize > maxHeapSize) {
   return false;
  }
@@ -11753,7 +11782,7 @@ function _emscripten_resize_heap(requestedSize) {
 }
 
 function _emscripten_sample_gamepad_data() {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(44, 1);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(43, 1);
  return (JSEvents.lastGamepadState = navigator.getGamepads ? navigator.getGamepads() : navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : null) ? 0 : -1;
 }
 
@@ -11783,7 +11812,7 @@ function registerBeforeUnloadEventCallback(target, userData, useCapture, callbac
 }
 
 function _emscripten_set_beforeunload_callback_on_thread(userData, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(45, 1, userData, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(44, 1, userData, callbackfunc, targetThread);
  if (typeof onbeforeunload == "undefined") return -1;
  if (targetThread !== 1) return -5;
  registerBeforeUnloadEventCallback(2, userData, true, callbackfunc, 28, "beforeunload");
@@ -11815,13 +11844,13 @@ function registerFocusEventCallback(target, userData, useCapture, callbackfunc, 
 }
 
 function _emscripten_set_blur_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(46, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(45, 1, target, userData, useCapture, callbackfunc, targetThread);
  registerFocusEventCallback(target, userData, useCapture, callbackfunc, 12, "blur", targetThread);
  return 0;
 }
 
 function _emscripten_set_element_css_size(target, width, height) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(47, 1, target, width, height);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(46, 1, target, width, height);
  target = findEventTarget(target);
  if (!target) return -4;
  target.style.width = width + "px";
@@ -11830,7 +11859,7 @@ function _emscripten_set_element_css_size(target, width, height) {
 }
 
 function _emscripten_set_focus_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(48, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(47, 1, target, userData, useCapture, callbackfunc, targetThread);
  registerFocusEventCallback(target, userData, useCapture, callbackfunc, 13, "focus", targetThread);
  return 0;
 }
@@ -11876,7 +11905,7 @@ function registerFullscreenChangeEventCallback(target, userData, useCapture, cal
 }
 
 function _emscripten_set_fullscreenchange_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(49, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(48, 1, target, userData, useCapture, callbackfunc, targetThread);
  if (!JSEvents.fullscreenEnabled()) return -1;
  target = findEventTarget(target);
  if (!target) return -4;
@@ -11908,14 +11937,14 @@ function registerGamepadEventCallback(target, userData, useCapture, callbackfunc
 }
 
 function _emscripten_set_gamepadconnected_callback_on_thread(userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(50, 1, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(49, 1, userData, useCapture, callbackfunc, targetThread);
  if (!navigator.getGamepads && !navigator.webkitGetGamepads) return -1;
  registerGamepadEventCallback(2, userData, useCapture, callbackfunc, 26, "gamepadconnected", targetThread);
  return 0;
 }
 
 function _emscripten_set_gamepaddisconnected_callback_on_thread(userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(51, 1, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(50, 1, userData, useCapture, callbackfunc, targetThread);
  if (!navigator.getGamepads && !navigator.webkitGetGamepads) return -1;
  registerGamepadEventCallback(2, userData, useCapture, callbackfunc, 27, "gamepaddisconnected", targetThread);
  return 0;
@@ -11957,19 +11986,19 @@ function registerKeyEventCallback(target, userData, useCapture, callbackfunc, ev
 }
 
 function _emscripten_set_keydown_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(52, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(51, 1, target, userData, useCapture, callbackfunc, targetThread);
  registerKeyEventCallback(target, userData, useCapture, callbackfunc, 2, "keydown", targetThread);
  return 0;
 }
 
 function _emscripten_set_keypress_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(53, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(52, 1, target, userData, useCapture, callbackfunc, targetThread);
  registerKeyEventCallback(target, userData, useCapture, callbackfunc, 1, "keypress", targetThread);
  return 0;
 }
 
 function _emscripten_set_keyup_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(54, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(53, 1, target, userData, useCapture, callbackfunc, targetThread);
  registerKeyEventCallback(target, userData, useCapture, callbackfunc, 3, "keyup", targetThread);
  return 0;
 }
@@ -12028,31 +12057,31 @@ function registerMouseEventCallback(target, userData, useCapture, callbackfunc, 
 }
 
 function _emscripten_set_mousedown_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(55, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(54, 1, target, userData, useCapture, callbackfunc, targetThread);
  registerMouseEventCallback(target, userData, useCapture, callbackfunc, 5, "mousedown", targetThread);
  return 0;
 }
 
 function _emscripten_set_mouseenter_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(56, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(55, 1, target, userData, useCapture, callbackfunc, targetThread);
  registerMouseEventCallback(target, userData, useCapture, callbackfunc, 33, "mouseenter", targetThread);
  return 0;
 }
 
 function _emscripten_set_mouseleave_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(57, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(56, 1, target, userData, useCapture, callbackfunc, targetThread);
  registerMouseEventCallback(target, userData, useCapture, callbackfunc, 34, "mouseleave", targetThread);
  return 0;
 }
 
 function _emscripten_set_mousemove_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(58, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(57, 1, target, userData, useCapture, callbackfunc, targetThread);
  registerMouseEventCallback(target, userData, useCapture, callbackfunc, 8, "mousemove", targetThread);
  return 0;
 }
 
 function _emscripten_set_mouseup_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(59, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(58, 1, target, userData, useCapture, callbackfunc, targetThread);
  registerMouseEventCallback(target, userData, useCapture, callbackfunc, 6, "mouseup", targetThread);
  return 0;
 }
@@ -12089,7 +12118,7 @@ function registerPointerlockChangeEventCallback(target, userData, useCapture, ca
 }
 
 function _emscripten_set_pointerlockchange_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(60, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(59, 1, target, userData, useCapture, callbackfunc, targetThread);
  if (!document || !document.body || !document.body.requestPointerLock && !document.body.mozRequestPointerLock && !document.body.webkitRequestPointerLock && !document.body.msRequestPointerLock) {
   return -1;
  }
@@ -12140,7 +12169,7 @@ function registerUiEventCallback(target, userData, useCapture, callbackfunc, eve
 }
 
 function _emscripten_set_resize_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(61, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(60, 1, target, userData, useCapture, callbackfunc, targetThread);
  registerUiEventCallback(target, userData, useCapture, callbackfunc, 10, "resize", targetThread);
  return 0;
 }
@@ -12209,25 +12238,25 @@ function registerTouchEventCallback(target, userData, useCapture, callbackfunc, 
 }
 
 function _emscripten_set_touchcancel_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(62, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(61, 1, target, userData, useCapture, callbackfunc, targetThread);
  registerTouchEventCallback(target, userData, useCapture, callbackfunc, 25, "touchcancel", targetThread);
  return 0;
 }
 
 function _emscripten_set_touchend_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(63, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(62, 1, target, userData, useCapture, callbackfunc, targetThread);
  registerTouchEventCallback(target, userData, useCapture, callbackfunc, 23, "touchend", targetThread);
  return 0;
 }
 
 function _emscripten_set_touchmove_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(64, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(63, 1, target, userData, useCapture, callbackfunc, targetThread);
  registerTouchEventCallback(target, userData, useCapture, callbackfunc, 24, "touchmove", targetThread);
  return 0;
 }
 
 function _emscripten_set_touchstart_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(65, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(64, 1, target, userData, useCapture, callbackfunc, targetThread);
  registerTouchEventCallback(target, userData, useCapture, callbackfunc, 22, "touchstart", targetThread);
  return 0;
 }
@@ -12261,7 +12290,7 @@ function registerVisibilityChangeEventCallback(target, userData, useCapture, cal
 }
 
 function _emscripten_set_visibilitychange_callback_on_thread(userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(66, 1, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(65, 1, userData, useCapture, callbackfunc, targetThread);
  if (!specialHTMLTargets[1]) {
   return -4;
  }
@@ -12296,7 +12325,7 @@ function registerWheelEventCallback(target, userData, useCapture, callbackfunc, 
 }
 
 function _emscripten_set_wheel_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(67, 1, target, userData, useCapture, callbackfunc, targetThread);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(66, 1, target, userData, useCapture, callbackfunc, targetThread);
  target = findEventTarget(target);
  if (typeof target.onwheel != "undefined") {
   registerWheelEventCallback(target, userData, useCapture, callbackfunc, 9, "wheel", targetThread);
@@ -12307,7 +12336,7 @@ function _emscripten_set_wheel_callback_on_thread(target, userData, useCapture, 
 }
 
 function _emscripten_set_window_title(title) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(68, 1, title);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(67, 1, title);
  setWindowTitle(UTF8ToString(title));
 }
 
@@ -12351,9 +12380,7 @@ function _emscripten_webgl_do_create_context(target, attributes) {
  return contextHandle;
 }
 
-function _emscripten_webgl_create_context(a0, a1) {
- return _emscripten_webgl_do_create_context(a0, a1);
-}
+var _emscripten_webgl_create_context = _emscripten_webgl_do_create_context;
 
 function _emscripten_webgl_destroy_context(contextHandle) {
  if (GL.currentContext == contextHandle) GL.currentContext = 0;
@@ -12400,9 +12427,7 @@ function _emscripten_webgl_do_get_current_context() {
  return GL.currentContext ? GL.currentContext.handle : 0;
 }
 
-function _emscripten_webgl_get_current_context() {
- return _emscripten_webgl_do_get_current_context();
-}
+var _emscripten_webgl_get_current_context = _emscripten_webgl_do_get_current_context;
 
 function _emscripten_webgl_init_context_attributes(attributes) {
  var a = attributes >> 2;
@@ -12448,12 +12473,19 @@ function getEnvStrings() {
  return getEnvStrings.strings;
 }
 
+function writeAsciiToMemory(str, buffer, dontAddNull) {
+ for (var i = 0; i < str.length; ++i) {
+  GROWABLE_HEAP_I8()[buffer++ >>> 0] = str.charCodeAt(i);
+ }
+ if (!dontAddNull) GROWABLE_HEAP_I8()[buffer >>> 0] = 0;
+}
+
 function _environ_get(__environ, environ_buf) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(69, 1, __environ, environ_buf);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(68, 1, __environ, environ_buf);
  var bufSize = 0;
  getEnvStrings().forEach(function(string, i) {
   var ptr = environ_buf + bufSize;
-  GROWABLE_HEAP_I32()[__environ + i * 4 >>> 2] = ptr;
+  GROWABLE_HEAP_U32()[__environ + i * 4 >>> 2] = ptr;
   writeAsciiToMemory(string, ptr);
   bufSize += string.length + 1;
  });
@@ -12461,19 +12493,19 @@ function _environ_get(__environ, environ_buf) {
 }
 
 function _environ_sizes_get(penviron_count, penviron_buf_size) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(70, 1, penviron_count, penviron_buf_size);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(69, 1, penviron_count, penviron_buf_size);
  var strings = getEnvStrings();
- GROWABLE_HEAP_I32()[penviron_count >>> 2] = strings.length;
+ GROWABLE_HEAP_U32()[penviron_count >>> 2] = strings.length;
  var bufSize = 0;
  strings.forEach(function(string) {
   bufSize += string.length + 1;
  });
- GROWABLE_HEAP_I32()[penviron_buf_size >>> 2] = bufSize;
+ GROWABLE_HEAP_U32()[penviron_buf_size >>> 2] = bufSize;
  return 0;
 }
 
 function _fd_close(fd) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(71, 1, fd);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(70, 1, fd);
  try {
   var stream = SYSCALLS.getStreamFromFD(fd);
   FS.close(stream);
@@ -12484,12 +12516,26 @@ function _fd_close(fd) {
  }
 }
 
+function doReadv(stream, iov, iovcnt, offset) {
+ var ret = 0;
+ for (var i = 0; i < iovcnt; i++) {
+  var ptr = GROWABLE_HEAP_U32()[iov >>> 2];
+  var len = GROWABLE_HEAP_U32()[iov + 4 >>> 2];
+  iov += 8;
+  var curr = FS.read(stream, GROWABLE_HEAP_I8(), ptr, len, offset);
+  if (curr < 0) return -1;
+  ret += curr;
+  if (curr < len) break;
+ }
+ return ret;
+}
+
 function _fd_read(fd, iov, iovcnt, pnum) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(72, 1, fd, iov, iovcnt, pnum);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(71, 1, fd, iov, iovcnt, pnum);
  try {
   var stream = SYSCALLS.getStreamFromFD(fd);
-  var num = SYSCALLS.doReadv(stream, iov, iovcnt);
-  GROWABLE_HEAP_I32()[pnum >>> 2] = num;
+  var num = doReadv(stream, iov, iovcnt);
+  GROWABLE_HEAP_U32()[pnum >>> 2] = num;
   return 0;
  } catch (e) {
   if (typeof FS == "undefined" || !(e instanceof FS.ErrnoError)) throw e;
@@ -12497,16 +12543,16 @@ function _fd_read(fd, iov, iovcnt, pnum) {
  }
 }
 
+function convertI32PairToI53Checked(lo, hi) {
+ return hi + 2097152 >>> 0 < 4194305 - !!lo ? (lo >>> 0) + hi * 4294967296 : NaN;
+}
+
 function _fd_seek(fd, offset_low, offset_high, whence, newOffset) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(73, 1, fd, offset_low, offset_high, whence, newOffset);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(72, 1, fd, offset_low, offset_high, whence, newOffset);
  try {
+  var offset = convertI32PairToI53Checked(offset_low, offset_high);
+  if (isNaN(offset)) return 61;
   var stream = SYSCALLS.getStreamFromFD(fd);
-  var HIGH_OFFSET = 4294967296;
-  var offset = offset_high * HIGH_OFFSET + (offset_low >>> 0);
-  var DOUBLE_LIMIT = 9007199254740992;
-  if (offset <= -DOUBLE_LIMIT || offset >= DOUBLE_LIMIT) {
-   return -61;
-  }
   FS.llseek(stream, offset, whence);
   tempI64 = [ stream.position >>> 0, (tempDouble = stream.position, +Math.abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math.min(+Math.floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math.ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0) ], 
   GROWABLE_HEAP_I32()[newOffset >>> 2] = tempI64[0], GROWABLE_HEAP_I32()[newOffset + 4 >>> 2] = tempI64[1];
@@ -12518,21 +12564,30 @@ function _fd_seek(fd, offset_low, offset_high, whence, newOffset) {
  }
 }
 
+function doWritev(stream, iov, iovcnt, offset) {
+ var ret = 0;
+ for (var i = 0; i < iovcnt; i++) {
+  var ptr = GROWABLE_HEAP_U32()[iov >>> 2];
+  var len = GROWABLE_HEAP_U32()[iov + 4 >>> 2];
+  iov += 8;
+  var curr = FS.write(stream, GROWABLE_HEAP_I8(), ptr, len, offset);
+  if (curr < 0) return -1;
+  ret += curr;
+ }
+ return ret;
+}
+
 function _fd_write(fd, iov, iovcnt, pnum) {
- if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(74, 1, fd, iov, iovcnt, pnum);
+ if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(73, 1, fd, iov, iovcnt, pnum);
  try {
   var stream = SYSCALLS.getStreamFromFD(fd);
-  var num = SYSCALLS.doWritev(stream, iov, iovcnt);
-  GROWABLE_HEAP_I32()[pnum >>> 2] = num;
+  var num = doWritev(stream, iov, iovcnt);
+  GROWABLE_HEAP_U32()[pnum >>> 2] = num;
   return 0;
  } catch (e) {
   if (typeof FS == "undefined" || !(e instanceof FS.ErrnoError)) throw e;
   return e.errno;
  }
-}
-
-function _getTempRet0() {
- return getTempRet0();
 }
 
 function _glActiveTexture(x0) {
@@ -12583,7 +12638,7 @@ function _glBlendFuncSeparate(x0, x1, x2, x3) {
 
 function _glBufferData(target, size, data, usage) {
  if (GL.currentContext.version >= 2) {
-  if (data) {
+  if (data && size) {
    GLctx.bufferData(target, GROWABLE_HEAP_U8(), usage, data, size);
   } else {
    GLctx.bufferData(target, size, usage);
@@ -12595,7 +12650,7 @@ function _glBufferData(target, size, data, usage) {
 
 function _glBufferSubData(target, offset, size, data) {
  if (GL.currentContext.version >= 2) {
-  GLctx.bufferSubData(target, offset, GROWABLE_HEAP_U8(), data, size);
+  size && GLctx.bufferSubData(target, offset, GROWABLE_HEAP_U8(), data, size);
   return;
  }
  GLctx.bufferSubData(target, offset, GROWABLE_HEAP_U8().subarray(data >>> 0, data + size >>> 0));
@@ -12631,7 +12686,7 @@ function _glCompileShader(shader) {
 
 function _glCompressedTexImage2D(target, level, internalFormat, width, height, border, imageSize, data) {
  if (GL.currentContext.version >= 2) {
-  if (GLctx.currentPixelUnpackBufferBinding) {
+  if (GLctx.currentPixelUnpackBufferBinding || !imageSize) {
    GLctx["compressedTexImage2D"](target, level, internalFormat, width, height, border, imageSize, data);
   } else {
    GLctx["compressedTexImage2D"](target, level, internalFormat, width, height, border, GROWABLE_HEAP_U8(), data, imageSize);
@@ -12643,7 +12698,7 @@ function _glCompressedTexImage2D(target, level, internalFormat, width, height, b
 
 function _glCompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, imageSize, data) {
  if (GL.currentContext.version >= 2) {
-  if (GLctx.currentPixelUnpackBufferBinding) {
+  if (GLctx.currentPixelUnpackBufferBinding || !imageSize) {
    GLctx["compressedTexSubImage2D"](target, level, xoffset, yoffset, width, height, format, imageSize, data);
   } else {
    GLctx["compressedTexSubImage2D"](target, level, xoffset, yoffset, width, height, format, GROWABLE_HEAP_U8(), data, imageSize);
@@ -13096,7 +13151,7 @@ function _glUniform1i(location, v0) {
 
 function _glUniform1iv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  GLctx.uniform1iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count);
+  count && GLctx.uniform1iv(webglGetUniformLocation(location), GROWABLE_HEAP_I32(), value >> 2, count);
   return;
  }
  if (count <= 288) {
@@ -13116,7 +13171,7 @@ function _glUniform4f(location, v0, v1, v2, v3) {
 
 function _glUniform4fv(location, count, value) {
  if (GL.currentContext.version >= 2) {
-  GLctx.uniform4fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 4);
+  count && GLctx.uniform4fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 4);
   return;
  }
  if (count <= 72) {
@@ -13138,7 +13193,7 @@ function _glUniform4fv(location, count, value) {
 
 function _glUniformMatrix3fv(location, count, transpose, value) {
  if (GL.currentContext.version >= 2) {
-  GLctx.uniformMatrix3fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 9);
+  count && GLctx.uniformMatrix3fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 9);
   return;
  }
  if (count <= 32) {
@@ -13162,7 +13217,7 @@ function _glUniformMatrix3fv(location, count, transpose, value) {
 
 function _glUniformMatrix4fv(location, count, transpose, value) {
  if (GL.currentContext.version >= 2) {
-  GLctx.uniformMatrix4fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 16);
+  count && GLctx.uniformMatrix4fv(webglGetUniformLocation(location), !!transpose, GROWABLE_HEAP_F32(), value >> 2, count * 16);
   return;
  }
  if (count <= 18) {
@@ -13222,14 +13277,6 @@ function _glViewport(x0, x1, x2, x3) {
  GLctx["viewport"](x0, x1, x2, x3);
 }
 
-function _setTempRet0(val) {
- setTempRet0(val);
-}
-
-function __isLeapYear(year) {
- return year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
-}
-
 function __arraySum(array, index) {
  var sum = 0;
  for (var i = 0; i <= index; sum += array[i++]) {}
@@ -13261,6 +13308,10 @@ function __addDays(date, days) {
   }
  }
  return newDate;
+}
+
+function writeArrayToMemory(array, buffer) {
+ GROWABLE_HEAP_I8().set(array, buffer >>> 0);
 }
 
 function _strftime(s, maxsize, format, tm) {
@@ -13369,12 +13420,10 @@ function _strftime(s, maxsize, format, tm) {
   if (compareByDay(firstWeekStartThisYear, thisDate) <= 0) {
    if (compareByDay(firstWeekStartNextYear, thisDate) <= 0) {
     return thisDate.getFullYear() + 1;
-   } else {
-    return thisDate.getFullYear();
    }
-  } else {
-   return thisDate.getFullYear() - 1;
+   return thisDate.getFullYear();
   }
+  return thisDate.getFullYear() - 1;
  }
  var EXPANSION_RULES_2 = {
   "%a": function(date) {
@@ -13428,9 +13477,8 @@ function _strftime(s, maxsize, format, tm) {
   "%p": function(date) {
    if (date.tm_hour >= 0 && date.tm_hour < 12) {
     return "AM";
-   } else {
-    return "PM";
    }
+   return "PM";
   },
   "%S": function(date) {
    return leadingNulls(date.tm_sec, 2);
@@ -13504,8 +13552,15 @@ function _strftime(s, maxsize, format, tm) {
  return bytes.length - 1;
 }
 
-function _strftime_l(s, maxsize, format, tm) {
+function _strftime_l(s, maxsize, format, tm, loc) {
  return _strftime(s, maxsize, format, tm);
+}
+
+function allocateUTF8OnStack(str) {
+ var size = lengthBytesUTF8(str) + 1;
+ var ret = stackAlloc(size);
+ stringToUTF8Array(str, GROWABLE_HEAP_I8(), ret, size);
+ return ret;
 }
 
 PThread.init();
@@ -13568,11 +13623,11 @@ Module["FS_createDataFile"] = FS.createDataFile;
 
 Module["FS_createPreloadedFile"] = FS.createPreloadedFile;
 
+Module["FS_unlink"] = FS.unlink;
+
 Module["FS_createLazyFile"] = FS.createLazyFile;
 
 Module["FS_createDevice"] = FS.createDevice;
-
-Module["FS_unlink"] = FS.unlink;
 
 Module["requestFullscreen"] = function Module_requestFullscreen(lockPointer, resizeCanvas) {
  Browser.requestFullscreen(lockPointer, resizeCanvas);
@@ -13602,6 +13657,10 @@ Module["createContext"] = function Module_createContext(canvas, useWebGL, setInM
  return Browser.createContext(canvas, useWebGL, setInModule, webGLContextAttributes);
 };
 
+var preloadedImages = {};
+
+var preloadedAudios = {};
+
 var GLctx;
 
 for (var i = 0; i < 32; ++i) tempFixedLengthArray.push(new Array(i));
@@ -13618,32 +13677,9 @@ for (var i = 0; i < 288; ++i) {
  __miniTempWebGLIntBuffers[i] = __miniTempWebGLIntBuffersStorage.subarray(0, i + 1);
 }
 
-var proxiedFunctionTable = [ null, exitOnMainThread, pthreadCreateProxied, ___syscall__newselect, ___syscall_chdir, ___syscall_dup3, ___syscall_fcntl64, ___syscall_ioctl, ___syscall_lstat64, ___syscall_openat, ___syscall_pipe, ___syscall_renameat, ___syscall_rmdir, ___syscall_unlinkat, _tzset_impl, _eglBindAPI, _eglChooseConfig, _eglCreateContext, _eglCreateWindowSurface, _eglDestroyContext, _eglDestroySurface, _eglGetConfigAttrib, _eglGetDisplay, _eglGetError, _eglInitialize, _eglMakeCurrent, _eglQueryString, _eglSwapBuffers, _eglSwapInterval, _eglTerminate, _eglWaitClient, _eglWaitNative, _emscripten_exit_fullscreen, _emscripten_get_canvas_element_size_main_thread, _emscripten_set_canvas_element_size_main_thread, _emscripten_exit_pointerlock, _emscripten_force_exit, _emscripten_get_device_pixel_ratio, _emscripten_get_element_css_size, _emscripten_get_gamepad_status, _emscripten_get_num_gamepads, _emscripten_get_screen_size, _emscripten_request_fullscreen_strategy, _emscripten_request_pointerlock, _emscripten_sample_gamepad_data, _emscripten_set_beforeunload_callback_on_thread, _emscripten_set_blur_callback_on_thread, _emscripten_set_element_css_size, _emscripten_set_focus_callback_on_thread, _emscripten_set_fullscreenchange_callback_on_thread, _emscripten_set_gamepadconnected_callback_on_thread, _emscripten_set_gamepaddisconnected_callback_on_thread, _emscripten_set_keydown_callback_on_thread, _emscripten_set_keypress_callback_on_thread, _emscripten_set_keyup_callback_on_thread, _emscripten_set_mousedown_callback_on_thread, _emscripten_set_mouseenter_callback_on_thread, _emscripten_set_mouseleave_callback_on_thread, _emscripten_set_mousemove_callback_on_thread, _emscripten_set_mouseup_callback_on_thread, _emscripten_set_pointerlockchange_callback_on_thread, _emscripten_set_resize_callback_on_thread, _emscripten_set_touchcancel_callback_on_thread, _emscripten_set_touchend_callback_on_thread, _emscripten_set_touchmove_callback_on_thread, _emscripten_set_touchstart_callback_on_thread, _emscripten_set_visibilitychange_callback_on_thread, _emscripten_set_wheel_callback_on_thread, _emscripten_set_window_title, _environ_get, _environ_sizes_get, _fd_close, _fd_read, _fd_seek, _fd_write ];
+var proxiedFunctionTable = [ null, _proc_exit, exitOnMainThread, pthreadCreateProxied, ___syscall__newselect, ___syscall_chdir, ___syscall_dup3, ___syscall_fcntl64, ___syscall_ioctl, ___syscall_lstat64, ___syscall_openat, ___syscall_pipe, ___syscall_renameat, ___syscall_rmdir, ___syscall_unlinkat, _eglBindAPI, _eglChooseConfig, _eglCreateContext, _eglCreateWindowSurface, _eglDestroyContext, _eglDestroySurface, _eglGetConfigAttrib, _eglGetDisplay, _eglGetError, _eglInitialize, _eglMakeCurrent, _eglQueryString, _eglSwapBuffers, _eglSwapInterval, _eglTerminate, _eglWaitClient, _eglWaitNative, _emscripten_exit_fullscreen, _emscripten_get_canvas_element_size_main_thread, _emscripten_set_canvas_element_size_main_thread, _emscripten_exit_pointerlock, _emscripten_get_device_pixel_ratio, _emscripten_get_element_css_size, _emscripten_get_gamepad_status, _emscripten_get_num_gamepads, _emscripten_get_screen_size, _emscripten_request_fullscreen_strategy, _emscripten_request_pointerlock, _emscripten_sample_gamepad_data, _emscripten_set_beforeunload_callback_on_thread, _emscripten_set_blur_callback_on_thread, _emscripten_set_element_css_size, _emscripten_set_focus_callback_on_thread, _emscripten_set_fullscreenchange_callback_on_thread, _emscripten_set_gamepadconnected_callback_on_thread, _emscripten_set_gamepaddisconnected_callback_on_thread, _emscripten_set_keydown_callback_on_thread, _emscripten_set_keypress_callback_on_thread, _emscripten_set_keyup_callback_on_thread, _emscripten_set_mousedown_callback_on_thread, _emscripten_set_mouseenter_callback_on_thread, _emscripten_set_mouseleave_callback_on_thread, _emscripten_set_mousemove_callback_on_thread, _emscripten_set_mouseup_callback_on_thread, _emscripten_set_pointerlockchange_callback_on_thread, _emscripten_set_resize_callback_on_thread, _emscripten_set_touchcancel_callback_on_thread, _emscripten_set_touchend_callback_on_thread, _emscripten_set_touchmove_callback_on_thread, _emscripten_set_touchstart_callback_on_thread, _emscripten_set_visibilitychange_callback_on_thread, _emscripten_set_wheel_callback_on_thread, _emscripten_set_window_title, _environ_get, _environ_sizes_get, _fd_close, _fd_read, _fd_seek, _fd_write ];
 
 var ASSERTIONS = false;
-
-function intArrayFromString(stringy, dontAddNull, length) {
- var len = length > 0 ? length : lengthBytesUTF8(stringy) + 1;
- var u8array = new Array(len);
- var numBytesWritten = stringToUTF8Array(stringy, u8array, 0, u8array.length);
- if (dontAddNull) u8array.length = numBytesWritten;
- return u8array;
-}
-
-function intArrayToString(array) {
- var ret = [];
- for (var i = 0; i < array.length; i++) {
-  var chr = array[i];
-  if (chr > 255) {
-   if (ASSERTIONS) {
-    assert(false, "Character code " + chr + " (" + String.fromCharCode(chr) + ")  at offset " + i + " not in 0x00-0xFF.");
-   }
-   chr &= 255;
-  }
-  ret.push(String.fromCharCode(chr));
- }
- return ret.join("");
-}
 
 var decodeBase64 = typeof atob == "function" ? atob : function(input) {
  var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
@@ -13714,10 +13750,9 @@ var asmLibraryArg = {
  "__syscall_renameat": ___syscall_renameat,
  "__syscall_rmdir": ___syscall_rmdir,
  "__syscall_unlinkat": ___syscall_unlinkat,
- "_emscripten_date_now": __emscripten_date_now,
  "_emscripten_default_pthread_stack_size": __emscripten_default_pthread_stack_size,
  "_emscripten_get_now_is_monotonic": __emscripten_get_now_is_monotonic,
- "_emscripten_notify_proxying_queue": __emscripten_notify_proxying_queue,
+ "_emscripten_notify_task_queue": __emscripten_notify_task_queue,
  "_emscripten_set_offscreencanvas_size": __emscripten_set_offscreencanvas_size,
  "_emscripten_throw_longjmp": __emscripten_throw_longjmp,
  "_gmtime_js": __gmtime_js,
@@ -13743,11 +13778,10 @@ var asmLibraryArg = {
  "eglWaitGL": _eglWaitGL,
  "eglWaitNative": _eglWaitNative,
  "emscripten_asm_const_int": _emscripten_asm_const_int,
- "emscripten_cancel_main_loop": _emscripten_cancel_main_loop,
  "emscripten_check_blocking_allowed": _emscripten_check_blocking_allowed,
+ "emscripten_date_now": _emscripten_date_now,
  "emscripten_exit_fullscreen": _emscripten_exit_fullscreen,
  "emscripten_exit_pointerlock": _emscripten_exit_pointerlock,
- "emscripten_force_exit": _emscripten_force_exit,
  "emscripten_get_canvas_element_size": _emscripten_get_canvas_element_size,
  "emscripten_get_device_pixel_ratio": _emscripten_get_device_pixel_ratio,
  "emscripten_get_element_css_size": _emscripten_get_element_css_size,
@@ -14080,7 +14114,6 @@ var asmLibraryArg = {
  "fd_read": _fd_read,
  "fd_seek": _fd_seek,
  "fd_write": _fd_write,
- "getTempRet0": _getTempRet0,
  "glActiveTexture": _glActiveTexture,
  "glAttachShader": _glAttachShader,
  "glBindBuffer": _glBindBuffer,
@@ -14164,7 +14197,6 @@ var asmLibraryArg = {
  "glViewport": _glViewport,
  "invoke_vii": invoke_vii,
  "memory": wasmMemory,
- "setTempRet0": _setTempRet0,
  "strftime": _strftime,
  "strftime_l": _strftime_l
 };
@@ -14176,27 +14208,23 @@ var ___wasm_call_ctors = Module["___wasm_call_ctors"] = function() {
 };
 
 var _main = Module["_main"] = function() {
- return (_main = Module["_main"] = Module["asm"]["main"]).apply(null, arguments);
+ return (_main = Module["_main"] = Module["asm"]["__main_argc_argv"]).apply(null, arguments);
 };
 
 var _memcpy = Module["_memcpy"] = function() {
  return (_memcpy = Module["_memcpy"] = Module["asm"]["memcpy"]).apply(null, arguments);
 };
 
-var _strlen = Module["_strlen"] = function() {
- return (_strlen = Module["_strlen"] = Module["asm"]["strlen"]).apply(null, arguments);
-};
-
 var _pthread_self = Module["_pthread_self"] = function() {
  return (_pthread_self = Module["_pthread_self"] = Module["asm"]["pthread_self"]).apply(null, arguments);
 };
 
-var _free = Module["_free"] = function() {
- return (_free = Module["_free"] = Module["asm"]["free"]).apply(null, arguments);
-};
-
 var ___errno_location = Module["___errno_location"] = function() {
  return (___errno_location = Module["___errno_location"] = Module["asm"]["__errno_location"]).apply(null, arguments);
+};
+
+var _free = Module["_free"] = function() {
+ return (_free = Module["_free"] = Module["asm"]["free"]).apply(null, arguments);
 };
 
 var _malloc = Module["_malloc"] = function() {
@@ -14207,8 +14235,8 @@ var _saveSetjmp = Module["_saveSetjmp"] = function() {
  return (_saveSetjmp = Module["_saveSetjmp"] = Module["asm"]["saveSetjmp"]).apply(null, arguments);
 };
 
-var _emscripten_tls_init = Module["_emscripten_tls_init"] = function() {
- return (_emscripten_tls_init = Module["_emscripten_tls_init"] = Module["asm"]["emscripten_tls_init"]).apply(null, arguments);
+var __emscripten_tls_init = Module["__emscripten_tls_init"] = function() {
+ return (__emscripten_tls_init = Module["__emscripten_tls_init"] = Module["asm"]["_emscripten_tls_init"]).apply(null, arguments);
 };
 
 var _emscripten_builtin_memalign = Module["_emscripten_builtin_memalign"] = function() {
@@ -14231,16 +14259,16 @@ var _emscripten_main_browser_thread_id = Module["_emscripten_main_browser_thread
  return (_emscripten_main_browser_thread_id = Module["_emscripten_main_browser_thread_id"] = Module["asm"]["emscripten_main_browser_thread_id"]).apply(null, arguments);
 };
 
-var _emscripten_proxy_execute_queue = Module["_emscripten_proxy_execute_queue"] = function() {
- return (_emscripten_proxy_execute_queue = Module["_emscripten_proxy_execute_queue"] = Module["asm"]["emscripten_proxy_execute_queue"]).apply(null, arguments);
-};
-
 var _emscripten_run_in_main_runtime_thread_js = Module["_emscripten_run_in_main_runtime_thread_js"] = function() {
  return (_emscripten_run_in_main_runtime_thread_js = Module["_emscripten_run_in_main_runtime_thread_js"] = Module["asm"]["emscripten_run_in_main_runtime_thread_js"]).apply(null, arguments);
 };
 
 var _emscripten_dispatch_to_thread_ = Module["_emscripten_dispatch_to_thread_"] = function() {
  return (_emscripten_dispatch_to_thread_ = Module["_emscripten_dispatch_to_thread_"] = Module["asm"]["emscripten_dispatch_to_thread_"]).apply(null, arguments);
+};
+
+var __emscripten_proxy_execute_task_queue = Module["__emscripten_proxy_execute_task_queue"] = function() {
+ return (__emscripten_proxy_execute_task_queue = Module["__emscripten_proxy_execute_task_queue"] = Module["asm"]["_emscripten_proxy_execute_task_queue"]).apply(null, arguments);
 };
 
 var __emscripten_thread_free_data = Module["__emscripten_thread_free_data"] = function() {
@@ -14271,28 +14299,36 @@ var stackAlloc = Module["stackAlloc"] = function() {
  return (stackAlloc = Module["stackAlloc"] = Module["asm"]["stackAlloc"]).apply(null, arguments);
 };
 
-var dynCall_v = Module["dynCall_v"] = function() {
- return (dynCall_v = Module["dynCall_v"] = Module["asm"]["dynCall_v"]).apply(null, arguments);
+var ___cxa_is_pointer_type = Module["___cxa_is_pointer_type"] = function() {
+ return (___cxa_is_pointer_type = Module["___cxa_is_pointer_type"] = Module["asm"]["__cxa_is_pointer_type"]).apply(null, arguments);
 };
 
-var dynCall_vi = Module["dynCall_vi"] = function() {
- return (dynCall_vi = Module["dynCall_vi"] = Module["asm"]["dynCall_vi"]).apply(null, arguments);
+var dynCall_v = Module["dynCall_v"] = function() {
+ return (dynCall_v = Module["dynCall_v"] = Module["asm"]["dynCall_v"]).apply(null, arguments);
 };
 
 var dynCall_ii = Module["dynCall_ii"] = function() {
  return (dynCall_ii = Module["dynCall_ii"] = Module["asm"]["dynCall_ii"]).apply(null, arguments);
 };
 
+var dynCall_vi = Module["dynCall_vi"] = function() {
+ return (dynCall_vi = Module["dynCall_vi"] = Module["asm"]["dynCall_vi"]).apply(null, arguments);
+};
+
+var dynCall_vii = Module["dynCall_vii"] = function() {
+ return (dynCall_vii = Module["dynCall_vii"] = Module["asm"]["dynCall_vii"]).apply(null, arguments);
+};
+
+var dynCall_viiiii = Module["dynCall_viiiii"] = function() {
+ return (dynCall_viiiii = Module["dynCall_viiiii"] = Module["asm"]["dynCall_viiiii"]).apply(null, arguments);
+};
+
 var dynCall_iii = Module["dynCall_iii"] = function() {
  return (dynCall_iii = Module["dynCall_iii"] = Module["asm"]["dynCall_iii"]).apply(null, arguments);
 };
 
-var dynCall_iiiiii = Module["dynCall_iiiiii"] = function() {
- return (dynCall_iiiiii = Module["dynCall_iiiiii"] = Module["asm"]["dynCall_iiiiii"]).apply(null, arguments);
-};
-
-var dynCall_iiii = Module["dynCall_iiii"] = function() {
- return (dynCall_iiii = Module["dynCall_iiii"] = Module["asm"]["dynCall_iiii"]).apply(null, arguments);
+var dynCall_viiiiii = Module["dynCall_viiiiii"] = function() {
+ return (dynCall_viiiiii = Module["dynCall_viiiiii"] = Module["asm"]["dynCall_viiiiii"]).apply(null, arguments);
 };
 
 var dynCall_viii = Module["dynCall_viii"] = function() {
@@ -14307,10 +14343,6 @@ var dynCall_vdi = Module["dynCall_vdi"] = function() {
  return (dynCall_vdi = Module["dynCall_vdi"] = Module["asm"]["dynCall_vdi"]).apply(null, arguments);
 };
 
-var dynCall_vii = Module["dynCall_vii"] = function() {
- return (dynCall_vii = Module["dynCall_vii"] = Module["asm"]["dynCall_vii"]).apply(null, arguments);
-};
-
 var dynCall_vffff = Module["dynCall_vffff"] = function() {
  return (dynCall_vffff = Module["dynCall_vffff"] = Module["asm"]["dynCall_vffff"]).apply(null, arguments);
 };
@@ -14323,16 +14355,20 @@ var dynCall_viiiiiiiii = Module["dynCall_viiiiiiiii"] = function() {
  return (dynCall_viiiiiiiii = Module["dynCall_viiiiiiiii"] = Module["asm"]["dynCall_viiiiiiiii"]).apply(null, arguments);
 };
 
-var dynCall_viiiii = Module["dynCall_viiiii"] = function() {
- return (dynCall_viiiii = Module["dynCall_viiiii"] = Module["asm"]["dynCall_viiiii"]).apply(null, arguments);
+var dynCall_iiiiii = Module["dynCall_iiiiii"] = function() {
+ return (dynCall_iiiiii = Module["dynCall_iiiiii"] = Module["asm"]["dynCall_iiiiii"]).apply(null, arguments);
 };
 
-var dynCall_viiiiii = Module["dynCall_viiiiii"] = function() {
- return (dynCall_viiiiii = Module["dynCall_viiiiii"] = Module["asm"]["dynCall_viiiiii"]).apply(null, arguments);
+var dynCall_iiii = Module["dynCall_iiii"] = function() {
+ return (dynCall_iiii = Module["dynCall_iiii"] = Module["asm"]["dynCall_iiii"]).apply(null, arguments);
 };
 
-var dynCall_viiiiiiiiiii = Module["dynCall_viiiiiiiiiii"] = function() {
- return (dynCall_viiiiiiiiiii = Module["dynCall_viiiiiiiiiii"] = Module["asm"]["dynCall_viiiiiiiiiii"]).apply(null, arguments);
+var dynCall_did = Module["dynCall_did"] = function() {
+ return (dynCall_did = Module["dynCall_did"] = Module["asm"]["dynCall_did"]).apply(null, arguments);
+};
+
+var dynCall_viiiiiiiiiiii = Module["dynCall_viiiiiiiiiiii"] = function() {
+ return (dynCall_viiiiiiiiiiii = Module["dynCall_viiiiiiiiiiii"] = Module["asm"]["dynCall_viiiiiiiiiiii"]).apply(null, arguments);
 };
 
 var dynCall_viiii = Module["dynCall_viiii"] = function() {
@@ -14343,32 +14379,36 @@ var dynCall_iiiii = Module["dynCall_iiiii"] = function() {
  return (dynCall_iiiii = Module["dynCall_iiiii"] = Module["asm"]["dynCall_iiiii"]).apply(null, arguments);
 };
 
-var dynCall_ji = Module["dynCall_ji"] = function() {
- return (dynCall_ji = Module["dynCall_ji"] = Module["asm"]["dynCall_ji"]).apply(null, arguments);
-};
-
 var dynCall_jiji = Module["dynCall_jiji"] = function() {
  return (dynCall_jiji = Module["dynCall_jiji"] = Module["asm"]["dynCall_jiji"]).apply(null, arguments);
 };
 
-var dynCall_iiiiiiiii = Module["dynCall_iiiiiiiii"] = function() {
- return (dynCall_iiiiiiiii = Module["dynCall_iiiiiiiii"] = Module["asm"]["dynCall_iiiiiiiii"]).apply(null, arguments);
+var dynCall_ji = Module["dynCall_ji"] = function() {
+ return (dynCall_ji = Module["dynCall_ji"] = Module["asm"]["dynCall_ji"]).apply(null, arguments);
 };
 
 var dynCall_iiiiiiii = Module["dynCall_iiiiiiii"] = function() {
  return (dynCall_iiiiiiii = Module["dynCall_iiiiiiii"] = Module["asm"]["dynCall_iiiiiiii"]).apply(null, arguments);
 };
 
-var dynCall_iiiiiidii = Module["dynCall_iiiiiidii"] = function() {
- return (dynCall_iiiiiidii = Module["dynCall_iiiiiidii"] = Module["asm"]["dynCall_iiiiiidii"]).apply(null, arguments);
+var dynCall_iiiiiiiiii = Module["dynCall_iiiiiiiiii"] = function() {
+ return (dynCall_iiiiiiiiii = Module["dynCall_iiiiiiiiii"] = Module["asm"]["dynCall_iiiiiiiiii"]).apply(null, arguments);
 };
 
 var dynCall_iiiiiiiiiiiiiiff = Module["dynCall_iiiiiiiiiiiiiiff"] = function() {
  return (dynCall_iiiiiiiiiiiiiiff = Module["dynCall_iiiiiiiiiiiiiiff"] = Module["asm"]["dynCall_iiiiiiiiiiiiiiff"]).apply(null, arguments);
 };
 
-var dynCall_iiiiiiiiii = Module["dynCall_iiiiiiiiii"] = function() {
- return (dynCall_iiiiiiiiii = Module["dynCall_iiiiiiiiii"] = Module["asm"]["dynCall_iiiiiiiiii"]).apply(null, arguments);
+var dynCall_iiiiiiiii = Module["dynCall_iiiiiiiii"] = function() {
+ return (dynCall_iiiiiiiii = Module["dynCall_iiiiiiiii"] = Module["asm"]["dynCall_iiiiiiiii"]).apply(null, arguments);
+};
+
+var dynCall_viiiiiiiiiii = Module["dynCall_viiiiiiiiiii"] = function() {
+ return (dynCall_viiiiiiiiiii = Module["dynCall_viiiiiiiiiii"] = Module["asm"]["dynCall_viiiiiiiiiii"]).apply(null, arguments);
+};
+
+var dynCall_iiiiiidii = Module["dynCall_iiiiiidii"] = function() {
+ return (dynCall_iiiiiidii = Module["dynCall_iiiiiidii"] = Module["asm"]["dynCall_iiiiiidii"]).apply(null, arguments);
 };
 
 var dynCall_iiiiiii = Module["dynCall_iiiiiii"] = function() {
@@ -14395,6 +14435,38 @@ var dynCall_iiiiji = Module["dynCall_iiiiji"] = function() {
  return (dynCall_iiiiji = Module["dynCall_iiiiji"] = Module["asm"]["dynCall_iiiiji"]).apply(null, arguments);
 };
 
+var dynCall_di = Module["dynCall_di"] = function() {
+ return (dynCall_di = Module["dynCall_di"] = Module["asm"]["dynCall_di"]).apply(null, arguments);
+};
+
+var dynCall_viidddii = Module["dynCall_viidddii"] = function() {
+ return (dynCall_viidddii = Module["dynCall_viidddii"] = Module["asm"]["dynCall_viidddii"]).apply(null, arguments);
+};
+
+var dynCall_vid = Module["dynCall_vid"] = function() {
+ return (dynCall_vid = Module["dynCall_vid"] = Module["asm"]["dynCall_vid"]).apply(null, arguments);
+};
+
+var dynCall_vidd = Module["dynCall_vidd"] = function() {
+ return (dynCall_vidd = Module["dynCall_vidd"] = Module["asm"]["dynCall_vidd"]).apply(null, arguments);
+};
+
+var dynCall_viff = Module["dynCall_viff"] = function() {
+ return (dynCall_viff = Module["dynCall_viff"] = Module["asm"]["dynCall_viff"]).apply(null, arguments);
+};
+
+var dynCall_viid = Module["dynCall_viid"] = function() {
+ return (dynCall_viid = Module["dynCall_viid"] = Module["asm"]["dynCall_viid"]).apply(null, arguments);
+};
+
+var dynCall_fii = Module["dynCall_fii"] = function() {
+ return (dynCall_fii = Module["dynCall_fii"] = Module["asm"]["dynCall_fii"]).apply(null, arguments);
+};
+
+var dynCall_dii = Module["dynCall_dii"] = function() {
+ return (dynCall_dii = Module["dynCall_dii"] = Module["asm"]["dynCall_dii"]).apply(null, arguments);
+};
+
 var dynCall_j = Module["dynCall_j"] = function() {
  return (dynCall_j = Module["dynCall_j"] = Module["asm"]["dynCall_j"]).apply(null, arguments);
 };
@@ -14403,40 +14475,24 @@ var dynCall_fi = Module["dynCall_fi"] = function() {
  return (dynCall_fi = Module["dynCall_fi"] = Module["asm"]["dynCall_fi"]).apply(null, arguments);
 };
 
-var dynCall_vif = Module["dynCall_vif"] = function() {
- return (dynCall_vif = Module["dynCall_vif"] = Module["asm"]["dynCall_vif"]).apply(null, arguments);
-};
-
-var dynCall_viff = Module["dynCall_viff"] = function() {
- return (dynCall_viff = Module["dynCall_viff"] = Module["asm"]["dynCall_viff"]).apply(null, arguments);
-};
-
-var dynCall_vifff = Module["dynCall_vifff"] = function() {
- return (dynCall_vifff = Module["dynCall_vifff"] = Module["asm"]["dynCall_vifff"]).apply(null, arguments);
-};
-
 var dynCall_viiffifj = Module["dynCall_viiffifj"] = function() {
  return (dynCall_viiffifj = Module["dynCall_viiffifj"] = Module["asm"]["dynCall_viiffifj"]).apply(null, arguments);
-};
-
-var dynCall_viiiffifj = Module["dynCall_viiiffifj"] = function() {
- return (dynCall_viiiffifj = Module["dynCall_viiiffifj"] = Module["asm"]["dynCall_viiiffifj"]).apply(null, arguments);
 };
 
 var dynCall_viiffifffj = Module["dynCall_viiffifffj"] = function() {
  return (dynCall_viiffifffj = Module["dynCall_viiffifffj"] = Module["asm"]["dynCall_viiffifffj"]).apply(null, arguments);
 };
 
-var dynCall_viiiffifffj = Module["dynCall_viiiffifffj"] = function() {
- return (dynCall_viiiffifffj = Module["dynCall_viiiffifffj"] = Module["asm"]["dynCall_viiiffifffj"]).apply(null, arguments);
+var dynCall_vif = Module["dynCall_vif"] = function() {
+ return (dynCall_vif = Module["dynCall_vif"] = Module["asm"]["dynCall_vif"]).apply(null, arguments);
 };
 
 var dynCall_viif = Module["dynCall_viif"] = function() {
  return (dynCall_viif = Module["dynCall_viif"] = Module["asm"]["dynCall_viif"]).apply(null, arguments);
 };
 
-var dynCall_fii = Module["dynCall_fii"] = function() {
- return (dynCall_fii = Module["dynCall_fii"] = Module["asm"]["dynCall_fii"]).apply(null, arguments);
+var dynCall_fid = Module["dynCall_fid"] = function() {
+ return (dynCall_fid = Module["dynCall_fid"] = Module["asm"]["dynCall_fid"]).apply(null, arguments);
 };
 
 var dynCall_vf = Module["dynCall_vf"] = function() {
@@ -14449,6 +14505,10 @@ var dynCall_vff = Module["dynCall_vff"] = function() {
 
 var dynCall_vfi = Module["dynCall_vfi"] = function() {
  return (dynCall_vfi = Module["dynCall_vfi"] = Module["asm"]["dynCall_vfi"]).apply(null, arguments);
+};
+
+var dynCall_vifff = Module["dynCall_vifff"] = function() {
+ return (dynCall_vifff = Module["dynCall_vifff"] = Module["asm"]["dynCall_vifff"]).apply(null, arguments);
 };
 
 var dynCall_viffff = Module["dynCall_viffff"] = function() {
@@ -14487,8 +14547,6 @@ var dynCall_iiiiiijj = Module["dynCall_iiiiiijj"] = function() {
  return (dynCall_iiiiiijj = Module["dynCall_iiiiiijj"] = Module["asm"]["dynCall_iiiiiijj"]).apply(null, arguments);
 };
 
-var __emscripten_allow_main_runtime_queued_calls = Module["__emscripten_allow_main_runtime_queued_calls"] = 332152;
-
 function invoke_vii(index, a1, a2) {
  var sp = stackSave();
  try {
@@ -14518,23 +14576,11 @@ Module["FS_unlink"] = FS.unlink;
 
 Module["keepRuntimeAlive"] = keepRuntimeAlive;
 
-Module["PThread"] = PThread;
-
-Module["PThread"] = PThread;
-
 Module["wasmMemory"] = wasmMemory;
 
 Module["ExitStatus"] = ExitStatus;
 
 var calledRun;
-
-function ExitStatus(status) {
- this.name = "ExitStatus";
- this.message = "Program terminated with exit(" + status + ")";
- this.status = status;
-}
-
-var calledMain = false;
 
 dependenciesFulfilled = function runCaller() {
  if (!calledRun) run();
@@ -14544,21 +14590,20 @@ dependenciesFulfilled = function runCaller() {
 function callMain(args) {
  var entryFunction = Module["_main"];
  args = args || [];
- var argc = args.length + 1;
+ args.unshift(thisProgram);
+ var argc = args.length;
  var argv = stackAlloc((argc + 1) * 4);
- GROWABLE_HEAP_I32()[argv >>> 2] = allocateUTF8OnStack(thisProgram);
- for (var i = 1; i < argc; i++) {
-  GROWABLE_HEAP_I32()[(argv >> 2) + i >>> 0] = allocateUTF8OnStack(args[i - 1]);
- }
- GROWABLE_HEAP_I32()[(argv >> 2) + argc >>> 0] = 0;
+ var argv_ptr = argv >> 2;
+ args.forEach(arg => {
+  GROWABLE_HEAP_I32()[argv_ptr++ >>> 0] = allocateUTF8OnStack(arg);
+ });
+ GROWABLE_HEAP_I32()[argv_ptr >>> 0] = 0;
  try {
   var ret = entryFunction(argc, argv);
-  exit(ret, true);
+  exitJS(ret, true);
   return ret;
  } catch (e) {
   return handleException(e);
- } finally {
-  calledMain = true;
  }
 }
 
@@ -14600,29 +14645,6 @@ function run(args) {
  } else {
   doRun();
  }
-}
-
-Module["run"] = run;
-
-function exit(status, implicit) {
- EXITSTATUS = status;
- if (!implicit) {
-  if (ENVIRONMENT_IS_PTHREAD) {
-   exitOnMainThread(status);
-   throw "unwind";
-  } else {}
- }
- procExit(status);
-}
-
-function procExit(code) {
- EXITSTATUS = code;
- if (!keepRuntimeAlive()) {
-  PThread.terminateAllThreads();
-  if (Module["onExit"]) Module["onExit"](code);
-  ABORT = true;
- }
- quit_(code, new ExitStatus(code));
 }
 
 if (Module["preInit"]) {
