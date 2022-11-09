@@ -152,28 +152,6 @@ Module.expectedDataFileDownloads++;
    }
    Module["FS_createPath"]("/", "data", true, true);
    Module["FS_createPath"]("/data", "ZGUI", true, true);
-   Module["FS_createPath"]("/data/ZGUI", "CocosProject", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject", "cocosstudio", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio", "BNUI", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio", "Default", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default", "effekseer", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default/effekseer", "Texture", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default", "live2d", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default/live2d", "Hiyori", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori", "Hiyori.2048", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori", "motions", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default", "materials", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default", "scripts", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default", "spine", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default/spine", "Button_girl", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Default", "textures", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio", "Resources", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Resources", "TongYong2", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2", "AnNiu", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2/AnNiu", "JiChu", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2", "ChuangTi", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2/ChuangTi", "2_3Ji", true, true);
-   Module["FS_createPath"]("/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2", "TuDi", true, true);
    Module["FS_createPath"]("/data/ZGUI", "Font", true, true);
    Module["FS_createPath"]("/data/ZGUI", "Image", true, true);
    Module["FS_createPath"]("/data/ZGUI", "Lua", true, true);
@@ -269,1943 +247,1543 @@ Module.expectedDataFileDownloads++;
  };
  loadPackage({
   "files": [ {
-   "filename": "/data/ZGUI/CocosProject/CocosProject.ccs",
-   "start": 0,
-   "end": 1294
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/BNUI/BNUIDebugDlg.csd",
-   "start": 1294,
-   "end": 14857
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/BNUI/TestFile.csb",
-   "start": 14857,
-   "end": 21273
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/BNUI/TestFile.csd",
-   "start": 21273,
-   "end": 34948
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/BNUI/TestFile_0.csd",
-   "start": 34948,
-   "end": 48514
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Button_Disable.png",
-   "start": 48514,
-   "end": 49625
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Button_Normal.png",
-   "start": 49625,
-   "end": 50738
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Button_Press.png",
-   "start": 50738,
-   "end": 51891
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/CheckBoxNode_Disable.png",
-   "start": 51891,
-   "end": 53122
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/CheckBoxNode_Normal.png",
-   "start": 53122,
-   "end": 54363
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/CheckBox_Disable.png",
-   "start": 54363,
-   "end": 55567
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/CheckBox_Normal.png",
-   "start": 55567,
-   "end": 56771
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/CheckBox_Press.png",
-   "start": 56771,
-   "end": 58014
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/DemoPlayer.ExportJson",
-   "start": 58014,
-   "end": 103521
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/DemoPlayer0.plist",
-   "start": 103521,
-   "end": 108051
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/DemoPlayer0.png",
-   "start": 108051,
-   "end": 121369
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/ImageFile.png",
-   "start": 121369,
-   "end": 123104
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Light_Ambint.png",
-   "start": 123104,
-   "end": 124378
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Light_Directional.png",
-   "start": 124378,
-   "end": 125516
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Light_Point.png",
-   "start": 125516,
-   "end": 126870
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Light_Spot.png",
-   "start": 126870,
-   "end": 128124
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/LoadingBarFile.png",
-   "start": 128124,
-   "end": 129239
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Slice3D.png",
-   "start": 129239,
-   "end": 131012
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/SliderNode_Disable.png",
-   "start": 131012,
-   "end": 132687
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/SliderNode_Normal.png",
-   "start": 132687,
-   "end": 134365
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/SliderNode_Press.png",
-   "start": 134365,
-   "end": 135932
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Slider_Back.png",
-   "start": 135932,
-   "end": 137098
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Slider_PressBar.png",
-   "start": 137098,
-   "end": 138185
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Sprite.png",
-   "start": 138185,
-   "end": 139958
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/Sprite3D.png",
-   "start": 139958,
-   "end": 141731
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/TextAtlas.png",
-   "start": 141731,
-   "end": 144852
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/alpha.png",
-   "start": 144852,
-   "end": 147642
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/arrowX.png",
-   "start": 147642,
-   "end": 148671
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/arrowY.png",
-   "start": 148671,
-   "end": 149711
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/arrowZ.png",
-   "start": 149711,
-   "end": 150706
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/camera.c3b",
-   "start": 150706,
-   "end": 160678
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/defaultBMFont.fnt",
-   "start": 160678,
-   "end": 189869
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/defaultBMFont.png",
-   "start": 189869,
-   "end": 304046
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/defaultMap.png",
-   "start": 304046,
-   "end": 321279
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/defaultMap.tmx",
-   "start": 321279,
-   "end": 321701
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/defaultParticle.plist",
-   "start": 321701,
-   "end": 329830
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Homing_Laser01.efk",
-   "start": 329830,
-   "end": 330900
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Simple_Distortion.efk",
-   "start": 330900,
-   "end": 333094
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Burst01.png",
-   "start": 333094,
-   "end": 368277
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Cloud01.png",
-   "start": 368277,
-   "end": 388934
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Flame01.png",
-   "start": 388934,
-   "end": 402056
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/LaserMain01.png",
-   "start": 402056,
-   "end": 407535
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/LaserMain02.png",
-   "start": 407535,
-   "end": 409727
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle01.png",
-   "start": 409727,
-   "end": 416809
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle02.png",
-   "start": 416809,
-   "end": 424039
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle03.png",
-   "start": 424039,
-   "end": 434988
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle04_bokashi_hard.png",
-   "start": 434988,
-   "end": 449120
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle04_bokashi_soft.png",
-   "start": 449120,
-   "end": 464470
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle04_bokashistrong_hard.png",
-   "start": 464470,
-   "end": 477593
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle04_bokashistrong_soft.png",
-   "start": 477593,
-   "end": 492238
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle04_clear_hard.png",
-   "start": 492238,
-   "end": 505784
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Particle04_clear_soft.png",
-   "start": 505784,
-   "end": 520217
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Splash01.png",
-   "start": 520217,
-   "end": 588558
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/SwordLine01.png",
-   "start": 588558,
-   "end": 595051
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Thunder01.png",
-   "start": 595051,
-   "end": 615049
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/Wind01.png",
-   "start": 615049,
-   "end": 625614
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/effekseer/Texture/wind02.png",
-   "start": 625614,
-   "end": 659051
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/empty.c3t",
-   "start": 659051,
-   "end": 663246
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/Hiyori.2048/texture_00.png",
-   "start": 663246,
-   "end": 2488832
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/Hiyori.2048/texture_01.png",
-   "start": 2488832,
-   "end": 5000934
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/Hiyori.moc3",
-   "start": 5000934,
-   "end": 5444326
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/Hiyori.model3.json",
-   "start": 5444326,
-   "end": 5446025
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/Hiyori.physics3.json",
-   "start": 5446025,
-   "end": 5472189
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/Hiyori.pose3.json",
-   "start": 5472189,
-   "end": 5472355
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/Hiyori.userdata3.json",
-   "start": 5472355,
-   "end": 5472978
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m01.motion3.json",
-   "start": 5472978,
-   "end": 5483680
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m02.motion3.json",
-   "start": 5483680,
-   "end": 5497939
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m03.motion3.json",
-   "start": 5497939,
-   "end": 5510747
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m04.motion3.json",
-   "start": 5510747,
-   "end": 5519538
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m05.motion3.json",
-   "start": 5519538,
-   "end": 5535544
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m06.motion3.json",
-   "start": 5535544,
-   "end": 5554983
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m07.motion3.json",
-   "start": 5554983,
-   "end": 5564693
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m08.motion3.json",
-   "start": 5564693,
-   "end": 5575332
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m09.motion3.json",
-   "start": 5575332,
-   "end": 5586887
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/live2d/Hiyori/motions/Hiyori_m10.motion3.json",
-   "start": 5586887,
-   "end": 5596434
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/materials/default.material",
-   "start": 5596434,
-   "end": 5596732
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/missing-font.fnt",
-   "start": 5596732,
-   "end": 5621830
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/missing-font.png",
-   "start": 5621830,
-   "end": 5732670
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/missing.png",
-   "start": 5732670,
-   "end": 5741244
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/scripts/default.pu",
-   "start": 5741244,
-   "end": 5741968
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/skeleton.png",
-   "start": 5741968,
-   "end": 5743514
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/skeleton@2x.png",
-   "start": 5743514,
-   "end": 5745693
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/skybox.png",
-   "start": 5745693,
-   "end": 5748571
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/spine/Button_girl/anniu.atlas",
-   "start": 5748571,
-   "end": 5749111
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/spine/Button_girl/anniu.json",
-   "start": 5749111,
-   "end": 5846889
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/spine/Button_girl/anniu.png",
-   "start": 5846889,
-   "end": 5856653
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/textures/default.png",
-   "start": 5856653,
-   "end": 5886553
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Default/white.png",
-   "start": 5886553,
-   "end": 5886672
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2/AnNiu/JiChu/TongYong2_AnNiu_JiChu_Btn_1Ji_Lv.png",
-   "start": 5886672,
-   "end": 5891622
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2/AnNiu/JiChu/TongYong2_AnNiu_JiChu_Btn_2Ji.png",
-   "start": 5891622,
-   "end": 5894727
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2/AnNiu/JiChu/TongYong2_AnNiu_JiChu_Btn_GuanBi_3Ji.png",
-   "start": 5894727,
-   "end": 5901019
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2/ChuangTi/2_3Ji/TongYong2_ChuangTi_2_3Ji_Pnl_2Ji.png",
-   "start": 5901019,
-   "end": 5936401
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2/TuDi/TongYong2_TuDi_FenKuaiMian.png",
-   "start": 5936401,
-   "end": 5940336
-  }, {
-   "filename": "/data/ZGUI/CocosProject/cocosstudio/Resources/TongYong2/TuDi/TongYong2_TuDi_WenBenKuang.png",
-   "start": 5940336,
-   "end": 5941494
-  }, {
    "filename": "/data/ZGUI/Font/chinese.msyh.ttf",
-   "start": 5941494,
-   "end": 20985936
+   "start": 0,
+   "end": 15044442
   }, {
    "filename": "/data/ZGUI/Font/zpix.ttf",
-   "start": 20985936,
-   "end": 25666284
+   "start": 15044442,
+   "end": 19724790
   }, {
    "filename": "/data/ZGUI/Image/CalibrationFloorDiffuse.png",
-   "start": 25666284,
-   "end": 26223106
+   "start": 19724790,
+   "end": 20281612
   }, {
    "filename": "/data/ZGUI/Image/CalibrationGreyscaleDarkDiffuse.png",
-   "start": 26223106,
-   "end": 26234076
+   "start": 20281612,
+   "end": 20292582
   }, {
    "filename": "/data/ZGUI/Image/CalibrationGreyscaleLightDiffuse.png",
-   "start": 26234076,
-   "end": 26244916
+   "start": 20292582,
+   "end": 20303422
   }, {
    "filename": "/data/ZGUI/Image/CalibrationRulerDiffuse.png",
-   "start": 26244916,
-   "end": 26318611
+   "start": 20303422,
+   "end": 20377117
   }, {
    "filename": "/data/ZGUI/Image/CalibrationRulerDiffuse_1.png",
-   "start": 26318611,
-   "end": 26385767
+   "start": 20377117,
+   "end": 20444273
   }, {
    "filename": "/data/ZGUI/Image/Daisy.png",
-   "start": 26385767,
-   "end": 27086083
+   "start": 20444273,
+   "end": 21144589
   }, {
    "filename": "/data/ZGUI/Image/Daisy_debug.png",
-   "start": 27086083,
-   "end": 27630647
+   "start": 21144589,
+   "end": 21689153
   }, {
    "filename": "/data/ZGUI/Image/Galaxy.png",
-   "start": 27630647,
-   "end": 28830859
+   "start": 21689153,
+   "end": 22889365
   }, {
    "filename": "/data/ZGUI/Image/c0.png",
-   "start": 28830859,
-   "end": 28831552
+   "start": 22889365,
+   "end": 22890058
   }, {
    "filename": "/data/ZGUI/Image/c1.png",
-   "start": 28831552,
-   "end": 28832252
+   "start": 22890058,
+   "end": 22890758
   }, {
    "filename": "/data/ZGUI/Image/c2.png",
-   "start": 28832252,
-   "end": 28832928
+   "start": 22890758,
+   "end": 22891434
   }, {
    "filename": "/data/ZGUI/Image/c3.png",
-   "start": 28832928,
-   "end": 28833631
+   "start": 22891434,
+   "end": 22892137
   }, {
    "filename": "/data/ZGUI/Image/c4.png",
-   "start": 28833631,
-   "end": 28834326
+   "start": 22892137,
+   "end": 22892832
   }, {
    "filename": "/data/ZGUI/Image/c5.png",
-   "start": 28834326,
-   "end": 28837367
+   "start": 22892832,
+   "end": 22895873
   }, {
    "filename": "/data/ZGUI/Image/c6.png",
-   "start": 28837367,
-   "end": 28838394
+   "start": 22895873,
+   "end": 22896900
   }, {
    "filename": "/data/ZGUI/Image/c7.png",
-   "start": 28838394,
-   "end": 28839090
+   "start": 22896900,
+   "end": 22897596
   }, {
    "filename": "/data/ZGUI/Image/ca1.png",
-   "start": 28839090,
-   "end": 28839624
+   "start": 22897596,
+   "end": 22898130
   }, {
    "filename": "/data/ZGUI/Image/ca10.png",
-   "start": 28839624,
-   "end": 28840182
+   "start": 22898130,
+   "end": 22898688
   }, {
    "filename": "/data/ZGUI/Image/ca2.png",
-   "start": 28840182,
-   "end": 28840758
+   "start": 22898688,
+   "end": 22899264
   }, {
    "filename": "/data/ZGUI/Image/ca3.png",
-   "start": 28840758,
-   "end": 28841374
+   "start": 22899264,
+   "end": 22899880
   }, {
    "filename": "/data/ZGUI/Image/ca4.png",
-   "start": 28841374,
-   "end": 28842029
+   "start": 22899880,
+   "end": 22900535
   }, {
    "filename": "/data/ZGUI/Image/ca5.png",
-   "start": 28842029,
-   "end": 28842684
+   "start": 22900535,
+   "end": 22901190
   }, {
    "filename": "/data/ZGUI/Image/ca6.png",
-   "start": 28842684,
-   "end": 28843339
+   "start": 22901190,
+   "end": 22901845
   }, {
    "filename": "/data/ZGUI/Image/ca7.png",
-   "start": 28843339,
-   "end": 28843998
+   "start": 22901845,
+   "end": 22902504
   }, {
    "filename": "/data/ZGUI/Image/ca8.png",
-   "start": 28843998,
-   "end": 28844632
+   "start": 22902504,
+   "end": 22903138
   }, {
    "filename": "/data/ZGUI/Image/ca9.png",
-   "start": 28844632,
-   "end": 28845225
+   "start": 22903138,
+   "end": 22903731
   }, {
    "filename": "/data/ZGUI/Image/cf.png",
-   "start": 28845225,
-   "end": 28846438
+   "start": 22903731,
+   "end": 22904944
   }, {
    "filename": "/data/ZGUI/Image/cff.png",
-   "start": 28846438,
-   "end": 28847869
+   "start": 22904944,
+   "end": 22906375
   }, {
    "filename": "/data/ZGUI/Image/e1.png",
-   "start": 28847869,
-   "end": 28849796
+   "start": 22906375,
+   "end": 22908302
   }, {
    "filename": "/data/ZGUI/Image/e10.png",
-   "start": 28849796,
-   "end": 28851757
+   "start": 22908302,
+   "end": 22910263
   }, {
    "filename": "/data/ZGUI/Image/e11.png",
-   "start": 28851757,
-   "end": 28853724
+   "start": 22910263,
+   "end": 22912230
   }, {
    "filename": "/data/ZGUI/Image/e12.png",
-   "start": 28853724,
-   "end": 28855683
+   "start": 22912230,
+   "end": 22914189
   }, {
    "filename": "/data/ZGUI/Image/e13.png",
-   "start": 28855683,
-   "end": 28857653
+   "start": 22914189,
+   "end": 22916159
   }, {
    "filename": "/data/ZGUI/Image/e14.png",
-   "start": 28857653,
-   "end": 28859669
+   "start": 22916159,
+   "end": 22918175
   }, {
    "filename": "/data/ZGUI/Image/e15.png",
-   "start": 28859669,
-   "end": 28861633
+   "start": 22918175,
+   "end": 22920139
   }, {
    "filename": "/data/ZGUI/Image/e16.png",
-   "start": 28861633,
-   "end": 28863574
+   "start": 22920139,
+   "end": 22922080
   }, {
    "filename": "/data/ZGUI/Image/e17.png",
-   "start": 28863574,
-   "end": 28865497
+   "start": 22922080,
+   "end": 22924003
   }, {
    "filename": "/data/ZGUI/Image/e18.png",
-   "start": 28865497,
-   "end": 28867415
+   "start": 22924003,
+   "end": 22925921
   }, {
    "filename": "/data/ZGUI/Image/e19.png",
-   "start": 28867415,
-   "end": 28869336
+   "start": 22925921,
+   "end": 22927842
   }, {
    "filename": "/data/ZGUI/Image/e2.png",
-   "start": 28869336,
-   "end": 28871266
+   "start": 22927842,
+   "end": 22929772
   }, {
    "filename": "/data/ZGUI/Image/e20.png",
-   "start": 28871266,
-   "end": 28873197
+   "start": 22929772,
+   "end": 22931703
   }, {
    "filename": "/data/ZGUI/Image/e21.png",
-   "start": 28873197,
-   "end": 28875105
+   "start": 22931703,
+   "end": 22933611
   }, {
    "filename": "/data/ZGUI/Image/e22.png",
-   "start": 28875105,
-   "end": 28877050
+   "start": 22933611,
+   "end": 22935556
   }, {
    "filename": "/data/ZGUI/Image/e23.png",
-   "start": 28877050,
-   "end": 28879001
+   "start": 22935556,
+   "end": 22937507
   }, {
    "filename": "/data/ZGUI/Image/e24.png",
-   "start": 28879001,
-   "end": 28880925
+   "start": 22937507,
+   "end": 22939431
   }, {
    "filename": "/data/ZGUI/Image/e25.png",
-   "start": 28880925,
-   "end": 28882854
+   "start": 22939431,
+   "end": 22941360
   }, {
    "filename": "/data/ZGUI/Image/e26.png",
-   "start": 28882854,
-   "end": 28884750
+   "start": 22941360,
+   "end": 22943256
   }, {
    "filename": "/data/ZGUI/Image/e27.png",
-   "start": 28884750,
-   "end": 28886628
+   "start": 22943256,
+   "end": 22945134
   }, {
    "filename": "/data/ZGUI/Image/e28.png",
-   "start": 28886628,
-   "end": 28888499
+   "start": 22945134,
+   "end": 22947005
   }, {
    "filename": "/data/ZGUI/Image/e29.png",
-   "start": 28888499,
-   "end": 28890369
+   "start": 22947005,
+   "end": 22948875
   }, {
    "filename": "/data/ZGUI/Image/e3.png",
-   "start": 28890369,
-   "end": 28892276
+   "start": 22948875,
+   "end": 22950782
   }, {
    "filename": "/data/ZGUI/Image/e30.png",
-   "start": 28892276,
-   "end": 28894166
+   "start": 22950782,
+   "end": 22952672
   }, {
    "filename": "/data/ZGUI/Image/e31.png",
-   "start": 28894166,
-   "end": 28896062
+   "start": 22952672,
+   "end": 22954568
   }, {
    "filename": "/data/ZGUI/Image/e32.png",
-   "start": 28896062,
-   "end": 28897936
+   "start": 22954568,
+   "end": 22956442
   }, {
    "filename": "/data/ZGUI/Image/e33.png",
-   "start": 28897936,
-   "end": 28899802
+   "start": 22956442,
+   "end": 22958308
   }, {
    "filename": "/data/ZGUI/Image/e34.png",
-   "start": 28899802,
-   "end": 28901688
+   "start": 22958308,
+   "end": 22960194
   }, {
    "filename": "/data/ZGUI/Image/e35.png",
-   "start": 28901688,
-   "end": 28903617
+   "start": 22960194,
+   "end": 22962123
   }, {
    "filename": "/data/ZGUI/Image/e36.png",
-   "start": 28903617,
-   "end": 28905514
+   "start": 22962123,
+   "end": 22964020
   }, {
    "filename": "/data/ZGUI/Image/e37.png",
-   "start": 28905514,
-   "end": 28907396
+   "start": 22964020,
+   "end": 22965902
   }, {
    "filename": "/data/ZGUI/Image/e38.png",
-   "start": 28907396,
-   "end": 28909315
+   "start": 22965902,
+   "end": 22967821
   }, {
    "filename": "/data/ZGUI/Image/e39.png",
-   "start": 28909315,
-   "end": 28911214
+   "start": 22967821,
+   "end": 22969720
   }, {
    "filename": "/data/ZGUI/Image/e4.png",
-   "start": 28911214,
-   "end": 28913091
+   "start": 22969720,
+   "end": 22971597
   }, {
    "filename": "/data/ZGUI/Image/e40.png",
-   "start": 28913091,
-   "end": 28914930
+   "start": 22971597,
+   "end": 22973436
   }, {
    "filename": "/data/ZGUI/Image/e41.png",
-   "start": 28914930,
-   "end": 28916779
+   "start": 22973436,
+   "end": 22975285
   }, {
    "filename": "/data/ZGUI/Image/e42.png",
-   "start": 28916779,
-   "end": 28918566
+   "start": 22975285,
+   "end": 22977072
   }, {
    "filename": "/data/ZGUI/Image/e43.png",
-   "start": 28918566,
-   "end": 28920357
+   "start": 22977072,
+   "end": 22978863
   }, {
    "filename": "/data/ZGUI/Image/e44.png",
-   "start": 28920357,
-   "end": 28922186
+   "start": 22978863,
+   "end": 22980692
   }, {
    "filename": "/data/ZGUI/Image/e45.png",
-   "start": 28922186,
-   "end": 28924014
+   "start": 22980692,
+   "end": 22982520
   }, {
    "filename": "/data/ZGUI/Image/e46.png",
-   "start": 28924014,
-   "end": 28925759
+   "start": 22982520,
+   "end": 22984265
   }, {
    "filename": "/data/ZGUI/Image/e47.png",
-   "start": 28925759,
-   "end": 28927484
+   "start": 22984265,
+   "end": 22985990
   }, {
    "filename": "/data/ZGUI/Image/e48.png",
-   "start": 28927484,
-   "end": 28929225
+   "start": 22985990,
+   "end": 22987731
   }, {
    "filename": "/data/ZGUI/Image/e49.png",
-   "start": 28929225,
-   "end": 28930936
+   "start": 22987731,
+   "end": 22989442
   }, {
    "filename": "/data/ZGUI/Image/e5.png",
-   "start": 28930936,
-   "end": 28932837
+   "start": 22989442,
+   "end": 22991343
   }, {
    "filename": "/data/ZGUI/Image/e50.png",
-   "start": 28932837,
-   "end": 28934609
+   "start": 22991343,
+   "end": 22993115
   }, {
    "filename": "/data/ZGUI/Image/e51.png",
-   "start": 28934609,
-   "end": 28936400
+   "start": 22993115,
+   "end": 22994906
   }, {
    "filename": "/data/ZGUI/Image/e52.png",
-   "start": 28936400,
-   "end": 28938208
+   "start": 22994906,
+   "end": 22996714
   }, {
    "filename": "/data/ZGUI/Image/e53.png",
-   "start": 28938208,
-   "end": 28940039
+   "start": 22996714,
+   "end": 22998545
   }, {
    "filename": "/data/ZGUI/Image/e54.png",
-   "start": 28940039,
-   "end": 28941908
+   "start": 22998545,
+   "end": 23000414
   }, {
    "filename": "/data/ZGUI/Image/e55.png",
-   "start": 28941908,
-   "end": 28943790
+   "start": 23000414,
+   "end": 23002296
   }, {
    "filename": "/data/ZGUI/Image/e56.png",
-   "start": 28943790,
-   "end": 28945608
+   "start": 23002296,
+   "end": 23004114
   }, {
    "filename": "/data/ZGUI/Image/e57.png",
-   "start": 28945608,
-   "end": 28947463
+   "start": 23004114,
+   "end": 23005969
   }, {
    "filename": "/data/ZGUI/Image/e58.png",
-   "start": 28947463,
-   "end": 28949323
+   "start": 23005969,
+   "end": 23007829
   }, {
    "filename": "/data/ZGUI/Image/e59.png",
-   "start": 28949323,
-   "end": 28951158
+   "start": 23007829,
+   "end": 23009664
   }, {
    "filename": "/data/ZGUI/Image/e6.png",
-   "start": 28951158,
-   "end": 28953056
+   "start": 23009664,
+   "end": 23011562
   }, {
    "filename": "/data/ZGUI/Image/e60.png",
-   "start": 28953056,
-   "end": 28954921
+   "start": 23011562,
+   "end": 23013427
   }, {
    "filename": "/data/ZGUI/Image/e7.png",
-   "start": 28954921,
-   "end": 28956769
+   "start": 23013427,
+   "end": 23015275
   }, {
    "filename": "/data/ZGUI/Image/e8.png",
-   "start": 28956769,
-   "end": 28958668
+   "start": 23015275,
+   "end": 23017174
   }, {
    "filename": "/data/ZGUI/Image/e9.png",
-   "start": 28958668,
-   "end": 28960554
+   "start": 23017174,
+   "end": 23019060
   }, {
    "filename": "/data/ZGUI/Image/empty.png",
-   "start": 28960554,
-   "end": 28961421
+   "start": 23019060,
+   "end": 23019927
   }, {
    "filename": "/data/ZGUI/Image/resurrect-64-32x.png",
-   "start": 28961421,
-   "end": 28962223
+   "start": 23019927,
+   "end": 23020729
   }, {
    "filename": "/data/ZGUI/Lua/anim_card.lua",
-   "start": 28962223,
-   "end": 28963519
+   "start": 23020729,
+   "end": 23022025
   }, {
    "filename": "/data/ZGUI/Lua/anim_card2.lua",
-   "start": 28963519,
-   "end": 28964812
+   "start": 23022025,
+   "end": 23023318
   }, {
    "filename": "/data/ZGUI/Lua/anim_card_light.lua",
-   "start": 28964812,
-   "end": 28965428
+   "start": 23023318,
+   "end": 23023934
   }, {
    "filename": "/data/ZGUI/Lua/anim_planet.lua",
-   "start": 28965428,
-   "end": 28966403
+   "start": 23023934,
+   "end": 23024909
   }, {
    "filename": "/data/ZGUI/Lua/animation.lua",
-   "start": 28966403,
-   "end": 28967041
+   "start": 23024909,
+   "end": 23025547
   }, {
    "filename": "/data/ZGUI/Lua/animation_s.lua",
-   "start": 28967041,
-   "end": 28967272
+   "start": 23025547,
+   "end": 23025778
   }, {
    "filename": "/data/ZGUI/Lua/button.lua",
-   "start": 28967272,
-   "end": 28970017
+   "start": 23025778,
+   "end": 23028523
   }, {
    "filename": "/data/ZGUI/Lua/clickable.lua",
-   "start": 28970017,
-   "end": 28971743
+   "start": 23028523,
+   "end": 23030249
   }, {
    "filename": "/data/ZGUI/Lua/clip.lua",
-   "start": 28971743,
-   "end": 28972914
+   "start": 23030249,
+   "end": 23031420
   }, {
    "filename": "/data/ZGUI/Lua/clip_s.lua",
-   "start": 28972914,
-   "end": 28973136
+   "start": 23031420,
+   "end": 23031642
   }, {
    "filename": "/data/ZGUI/Lua/debug_panel.lua",
-   "start": 28973136,
-   "end": 28984268
+   "start": 23031642,
+   "end": 23042774
   }, {
    "filename": "/data/ZGUI/Lua/debug_panel_s.lua",
-   "start": 28984268,
-   "end": 28984503
+   "start": 23042774,
+   "end": 23043009
   }, {
    "filename": "/data/ZGUI/Lua/hittest.lua",
-   "start": 28984503,
-   "end": 28987365
+   "start": 23043009,
+   "end": 23045871
   }, {
    "filename": "/data/ZGUI/Lua/scene.lua",
-   "start": 28987365,
-   "end": 28990140
+   "start": 23045871,
+   "end": 23048646
   }, {
    "filename": "/data/ZGUI/Lua/screen.lua",
-   "start": 28990140,
-   "end": 28992902
+   "start": 23048646,
+   "end": 23051408
   }, {
    "filename": "/data/ZGUI/Lua/skeleton_hand_l.lua",
-   "start": 28992902,
-   "end": 28993098
+   "start": 23051408,
+   "end": 23051604
   }, {
    "filename": "/data/ZGUI/Lua/skeleton_hand_r.lua",
-   "start": 28993098,
-   "end": 28993294
+   "start": 23051604,
+   "end": 23051800
   }, {
    "filename": "/data/ZGUI/Lua/skeleton_head.lua",
-   "start": 28993294,
-   "end": 28993492
+   "start": 23051800,
+   "end": 23051998
   }, {
    "filename": "/data/ZGUI/Lua/test.lua",
-   "start": 28993492,
-   "end": 28997203
+   "start": 23051998,
+   "end": 23055709
   }, {
    "filename": "/data/ZGUI/Lua/text.lua",
-   "start": 28997203,
-   "end": 28999034
+   "start": 23055709,
+   "end": 23057540
   }, {
    "filename": "/data/ZGUI/Lua/text_s.lua",
-   "start": 28999034,
-   "end": 28999253
+   "start": 23057540,
+   "end": 23057759
   }, {
    "filename": "/data/ZGUI/Lua/text_sdf.lua",
-   "start": 28999253,
-   "end": 29001145
+   "start": 23057759,
+   "end": 23059651
   }, {
    "filename": "/data/ZGUI/Lua/z_object.lua",
-   "start": 29001145,
-   "end": 29002210
+   "start": 23059651,
+   "end": 23060716
   }, {
    "filename": "/data/ZGUI/Lua/zgui_anim.lua",
-   "start": 29002210,
-   "end": 29004454
-  }, {
-   "filename": "/data/ZGUI/_CopyTemplates.xml",
-   "start": 29004454,
-   "end": 29004551
+   "start": 23060716,
+   "end": 23062960
   }, {
    "filename": "/data/bgfx_shader/android/f_simple.bin",
-   "start": 29004551,
-   "end": 29004849
+   "start": 23062960,
+   "end": 23063258
   }, {
    "filename": "/data/bgfx_shader/android/f_zgui.bin",
-   "start": 29004849,
-   "end": 29006599
+   "start": 23063258,
+   "end": 23065008
   }, {
    "filename": "/data/bgfx_shader/android/v_simple.bin",
-   "start": 29006599,
-   "end": 29007034
+   "start": 23065008,
+   "end": 23065443
   }, {
    "filename": "/data/bgfx_shader/android/v_zgui.bin",
-   "start": 29007034,
-   "end": 29007733
+   "start": 23065443,
+   "end": 23066142
   }, {
    "filename": "/data/bgfx_shader/asmjs/f_simple.bin",
-   "start": 29007733,
-   "end": 29008031
+   "start": 23066142,
+   "end": 23066440
   }, {
    "filename": "/data/bgfx_shader/asmjs/f_zgui.bin",
-   "start": 29008031,
-   "end": 29009781
+   "start": 23066440,
+   "end": 23068190
   }, {
    "filename": "/data/bgfx_shader/asmjs/v_simple.bin",
-   "start": 29009781,
-   "end": 29010216
+   "start": 23068190,
+   "end": 23068625
   }, {
    "filename": "/data/bgfx_shader/asmjs/v_zgui.bin",
-   "start": 29010216,
-   "end": 29010915
+   "start": 23068625,
+   "end": 23069324
   }, {
    "filename": "/data/bgfx_shader/bgfx_shader.sh",
-   "start": 29010915,
-   "end": 29034507
+   "start": 23069324,
+   "end": 23092916
   }, {
    "filename": "/data/bgfx_shader/f_simple.sc",
-   "start": 29034507,
-   "end": 29034702
+   "start": 23092916,
+   "end": 23093111
   }, {
    "filename": "/data/bgfx_shader/f_zgui.sc",
-   "start": 29034702,
-   "end": 29035910
+   "start": 23093111,
+   "end": 23094319
   }, {
    "filename": "/data/bgfx_shader/ios/f_simple.bin",
-   "start": 29035910,
-   "end": 29036624
+   "start": 23094319,
+   "end": 23095033
   }, {
    "filename": "/data/bgfx_shader/ios/f_zgui.bin",
-   "start": 29036624,
-   "end": 29038470
+   "start": 23095033,
+   "end": 23096879
   }, {
    "filename": "/data/bgfx_shader/ios/v_simple.bin",
-   "start": 29038470,
-   "end": 29039272
+   "start": 23096879,
+   "end": 23097681
   }, {
    "filename": "/data/bgfx_shader/ios/v_zgui.bin",
-   "start": 29039272,
-   "end": 29040547
+   "start": 23097681,
+   "end": 23098956
   }, {
    "filename": "/data/bgfx_shader/osx/f_simple.bin",
-   "start": 29040547,
-   "end": 29041261
+   "start": 23098956,
+   "end": 23099670
   }, {
    "filename": "/data/bgfx_shader/osx/f_zgui.bin",
-   "start": 29041261,
-   "end": 29043107
+   "start": 23099670,
+   "end": 23101516
   }, {
    "filename": "/data/bgfx_shader/osx/v_simple.bin",
-   "start": 29043107,
-   "end": 29043909
+   "start": 23101516,
+   "end": 23102318
   }, {
    "filename": "/data/bgfx_shader/osx/v_zgui.bin",
-   "start": 29043909,
-   "end": 29045184
+   "start": 23102318,
+   "end": 23103593
   }, {
    "filename": "/data/bgfx_shader/v_simple.sc",
-   "start": 29045184,
-   "end": 29045424
+   "start": 23103593,
+   "end": 23103833
   }, {
    "filename": "/data/bgfx_shader/v_zgui.sc",
-   "start": 29045424,
-   "end": 29045887
+   "start": 23103833,
+   "end": 23104296
   }, {
    "filename": "/data/bgfx_shader/varying.def.sc",
-   "start": 29045887,
-   "end": 29046203
+   "start": 23104296,
+   "end": 23104612
   }, {
    "filename": "/data/bgfx_shader/windows.varying.def.sc",
-   "start": 29046203,
-   "end": 29046518
+   "start": 23104612,
+   "end": 23104927
   }, {
    "filename": "/data/bgfx_shader/windows/f_simple.bin",
-   "start": 29046518,
-   "end": 29046740
+   "start": 23104927,
+   "end": 23105149
   }, {
    "filename": "/data/bgfx_shader/windows/f_zgui.bin",
-   "start": 29046740,
-   "end": 29048404
+   "start": 23105149,
+   "end": 23106813
   }, {
    "filename": "/data/bgfx_shader/windows/v_simple.bin",
-   "start": 29048404,
-   "end": 29048759
+   "start": 23106813,
+   "end": 23107168
   }, {
    "filename": "/data/bgfx_shader/windows/v_zgui.bin",
-   "start": 29048759,
-   "end": 29049341
+   "start": 23107168,
+   "end": 23107750
   }, {
    "filename": "/data/font/zpix.ttf",
-   "start": 29049341,
-   "end": 33729689
+   "start": 23107750,
+   "end": 27788098
   }, {
    "filename": "/data/history.txt",
-   "start": 33729689,
-   "end": 33729690
+   "start": 27788098,
+   "end": 27788099
   }, {
    "filename": "/data/image/animation/blood/1.png",
-   "start": 33729690,
-   "end": 33730084
+   "start": 27788099,
+   "end": 27788493
   }, {
    "filename": "/data/image/animation/blood/10.png",
-   "start": 33730084,
-   "end": 33730591
+   "start": 27788493,
+   "end": 27789e3
   }, {
    "filename": "/data/image/animation/blood/11.png",
-   "start": 33730591,
-   "end": 33731028
+   "start": 27789e3,
+   "end": 27789437
   }, {
    "filename": "/data/image/animation/blood/12.png",
-   "start": 33731028,
-   "end": 33731466
+   "start": 27789437,
+   "end": 27789875
   }, {
    "filename": "/data/image/animation/blood/13.png",
-   "start": 33731466,
-   "end": 33731865
+   "start": 27789875,
+   "end": 27790274
   }, {
    "filename": "/data/image/animation/blood/14.png",
-   "start": 33731865,
-   "end": 33732253
+   "start": 27790274,
+   "end": 27790662
   }, {
    "filename": "/data/image/animation/blood/15.png",
-   "start": 33732253,
-   "end": 33732619
+   "start": 27790662,
+   "end": 27791028
   }, {
    "filename": "/data/image/animation/blood/16.png",
-   "start": 33732619,
-   "end": 33732946
+   "start": 27791028,
+   "end": 27791355
   }, {
    "filename": "/data/image/animation/blood/17.png",
-   "start": 33732946,
-   "end": 33733273
+   "start": 27791355,
+   "end": 27791682
   }, {
    "filename": "/data/image/animation/blood/18.png",
-   "start": 33733273,
-   "end": 33733600
+   "start": 27791682,
+   "end": 27792009
   }, {
    "filename": "/data/image/animation/blood/19.png",
-   "start": 33733600,
-   "end": 33733927
+   "start": 27792009,
+   "end": 27792336
   }, {
    "filename": "/data/image/animation/blood/2.png",
-   "start": 33733927,
-   "end": 33734665
+   "start": 27792336,
+   "end": 27793074
   }, {
    "filename": "/data/image/animation/blood/20.png",
-   "start": 33734665,
-   "end": 33735002
+   "start": 27793074,
+   "end": 27793411
   }, {
    "filename": "/data/image/animation/blood/3.png",
-   "start": 33735002,
-   "end": 33735849
+   "start": 27793411,
+   "end": 27794258
   }, {
    "filename": "/data/image/animation/blood/4.png",
-   "start": 33735849,
-   "end": 33736763
+   "start": 27794258,
+   "end": 27795172
   }, {
    "filename": "/data/image/animation/blood/5.png",
-   "start": 33736763,
-   "end": 33737639
+   "start": 27795172,
+   "end": 27796048
   }, {
    "filename": "/data/image/animation/blood/6.png",
-   "start": 33737639,
-   "end": 33738404
+   "start": 27796048,
+   "end": 27796813
   }, {
    "filename": "/data/image/animation/blood/7.png",
-   "start": 33738404,
-   "end": 33739063
+   "start": 27796813,
+   "end": 27797472
   }, {
    "filename": "/data/image/animation/blood/8.png",
-   "start": 33739063,
-   "end": 33739660
+   "start": 27797472,
+   "end": 27798069
   }, {
    "filename": "/data/image/animation/blood/9.png",
-   "start": 33739660,
-   "end": 33740154
+   "start": 27798069,
+   "end": 27798563
   }, {
    "filename": "/data/image/animation/wizard/1.png",
-   "start": 33740154,
-   "end": 33741385
+   "start": 27798563,
+   "end": 27799794
   }, {
    "filename": "/data/image/animation/wizard/10.png",
-   "start": 33741385,
-   "end": 33742650
+   "start": 27799794,
+   "end": 27801059
   }, {
    "filename": "/data/image/animation/wizard/11.png",
-   "start": 33742650,
-   "end": 33743888
+   "start": 27801059,
+   "end": 27802297
   }, {
    "filename": "/data/image/animation/wizard/12.png",
-   "start": 33743888,
-   "end": 33745149
+   "start": 27802297,
+   "end": 27803558
   }, {
    "filename": "/data/image/animation/wizard/13.png",
-   "start": 33745149,
-   "end": 33746384
+   "start": 27803558,
+   "end": 27804793
   }, {
    "filename": "/data/image/animation/wizard/14.png",
-   "start": 33746384,
-   "end": 33747613
+   "start": 27804793,
+   "end": 27806022
   }, {
    "filename": "/data/image/animation/wizard/15.png",
-   "start": 33747613,
-   "end": 33748811
+   "start": 27806022,
+   "end": 27807220
   }, {
    "filename": "/data/image/animation/wizard/16.png",
-   "start": 33748811,
-   "end": 33750091
+   "start": 27807220,
+   "end": 27808500
   }, {
    "filename": "/data/image/animation/wizard/2.png",
-   "start": 33750091,
-   "end": 33751341
+   "start": 27808500,
+   "end": 27809750
   }, {
    "filename": "/data/image/animation/wizard/3.png",
-   "start": 33751341,
-   "end": 33752575
+   "start": 27809750,
+   "end": 27810984
   }, {
    "filename": "/data/image/animation/wizard/4.png",
-   "start": 33752575,
-   "end": 33753815
+   "start": 27810984,
+   "end": 27812224
   }, {
    "filename": "/data/image/animation/wizard/5.png",
-   "start": 33753815,
-   "end": 33755035
+   "start": 27812224,
+   "end": 27813444
   }, {
    "filename": "/data/image/animation/wizard/6.png",
-   "start": 33755035,
-   "end": 33756287
+   "start": 27813444,
+   "end": 27814696
   }, {
    "filename": "/data/image/animation/wizard/7.png",
-   "start": 33756287,
-   "end": 33757554
+   "start": 27814696,
+   "end": 27815963
   }, {
    "filename": "/data/image/animation/wizard/8.png",
-   "start": 33757554,
-   "end": 33758858
+   "start": 27815963,
+   "end": 27817267
   }, {
    "filename": "/data/image/animation/wizard/9.png",
-   "start": 33758858,
-   "end": 33760129
+   "start": 27817267,
+   "end": 27818538
   }, {
    "filename": "/data/image/flappy_duck/cactus.png",
-   "start": 33760129,
-   "end": 33760325
+   "start": 27818538,
+   "end": 27818734
   }, {
    "filename": "/data/image/flappy_duck/duck/down1.png",
-   "start": 33760325,
-   "end": 33760577
+   "start": 27818734,
+   "end": 27818986
   }, {
    "filename": "/data/image/flappy_duck/duck/down2.png",
-   "start": 33760577,
-   "end": 33760821
+   "start": 27818986,
+   "end": 27819230
   }, {
    "filename": "/data/image/flappy_duck/duck/up1.png",
-   "start": 33760821,
-   "end": 33761082
+   "start": 27819230,
+   "end": 27819491
   }, {
    "filename": "/data/image/flappy_duck/duck/up2.png",
-   "start": 33761082,
-   "end": 33761331
+   "start": 27819491,
+   "end": 27819740
   }, {
    "filename": "/data/image/flappy_duck/duck_head.png",
-   "start": 33761331,
-   "end": 33761623
+   "start": 27819740,
+   "end": 27820032
   }, {
    "filename": "/data/image/flappy_duck/skybg1.png",
-   "start": 33761623,
-   "end": 33762715
+   "start": 27820032,
+   "end": 27821124
   }, {
    "filename": "/data/image/flappy_duck/skybg2.png",
-   "start": 33762715,
-   "end": 33763472
+   "start": 27821124,
+   "end": 27821881
   }, {
    "filename": "/data/image/flappy_duck/stars.png",
-   "start": 33763472,
-   "end": 33764333
+   "start": 27821881,
+   "end": 27822742
   }, {
    "filename": "/data/image/font/-1.png",
-   "start": 33764333,
-   "end": 33764436
+   "start": 27822742,
+   "end": 27822845
   }, {
    "filename": "/data/image/font/100.png",
-   "start": 33764436,
-   "end": 33764543
+   "start": 27822845,
+   "end": 27822952
   }, {
    "filename": "/data/image/font/101.png",
-   "start": 33764543,
-   "end": 33764650
+   "start": 27822952,
+   "end": 27823059
   }, {
    "filename": "/data/image/font/102.png",
-   "start": 33764650,
-   "end": 33764750
+   "start": 27823059,
+   "end": 27823159
   }, {
    "filename": "/data/image/font/103.png",
-   "start": 33764750,
-   "end": 33764863
+   "start": 27823159,
+   "end": 27823272
   }, {
    "filename": "/data/image/font/104.png",
-   "start": 33764863,
-   "end": 33764967
+   "start": 27823272,
+   "end": 27823376
   }, {
    "filename": "/data/image/font/105.png",
-   "start": 33764967,
-   "end": 33765061
+   "start": 27823376,
+   "end": 27823470
   }, {
    "filename": "/data/image/font/106.png",
-   "start": 33765061,
-   "end": 33765167
+   "start": 27823470,
+   "end": 27823576
   }, {
    "filename": "/data/image/font/107.png",
-   "start": 33765167,
-   "end": 33765272
+   "start": 27823576,
+   "end": 27823681
   }, {
    "filename": "/data/image/font/108.png",
-   "start": 33765272,
-   "end": 33765360
+   "start": 27823681,
+   "end": 27823769
   }, {
    "filename": "/data/image/font/109.png",
-   "start": 33765360,
-   "end": 33765463
+   "start": 27823769,
+   "end": 27823872
   }, {
    "filename": "/data/image/font/110.png",
-   "start": 33765463,
-   "end": 33765563
+   "start": 27823872,
+   "end": 27823972
   }, {
    "filename": "/data/image/font/111.png",
-   "start": 33765563,
-   "end": 33765668
+   "start": 27823972,
+   "end": 27824077
   }, {
    "filename": "/data/image/font/112.png",
-   "start": 33765668,
-   "end": 33765776
+   "start": 27824077,
+   "end": 27824185
   }, {
    "filename": "/data/image/font/113.png",
-   "start": 33765776,
-   "end": 33765879
+   "start": 27824185,
+   "end": 27824288
   }, {
    "filename": "/data/image/font/114.png",
-   "start": 33765879,
-   "end": 33765979
+   "start": 27824288,
+   "end": 27824388
   }, {
    "filename": "/data/image/font/115.png",
-   "start": 33765979,
-   "end": 33766084
+   "start": 27824388,
+   "end": 27824493
   }, {
    "filename": "/data/image/font/116.png",
-   "start": 33766084,
-   "end": 33766177
+   "start": 27824493,
+   "end": 27824586
   }, {
    "filename": "/data/image/font/117.png",
-   "start": 33766177,
-   "end": 33766278
+   "start": 27824586,
+   "end": 27824687
   }, {
    "filename": "/data/image/font/118.png",
-   "start": 33766278,
-   "end": 33766379
+   "start": 27824687,
+   "end": 27824788
   }, {
    "filename": "/data/image/font/119.png",
-   "start": 33766379,
-   "end": 33766480
+   "start": 27824788,
+   "end": 27824889
   }, {
    "filename": "/data/image/font/120.png",
-   "start": 33766480,
-   "end": 33766593
+   "start": 27824889,
+   "end": 27825002
   }, {
    "filename": "/data/image/font/121.png",
-   "start": 33766593,
-   "end": 33766702
+   "start": 27825002,
+   "end": 27825111
   }, {
    "filename": "/data/image/font/122.png",
-   "start": 33766702,
-   "end": 33766814
+   "start": 27825111,
+   "end": 27825223
   }, {
    "filename": "/data/image/font/123.png",
-   "start": 33766814,
-   "end": 33766921
+   "start": 27825223,
+   "end": 27825330
   }, {
    "filename": "/data/image/font/124.png",
-   "start": 33766921,
-   "end": 33767010
+   "start": 27825330,
+   "end": 27825419
   }, {
    "filename": "/data/image/font/125.png",
-   "start": 33767010,
-   "end": 33767111
+   "start": 27825419,
+   "end": 27825520
   }, {
    "filename": "/data/image/font/126.png",
-   "start": 33767111,
-   "end": 33767208
+   "start": 27825520,
+   "end": 27825617
   }, {
    "filename": "/data/image/font/127.png",
-   "start": 33767208,
-   "end": 33767313
+   "start": 27825617,
+   "end": 27825722
   }, {
    "filename": "/data/image/font/32.png",
-   "start": 33767313,
-   "end": 33767391
+   "start": 27825722,
+   "end": 27825800
   }, {
    "filename": "/data/image/font/33.png",
-   "start": 33767391,
-   "end": 33767482
+   "start": 27825800,
+   "end": 27825891
   }, {
    "filename": "/data/image/font/34.png",
-   "start": 33767482,
-   "end": 33767577
+   "start": 27825891,
+   "end": 27825986
   }, {
    "filename": "/data/image/font/35.png",
-   "start": 33767577,
-   "end": 33767675
+   "start": 27825986,
+   "end": 27826084
   }, {
    "filename": "/data/image/font/36.png",
-   "start": 33767675,
-   "end": 33767790
+   "start": 27826084,
+   "end": 27826199
   }, {
    "filename": "/data/image/font/37.png",
-   "start": 33767790,
-   "end": 33767902
+   "start": 27826199,
+   "end": 27826311
   }, {
    "filename": "/data/image/font/38.png",
-   "start": 33767902,
-   "end": 33768013
+   "start": 27826311,
+   "end": 27826422
   }, {
    "filename": "/data/image/font/39.png",
-   "start": 33768013,
-   "end": 33768111
+   "start": 27826422,
+   "end": 27826520
   }, {
    "filename": "/data/image/font/40.png",
-   "start": 33768111,
-   "end": 33768210
+   "start": 27826520,
+   "end": 27826619
   }, {
    "filename": "/data/image/font/41.png",
-   "start": 33768210,
-   "end": 33768302
+   "start": 27826619,
+   "end": 27826711
   }, {
    "filename": "/data/image/font/42.png",
-   "start": 33768302,
-   "end": 33768413
+   "start": 27826711,
+   "end": 27826822
   }, {
    "filename": "/data/image/font/43.png",
-   "start": 33768413,
-   "end": 33768518
+   "start": 27826822,
+   "end": 27826927
   }, {
    "filename": "/data/image/font/44.png",
-   "start": 33768518,
-   "end": 33768614
+   "start": 27826927,
+   "end": 27827023
   }, {
    "filename": "/data/image/font/45.png",
-   "start": 33768614,
-   "end": 33768708
+   "start": 27827023,
+   "end": 27827117
   }, {
    "filename": "/data/image/font/46.png",
-   "start": 33768708,
-   "end": 33768795
+   "start": 27827117,
+   "end": 27827204
   }, {
    "filename": "/data/image/font/47.png",
-   "start": 33768795,
-   "end": 33768898
+   "start": 27827204,
+   "end": 27827307
   }, {
    "filename": "/data/image/font/48.png",
-   "start": 33768898,
-   "end": 33769002
+   "start": 27827307,
+   "end": 27827411
   }, {
    "filename": "/data/image/font/49.png",
-   "start": 33769002,
-   "end": 33769102
+   "start": 27827411,
+   "end": 27827511
   }, {
    "filename": "/data/image/font/50.png",
-   "start": 33769102,
-   "end": 33769208
+   "start": 27827511,
+   "end": 27827617
   }, {
    "filename": "/data/image/font/51.png",
-   "start": 33769208,
-   "end": 33769316
+   "start": 27827617,
+   "end": 27827725
   }, {
    "filename": "/data/image/font/52.png",
-   "start": 33769316,
-   "end": 33769424
+   "start": 27827725,
+   "end": 27827833
   }, {
    "filename": "/data/image/font/53.png",
-   "start": 33769424,
-   "end": 33769533
+   "start": 27827833,
+   "end": 27827942
   }, {
    "filename": "/data/image/font/54.png",
-   "start": 33769533,
-   "end": 33769647
+   "start": 27827942,
+   "end": 27828056
   }, {
    "filename": "/data/image/font/55.png",
-   "start": 33769647,
-   "end": 33769748
+   "start": 27828056,
+   "end": 27828157
   }, {
    "filename": "/data/image/font/56.png",
-   "start": 33769748,
-   "end": 33769854
+   "start": 27828157,
+   "end": 27828263
   }, {
    "filename": "/data/image/font/57.png",
-   "start": 33769854,
-   "end": 33769964
+   "start": 27828263,
+   "end": 27828373
   }, {
    "filename": "/data/image/font/58.png",
-   "start": 33769964,
-   "end": 33770055
+   "start": 27828373,
+   "end": 27828464
   }, {
    "filename": "/data/image/font/59.png",
-   "start": 33770055,
-   "end": 33770152
+   "start": 27828464,
+   "end": 27828561
   }, {
    "filename": "/data/image/font/60.png",
-   "start": 33770152,
-   "end": 33770254
+   "start": 27828561,
+   "end": 27828663
   }, {
    "filename": "/data/image/font/61.png",
-   "start": 33770254,
-   "end": 33770352
+   "start": 27828663,
+   "end": 27828761
   }, {
    "filename": "/data/image/font/62.png",
-   "start": 33770352,
-   "end": 33770459
+   "start": 27828761,
+   "end": 27828868
   }, {
    "filename": "/data/image/font/63.png",
-   "start": 33770459,
-   "end": 33770568
+   "start": 27828868,
+   "end": 27828977
   }, {
    "filename": "/data/image/font/64.png",
-   "start": 33770568,
-   "end": 33770690
+   "start": 27828977,
+   "end": 27829099
   }, {
    "filename": "/data/image/font/65.png",
-   "start": 33770690,
-   "end": 33770801
+   "start": 27829099,
+   "end": 27829210
   }, {
    "filename": "/data/image/font/66.png",
-   "start": 33770801,
-   "end": 33770907
+   "start": 27829210,
+   "end": 27829316
   }, {
    "filename": "/data/image/font/67.png",
-   "start": 33770907,
-   "end": 33771010
+   "start": 27829316,
+   "end": 27829419
   }, {
    "filename": "/data/image/font/68.png",
-   "start": 33771010,
-   "end": 33771114
+   "start": 27829419,
+   "end": 27829523
   }, {
    "filename": "/data/image/font/69.png",
-   "start": 33771114,
-   "end": 33771217
+   "start": 27829523,
+   "end": 27829626
   }, {
    "filename": "/data/image/font/70.png",
-   "start": 33771217,
-   "end": 33771316
+   "start": 27829626,
+   "end": 27829725
   }, {
    "filename": "/data/image/font/71.png",
-   "start": 33771316,
-   "end": 33771430
+   "start": 27829725,
+   "end": 27829839
   }, {
    "filename": "/data/image/font/72.png",
-   "start": 33771430,
-   "end": 33771539
+   "start": 27829839,
+   "end": 27829948
   }, {
    "filename": "/data/image/font/73.png",
-   "start": 33771539,
-   "end": 33771627
+   "start": 27829948,
+   "end": 27830036
   }, {
    "filename": "/data/image/font/74.png",
-   "start": 33771627,
-   "end": 33771723
+   "start": 27830036,
+   "end": 27830132
   }, {
    "filename": "/data/image/font/75.png",
-   "start": 33771723,
-   "end": 33771836
+   "start": 27830132,
+   "end": 27830245
   }, {
    "filename": "/data/image/font/76.png",
-   "start": 33771836,
-   "end": 33771932
+   "start": 27830245,
+   "end": 27830341
   }, {
    "filename": "/data/image/font/77.png",
-   "start": 33771932,
-   "end": 33772039
+   "start": 27830341,
+   "end": 27830448
   }, {
    "filename": "/data/image/font/78.png",
-   "start": 33772039,
-   "end": 33772148
+   "start": 27830448,
+   "end": 27830557
   }, {
    "filename": "/data/image/font/79.png",
-   "start": 33772148,
-   "end": 33772252
+   "start": 27830557,
+   "end": 27830661
   }, {
    "filename": "/data/image/font/80.png",
-   "start": 33772252,
-   "end": 33772359
+   "start": 27830661,
+   "end": 27830768
   }, {
    "filename": "/data/image/font/81.png",
-   "start": 33772359,
-   "end": 33772473
+   "start": 27830768,
+   "end": 27830882
   }, {
    "filename": "/data/image/font/82.png",
-   "start": 33772473,
-   "end": 33772576
+   "start": 27830882,
+   "end": 27830985
   }, {
    "filename": "/data/image/font/83.png",
-   "start": 33772576,
-   "end": 33772693
+   "start": 27830985,
+   "end": 27831102
   }, {
    "filename": "/data/image/font/84.png",
-   "start": 33772693,
-   "end": 33772787
+   "start": 27831102,
+   "end": 27831196
   }, {
    "filename": "/data/image/font/85.png",
-   "start": 33772787,
-   "end": 33772892
+   "start": 27831196,
+   "end": 27831301
   }, {
    "filename": "/data/image/font/86.png",
-   "start": 33772892,
-   "end": 33772994
+   "start": 27831301,
+   "end": 27831403
   }, {
    "filename": "/data/image/font/87.png",
-   "start": 33772994,
-   "end": 33773108
+   "start": 27831403,
+   "end": 27831517
   }, {
    "filename": "/data/image/font/88.png",
-   "start": 33773108,
-   "end": 33773221
+   "start": 27831517,
+   "end": 27831630
   }, {
    "filename": "/data/image/font/89.png",
-   "start": 33773221,
-   "end": 33773325
+   "start": 27831630,
+   "end": 27831734
   }, {
    "filename": "/data/image/font/90.png",
-   "start": 33773325,
-   "end": 33773430
+   "start": 27831734,
+   "end": 27831839
   }, {
    "filename": "/data/image/font/91.png",
-   "start": 33773430,
-   "end": 33773528
+   "start": 27831839,
+   "end": 27831937
   }, {
    "filename": "/data/image/font/92.png",
-   "start": 33773528,
-   "end": 33773628
+   "start": 27831937,
+   "end": 27832037
   }, {
    "filename": "/data/image/font/93.png",
-   "start": 33773628,
-   "end": 33773722
+   "start": 27832037,
+   "end": 27832131
   }, {
    "filename": "/data/image/font/94.png",
-   "start": 33773722,
-   "end": 33773823
+   "start": 27832131,
+   "end": 27832232
   }, {
    "filename": "/data/image/font/95.png",
-   "start": 33773823,
-   "end": 33773915
+   "start": 27832232,
+   "end": 27832324
   }, {
    "filename": "/data/image/font/96.png",
-   "start": 33773915,
-   "end": 33774010
+   "start": 27832324,
+   "end": 27832419
   }, {
    "filename": "/data/image/font/97.png",
-   "start": 33774010,
-   "end": 33774117
+   "start": 27832419,
+   "end": 27832526
   }, {
    "filename": "/data/image/font/98.png",
-   "start": 33774117,
-   "end": 33774224
+   "start": 27832526,
+   "end": 27832633
   }, {
    "filename": "/data/image/font/99.png",
-   "start": 33774224,
-   "end": 33774324
+   "start": 27832633,
+   "end": 27832733
   }, {
    "filename": "/data/image/mario.png",
-   "start": 33774324,
-   "end": 33774622
+   "start": 27832733,
+   "end": 27833031
   }, {
    "filename": "/data/image/splash.png",
-   "start": 33774622,
-   "end": 33776474
+   "start": 27833031,
+   "end": 27834883
   }, {
    "filename": "/data/image/sprite16.png",
-   "start": 33776474,
-   "end": 33776635
+   "start": 27834883,
+   "end": 27835044
   }, {
    "filename": "/data/image/ui/blank2.png",
-   "start": 33776635,
-   "end": 33776726
+   "start": 27835044,
+   "end": 27835135
   }, {
    "filename": "/data/image/ui/button16/1.png",
-   "start": 33776726,
-   "end": 33776891
+   "start": 27835135,
+   "end": 27835300
   }, {
    "filename": "/data/image/ui/button16/2.png",
-   "start": 33776891,
-   "end": 33777054
+   "start": 27835300,
+   "end": 27835463
   }, {
    "filename": "/data/image/ui/button16/3.png",
-   "start": 33777054,
-   "end": 33777221
+   "start": 27835463,
+   "end": 27835630
   }, {
    "filename": "/data/image/ui/dpad16/d1.png",
-   "start": 33777221,
-   "end": 33777398
+   "start": 27835630,
+   "end": 27835807
   }, {
    "filename": "/data/image/ui/dpad16/d2.png",
-   "start": 33777398,
-   "end": 33777568
+   "start": 27835807,
+   "end": 27835977
   }, {
    "filename": "/data/image/ui/dpad16/l1.png",
-   "start": 33777568,
-   "end": 33777750
+   "start": 27835977,
+   "end": 27836159
   }, {
    "filename": "/data/image/ui/dpad16/l2.png",
-   "start": 33777750,
-   "end": 33777931
+   "start": 27836159,
+   "end": 27836340
   }, {
    "filename": "/data/image/ui/dpad16/r1.png",
-   "start": 33777931,
-   "end": 33778128
+   "start": 27836340,
+   "end": 27836537
   }, {
    "filename": "/data/image/ui/dpad16/r2.png",
-   "start": 33778128,
-   "end": 33778316
+   "start": 27836537,
+   "end": 27836725
   }, {
    "filename": "/data/image/ui/dpad16/u1.png",
-   "start": 33778316,
-   "end": 33778498
+   "start": 27836725,
+   "end": 27836907
   }, {
    "filename": "/data/image/ui/dpad16/u2.png",
-   "start": 33778498,
-   "end": 33778691
+   "start": 27836907,
+   "end": 27837100
   }, {
    "filename": "/data/image/ui/joystick32/1.png",
-   "start": 33778691,
-   "end": 33778906
+   "start": 27837100,
+   "end": 27837315
   }, {
    "filename": "/data/image/ui/joystick32/2.png",
-   "start": 33778906,
-   "end": 33779105
+   "start": 27837315,
+   "end": 27837514
   }, {
    "filename": "/data/image/ui/joystick32/3.png",
-   "start": 33779105,
-   "end": 33779322
+   "start": 27837514,
+   "end": 27837731
   }, {
    "filename": "/data/image/ui/joystick32/4.png",
-   "start": 33779322,
-   "end": 33779559
+   "start": 27837731,
+   "end": 27837968
   }, {
    "filename": "/data/image/ui/joystick32/5.png",
-   "start": 33779559,
-   "end": 33779801
+   "start": 27837968,
+   "end": 27838210
   }, {
    "filename": "/data/image/ui/joystick32/6.png",
-   "start": 33779801,
-   "end": 33780022
+   "start": 27838210,
+   "end": 27838431
   }, {
    "filename": "/data/image/yapre.png",
-   "start": 33780022,
-   "end": 33780486
+   "start": 27838431,
+   "end": 27838895
   }, {
    "filename": "/data/image/yapre_text.png",
-   "start": 33780486,
-   "end": 33780683
+   "start": 27838895,
+   "end": 27839092
   }, {
    "filename": "/data/lua/app/_init.lua",
-   "start": 33780683,
-   "end": 33780725
+   "start": 27839092,
+   "end": 27839134
   }, {
    "filename": "/data/lua/app/app.lua",
-   "start": 33780725,
-   "end": 33781312
+   "start": 27839134,
+   "end": 27839721
   }, {
    "filename": "/data/lua/app/game/_init.lua",
-   "start": 33781312,
-   "end": 33785200
+   "start": 27839721,
+   "end": 27843609
   }, {
    "filename": "/data/lua/app/game/world_dungeon.lua",
-   "start": 33785200,
-   "end": 33786927
+   "start": 27843609,
+   "end": 27845336
   }, {
    "filename": "/data/lua/app/game/world_flappy_duck.lua",
-   "start": 33786927,
-   "end": 33799850
+   "start": 27845336,
+   "end": 27858259
   }, {
    "filename": "/data/lua/app/game/world_image.lua",
-   "start": 33799850,
-   "end": 33802665
+   "start": 27858259,
+   "end": 27861074
   }, {
    "filename": "/data/lua/app/game/world_label.lua",
-   "start": 33802665,
-   "end": 33805498
+   "start": 27861074,
+   "end": 27863907
   }, {
    "filename": "/data/lua/app/game/world_mario_music.lua",
-   "start": 33805498,
-   "end": 33811345
+   "start": 27863907,
+   "end": 27869754
   }, {
    "filename": "/data/lua/app/game/world_palette.lua",
-   "start": 33811345,
-   "end": 33811847
+   "start": 27869754,
+   "end": 27870256
   }, {
    "filename": "/data/lua/app/game/world_slides.lua",
-   "start": 33811847,
-   "end": 33813440
+   "start": 27870256,
+   "end": 27871849
   }, {
    "filename": "/data/lua/app/game/world_word_slide_maker.lua",
-   "start": 33813440,
-   "end": 33814788
+   "start": 27871849,
+   "end": 27873197
   }, {
    "filename": "/data/lua/app/rewind_controller.lua",
-   "start": 33814788,
-   "end": 33820122
+   "start": 27873197,
+   "end": 27878531
   }, {
    "filename": "/data/lua/app/test_world.lua",
-   "start": 33820122,
-   "end": 33823587
+   "start": 27878531,
+   "end": 27881996
   }, {
    "filename": "/data/lua/core/_init.lua",
-   "start": 33823587,
-   "end": 33823778
+   "start": 27881996,
+   "end": 27882187
   }, {
    "filename": "/data/lua/core/components/_init.lua",
-   "start": 33823778,
-   "end": 33824183
+   "start": 27882187,
+   "end": 27882592
   }, {
    "filename": "/data/lua/core/components/animation.lua",
-   "start": 33824183,
-   "end": 33827016
+   "start": 27882592,
+   "end": 27885425
   }, {
    "filename": "/data/lua/core/components/data.lua",
-   "start": 33827016,
-   "end": 33827086
+   "start": 27885425,
+   "end": 27885495
   }, {
    "filename": "/data/lua/core/components/input.lua",
-   "start": 33827086,
-   "end": 33828720
+   "start": 27885495,
+   "end": 27887129
   }, {
    "filename": "/data/lua/core/components/layout.lua",
-   "start": 33828720,
-   "end": 33834873
+   "start": 27887129,
+   "end": 27893282
   }, {
    "filename": "/data/lua/core/components/position.lua",
-   "start": 33834873,
-   "end": 33834981
+   "start": 27893282,
+   "end": 27893390
   }, {
    "filename": "/data/lua/core/components/size.lua",
-   "start": 33834981,
-   "end": 33835082
+   "start": 27893390,
+   "end": 27893491
   }, {
    "filename": "/data/lua/core/components/sprite.lua",
-   "start": 33835082,
-   "end": 33836025
+   "start": 27893491,
+   "end": 27894434
   }, {
    "filename": "/data/lua/core/components/sprite_text.lua",
-   "start": 33836025,
-   "end": 33838948
+   "start": 27894434,
+   "end": 27897357
   }, {
    "filename": "/data/lua/core/components/tags.lua",
-   "start": 33838948,
-   "end": 33839018
+   "start": 27897357,
+   "end": 27897427
   }, {
    "filename": "/data/lua/core/components/text.lua",
-   "start": 33839018,
-   "end": 33840224
+   "start": 27897427,
+   "end": 27898633
   }, {
    "filename": "/data/lua/core/components/tick.lua",
-   "start": 33840224,
-   "end": 33841171
+   "start": 27898633,
+   "end": 27899580
   }, {
    "filename": "/data/lua/core/components/tree.lua",
-   "start": 33841171,
-   "end": 33842935
+   "start": 27899580,
+   "end": 27901344
   }, {
    "filename": "/data/lua/core/data/emscripten_keycode_mapping.lua",
-   "start": 33842935,
-   "end": 33843989
+   "start": 27901344,
+   "end": 27902398
   }, {
    "filename": "/data/lua/core/data/font_data.lua",
-   "start": 33843989,
-   "end": 33845475
+   "start": 27902398,
+   "end": 27903884
   }, {
    "filename": "/data/lua/core/data/palette_data.lua",
-   "start": 33845475,
-   "end": 33846732
+   "start": 27903884,
+   "end": 27905141
   }, {
    "filename": "/data/lua/core/entities/_init.lua",
-   "start": 33846732,
-   "end": 33846761
+   "start": 27905141,
+   "end": 27905170
   }, {
    "filename": "/data/lua/core/entities/ui/_init.lua",
-   "start": 33846761,
-   "end": 33847127
+   "start": 27905170,
+   "end": 27905536
   }, {
    "filename": "/data/lua/core/entities/ui/button.lua",
-   "start": 33847127,
-   "end": 33850290
+   "start": 27905536,
+   "end": 27908699
   }, {
    "filename": "/data/lua/core/entities/ui/dpad.lua",
-   "start": 33850290,
-   "end": 33853123
+   "start": 27908699,
+   "end": 27911532
   }, {
    "filename": "/data/lua/core/entities/ui/image.lua",
-   "start": 33853123,
-   "end": 33856118
+   "start": 27911532,
+   "end": 27914527
   }, {
    "filename": "/data/lua/core/entities/ui/joystick.lua",
-   "start": 33856118,
-   "end": 33859267
+   "start": 27914527,
+   "end": 27917676
   }, {
    "filename": "/data/lua/core/entities/ui/label.lua",
-   "start": 33859267,
-   "end": 33859805
+   "start": 27917676,
+   "end": 27918214
   }, {
    "filename": "/data/lua/core/entities/ui/palette.lua",
-   "start": 33859805,
-   "end": 33860689
+   "start": 27918214,
+   "end": 27919098
   }, {
    "filename": "/data/lua/core/entities/ui/panel.lua",
-   "start": 33860689,
-   "end": 33861559
+   "start": 27919098,
+   "end": 27919968
   }, {
    "filename": "/data/lua/core/entities/ui/progress.lua",
-   "start": 33861559,
-   "end": 33863253
+   "start": 27919968,
+   "end": 27921662
   }, {
    "filename": "/data/lua/core/entities/ui/progress_selector.lua",
-   "start": 33863253,
-   "end": 33865222
+   "start": 27921662,
+   "end": 27923631
   }, {
    "filename": "/data/lua/core/entities/ui/sprite_label.lua",
-   "start": 33865222,
-   "end": 33865868
+   "start": 27923631,
+   "end": 27924277
   }, {
    "filename": "/data/lua/core/serialization.lua",
-   "start": 33865868,
-   "end": 33868384
+   "start": 27924277,
+   "end": 27926793
   }, {
    "filename": "/data/lua/core/splash_screen.lua",
-   "start": 33868384,
-   "end": 33869729
+   "start": 27926793,
+   "end": 27928138
   }, {
    "filename": "/data/lua/core/systems/_init.lua",
-   "start": 33869729,
-   "end": 33869878
+   "start": 27928138,
+   "end": 27928287
   }, {
    "filename": "/data/lua/core/systems/dummy.lua",
-   "start": 33869878,
-   "end": 33870269
+   "start": 27928287,
+   "end": 27928678
   }, {
    "filename": "/data/lua/core/systems/input.lua",
-   "start": 33870269,
-   "end": 33874336
+   "start": 27928678,
+   "end": 27932745
   }, {
    "filename": "/data/lua/core/systems/sprite.lua",
-   "start": 33874336,
-   "end": 33876084
+   "start": 27932745,
+   "end": 27934493
   }, {
    "filename": "/data/lua/core/systems/tick.lua",
-   "start": 33876084,
-   "end": 33877884
+   "start": 27934493,
+   "end": 27936293
   }, {
    "filename": "/data/lua/core/systems/tree.lua",
-   "start": 33877884,
-   "end": 33879686
+   "start": 27936293,
+   "end": 27938095
   }, {
    "filename": "/data/lua/core/yecs.lua",
-   "start": 33879686,
-   "end": 33892199
+   "start": 27938095,
+   "end": 27950608
   }, {
    "filename": "/data/lua/libs/debugger.lua",
-   "start": 33892199,
-   "end": 33916959
+   "start": 27950608,
+   "end": 27975368
   }, {
    "filename": "/data/lua/libs/rx.lua",
-   "start": 33916959,
-   "end": 33983145
+   "start": 27975368,
+   "end": 28041554
   }, {
    "filename": "/data/lua/libs/strict.lua",
-   "start": 33983145,
-   "end": 33984352
+   "start": 28041554,
+   "end": 28042761
   }, {
    "filename": "/data/lua/libs/table_save.lua",
-   "start": 33984352,
-   "end": 33989105
+   "start": 28042761,
+   "end": 28047514
   }, {
    "filename": "/data/lua/nes/apu.lua",
-   "start": 33989105,
-   "end": 34017903
+   "start": 28047514,
+   "end": 28076312
   }, {
    "filename": "/data/lua/nes/cpu.lua",
-   "start": 34017903,
-   "end": 34051791
+   "start": 28076312,
+   "end": 28110200
   }, {
    "filename": "/data/lua/nes/libs/complex.lua",
-   "start": 34051791,
-   "end": 34064526
+   "start": 28110200,
+   "end": 28122935
   }, {
    "filename": "/data/lua/nes/libs/profile.lua",
-   "start": 34064526,
-   "end": 34072009
+   "start": 28122935,
+   "end": 28130418
   }, {
    "filename": "/data/lua/nes/libs/serpent.lua",
-   "start": 34072009,
-   "end": 34083070
+   "start": 28130418,
+   "end": 28141479
   }, {
    "filename": "/data/lua/nes/nes.lua",
-   "start": 34083070,
-   "end": 34085518
+   "start": 28141479,
+   "end": 28143927
   }, {
    "filename": "/data/lua/nes/pads.lua",
-   "start": 34085518,
-   "end": 34087885
+   "start": 28143927,
+   "end": 28146294
   }, {
    "filename": "/data/lua/nes/palette.lua",
-   "start": 34087885,
-   "end": 34093302
+   "start": 28146294,
+   "end": 28151711
   }, {
    "filename": "/data/lua/nes/ppu.lua",
-   "start": 34093302,
-   "end": 34142850
+   "start": 28151711,
+   "end": 28201259
   }, {
    "filename": "/data/lua/nes/rom.lua",
-   "start": 34142850,
-   "end": 34160370
+   "start": 28201259,
+   "end": 28218779
   }, {
    "filename": "/data/lua/nes/utils.lua",
-   "start": 34160370,
-   "end": 34167710
+   "start": 28218779,
+   "end": 28226119
   }, {
    "filename": "/data/lua/utils/copy.lua",
-   "start": 34167710,
-   "end": 34168486
+   "start": 28226119,
+   "end": 28226895
   }, {
    "filename": "/data/lua/utils/eval.lua",
-   "start": 34168486,
-   "end": 34168900
+   "start": 28226895,
+   "end": 28227309
   }, {
    "filename": "/data/lua/utils/log.lua",
-   "start": 34168900,
-   "end": 34169721
+   "start": 28227309,
+   "end": 28228130
   }, {
    "filename": "/data/lua/utils/package_path.lua",
-   "start": 34169721,
-   "end": 34169998
+   "start": 28228130,
+   "end": 28228407
   }, {
    "filename": "/data/lua/utils/reload.lua",
-   "start": 34169998,
-   "end": 34186525
+   "start": 28228407,
+   "end": 28244934
   }, {
    "filename": "/data/lua/utils/uuid.lua",
-   "start": 34186525,
-   "end": 34186820
+   "start": 28244934,
+   "end": 28245229
   }, {
    "filename": "/data/lua/yazr.lua",
-   "start": 34186820,
-   "end": 34187543
+   "start": 28245229,
+   "end": 28245952
   }, {
    "filename": "/data/lua/yazrXnes.lua",
-   "start": 34187543,
-   "end": 34191350
+   "start": 28245952,
+   "end": 28249759
   } ],
-  "remote_package_size": 34191350
+  "remote_package_size": 28249759
  });
 })();
 
